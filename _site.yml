@@ -1,0 +1,23 @@
+name: "Aleš Vomáčka"
+output_dir: "."
+navbar:
+  title: "Statitiska 1"
+  left:
+    - text: "Materiály k přednáškám"
+    - text: "Domácí úkoly"
+    - text: "Atestace"
+    - text: "Data"
+    - text: "Literatura"
+output:
+  html_document:
+    theme:
+      bootswatch: united
+      primary: "#BB5C37"
+      heading_font:
+        google: "Fira Sans"
+      base_font:
+        google: "Fira Sans"
+      code_font:
+        google: "Fira Code"
+    include:
+      after_body: footer.html

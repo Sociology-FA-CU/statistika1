@@ -1,0 +1,24 @@
+---
+title: "Statistika 1"
+output: html_document
+---
+
+Vzhled stránky jde upravovat klasicky v souboru _site.yml (otevři v jakémkoliv textovém editoru). Barva záhlaví se upravuje pomocí argumentu primary, dosaď si vlastní hex kód. Font se upravuje taky v _site.yml, ale bohužel si už nepamatuju, jak jsem na to přišel. Zápatí stránky je definované v souboru footer.html (teď je to proklikávací text "Katedra sociologie, Filozofická fakulta, Univerzita Karlova"). Pokud ho chceš změnit, tak musíš přepsat ten html soubor. Pokud ho chceš smazat, smaž řádky 23 a 24 v _site.yml.
+
+## Tabsety {.tabset .tabset-pills}
+
+### Tabset 1
+
+Tabsety (ty tlačítka na překlikávní) jsou popsané zde https://bookdown.org/yihui/rmarkdown-cookbook/html-tabs.html. Pozor, tabset musí být nadpis alespoň na druhé úrovni. Na první úrovni nefunguje. Pokud nechceš, aby byly jednotlivá tlačítka barevně ohraničená (ale měly pouze tenkou hranici), smaž .tabset-pills z nadpisu.
+
+### Tabset 2
+
+Kočky jsou lepší než psy. Figth me.
+
+## Prezentace
+
+Prezentace se dají vložit pomocí iframu přes html kód. Koukni do index.Rmd pro ukázku. Taky si musíš pohrát s rozměry prezentace. Ta testovací prezentace má 900 pixelů na šířku a 600 na výšku.
+
+<iframe src="presentation/test-presentation.html" width="900" height="600"></iframe>
+
+<br>
