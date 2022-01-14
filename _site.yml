@@ -1,18 +1,19 @@
-name: "Aleš Vomáčka"
+name: "Jaromír Mazák"
 output_dir: "."
 navbar:
   title: "Statitiska 1"
   left:
-    - text: "Materiály k přednáškám"
-    - text: "Domácí úkoly"
-    - text: "Atestace"
+    - text: "Prezentace"
+    - text: "Procvičování"
     - text: "Data"
-    - text: "Literatura"
+    - text: "Sylabus"
+    - text: "Atestace"
+
 output:
   html_document:
     theme:
       bootswatch: united
-      primary: "#BB5C37"
+      primary: "#20B2AA"
       heading_font:
         google: "Fira Sans"
       base_font:
