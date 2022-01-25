@@ -1,0 +1,121 @@
+---
+title: "Sylabus"
+output: 
+  html_document:
+    number_sections: true
+    toc: true
+    toc_float: true
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné přednášce + semináři. U každého tématu najdete cíle výuky a výsledky učení. Cíle výuky jsou vymezením toho, co bych rád, abyste se v kurzu naučili. Výsledky učení jsou pak vodítkem pro mě i pro vás, jak si ověřit, že se to povedlo. Doporučuji pracovat s výslekdy učení z následujících důvodů:
+
+-   Pomáhají vám ověřit, že jste si odnesli to hlavní z každé přednášky + semináře
+-   Z výsledků učení přímo vychází sekce Procvičování, kde si můžete ověřit své znalosti a dovednosti
+-   Z výsledků učení přímo vychází úlohy v závěrečném testu, na jehož základě je vám udělana výsledná známka
+
+# Úvod a motivace
+
+-   *Cíle výuky:* Cílem přednášky + semináře je představit studujícím statistiku jako investigativní proces, který má vést k zodpovězení relevantních otázek společenských věd. Za tímto účelem je představen rámec PPDACC, tedy "problem" -- "plan" -- "data" -- "analysis" -- "conclusion" -- "communication" [@mackay2000; @spiegelhalter2019a], který se bude opětovně vynořovat v průběhu kurzu. Studujícím je také představen statistický jazyk R, který je v průběhu kurzu používán k demonstracím. Především v rámci seminářů (cvičení) jsou studenti podpořeni v tom, aby sami R využívali k řešení různých jednoduchých úkolů.
+
+-   *Výsledky učení - studující dokáže:*
+
+    -   Definovat a ve správných souvislostech použít pojmy: (kvantitativní) empirický výzkum, deskripce, explanace, proměnná, deskriptivní statistika, inferenční statistika, induktivní statistika, kauzální inference, vzorek, výběrový soubor, populace, reprezentativita dat
+    -   Vysvětlit a porovnat cíle deskriptivní a inferenční (induktivní) statistiky
+    -   Vysvětlit a na příkladu ilustrovat klíčovou roli definice pojmu (co počítáme) v kontextu statistického vyšetřování
+    -   Nakreslit a popsat PPDAC cyklus jako příklad modelu statického vyšetřování
+
+# Kategorická data a procenta
+
+-   *Cíle výuky:* Cílem je seznámit studující s různými typy proměnných. Pozornost je poté věnována kategorickým proměnným a různým způsobům jejich prezentace včetně prezentace vizuální. Speciální pozornost je věnována binárním / dichotomickým datům a problematice absolutního a relativního rizika. Studentům je také představeno Bernoulliho rozdělení.
+
+-   *Výsledky učení - studující dokáže:*
+
+    - Definovat a ve správných souvislostech použít pojmy: proměnné diskrétní, spojité, kategoriální, nominální, ordinální, kardinální, intervalové, poměrové, absolutní riziko, relativní riziko, očekávaná četnost, pravděpodobnost, šance.
+    - Vysvětlit, proč je nevhodné použití vícero koláčových grafů pro srovnání dvou a více skupin. 
+    - Převést informace o absolutním a relativním riziku na očekávané četnosti. 
+
+
+# Numerické proměnné a míry centrality
+
+-   *Cíle výuky:* Cílem je představit studujícím koncept empirické distribuce dat (empirického rozdělení dat) a možnosti jejího grafického a numerické popisu s důrazem na míry centrality. V rámci přednášky je též představeno uniformní a normální rozdělení.
+
+-   *Výsledky učení - studující dokáže:*
+
+    - Definovat a ve správných souvislostech použít pojmy: empirická distribuce dat, boxplot (krabicový graf), histogram, aritmetický průměr, medián, modus, uniformní rozdělení, normální rozdělení.
+    - Porovnat vlastnosti aritmetického průměru a mediánu.
+    - Vysvětlit, co jsou robustní statistiky a uvést příklad robustní míry centrality. 
+    - Uvést příklady míry centrality, která robustní není, a vymyslet ilustrativní příklad dat, na kterém to lze demonstrovat. 
+    - Vysvětlit, jaké nedostatky může mít použití konkrétní statistiky na konkrétních příkladech (například použití aritmetického průměru pro příjem, mediánu pro majetek, módu pro počet komentářů u příspěvku na sociálních médiích atp.).
+    - Nakreslit a na obrázku vysvětlit, proč může být pro správné pochopení distribuce dat potřeba data vizualizovat (nejen pouze popsat vybranou mírou centrality).
+
+
+# Numerické proměnné a míry variability
+
+-   *Cíle výuky:* Přednáška rozšiřuje výklad o konceptu empirické distribuce dat, tentokrát s důrazem na míry variability. V rámci přednášky je také představena problematika exponenciální funkce (exponenciálního růstu) a možnosti využití logaritmického měřítka pro práci s (velmi) šikmými daty. Studenti jsou také seznámeni s binomickým a Poissonovým rozdělením. 
+
+-   *Výsledky učení - studující dokáže:*
+
+    - Definovat a ve správných souvislostech použít pojmy: exponenciální funkce, logaritmické měřítko, logaritmická transformace, rozsah, percentil, kvartil, mezikvartilové rozpětí, směrodatná odchylka, rozptyl, Giniho koeficient, šikmost, špičatost, binomické rozdělení, Poissonovo rozdělení.
+    - Vysvětlit, v jaké vzájemném vztahu jsou směrodatná odchylka a rozptyl.
+    - Vysvětlit, co jsou robustní statistiky a uvést příklady robustní míry variability.  
+    - Uvést příklad míry variability, která robustní není, a vymyslet ilustrativní příklad dat, na kterém to lze demonstrovat. 
+    - Nakreslit a na obrázku vysvětlit, proč může být pro správné pochopení distribuce dat potřeba data vizualizovat (nejen pouze popsat sumarizačními statistikami).
+
+
+# Popis vztahů mezi proměnnými
+
+-   *Cíle výuky:* Cílem je systematizovat pro studující problematiku popisu vztahů mezi různými typy proměnných. Toto téma je částečně pokryto už v předchozích přednáškách, které se všechny opírají o reálné příklady, takže přítomnost více proměnných a zkoumání vztahů mezi nimi jsou studentům představeny jaksi mimochodem. Nyní jde o systematizaci a doplnění tohoto poznání. Předmětem přednášky je pouze deskripce vztahů, nikoliv statistické testování. Velký důraz je kladen na vizualizaci dat.
+
+-   *Výsledky učení - studující dokáže:*
+
+    - Definovat a ve správných souvislostech použít pojmy korelace, Pearsonův korelační koeficient, Spearmanův korelační koeficient, kontingenční tabulka, Simpsonův paradox, řádková procenta, sloupcová procenta, závislá proměnná, nezávislá proměnná.
+    - Vysvětlit na základní úrovni myšlenku statistického modelu jako matematické reprezentace vyjadřující pravděpodobnostní rozdělení náhodných proměnných a skládající se z deterministické a náhodné komponenty.
+    - Interpretovat výstup jednoduché lineární regrese v grafické i tabulkové podobě. 
+    - Pohledem a úvahou odhadnout, jak se bude měnit korelační koeficient u daného malého datového souboru a jak se bude lišit Pearsonův a Spearmanův koeficient pro tato data.  
+    - Vysvětlit a na příkladech ilustrovat, co znamená, že korelace neimplikuje kauzalitu. 
+    - Vysvětlit a na příkladech ilustrovat, co znamená, že kauzalita neimplikuje korelaci.
+    - Nakreslit obrázek ilustrující Simpsonův paradax pro zadaný problém. 
+
+
+# Základy inferenčního uvažování: vzorek a populace
+
+-   *Cíle výuky:* Cílem přednášky je seznámit studující s různými významy konceptu populace a uvést je do problematiky inferenční statistiky, tedy usuzování z výběrového souboru na populaci. Vedle konceptu populace jsou předmětem přednášky bodové a intervalové odhady a základní seznámení se simulační technikou bootstrapping. 
+
+-   *Výsledky učení - studující dokáže:*
+
+    - Definovat a ve správných souvislostech použít pojmy induktivní (inferenční) statistika, validita, interní validita, externí validita, populace jako skupina subjektů, virtuální populace, metaforická populace, „sampling distribution“, bootstrapping.
+    - Vysvětlit myšlenku bootstrappingu a jak na jeho základě odhadujeme variabilitu odhadu.
+    - Srovnat doslovný význam pojmu populace a s pojmem virtuální populace a metaforická populace a vysvětlit, v čem je zavedení těchto pojmů užitečné. 
+
+
+# Pravděpodobnost, nejistota a variabilita
+
+-   *Cíle výuky:* Cílem je šetrné uvedení do teorie pravděpodobnosti coby jazyka nejistoty a variability. Diskutována je klasická (naivní, četnostní) definice pravděpodobnosti a základní zákony/pravidla pravděpodobnosti. Intuitivní pochopení pravděpodobnosti je podpořeno pomocí konceptu očekávaných četností. Pozornost je věnována také myšlence randomizace a různým filosofickým uchopením významu pravděpodobnosti.
+
+-   *Výsledky učení - studující dokáže:*
+
+# Centrální limitní věta
+
+-   *Cíle výuky:* Cílem je propojení teorie pravděpodobnosti a statistiky skrze centrální limitní větu. Představen je také výpočet intervalů spolehlivosti jako rozšíření problematiky intervalových odhadů představených dříve.
+
+-   *Výsledky učení - studující dokáže:*
+
+# Podmíněná pravděpodobnost a Bayesova věta
+
+-   *Cíle výuky:* Cílem je seznámit studující s podmíněnou pravděpodobností a jejími aplikacemi včetně formalizace pomocí Bayesovy věty.
+
+-   *Výsledky učení - studující dokáže:*
+
+# Bayesovská aktualizace na základě nových informací
+
+-   *Cíle výuky:* Cílem přednášky je představit bayesovský koncept statistiky jako nástroje pro aktualizaci stávajícího poznání o nové vstupní informace. Studující se seznámí se základními podobnostmi a odlišnostmi klasické frekvenční statistiky a alternativního bayesovského přístupu. Protože následné studium statistiky v bakalářském stupni je převážně založeno na frekvenčním přístupu a testování nulových hypotéz (kurz Statistika 2), smyslem přednášky je zasadit tradiční a v sociologii i jiných společenských vědách dominantní frekvenční přístup do širšího kontextu existence více filosofických alternativ, z nichž každá má své silné i slabé stránky.
+
+-   *Výsledky učení - studující dokáže:*
+
+# Reference {-}
+

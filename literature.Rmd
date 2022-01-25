@@ -1,0 +1,24 @@
+---
+title: "Literatura"
+output: html_document
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Tento kurz vyučuji od letního semestru 2022 a seznam doporučené literatury se plánuji teprve dotvářet. V totu chvíli považuji za nejvhodnější primární text pro kurz knihu **The Art of Statistics: How to Learn from Data** od Davida Spiegelhaltera [-@spiegelhalter2019]. Kniha podobně jako kurz míří na dva cíli: posílení statistické gramotnosti u široké veřejnosti a uvedení studentů na cestu studia statistiky. Kurz volí moderní cestu k výuce statistiky, kdy na začátku cesty ke statistickému vzdělání není příliš akcentována teorie pravděpodobnosti, a to z didaktických důvodů - teorie pravděpodobnosti je náročná disciplína a ocení ji spíše až studenti, kteří už mají do statistiky nějaký vhled. S teorií pravděpodobnosti se tak setkáme především ve druhé polovině kurz, za základní oporu poslouží kniha **Introduction to probability** [@blitzstein2014], která pro zájemce nabízí mnohem širší pojednání tématu než tento kurz.
+
+Jako pokročilejší literaturu pro zájemce lze doporučit především knihu Statistical Rethinking [@mcelreath2020], která akcentuje bayesiánský přístup ke statistice. Kniha je velmi zajímavá, ale většinou ji ocení až studenti v pozdější fázi studia, v kurzu z ní ovšem čerpáme některé příklady. Jako zásobárna statistických příkladů z oblasti společenských věd poslouží také knihy **A Quantitative Tour of the Social Sciences** [@aquanti2009] a **Teaching Statistics: A Bag of Tricks** [@gelman2017].
+
+Dále pro zájemce o tu rovinu kurzu, která se spíše než technickými postupy zabývá každodenní statistickou gramotností, lze doporučit knihu **How to Make the World Add Up** [@harford2021].
+
+V kurzu velmi zlehka pracujeme také se softwarem R pro účely praktických ukázek některých základních konceptů. Jako rozšiřující literaturu pro kvantitativní analýzu dat v R doporučuji především knihu **R for Data Science** [@wickham2017], která je volně dostupná online, viz odkaz níže v seznamu, a také knihy **Social Science Data with R: An Introduction** @fogarty2019 a **Statistical Inference via Data Science**[@ismay2019]. Nicméně obsah těchto knih se jen velmi lehce dotýká obsahu kurzu Statistika 1 a jde spíše o texty pro zájemce o intenzivnější práci v R. Tyto studující lze pak odkázat také na kurz Úvod do analýzy dat v R, který vyučuji s kolegou Alešem Vomáčkou, jehož záběr se více překrývá s knihami doporučenými v tomto odstavci.
+
+Za pomoc se sestavením seznamu doporučené literatury děkuji Alešovi Vomáčkovi.
+
+
+## Seznam literatury
+
+</br>

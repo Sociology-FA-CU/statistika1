@@ -1,24 +1,23 @@
 ---
 title: "Statistika 1"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
-Vzhled stránky jde upravovat klasicky v souboru _site.yml (otevři v jakémkoliv textovém editoru). Barva záhlaví se upravuje pomocí argumentu primary, dosaď si vlastní hex kód. Font se upravuje taky v _site.yml, ale bohužel si už nepamatuju, jak jsem na to přišel. Zápatí stránky je definované v souboru footer.html (teď je to proklikávací text "Katedra sociologie, Filozofická fakulta, Univerzita Karlova"). Pokud ho chceš změnit, tak musíš přepsat ten html soubor. Pokud ho chceš smazat, smaž řádky 23 a 24 v _site.yml.
 
-## Tabsety {.tabset .tabset-pills}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
-### Tabset 1
+## O kurzu 
 
-Tabsety (ty tlačítka na překlikávní) jsou popsané zde https://bookdown.org/yihui/rmarkdown-cookbook/html-tabs.html. Pozor, tabset musí být nadpis alespoň na druhé úrovni. Na první úrovni nefunguje. Pokud nechceš, aby byly jednotlivá tlačítka barevně ohraničená (ale měly pouze tenkou hranici), smaž .tabset-pills z nadpisu.
+Tento kurz je koncipován jako první krok do statistiky pro studenty a studentky sociologie. Kurz sleduje dva hlavní cíle. Prvním je u studujících vybudovat/posílit základy datové či statistické gramotnosti, aby mohli být kritickými uživateli statistických výstupů v médiích a postupně také ve vědeckých pracích. Druhým cílem je začít je seznamovat s procesem statistického vyšetřování a s vybranými statistickými postupy, které vědec či analytik v rámci své práce využívá.  Tím by měli studující vykročit na cestu k tomu, aby se sami stali zběhlými tvůrci kvantitativního sociologického poznání. Výuka probíhá formou 90minutové přednášky a 90 minuotvého semináře jednou týdně. Kurz je koncipován jako jednosemestrální a navazuje na něj kurz Statistika 2. Formálně je kurz rozdělen do dvou částí: [Zde najdete přednášku v SIS](https://is.cuni.cz/studium/predmety/index.php?id=c092f48d0faf8dab134342edd4e7ae4a&tid=&do=predmet&kod=ASG100117) a [tady je zase seminář](https://is.cuni.cz/studium/predmety/index.php?id=c092f48d0faf8dab134342edd4e7ae4a&tid=&do=predmet&kod=ASG100118).  
 
-### Tabset 2
+## O webu
 
-Kočky jsou lepší než psy. Figth me.
+Tento web je hlavní elektronickou oporou kurzu. Moodle je v tom kurzu využíván pouze pro složení závěrečného testu a pro přístup ke studijní literatuře. Na tomto webu najdete sylabus s cíli výuky a výsledky učení pro jednotlivé přednášky. Velmi doporučuji s nimi pracovat. Dále zde najdete všechny prezentace k přednáškám, úlohy k procvičování (slouží jako kontrola pro studující, že všemu dobře porozuměli a dokážou to aplikovat) a datové soubory pro seminář i zadné procvičovací úlohy. Vlastní karta je věnována podmínkám atestace a základní doporučené kurzové literatuře. Další doporučení na zdroje najdete na konci jednotlivých prezentací. 
 
-## Prezentace
+## Vyučující
 
-Prezentace se dají vložit pomocí iframu přes html kód. Koukni do index.Rmd pro ukázku. Taky si musíš pohrát s rozměry prezentace. Ta testovací prezentace má 900 pixelů na šířku a 600 na výšku.
-
-<iframe src="presentation/test-presentation.html" width="900" height="600"></iframe>
-
-<br>
+**Jaromír Mazák, PhD.** pracuje na katedře sociologie jako odborný asistent. Kurz Statistika 1 vyučuje od letního semestru 2022. Výzkumně se věnuje především tématu občanské společnosti a politické participace, ve výuce pak hlavně tématům kvantitativní analýzy dat ([Úvod do analýzy dat v R](https://sociology-fa-cu.github.io/Uvod_do_analyzy_dat_v_R/), [Applied regression in R](https://sociology-fa-cu.github.io/appliedregressioninr/index.html), [Vybraná témata analýzy dat](https://sociology-fa-cu.github.io/vybranatemataanalyzy/index.html)). Více na [profilu na stránkách katedry](https://ksoc.ff.cuni.cz/mazak/).

@@ -3,11 +3,18 @@ output_dir: "."
 navbar:
   title: "Statitiska 1"
   left:
-    - text: "Prezentace"
-    - text: "Procvičování"
-    - text: "Data"
     - text: "Sylabus"
+      href: syllabus.html
+    - text: "Prezentace"
+      href: presentation.html
+    - text: "Procvičování"
+      href: exercise.html
+    - text: "Data"
+      href: data.html
     - text: "Atestace"
+      href: pass.html
+    - text: "Literatura"
+      href: literature.html
 
 output:
   html_document:

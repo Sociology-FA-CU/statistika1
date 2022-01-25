@@ -1,0 +1,10 @@
+---
+title: "Testovací prezentace"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Prezentace pro tuto přednášku ještě není hotova

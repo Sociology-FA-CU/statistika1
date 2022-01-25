@@ -1,0 +1,17 @@
+---
+title: "Atestace"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Udělení atestace se řídí lhůtami a podmínkami stanovenými v dokumentu [Pravidla pro organizaci studia na Filozofické fakultě
+Univerzity Karlovy](https://www.ff.cuni.cz/wp-content/uploads/2021/08/Pravidla_pro_organizaci_studia_FFUK_IV_uplne_zneni_z_28-5-2021_ucinne_od_1_10_2021-final-web.pdf). 
+
+Kurz je zakončen zkouškou, tj. jsou udělovány známky. Známka je udělena výhradně na základě výsledku závěrečného testu, který ověřuje základní znalosti a kompetence získané v kurzu. Aby se studující mohl zapsat ke zkoušce, musí získat zápočet. Zápočet se plní odevzdáním alespoň tří se čtyř zadaných zápočtových domácích úloh ve stanoveném termínu (bude upřesněno na první přednášce) a v dostatečné kvalitě. Pokud úkol neodpovídá kvalitou, bude mít studující u každého úkolu jeden pokus na přepracování a opravení nedostatků ve lhůtě do sedmi dnů od informování vyučujícím nebo pomvědem/pomvědkou o tom, že kvalita odevzdaného úkolu nebyla dostačující. 
+
+## Zadání zápočtových domácích úloh
+
+TBD

@@ -1,0 +1,150 @@
+---
+title: "Úvod a motivace"
+author: "Jaromír Mazák"
+output: ioslides_presentation
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r libs}
+
+library(cowplot)
+library(ggplot2)
+
+```
+
+
+```{css, echo=FALSE}
+blockquote {
+  background: #f9f9f9;
+  border-left: 5px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 1.5em;
+}
+```
+
+# DOPLNIT: Intro story
+
+Něco jako Harold Shipman, ale sociologie?
+
+
+# Proměnná
+
+A variable
+
+## Proměnná
+
+Proměnná: formální reprezentace určité vlastnosti či charakteristiky entit (věcí, osob, ...).
+
+Statistika: zkoumání vlastností proměnných a vztahů mezi nimi.
+
+## Vidět svět jako data
+
+Prvním krokem statistického vyšetřování je překlopit svět na data.
+
+>- Kolik stromů je na světě?
+>- Jaká je úmrtnost novorozenců?
+
+
+<div class="notes">
+Stromy: oficiální def. (může se lišit podle země): rostlina s dřevnatým kmenem s obvodem ve výši prsou (DBH) 10 cm. Počítání na vzorku oblastí, odhad celé Země dle satelitních snímků. Res: cca 3^12 stromů. Zdroj: Spiegelhalter, The Art of Statistics.
+
+Británie: odlišnosti v míře úmrtnosti novorozenců mezi London a Midlands. ALE: Ne rozdíl v péči, ale v tom, jak zaznamenávali případy dětí narozených těsně před 24. týdnem (poté zákon jasně říká narození, ne miscarriage). V Midlands jako narození, v Londýně miscarriage. Jak doktoři v zemi začali adaptovat přístup v Midlands, začali i národní statistiky ukazovat zhoršující trendy. Falešný poplach [‘Obesity, poverty, smoking and a shortage of midwives could all be factors, say health professionals’](https://www.theguardian.com/society/2018/mar/15/concern-at-rising-infant-mortality-rate-in-england-and-wales)   
+</div>
+
+## Aplikovaná statistika potřebuje definice pojmů
+
+<blockquote>
+Představte si, že se díváte na dvě ovce na poli. Kolik ovcí tam je? Dvě, samozřejmě. Až na to, že jedna z ovcí není ovce, je to jehně. A ta druhá ovce je těžce březí – vlastně rodí, každou chvíli porodí. Kolik že to bylo ovcí? Jedna? Dvě? Dvě a půl?
+
+—[Tim Harford, How to make the World add up](https://www.amazon.sg/How-Make-World-Add-Differently/dp/1408712245)
+</blockquote>
+
+
+Tim Harford: "Avoid premature enumeration"
+
+<div class="notes">
+Over the years, as I found myself trying to lead people out of statistical mazes week after week, I came to realise that many of the problems I encountered were because people had taken a wrong turn right at the start. They had dived into the mathematics of a statistical claim – asking about sampling errors and margins of error, debating if the number is rising or falling, believing, doubting, analysing, dissecting – without taking the time to understand the first and most obvious fact: what is being measured, or counted? What definition is being used?
+</div>
+
+
+## Sociologický příklad: Ohrožení chudobou
+
+Otázka: Máme v ČR ve srovnání se zbytkem EU hodně, nebo málo lidí ohrožených chudobou?
+
+## Ohrožení chudobou: data
+
+![](figures/01_risk_of_poverty.png){width=70%}
+
+
+[Zdroj Eurostat](https://ec.europa.eu/eurostat/web/products-eurostat-news/-/edn-20211015-1#:~:text=In%202020%2C%20there%20were%2096.5,data%20published%20by%20Eurostat%20today.)
+
+>- Jak byste nízkou míru ohrožení chudobou u nás vysvětlili? 
+
+## Co je ohrožení chudobou a sociálním vyloučením?
+
+<blockquote>
+At risk of poverty or social exclusion, abbreviated as AROPE, corresponds to the sum of persons who are either at risk of poverty, or severely materially and socially deprived or living in a household with a very low work intensity.
+
+[Eurostat](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:At_risk_of_poverty_or_social_exclusion_(AROPE))
+</blockquote>
+
+
+>- Ale co to znamená?
+
+<div class="notes">
+At risk of poverty rate = share of people with an equivalised disposable income (after social transfer) below the at-risk-of-poverty threshold, which is set at 60 % of the national median equivalised disposable income after social transfers.
+Severe material deprivation rate = cannot afford at least 4 out of 9 predefined material items considered by most people to be desirable or even necessary to lead an adequate life.
+Low work intensity indicator = households where the adults (those aged 18-59, but excluding students aged 18-24) worked a working time equal or less than 20 % of their total combined work-time potential during the previous year.
+</div>
+
+
+## Psychologický příklad: Násilné videohry
+
+Otázka: Způsobuje hraní násilných počítačových her násilné chování u dětí?
+
+<div class="notes">
+Lze měřit korelace, ale ty neimplikují kauzalitu. Experimentálně se ale zase neměří násilné chování, ale "agresivní chování". [Vlivná studie](https://doi.org/10.1037/a0024908) například měřila agresivní chování množstvím tím, nakolik pálivý drink připraví účastník domnělému jinému účastníkovi, o kterém ví, že nemá rád pálivé jídlo. Je to vypovídající vzhledem k násilnému chování? (Res: pálivost drinku neovlivnilo, jestli byla hra násilná, ale jestli byla kompetitivní)
+</div>
+
+# Statistika jako investigativní proces
+
+## Statistika jako soubor nástrojů na analýzu dat
+
+Tradiční přístup k výuce statistiky. Klíčové dovednosti: rozpoznat typ dat, který mám k dispozici. Aplikovat na ně odpovídající statistickou metodu. 
+
+## Statistika jako proces vytváření vědění z dat
+
+Statistika jako základ pro kvantitativní empirický výzkum, zaměřená na porozumění světu, vytváření vědění a opory v rozhodování.
+
+## (Kvantitativní) empirický výzkum
+
+Empirický výzkum: Výzkum, kdy sebereme data z vnějšího světa a následně na základě těchto dat formujeme závěry o vnějším světě. 
+
+Kvantitativní empirický výzkum se opírá o statistiku, ale jde o širší pojem. Zahrnuje v sobě také práci s koncepty a jejich operacionalizaci, vytváření měřících nástrojů (např. dotazníků), etiku výzkumu, designování výzkumnýchstudií, principy práce s respondenty (motivace atp.) atp. Nejde jen o vytváření vědění z dat, ale o vytváření samotných dat. 
+
+## Provázání statistiky s výzkumem skrze PPDACC cyklus
+
+Problem – Plan – Data – Analysis – Conclusion - Communication
+
+## Problém
+
+Výzkumná otázka:
+
+- Deskripce
+- Vysvětlení
+
+<div class="notes">
+Lze měřit korelace, ale ty neimplikují kauzalitu. Experimentálně se ale zase neměří násilné chování, ale "agresivní chování". [Vlivná studie](https://doi.org/10.1037/a0024908) například měřila agresivní chování množstvím tím, nakolik pálivý drink připraví účastník domnělému jinému účastníkovi, o kterém ví, že nemá rád pálivé jídlo. Je to vypovídající vzhledem k násilnému chování? (Res: pálivost drinku neovlivnilo, jestli byla hra násilná, ale jestli byla kompetitivní)
+</div>
+
+
+## Chcete se dozvědět víc?
+
+Projekt [STATS](https://senseaboutscienceusa.org/) usiluje o podporu statistické gramotnosti v USA, především se zaměřuje na novináře. Je to sice jiný kontext, ale inspirativní, například [průvodce statistikami ve vzdělávání](https://senseaboutscienceusa.org/a-reporters-guide-to-education-statistics/). 
+
+

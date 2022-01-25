@@ -1,5 +1,6 @@
 ---
-title: "test-presentation"
+title: "Numerické proměnné a míry centrality"
+author: "Jaromír Mazák"
 output: ioslides_presentation
 ---
 

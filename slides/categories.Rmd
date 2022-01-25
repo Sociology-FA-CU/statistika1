@@ -1,0 +1,84 @@
+---
+title: "Kategorická data a procenta"
+author: "Jaromír Mazák"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r libs}
+
+library(cowplot)
+library(ggplot2)
+
+```
+
+
+```{css, echo=FALSE}
+blockquote {
+  background: #f9f9f9;
+  border-left: 5px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 1.5em;
+}
+```
+
+
+# Binární data
+
+## Binární data
+
+P
+
+
+## Titulek v Hospodářských novinách
+
+<blockquote>
+"Na koronavirus letos [2021] zemřelo 24 tisíc Čechů, 80 procent z nich nebylo očkovaných."
+</blockquote>
+
+Co na základě tohoto výroku můžeme říct o účinnosti vakcín?
+
+[Celý článek HN](https://domaci.hn.cz/c1-67017640-na-koronavirus-letos-zemrelo-24-tisic-cechu-80-procent-z-nich-nebylo-ockovanych)
+
+
+## Přehlížení výchozí pravděpodobnosti
+
+Base rate fallacy, asi by šlo přeložit jako...
+
+<div class="red2">
+
+Přehlížení výchozí pravděpodobnosti
+
+</div>
+
+
+
+![](figures/02_base_rate_1.png)
+
+
+## Přehlížení výchozí pravděpodobnosti
+
+```{r}
+p1 <- ggdraw() + draw_image("figures/02_base_rate_1.png", scale = 0.9)
+p2 <- ggdraw() + draw_image("figures/02_base_rate_2.png", scale = 0.9)
+
+plot_grid(p1, p2)
+```
+
+[Zdroj obrázků Our World in Data](https://ourworldindata.org/covid-deaths-by-vaccination)
+
+## Není většina jako většina
+
+<blockquote>
+Titulek na Britských listech: "Proč většina lidí, kteří už byli očkováni, nyní v Anglii umírá na covid?"
+</blockquote>
+
+To naštěstí není pravda. Ale většina umírajících jsou očkovaní. Pokud neznáme výchozí distribuci, nic moc nám to neříká.  
+
+[Celý článek BL](https://blisty.cz/art/104272-proc-vetsina-lidi-kteri-uz-byli-ockovani-nyni-v-anglii-umira-na-covid.html)
+
+
+
