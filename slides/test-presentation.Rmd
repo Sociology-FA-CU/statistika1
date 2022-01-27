@@ -1,6 +1,8 @@
 ---
 title: "Testovací prezentace"
-output: ioslides_presentation
+output:
+  ioslides_presentation:
+    css:  "../css/slides-style.css"
 ---
 
 ```{r setup, include=FALSE}
