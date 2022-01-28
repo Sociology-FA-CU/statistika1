@@ -12,7 +12,7 @@ bibliography: references.bib
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné přednášce + semináři. U každého tématu najdete cíle výuky a výsledky učení. Cíle výuky jsou vymezením toho, co bych rád, abyste se v kurzu naučili. Výsledky učení jsou pak vodítkem pro mě i pro vás, jak si ověřit, že se to povedlo. Doporučuji pracovat s výslekdy učení z následujících důvodů:
+Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné přednášce + semináři. U každého tématu najdete cíle výuky a výsledky učení. Cíle výuky jsou vymezením toho, co bych rád, abyste se v kurzu naučili. Výsledky učení jsou pak vodítkem pro mě i pro vás, jak si ověřit, že se to povedlo. Doporučuji pracovat s výsledky učení z následujících důvodů:
 
 -   Pomáhají vám ověřit, že jste si odnesli to hlavní z každé přednášky + semináře
 -   Z výsledků učení přímo vychází sekce Procvičování, kde si můžete ověřit své znalosti a dovednosti
@@ -27,7 +27,6 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
     -   Definovat a ve správných souvislostech použít pojmy: (kvantitativní) empirický výzkum, proměnná
     -   Vysvětlit a na příkladu ilustrovat klíčovou roli definice pojmu (co počítáme) v kontextu statistického vyšetřování
     -   Nakreslit a popsat PPDACC cyklus jako příklad modelu statického vyšetřování
-    
 
 # Kategorická data a procenta
 
@@ -35,10 +34,9 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 
 -   *Výsledky učení - studující dokáže:*
 
-    - Definovat a ve správných souvislostech použít pojmy: proměnné diskrétní, spojité, kategoriální, nominální, ordinální, kardinální, intervalové, poměrové, absolutní riziko, relativní riziko, očekávaná četnost, pravděpodobnost, šance.
-    - Vysvětlit, proč je nevhodné použití vícero koláčových grafů pro srovnání dvou a více skupin. 
-    - Převést informace o absolutním a relativním riziku na očekávané četnosti. 
-
+    -   Definovat a ve správných souvislostech použít pojmy: proměnné diskrétní, spojité, kategoriální, nominální, ordinální, kardinální, intervalové, poměrové, absolutní riziko, relativní riziko, očekávaná četnost, pravděpodobnost, šance.
+    -   Vysvětlit, proč je nevhodné použití vícero koláčových grafů pro srovnání dvou a více skupin.
+    -   Převést informace o absolutním a relativním riziku na očekávané četnosti.
 
 # Numerické proměnné a míry centrality
 
@@ -46,26 +44,24 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 
 -   *Výsledky učení - studující dokáže:*
 
-    - Definovat a ve správných souvislostech použít pojmy: empirická distribuce dat, boxplot (krabicový graf), histogram, aritmetický průměr, medián, modus, uniformní rozdělení, normální rozdělení.
-    - Porovnat vlastnosti aritmetického průměru a mediánu.
-    - Vysvětlit, co jsou robustní statistiky a uvést příklad robustní míry centrality. 
-    - Uvést příklady míry centrality, která robustní není, a vymyslet ilustrativní příklad dat, na kterém to lze demonstrovat. 
-    - Vysvětlit, jaké nedostatky může mít použití konkrétní statistiky na konkrétních příkladech (například použití aritmetického průměru pro příjem, mediánu pro majetek, módu pro počet komentářů u příspěvku na sociálních médiích atp.).
-    - Nakreslit a na obrázku vysvětlit, proč může být pro správné pochopení distribuce dat potřeba data vizualizovat (nejen pouze popsat vybranou mírou centrality).
-
+    -   Definovat a ve správných souvislostech použít pojmy: empirická distribuce dat, boxplot (krabicový graf), histogram, aritmetický průměr, medián, modus, uniformní rozdělení, normální rozdělení.
+    -   Porovnat vlastnosti aritmetického průměru a mediánu.
+    -   Vysvětlit, co jsou robustní statistiky a uvést příklad robustní míry centrality.
+    -   Uvést příklady míry centrality, která robustní není, a vymyslet ilustrativní příklad dat, na kterém to lze demonstrovat.
+    -   Vysvětlit, jaké nedostatky může mít použití konkrétní statistiky na konkrétních příkladech (například použití aritmetického průměru pro příjem, mediánu pro majetek, módu pro počet komentářů u příspěvku na sociálních médiích atp.).
+    -   Nakreslit a na obrázku vysvětlit, proč může být pro správné pochopení distribuce dat potřeba data vizualizovat (nejen pouze popsat vybranou mírou centrality).
 
 # Numerické proměnné a míry variability
 
--   *Cíle výuky:* Přednáška rozšiřuje výklad o konceptu empirické distribuce dat, tentokrát s důrazem na míry variability. V rámci přednášky je také představena problematika exponenciální funkce (exponenciálního růstu) a možnosti využití logaritmického měřítka pro práci s (velmi) šikmými daty. Studenti jsou také seznámeni problematikou standardizace a z-skórů. Okrajově bude představeno také binomické a Poissonovo rozdělení. 
+-   *Cíle výuky:* Přednáška rozšiřuje výklad o konceptu empirické distribuce dat, tentokrát s důrazem na míry variability. V rámci přednášky je také představena problematika exponenciální funkce (exponenciálního růstu) a možnosti využití logaritmického měřítka pro práci s (velmi) šikmými daty. Studenti jsou také seznámeni problematikou standardizace a z-skórů. Okrajově bude představeno také binomické a Poissonovo rozdělení.
 
 -   *Výsledky učení - studující dokáže:*
 
-    - Definovat a ve správných souvislostech použít pojmy: exponenciální funkce, logaritmické měřítko, logaritmická transformace, rozsah, percentil, kvartil, mezikvartilové rozpětí, směrodatná odchylka, rozptyl, Giniho koeficient, šikmost, špičatost.
-    - Vysvětlit, v jaké vzájemném vztahu jsou směrodatná odchylka a rozptyl.
-    - Vysvětlit, co jsou robustní statistiky a uvést příklady robustní míry variability.  
-    - Uvést příklad míry variability, která robustní není, a vymyslet ilustrativní příklad dat, na kterém to lze demonstrovat. 
-    - Nakreslit a na obrázku vysvětlit, proč může být pro správné pochopení distribuce dat potřeba data vizualizovat (nejen pouze popsat sumarizačními statistikami).
-
+    -   Definovat a ve správných souvislostech použít pojmy: exponenciální funkce, logaritmické měřítko, logaritmická transformace, rozsah, percentil, kvartil, mezikvartilové rozpětí, směrodatná odchylka, rozptyl, Giniho koeficient, šikmost, špičatost.
+    -   Vysvětlit, v jaké vzájemném vztahu jsou směrodatná odchylka a rozptyl.
+    -   Vysvětlit, co jsou robustní statistiky a uvést příklady robustní míry variability.\
+    -   Uvést příklad míry variability, která robustní není, a vymyslet ilustrativní příklad dat, na kterém to lze demonstrovat.
+    -   Nakreslit a na obrázku vysvětlit, proč může být pro správné pochopení distribuce dat potřeba data vizualizovat (nejen pouze popsat sumarizačními statistikami).
 
 # Popis vztahů mezi proměnnými
 
@@ -73,33 +69,31 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 
 -   *Výsledky učení - studující dokáže:*
 
-    - Definovat a ve správných souvislostech použít pojmy kovariance, korelace, Pearsonův korelační koeficient, Spearmanův korelační koeficient, kontingenční tabulka, řádková procenta, sloupcová procenta, Simpsonův paradox.
-    - Interpretovat výstup jednoduché lineární regrese v grafické i tabulkové podobě. 
-    - Pohledem a úvahou odhadnout, jak se bude měnit korelační koeficient u daného malého datového souboru a jak se bude lišit Pearsonův a Spearmanův koeficient pro tato data.  
-    - Vysvětlit a na příkladech ilustrovat, co znamená, že korelace neimplikuje kauzalitu. 
-    - Vysvětlit a na příkladech ilustrovat, co znamená, že kauzalita neimplikuje korelaci.
-    - Nakreslit obrázek ilustrující Simpsonův paradax pro zadaný problém. 
-    
+    -   Definovat a ve správných souvislostech použít pojmy kovariance, korelace, Pearsonův korelační koeficient, Spearmanův korelační koeficient, kontingenční tabulka, řádková procenta, sloupcová procenta, Simpsonův paradox.
+    -   Interpretovat výstup jednoduché lineární regrese v grafické i tabulkové podobě.
+    -   Pohledem a úvahou odhadnout, jak se bude měnit korelační koeficient u daného malého datového souboru a jak se bude lišit Pearsonův a Spearmanův koeficient pro tato data.\
+    -   Vysvětlit a na příkladech ilustrovat, co znamená, že korelace neimplikuje kauzalitu.
+    -   Vysvětlit a na příkladech ilustrovat, co znamená, že kauzalita neimplikuje korelaci.
+    -   Nakreslit obrázek ilustrující Simpsonův paradax pro zadaný problém.
+
 # Statistický model
 
--   *Cíle výuky:* Cílem je seznámit studující na základní úrovni s myšlenkou statistického modelu, jako matematické reprezentace vyjadřující pravděpodobnostní rozdělení náhodných proměnných a skládající se z deterministické a náhodné komponenty. Tato myšlenka je představena na konceptu již známém (aritmetický průměr) i novém (jednoduchá lineární regrese). 
+-   *Cíle výuky:* Cílem je seznámit studující na základní úrovni s myšlenkou statistického modelu, jako matematické reprezentace vyjadřující pravděpodobnostní rozdělení náhodných proměnných a skládající se z deterministické a náhodné komponenty. Tato myšlenka je představena na konceptu již známém (aritmetický průměr) i novém (jednoduchá lineární regrese).
 
 -   *Výsledky učení - studující dokáže:*
 
-    - Definovat a ve správných souvislostech použít pojmy závislá proměnná, nezávislá proměnná, očekávaná hodnota, podmíněná očekávaná hodnota, jednoduchá lineární regrese
-    - Vysvětlit, co znamená regrese k průměru a jakou roli v tomto konceptu hraje rozdělení variability na deterministickou a náhodnou složku
-    
+    -   Definovat a ve správných souvislostech použít pojmy závislá proměnná, nezávislá proměnná, očekávaná hodnota, podmíněná očekávaná hodnota, jednoduchá lineární regrese
+    -   Vysvětlit, co znamená regrese k průměru a jakou roli v tomto konceptu hraje rozdělení variability na deterministickou a náhodnou složku
 
 # Základy inferenčního uvažování: vzorek a populace
 
--   *Cíle výuky:* Cílem přednášky je seznámit studující s různými významy konceptu populace a uvést je do problematiky inferenční statistiky, tedy usuzování z výběrového souboru na populaci. Vedle konceptu populace jsou předmětem přednášky bodové a intervalové odhady a základní seznámení se simulační technikou bootstrapping. 
+-   *Cíle výuky:* Cílem přednášky je seznámit studující s různými významy konceptu populace a uvést je do problematiky inferenční statistiky, tedy usuzování z výběrového souboru na populaci. Vedle konceptu populace jsou předmětem přednášky bodové a intervalové odhady a základní seznámení se simulační technikou bootstrapping.
 
 -   *Výsledky učení - studující dokáže:*
 
-    - Definovat a ve správných souvislostech použít pojmy deskripce, explanace, deskriptivní statistika, inferenční statistika, induktivní statistika, vzorek, výběrový soubor, populace, reprezentativita dat, validita, interní validita, externí validita, populace jako skupina subjektů, virtuální populace, metaforická populace, „sampling distribution“, bootstrapping.
-    - Vysvětlit myšlenku bootstrappingu a jak na jeho základě odhadujeme variabilitu odhadu.
-    - Srovnat doslovný význam pojmu populace a s pojmem virtuální populace a metaforická populace a vysvětlit, v čem je zavedení těchto pojmů užitečné. 
-
+    -   Definovat a ve správných souvislostech použít pojmy deskripce, explanace, deskriptivní statistika, inferenční statistika, induktivní statistika, vzorek, výběrový soubor, populace, reprezentativita dat, validita, interní validita, externí validita, populace jako skupina subjektů, virtuální populace, metaforická populace, „sampling distribution", bootstrapping.
+    -   Vysvětlit myšlenku bootstrappingu a jak na jeho základě odhadujeme variabilitu odhadu.
+    -   Srovnat doslovný význam pojmu populace a s pojmem virtuální populace a metaforická populace a vysvětlit, v čem je zavedení těchto pojmů užitečné.
 
 # Pravděpodobnost, nejistota a variabilita
 
@@ -107,11 +101,21 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 
 -   *Výsledky učení - studující dokáže:*
 
+    -   Vysvětlit omezení klasické (naivní) definice pravděpodobnosti.
+
+    -   Vysvětlit rozdíly mezi frekventistickou a bayesiánskou interpretací pravděpodobnosti a diskutovat výhody a nevýhody obou přístupů.
+
+    -   Interpretovat graf (kumulativní) distribuční funkce pro diskrétní i spojité proměnné.
+
 # Centrální limitní věta
 
 -   *Cíle výuky:* Cílem je propojení teorie pravděpodobnosti a statistiky skrze centrální limitní větu. Představen je také zákon velkých čísel a výpočet intervalů spolehlivosti jako rozšíření problematiky intervalových odhadů představených dříve.
 
 -   *Výsledky učení - studující dokáže:*
+
+    -   Vysvětlit na základě zákona zákona velkých čísel a centrální limitní věty, proč je možné zobecnit výsledky výběrových šetření na širší populaci.
+
+    -   Interpretovat intervalové odhady z pohledu frekventistické a bayesiánské pravděpodobnosti a vysvětlit výhody a nevýhody obou přístupů.
 
 # Podmíněná pravděpodobnost a Bayesova věta
 
@@ -119,11 +123,20 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 
 -   *Výsledky učení - studující dokáže:*
 
+    -   Využít podmíněnou pravděpodobnost pro zpřesnění pravděpodobnostních odhadů.
+
+    -   Využít Bayesovu větu pro inverzi podmíněné pravděpodobnosti.
+
 # Bayesovská aktualizace na základě nových informací
 
 -   *Cíle výuky:* TATO PŘEDNÁŠKA JE NADSTAVBOVÁ A V PŘÍPADĚ POTŘEBY BUDE VYNECHÁNA, ABY VZNIKL PROSTOR PRO LEPŠÍ POCHOPENÍ ZÁKLADNÍCH POJMŮ PŘEDSTAVENÝCH V PŘEDNÁŠKÁCH VÝŠE, NAPŘÍKLAD FORMOU OPAKOVACÍHO SETKÁNÍ. Cílem přednášky je představit bayesovský koncept statistiky jako nástroje pro aktualizaci stávajícího poznání o nové vstupní informace. Studující se seznámí se základními podobnostmi a odlišnostmi klasické frekvenční statistiky a alternativního bayesovského přístupu. Protože následné studium statistiky v bakalářském stupni je převážně založeno na frekvenčním přístupu a testování nulových hypotéz (kurz Statistika 2), smyslem přednášky je zasadit tradiční a v sociologii i jiných společenských vědách dominantní frekvenční přístup do širšího kontextu existence více filosofických alternativ, z nichž každá má své silné i slabé stránky.
 
 -   *Výsledky učení - studující dokáže:*
 
-# Reference {-}
+    -   Vysvětlit pojmy prior, likelihood a posterior.
 
+    -   Vysvětlit, jakou roli hraje Bayesův teorém v bayesiánské inferenci.
+
+    -   Konceptuálně vysvětlit, jak je možné formálně aktualizovat představy o světe na základě nově příchozích dat.
+
+# Reference {.unnumbered}
