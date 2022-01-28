@@ -16,7 +16,7 @@ Tento kurz je koncipován jako první krok do statistiky pro studenty a studentk
 
 ## O webu
 
-Tento web je hlavní elektronickou oporou kurzu. Moodle je v tom kurzu využíván pouze pro složení závěrečného testu a pro přístup ke studijní literatuře. Na tomto webu najdete sylabus s cíli výuky a výsledky učení pro jednotlivé přednášky. Velmi doporučuji s nimi pracovat. Dále zde najdete všechny prezentace k přednáškám, úlohy k procvičování (slouží jako kontrola pro studující, že všemu dobře porozuměli a dokážou to aplikovat) a datové soubory pro seminář i zadné procvičovací úlohy. Vlastní karta je věnována podmínkám atestace a základní doporučené kurzové literatuře. Další doporučení na zdroje najdete na konci jednotlivých prezentací. 
+Tento web je hlavní elektronickou oporou kurzu. Moodle je v tom kurzu využíván pouze pro složení závěrečného testu, přístup ke studijní literatuře a odevzdávání zápočtových úkolů. Na tomto webu najdete sylabus s cíli výuky a výsledky učení pro jednotlivé přednášky. Velmi doporučuji s nimi pracovat. Dále zde najdete všechny prezentace k přednáškám, úlohy k procvičování (slouží jako kontrola pro studující, že všemu dobře porozuměli a dokážou to aplikovat a také jako příležitost získat průběžnou prací bonusové body pro zlepšení výsledné známky) a datové soubory pro seminář i zadané procvičovací úlohy. Vlastní karty jsou věnovány podmínkám atestace (včetně zadání zápočtových úkolů) a základní doporučené kurzové literatuře. Další doporučení na zdroje najdete na konci jednotlivých prezentací. 
 
 ## Vyučující
 
