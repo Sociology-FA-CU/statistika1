@@ -319,4 +319,6 @@ Na této fotografii je 6 aut. Vůz číslo "99" (se žlutou střechou) je na 1. 
 Kategorizace dat: Převod původně nekategorických dat na kategorická. 
 Dichotomizace dat: Převod původně nebinárních dat na data binární.
 
+## Reference v prezentaci
+
 
