@@ -1,5 +1,6 @@
 ---
 title: "Numerické proměnné a míry centrality"
+subtitle: "Statistika 1, Katedra sociologie Filozofické fakulty UK" 
 author: "Jaromír Mazák"
 output:
   ioslides_presentation:

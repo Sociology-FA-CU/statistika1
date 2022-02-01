@@ -62,31 +62,31 @@ Pod jednotlivými kartami s čísly najdete kompletní prezentace k přednášk�
 
 ### 6
 
-<iframe src="slides/test-presentation.html" width="900" height="600"></iframe>
+<iframe src="slides/model.html" width="900" height="600"></iframe>
 <br>
 
 
 ### 7
 
-<iframe src="slides/test-presentation.html" width="900" height="600"></iframe>
+<iframe src="slides/inference.html" width="900" height="600"></iframe>
 <br>
 
 
 ### 8
 
-<iframe src="slides/test-presentation.html" width="900" height="600"></iframe>
+<iframe src="slides/probability.html" width="900" height="600"></iframe>
 <br>
 
 
 ### 9
 
-<iframe src="slides/test-presentation.html" width="900" height="600"></iframe>
+<iframe src="slides/clt.html" width="900" height="600"></iframe>
 <br>
 
 
 ### 10
 
-<iframe src="slides/test-presentation.html" width="900" height="600"></iframe>
+<iframe src="slides/conditional.html" width="900" height="600"></iframe>
 <br>
 
 

@@ -30,7 +30,7 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 
 # Kategorická data a procenta
 
--   *Cíle výuky:* Cílem je seznámit studující s různými typy proměnných. Pozornost je poté věnována kategorickým proměnným a různým způsobům jejich prezentace včetně prezentace vizuální. Speciální pozornost je věnována binárním / dichotomickým datům a problematice absolutního a relativního rizika. Studentům je také představeno Bernoulliho rozdělení.
+-   *Cíle výuky:* Cílem je seznámit studující s různými typy proměnných. Pozornost je poté věnována kategorickým proměnným a různým způsobům jejich prezentace včetně prezentace vizuální. Speciální pozornost je věnována binárním / dichotomickým datům a problematice absolutního a relativního rizika.
 
 -   *Výsledky učení - studující dokáže:*
 
@@ -59,7 +59,7 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 
     -   Definovat a ve správných souvislostech použít pojmy: exponenciální funkce, logaritmické měřítko, logaritmická transformace, rozsah, percentil, kvartil, mezikvartilové rozpětí, směrodatná odchylka, rozptyl, Giniho koeficient, šikmost, špičatost.
     -   Vysvětlit, v jaké vzájemném vztahu jsou směrodatná odchylka a rozptyl.
-    -   Vysvětlit, co jsou robustní statistiky a uvést příklady robustní míry variability.\
+    -   Vysvětlit, co jsou robustní statistiky a uvést příklady robustní míry variability.
     -   Uvést příklad míry variability, která robustní není, a vymyslet ilustrativní příklad dat, na kterém to lze demonstrovat.
     -   Nakreslit a na obrázku vysvětlit, proč může být pro správné pochopení distribuce dat potřeba data vizualizovat (nejen pouze popsat sumarizačními statistikami).
 
@@ -102,9 +102,7 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 -   *Výsledky učení - studující dokáže:*
 
     -   Vysvětlit omezení klasické (naivní) definice pravděpodobnosti.
-
     -   Vysvětlit rozdíly mezi frekventistickou a bayesiánskou interpretací pravděpodobnosti a diskutovat výhody a nevýhody obou přístupů.
-
     -   Interpretovat graf (kumulativní) distribuční funkce pro diskrétní i spojité proměnné.
 
 # Centrální limitní věta
@@ -114,7 +112,6 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 -   *Výsledky učení - studující dokáže:*
 
     -   Vysvětlit na základě zákona zákona velkých čísel a centrální limitní věty, proč je možné zobecnit výsledky výběrových šetření na širší populaci.
-
     -   Interpretovat intervalové odhady z pohledu frekventistické a bayesiánské pravděpodobnosti a vysvětlit výhody a nevýhody obou přístupů.
 
 # Podmíněná pravděpodobnost a Bayesova věta
@@ -123,8 +120,9 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 
 -   *Výsledky učení - studující dokáže:*
 
+    -   Definovat a ve správných souvislostech použít pojmy specificita, sensitivita a přesnoste testu.
+    -   Vysvětlit na zadaném příkladu, co jsou falešně pozitivní a co falešně negativní případy a případně je na základě zadání vyčíslit.
     -   Využít podmíněnou pravděpodobnost pro zpřesnění pravděpodobnostních odhadů.
-
     -   Využít Bayesovu větu pro inverzi podmíněné pravděpodobnosti.
 
 # Bayesovská aktualizace na základě nových informací
@@ -134,9 +132,7 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 -   *Výsledky učení - studující dokáže:*
 
     -   Vysvětlit pojmy prior, likelihood a posterior.
-
     -   Vysvětlit, jakou roli hraje Bayesův teorém v bayesiánské inferenci.
-
     -   Konceptuálně vysvětlit, jak je možné formálně aktualizovat představy o světe na základě nově příchozích dat.
 
 # Reference {.unnumbered}
