@@ -276,7 +276,7 @@ Absolutní riziko se zvýšilo o 2 %. Relativní riziko je 70/68 = 1.03, tedy zv
   - poměrové 
   
 ::: {.notes}
-Příklady intervalových proměnných: teplota ve stupních Celsia; letopočty, IQ,  
+Příklady intervalových proměnných: teplota ve stupních Celsia; letopočty, IQ,...  
 :::
   
 ## Příklad
@@ -286,6 +286,7 @@ Na této fotografii je 6 aut. Vůz číslo "99" (se žlutou střechou) je na 1. 
 ![](figures/02_car-racing.jpg)
 
 [Zdroj mathsisfun.com](https://www.mathsisfun.com/numbers/cardinal-ordinal-nominal.html#:~:text=Example%20With%20Everything&text=Car%20Number%20%2299%22%20(with,a%20name%20for%20the%20car))
+
 
 ## Alternativní prezentace
 
@@ -298,9 +299,24 @@ Na této fotografii je 6 aut. Vůz číslo "99" (se žlutou střechou) je na 1. 
 
   - Intervalové
   - Poměrové
+  
 
 ## Matematická perspektiva na kvantitativní proměnné
 
 - Diskrétní proměnné (množina počitatelných prvků)
 - Spojité proměnné
+
+
+## Kategorická data - shrnutí
+
+- Kategorická data jsou buď nominální, nebo ordinální.
+- Jejich smyslem je uskupovat příbuzná pozorování.
+- Často je analyticky uchopujeme skrze procenta a kontingenčí tabulky (viz Analytická propedeutika)
+- Speciální kategorií kategorických dat jsou data binární či dichotomická. 
+
+## Kategorizace dat
+
+Kategorizace dat: Převod původně nekategorických dat na kategorická. 
+Dichotomizace dat: Převod původně nebinárních dat na data binární.
+
 
