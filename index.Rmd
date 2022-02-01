@@ -20,4 +20,8 @@ Tento web je hlavní elektronickou oporou kurzu. Moodle je v tom kurzu využív�
 
 ## Vyučující
 
-**Jaromír Mazák, PhD.** pracuje na katedře sociologie jako odborný asistent. Kurz Statistika 1 vyučuje od letního semestru 2022. Výzkumně se věnuje především tématu občanské společnosti a politické participace, ve výuce pak hlavně tématům kvantitativní analýzy dat ([Úvod do analýzy dat v R](https://sociology-fa-cu.github.io/Uvod_do_analyzy_dat_v_R/), [Applied regression in R](https://sociology-fa-cu.github.io/appliedregressioninr/index.html), [Vybraná témata analýzy dat](https://sociology-fa-cu.github.io/vybranatemataanalyzy/index.html)). Více na [profilu na stránkách katedry](https://ksoc.ff.cuni.cz/mazak/).
+Jmenuji se **Jaromír Mazák**, pracuji na katedře sociologie FF UK jako odborný asistent. Kurz Statistika 1 vyučuji od letního semestru 2022. Výzkumně se věnuji především tématu občanské společnosti a politické participace, ve výuce pak hlavně tématům kvantitativní analýzy dat ([Úvod do analýzy dat v R](https://sociology-fa-cu.github.io/Uvod_do_analyzy_dat_v_R/), [Applied regression in R](https://sociology-fa-cu.github.io/appliedregressioninr/index.html), [Vybraná témata analýzy dat](https://sociology-fa-cu.github.io/vybranatemataanalyzy/index.html)). Více na [profilu na stránkách katedry](https://ksoc.ff.cuni.cz/mazak/). Případně mě kontaktujte [emailem](mailto:jaromir.mazak@ff.cuni.cz), obzvlášť pokud na webu najdete chybu nebo budete mít nějaký podnět - budu vděčný!
+
+Na realizaci kurzu se podílí také pomvědky **Františka Tranová** a **Hana Šiková**.  
+
+Vznik kurzu v roli konzultanta, skeptika i inspirátora významně podpořil **Aleš Vomáčka**.

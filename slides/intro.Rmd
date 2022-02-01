@@ -23,6 +23,12 @@ library(eulerr) # for ploting statistics in context of science
 
 ```
 
+
+<style>
+.forceBreak { -webkit-column-break-after: always; break-after: column; }
+</style>
+
+
 # Statistika a covid
 
 ## Základní reprodukční číslo {.flexbox .vcenter}
@@ -79,6 +85,13 @@ fit2 <- euler(c("A" = 100, "B" = 0, "C" = 0,
 
 plot(fit2, labels = c("Věda", "Empirický výzkum", "Statistika"),
      edges = list(lty = 1:3))
+
+# image also saved as "01_stats_in_context.png"
+
+# png("slides/figures/01_stats_in_context.png", width = 350, height = 350)
+# plot(fit2, labels = c("Věda", "Empirický výzkum", "Statistika"),
+#      edges = list(lty = 1:3))
+# dev.off()
 
 
 ```
@@ -180,6 +193,65 @@ node [shape = rectangle, style = filled, fillcolor = Lavender]
 diagram
 
 ```
+
+# Studium statistiky na Katedře sociologie FF UK
+
+## Statistika a empirický výzkum u nás {.columns-2 .smaller}
+
+### Statistika
+
+- Statistika 1 + 2 (Bc.)
+- Zpracování scg. dat (Bc.)
+- Analýza dat v SPSS 1 + 2 (Mgr.)
+- Úvod do vícerozměrné an. dat (Mgr.)
+- Pokročilé stat. met. (Mgr.)
+- Volitelné kurzy (hlavně v R)
+
+### Empirický výzkum
+
+- Scg. výzkum 1, 2, 3, 4 (Bc.)
+
+
+<p class="forceBreak"></p>
+
+![](figures/01_stats_in_context.png)
+
+# Statistika je proces, ale má různé cíle...
+
+## Zmatení pojmů: cíle vědy a cíle statistiky {.columns-2 .smaller}
+
+### Cíle vědy (hierarchie)
+
+- Deskripce - popis světa a jeho pravidelností
+- Vysvětlení (explanace) - kauzální mechanismus, kauzální inference
+
+Rozdíl mezi deskripcí a explanací ilustruje rozdíl mezi fakty a teorií.
+
+<p class="forceBreak"></p>
+
+### Cíle statistiky
+
+- Deskripce dat (deskriptivní statistika)
+- Inference z dat (vzorku) na populaci (inferenční, resp. induktivní statistika)
+
+Z hlediska cílů vědy plní deskriptivní statistika a induktivní statistika stejnou funkci: deskripci. Vysvětlení nikdy nevychází jen ze statistiky, vždy potřebuje teorii. 
+
+## Teorie a fakta (data) {.columns-2 .smaller}
+
+"Některé druhy gazel, když spatří predátora, vyskakují do výšky."
+
+"Chování gazel vysvětluje tzv. signalizační teorie, podle které predátorovi ukazuje, že má spoustu energie a bude obtížné ji chytit (vyhne se tím výdeji při nutnosti útěku)."
+
+<p class="forceBreak"></p>
+
+![](figures/01_gazela.jpg){width=100%}
+
+Autor foto: [Yathin sk - I photographed this springbok in Etosha National Park](https://commons.wikimedia.org/w/index.php?curid=21251829), CC BY-SA 3.0 
+
+::: {.notes}
+Signalizační teorie našla své místo i ve společenských vědách – například existuje signalizační teorie o náboženství: náboženství jako nástroj udržování skupinové soudržnosti a spolupráce (evoluce na úrovni skupin). Nákladné náboženské signalizační rituály (obřízka, půst atp.) mají podle této teorie zabránit „černým pasažérům“ (lidem, kteří to s loajalitou skupině nemyslí vážně).Tendence k signalizačnímu chování také vysvětluje okázalou spotřebu (ukazuji zdroje tím, že jimi mrhám). 
+:::
+
 
 # Proměnná: základní stavební kámen statistického uvažování
 
