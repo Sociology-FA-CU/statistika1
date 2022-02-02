@@ -40,11 +40,11 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 
 # Numerické proměnné a míry centrality
 
--   *Cíle výuky:* Cílem je představit studujícím koncept empirické distribuce dat (empirického rozdělení dat) a možnosti jejího grafického a numerické popisu s důrazem na míry centrality. V rámci přednášky je též představeno uniformní a normální rozdělení.
+-   *Cíle výuky:* Cílem je představit studujícím koncept empirické distribuce dat (empirického rozdělení dat) a možnosti jejího grafického a numerické popisu s důrazem na míry centrality.
 
 -   *Výsledky učení - studující dokáže:*
 
-    -   Definovat a ve správných souvislostech použít pojmy: empirická distribuce dat, boxplot (krabicový graf), histogram, aritmetický průměr, medián, modus, uniformní rozdělení, normální rozdělení.
+    -   Definovat a ve správných souvislostech použít pojmy: empirická distribuce dat, boxplot (krabicový graf), histogram, aritmetický průměr, medián, modus, kvartil, percentil.
     -   Porovnat vlastnosti aritmetického průměru a mediánu.
     -   Vysvětlit, co jsou robustní statistiky a uvést příklad robustní míry centrality.
     -   Uvést příklady míry centrality, která robustní není, a vymyslet ilustrativní příklad dat, na kterém to lze demonstrovat.
@@ -53,11 +53,11 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 
 # Numerické proměnné a míry variability
 
--   *Cíle výuky:* Přednáška rozšiřuje výklad o konceptu empirické distribuce dat, tentokrát s důrazem na míry variability. V rámci přednášky je také představena problematika exponenciální funkce (exponenciálního růstu) a možnosti využití logaritmického měřítka pro práci s (velmi) šikmými daty. Studenti jsou také seznámeni problematikou standardizace a z-skórů. Okrajově bude představeno také binomické a Poissonovo rozdělení.
+-   *Cíle výuky:* Přednáška rozšiřuje výklad o konceptu empirické distribuce dat, tentokrát s důrazem na míry variability. V rámci přednášky je také představena problematika exponenciální funkce (exponenciálního růstu) a možnosti využití logaritmického měřítka pro práci s (velmi) šikmými daty. Studenti jsou také seznámeni problematikou standardizace a z-skórů. V rámci přednášky je též představeno uniformní a normální rozdělení.
 
 -   *Výsledky učení - studující dokáže:*
 
-    -   Definovat a ve správných souvislostech použít pojmy: exponenciální funkce, logaritmické měřítko, logaritmická transformace, rozsah, percentil, kvartil, mezikvartilové rozpětí, směrodatná odchylka, rozptyl, Giniho koeficient, šikmost, špičatost.
+    -   Definovat a ve správných souvislostech použít pojmy: exponenciální funkce, logaritmické měřítko, logaritmická transformace, rozsah, percentil, kvartil, mezikvartilové rozpětí, směrodatná odchylka, rozptyl, Giniho koeficient, šikmost, špičatost, uniformní rozdělení, normální rozdělení.
     -   Vysvětlit, v jaké vzájemném vztahu jsou směrodatná odchylka a rozptyl.
     -   Vysvětlit, co jsou robustní statistiky a uvést příklady robustní míry variability.
     -   Uvést příklad míry variability, která robustní není, a vymyslet ilustrativní příklad dat, na kterém to lze demonstrovat.

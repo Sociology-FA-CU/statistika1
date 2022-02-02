@@ -5,33 +5,293 @@ author: "Jaromír Mazák"
 output:
   ioslides_presentation:
     css: "../css/slides-style.css"
+editor_options: 
+  chunk_output_type: console
+bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
-## R Markdown
+```{r libs}
+library(knitr)
+library(kableExtra)
+library(tidyverse)
+library(cowplot)
+library(ggplot2)
+library(scales)
+library(here)
 
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
-
-## Slide with Bullets
-
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-## Slide with R Output
-
-```{r cars, echo = TRUE}
-summary(cars)
 ```
 
-## Slide with Plot
-
-```{r pressure}
-plot(pressure)
+```{=html}
+<style>
+.forceBreak { -webkit-column-break-after: always; break-after: column; }
+</style>
 ```
 
+# Empirická distribuce dat
+
+Tvar kardinálních dat
+
+## TBD example of skewed data, income?
+
+-   grafy - "tvar dat"
+-   logaritmické měřítko
+
+# Míry centrality
+
+## Míry centrality (measures of central tendency)
+
+Míry centrality se také nazývají míry polohy (measures of the location of the data distribution).
+
+> -   (aritmetický) průměr - suma dělená počtem případů
+> -   medián - prostřední hodnota z řady seřazené podle velikosti
+> -   modus - nejčastější hodnota
+
+## Aritmetický průměr z dat (sample mean)
+
+$$\bar{x} = (x_1 + x_2 + … +x_n)/n$$
+
+kde $x_1, x_2, …, x_n$ jsou jednotlivá pozorování a $n$ je počet těchto pozorování.
+
+Zkrácený zápis:
+
+$$\bar{x} = \frac{1}{n} \sum_{i=1}^n x_i $$
+
+## Skoro všichni mají větší než průměrný počet nohou... {.columns-2 .smaller}
+
+Průměr reprezentuje data v určitém smyslu, ale nemusí být reprezentativní v jiném smyslu.
+
+<p class="forceBreak">
+
+</p>
+
+![](figures/03_mean.png){width="80%"} Obrázek z [brilliant.org](https://brilliant.org/wiki/arithmetic-mean/)
+
+::: {.notes}
+Další příklady: Bill Gates přijde do baru a najednou je v něm v průměru každý miliardář. Průměrný věk dožití v roce 1800 v Evropě byl 33 let. Ale přibližně třetina lidí zemřela do pěti let od narození. Pokud je vyloučíme, průměrný věk se blížil 60 let.
+:::
+
+## Jak se šíří COVID
+
+![](figures/01_R0_covid.png){width="50%"}
+
+Převzato z @spiegelhalter2021a
+
+## Měli bychom tedy raději používat medián?
+
+Studie Evropské centrální banky v roce 2013: německá mediánová domácnost je výrazně chudší než domácnosti středomořských zemí.
+
+```{r}
+
+wealth <- 
+  tribble(~"země", ~"kategorie", ~"hodnota",
+        "Německo", "mediánová domácnost", 51400,
+        "Německo", "průměrná domácnost", 195200,
+        "Německo", "průměr na osobu", 95500,
+        "Francie", "mediánová domácnost", 115800,
+        "Francie", "průměrná domácnost", 233400,
+        "Francie", "průměr na osobu", 104100,
+        "Itálie", "mediánová domácnost", 173500,
+        "Itálie", "průměrná domácnost", 275200,
+        "Itálie", "průměr na osobu", 108700,
+        "Španělsko", "mediánová domácnost", 182700,
+        "Španělsko", "průměrná domácnost", 291400,
+        "Španělsko", "průměr na osobu", 108700) %>% 
+  mutate(země = fct_relevel(země, c("Německo", "Francie", "Itálie", "Španělsko")),
+         kategorie = fct_relevel(kategorie, c("mediánová domácnost", "průměrná domácnost", "průměr na osobu")))
+
+wealth %>% 
+  filter(kategorie == "mediánová domácnost") %>% 
+  ggplot(aes(x=fct_reorder(země, hodnota), y = hodnota, fill = země))+
+  geom_col()+
+  labs(title = "Bohatství mediánové domácnosti v EUR",
+       x=element_blank(), 
+       y=element_blank(),
+       caption = "The Household Survey (European Central Bank, 2013)") +
+  geom_text(aes(label = format(hodnota, big.mark = " ", scientific = FALSE)), vjust = 1.5, color = "white")+
+  scale_y_continuous(labels = number_format(suffix = " EUR",
+                                            accuracy = 1))
+  
+
+
+
+```
+
+Zdroj dat je [článek na voxeu.org](https://voxeu.org/article/are-germans-poorer-other-europeans-principal-eurozone-differences-wealth-and-income#fn)
+
+::: {.notes}
+Diskuse: velikost domácností, průměr vs. medián (pro agregované srovnání bohatství dvou zemí možná lepší průměr, medián dává možná větší smysl jako reference pro jednotlivce uvnitř země), míra vlastnictví bydlení (v Německu nejnižší, 44% in Germany, probably due to a primary role of social housing in this country, compared to 55%, 69% and 83% in France, Italy and Spain, respectively), cenové trendy u důležitých komponentů, kulturní odlišnosti v reportování, podíl finančních aktiv (častěji nereportovaná, v Německu více), bohatství národa a závisí i na bohatství veřejného sektoru.
+:::
+
+## Mediánová vs. průměrná domácnost
+
+```{r}
+
+wealth %>% 
+  filter(kategorie == "mediánová domácnost" | kategorie == "průměrná domácnost") %>% 
+  ggplot(aes(x = kategorie, y = hodnota, group = země, fill = země))+
+  geom_col(position = "dodge", color = "black")+
+  labs(title = "Bohatství průměrné vs. mediánové domácnosti v EUR",
+       x=element_blank(), 
+       y=element_blank(),
+       caption = "The Household Survey (European Central Bank, 2013)") +
+  scale_y_continuous(labels = number_format(suffix = " EUR",
+                                            accuracy = 1))
+
+```
+
+## Zohlednění velikosti domácností
+
+```{r}
+
+wealth %>% 
+  ggplot(aes(x = kategorie, y = hodnota, group = země, fill = země))+
+  geom_col(position = "dodge", color = "black")+
+  labs(title = "Bohatství průměrné a mediánové domácnosti a průměr na osobu v EUR",
+       x=element_blank(), 
+       y=element_blank(),
+       caption = "The Household Survey (European Central Bank, 2013)") +
+  scale_y_continuous(labels = number_format(suffix = " EUR",
+                                            accuracy = 1))
+
+```
+
+# Robustní statistiky
+
+## Co je robustní statistika?
+
+- Ukazetel, který není (příliš) ovlivněn extrémními hodnotami (odlehlými pozorováními).
+
+```{r}
+
+```
+
+## Průměr vs. medián
+
+TBD
+
+## Oříznutý průměr vs. median
+
+# Kvartily, kvintily, percentily
+
+## Kvartily
+
+TBD
+
+## Percentily
+
+TBD
+
+# Jiné průměry
+
+## Jiné průměry
+
+-   vážený průměr
+-   klouzavý průměr
+-   geometrický průměr (nadstavba)
+-   harmonický průměr (nadstavba)
+
+::: {.notes}
+**vážený průměr** - typicky výpočet průměru z agregovaných dat, kde známe počet pozorování v každé skupině. **klouzavý průměr** - v časových řádách pro zachycení trendu bez zbytečnéhu šumu. **geometrický průměr** - použití typicky při analýze přírůstků, např. průměrné tempo růstu HDP, průměrné inflace nebo průměrného úroku. **harmonický průměr** - v technických oborech, např. při měření průměrného času potřebného na výrovbu jednoho výrobku, když se vyrábí na více různě rychlých linkách.
+:::
+
+## Vážený průměr
+
+$$\bar{x} = \frac{\sum_{i=1}^n x_i*w_i}{\sum_{i=1}^n w_i}  $$
+
+kde $w_i$ jsou váhy jednotlivých pozorování
+
+## Vážený průměr - příklad
+
+```{r}
+obyv <- read_csv2(here("data-input", "ec_population_structure_subset.csv"))
+
+obyv %>% ggplot(aes(y=fct_reorder(country, `80-and-over`), x = `80-and-over`, fill = status)) + 
+  geom_col() + 
+  labs(title = "Podíl osob ve věku 80 a více\nna celkové populaci", 
+       x = element_blank(), y = element_blank(),
+       caption = "Zdroj dat: Eurostat")+
+  scale_fill_discrete(name = element_blank(),
+                      guide = guide_legend(reverse = TRUE))+
+  scale_x_continuous(labels = percent_format(scale = 1, accuracy = 1))
+  
+
+```
+
+Jak vypočítat podíl osob ve věku 80 a více v rámci EU?
+
+## Příklad Itálie, Česko a Slovensko
+
+```{r}
+
+obyv_3 <- obyv %>% filter(country %in% c("Italy", "Czechia", "Slovakia")) %>% select(-status)
+obyv_3$pop <- c(10.7, 59.55, 5.46)
+
+```
+
+-   Podíl 80 a více ČR = 4,1 %
+
+-   Podíl 80 a více IT = 7,4 %
+
+-   Podíl 80 a více SK = 3,4 %
+
+-   Počet obyvatel ČR = 10 700 000
+
+-   Počet obyvatel IT = 59 600 000
+
+-   Počet obyvatel SK = 5 500 000
+
+> -   Aritmetický průměr = $(4.1 + 7.4 + 3.4) / 3 = 4.97$
+> -   Geometrický průměr = $(4.1*10.7 + 7.4*59.6 + 3.4*5.5) / (10.7 + 59.6 + 5.5) = 6.64$
+
+## Klouzavý průměr {.columns-2 .smaller}
+
+![](figures/03_rolling_average.png){width="90%"}
+
+@spiegelhalter2021a
+
+<p class="forceBreak">
+
+</p>
+
+-   Tmavá plná čára = USA
+-   Světlá plná čára = IT
+-   Světlá prerušovaná čára = UK
+
+## Geometrický průměr (nadstavba)
+
+Pokud je růst HDP ve třech po sobě jdoucích letech 2 %, 20 % a 38 %, průměrný růst HDP je tedy 20 % (aritmetický průměr). Problém je, že pokud by byl třikrát po sobě narostlo HDP o 20 %, dospěli bychom k jinému výsledku. Geometrický průměr je číslo, o které by každý rok muselo narůst HDP, abychom dospěli ke stejnému výsledku, jako když reálný růst byl 2, 20 a 38 %.
+
+Jak se vyvíjelo HDP: $100*1.02*1.20*1.38 = 168.9$
+
+Aritmetický průměr: $100*1.2*1.2*1.2 = 172.8$
+
+## Výpočet geometrického průměru (nadstavba)
+
+$$\bar{x}_G = \sqrt[n]{x_1*x_2*x_3 ... x_n}  $$
+kde ${x_1*x_2*x_3 ... x_n}$ vyjadřují tempo růstu ve formátu, kdy 2 % jsou vyjádřena jako 1,02
+
+
+Tedy v našem případě: $\sqrt[3]{1.02*1.20*1.38} = 1.191$
+
+A lze snadno ověřit, že: $100*1.191*1.191*1.191 = 168.9$
+
+## Harmonický průměr (nadstavba)
+
+$$\bar{x}_H = \frac{n}{\frac{1}{n}*(\frac{1}{x_1}+\frac{1}{x_2}...\frac{1}{x_n})}  $$
+
+
+$$\bar{x}_H = \frac{n}{\sum_{i=1}^n \frac{1}{x_i}}  $$
+
+Linka A vyrobí produkt za 30 minut, linka B za 10 minut. Jak dlouho průměrně trvá vyrobit jeden výrobek? 20 minut je špatná odpověď, protože by vedla k predikci, že za hodinu vyrobím v průměru 3 výrobky na jedné lince, tedy 6 na obou dohromady. Ale ve skutečnosti vyrobím za hodinu 8 výrobků. 
+
+Výpočet pomocí harmonického průměru je: $2/(1/30 + 1/10) = 15$
+
+Tedy průměrně na jedné lince výrobek za 15 minut, 4 za hodinu a celkem 8 výrobků za hodinu.
+
+## Reference v prezentaci
+
+Následuje seznam referencí, které v prezentaci neměly aktivní proklik na zdroj.

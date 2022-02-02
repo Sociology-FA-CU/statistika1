@@ -10,7 +10,17 @@ knitr::opts_chunk$set(echo = TRUE)
 Udělení atestace se řídí lhůtami a podmínkami stanovenými v dokumentu [Pravidla pro organizaci studia na Filozofické fakultě
 Univerzity Karlovy](https://www.ff.cuni.cz/wp-content/uploads/2021/08/Pravidla_pro_organizaci_studia_FFUK_IV_uplne_zneni_z_28-5-2021_ucinne_od_1_10_2021-final-web.pdf). 
 
-Kurz je zakončen zkouškou, tj. jsou udělovány známky. Známka je udělena výhradně na základě výsledku závěrečného testu, který ověřuje základní znalosti a kompetence získané v kurzu. Aby se studující mohl zapsat ke zkoušce, musí získat zápočet. Zápočet se plní odevzdáním alespoň tří se čtyř zadaných zápočtových domácích úloh ve stanoveném termínu (bude upřesněno na první přednášce) a v dostatečné kvalitě. Pokud úkol neodpovídá kvalitou, bude mít studující u každého úkolu jeden pokus na přepracování a opravení nedostatků ve lhůtě do sedmi dnů od informování vyučujícím nebo pomvědem/pomvědkou o tom, že kvalita odevzdaného úkolu nebyla dostačující. 
+Kurz je zakončen zkouškou, tj. jsou udělovány známky. Známka je udělena na základě bodového zisku v závěrečném testu, který ověřuje základní znalosti a kompetence získané v kurzu. K bodovému zisku v závěrečném testu je možné získat bonus na základě průběžné práce v kurzu, viz níže. Maximální bodový zisk v testu je 100 bodů. Poté jsou připočteny bodové bonusy a závěrečná známka je pak stanovena na základě výsledného součtu bodů dle následujícího klíče:
+
+- 90 bodů a více: výborně
+- 80 až 89 bodů: velmi dobře
+- 70 až 79 bodů: dobře
+
+Test je koncipován tak, aby ověřil základní znalosti a kompetence, neobsahuje nadstavbové otázky. Všichni tedy mohou dosáhnout plného počtu bodů.  
+
+Aby se studující mohl zapsat ke zkoušce, musí získat zápočet. Zápočet se plní odevzdáním dvou zadaných průběžných zápočtových domácích úloh ve stanoveném termínu a v dostatečné kvalitě. Pokud úkol neodpovídá kvalitou, bude mít studující u každého úkolu dva pokusy na přepracování a opravení nedostatků ve lhůtě do 14 dnů od informování vyučujícím nebo pomvědem/pomvědkou (emailem) o tom, že kvalita odevzdaného úkolu nebyla dostačující. V případě, že kvalita neodpovídá ani u druhého opravného termínu, studující nemůže pokračovat v plnění kurzu (kurz je hodnocen jako nesplněný a studující musí buť ukončit studium, nebo žádat o opakovaný zápis předmětu dle čl. 7, ods. 2 Pravidel pro organizaci studia). K oběma zápočtovým úkolům dostanou studenti písemnou individuální zpětnou vazbu. Kromě toho oba úkoly důkladně probereme na semináři (po lhůtě na odevzdání). Při každém nedodržení termínu odevzdání zápočtového úkolu studující automaticky ztrácí nárok na jeden opravný termín.
+
+Kromě zápočtových úkolů mohou studující dobrovolně plnit průběžné úkoly, jejichž zadání je zveřejněno na tomto webu v sekci "Bonusové úkoly". Bonusových úkolů je vypsáno celkem pět. Za každý odevzdaný úkol, který je správně, lze získat 2 body jako bonus do závěrečného testu. Termín odevzdání je vždy do půlnoci čtvrtého dne od přednášky, ke které se úkol váže (den přednášky se počítá jako den první). Pokud je například přednáška v pondělí, bonusový úkol je možné odevzdat do čtvrteční půlnoci. 
 
 ## Zadání zápočtových domácích úloh
 

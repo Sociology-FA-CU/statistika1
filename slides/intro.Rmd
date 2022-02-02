@@ -23,10 +23,19 @@ library(eulerr) # for ploting statistics in context of science
 
 ```
 
-
+```{=html}
 <style>
 .forceBreak { -webkit-column-break-after: always; break-after: column; }
 </style>
+```
+## 
+
+-   Efektivita vakcíny Pfizer--BioNTech je 73 %.
+-   11,5 % lidí v Česku žije v chudobě.
+
+::: {.notes}
+**Efektivita vakcíny** je definována jako relativní pokles rizika. Tj. v očkované skupině je zasaženo o 73 % méně lidí, než by se nakazilo bez vakcíny. (Neznamená to, že 27 % z očkovaných bude zasaženo. Neznamená, že 73 % si utvoří protilátky.) Co se myslí pojmeme "zasaženo"? To může být různé. Klíčové se ptát, efektivita proti čemu: [V tomto případě](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(21)02183-8/fulltext) proti nakažení, dále 90 % efektivita proti hospitalizaci. Dále víme, že efektivita proti nákaze poklesla z 88 % po 1 měsíci na 47 % po 5 měsících. **Chudoba** je yde specifický ukazatel ohrožení chudobou a sociálním vyloučením, viz dále.
+:::
 
 
 # Statistika a covid
@@ -165,7 +174,6 @@ PPDAC cyklus vymysleli @mackay2000a Explicitně na PPDACC ho rozšiřuje @spiege
 
 -   Intepretace, generování nových nápadů, komunikace různým skupinám.
 
-
 ## PPDACC cyklus - shrnutí
 
 ```{r}
@@ -200,19 +208,20 @@ diagram
 
 ### Statistika
 
-- Statistika 1 + 2 (Bc.)
-- Zpracování scg. dat (Bc.)
-- Analýza dat v SPSS 1 + 2 (Mgr.)
-- Úvod do vícerozměrné an. dat (Mgr.)
-- Pokročilé stat. met. (Mgr.)
-- Volitelné kurzy (hlavně v R)
+-   Statistika 1 + 2 (Bc.)
+-   Zpracování scg. dat (Bc.)
+-   Analýza dat v SPSS 1 + 2 (Mgr.)
+-   Úvod do vícerozměrné an. dat (Mgr.)
+-   Pokročilé stat. met. (Mgr.)
+-   Volitelné kurzy (hlavně v R)
 
 ### Empirický výzkum
 
-- Scg. výzkum 1, 2, 3, 4 (Bc.)
+-   Scg. výzkum 1, 2, 3, 4 (Bc.)
 
+<p class="forceBreak">
 
-<p class="forceBreak"></p>
+</p>
 
 ![](figures/01_stats_in_context.png)
 
@@ -222,19 +231,21 @@ diagram
 
 ### Cíle vědy (hierarchie)
 
-- Deskripce - popis světa a jeho pravidelností
-- Vysvětlení (explanace) - kauzální mechanismus, kauzální inference
+-   Deskripce - popis světa a jeho pravidelností
+-   Vysvětlení (explanace) - kauzální mechanismus, kauzální inference
 
 Rozdíl mezi deskripcí a explanací ilustruje rozdíl mezi fakty a teorií.
 
-<p class="forceBreak"></p>
+<p class="forceBreak">
+
+</p>
 
 ### Cíle statistiky
 
-- Deskripce dat (deskriptivní statistika)
-- Inference z dat (vzorku) na populaci (inferenční, resp. induktivní statistika)
+-   Deskripce dat (deskriptivní statistika)
+-   Inference z dat (vzorku) na populaci (inferenční, resp. induktivní statistika)
 
-Z hlediska cílů vědy plní deskriptivní statistika a induktivní statistika stejnou funkci: deskripci. Vysvětlení nikdy nevychází jen ze statistiky, vždy potřebuje teorii. 
+Z hlediska cílů vědy plní deskriptivní statistika a induktivní statistika stejnou funkci: deskripci. Vysvětlení nikdy nevychází jen ze statistiky, vždy potřebuje teorii.
 
 ## Teorie a fakta (data) {.columns-2 .smaller}
 
@@ -242,16 +253,17 @@ Z hlediska cílů vědy plní deskriptivní statistika a induktivní statistika 
 
 "Chování gazel vysvětluje tzv. signalizační teorie, podle které predátorovi ukazuje, že má spoustu energie a bude obtížné ji chytit (vyhne se tím výdeji při nutnosti útěku)."
 
-<p class="forceBreak"></p>
+<p class="forceBreak">
 
-![](figures/01_gazela.jpg){width=100%}
+</p>
 
-Autor foto: [Yathin sk - I photographed this springbok in Etosha National Park](https://commons.wikimedia.org/w/index.php?curid=21251829), CC BY-SA 3.0 
+![](figures/01_gazela.jpg){width="100%"}
+
+Autor foto: [Yathin sk - I photographed this springbok in Etosha National Park](https://commons.wikimedia.org/w/index.php?curid=21251829), CC BY-SA 3.0
 
 ::: {.notes}
-Signalizační teorie našla své místo i ve společenských vědách – například existuje signalizační teorie o náboženství: náboženství jako nástroj udržování skupinové soudržnosti a spolupráce (evoluce na úrovni skupin). Nákladné náboženské signalizační rituály (obřízka, půst atp.) mají podle této teorie zabránit „černým pasažérům“ (lidem, kteří to s loajalitou skupině nemyslí vážně).Tendence k signalizačnímu chování také vysvětluje okázalou spotřebu (ukazuji zdroje tím, že jimi mrhám). 
+Signalizační teorie našla své místo i ve společenských vědách -- například existuje signalizační teorie o náboženství: náboženství jako nástroj udržování skupinové soudržnosti a spolupráce (evoluce na úrovni skupin). Nákladné náboženské signalizační rituály (obřízka, půst atp.) mají podle této teorie zabránit „černým pasažérům" (lidem, kteří to s loajalitou skupině nemyslí vážně).Tendence k signalizačnímu chování také vysvětluje okázalou spotřebu (ukazuji zdroje tím, že jimi mrhám).
 :::
-
 
 # Proměnná: základní stavební kámen statistického uvažování
 
@@ -262,7 +274,6 @@ A variable
 Proměnná: formální reprezentace určité vlastnosti či charakteristiky entit (věcí, osob, ...).
 
 Statistika: zkoumání vlastností proměnných a vztahů mezi nimi.
-
 
 ## Příklad standardního zápisu proměnných v sociologii
 
@@ -275,7 +286,6 @@ tab <- tribble(~"ID", ~"pohlaví", ~"věk", ~"postoj k placení školného",
 kbl(tab) %>%
    kable_material(bootstrap_options = c("hover", "condensed"))
 ```
-
 
 ## Vidět svět jako data
 
@@ -350,9 +360,9 @@ Překlopení pojmů z jazyka teorie do observačního jazyka.
 Všichni máme nějakou intuitivní představu, co je to chudoba. Ale jak objektivně pozorovat chudobu? Pozorovat namísto toho příjem a jeho překročení nebo nepřekročení 60% hranice mediánu je praktičtější.
 :::
 
-## Chcete se dozvědět víc?
+<!-- ## Chcete se dozvědět víc? -->
 
-Projekt [STATS](https://senseaboutscienceusa.org/) usiluje o podporu statistické gramotnosti v USA, především se zaměřuje na novináře. Je to sice jiný kontext, ale inspirativní, například [průvodce statistikami ve vzdělávání](https://senseaboutscienceusa.org/a-reporters-guide-to-education-statistics/).
+<!-- Projekt [STATS](https://senseaboutscienceusa.org/) usiluje o podporu statistické gramotnosti v USA, především se zaměřuje na novináře. Je to sice jiný kontext, ale inspirativní, například [průvodce statistikami ve vzdělávání](https://senseaboutscienceusa.org/a-reporters-guide-to-education-statistics/). -->
 
 ## Reference v prezentaci
 

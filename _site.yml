@@ -9,6 +9,8 @@ navbar:
       href: presentation.html
     - text: "Procvičování"
       href: exercise.html
+    - text: "Bonusové úkoly"
+      href: bonus.html
     - text: "Data"
       href: data.html
     - text: "Atestace"
