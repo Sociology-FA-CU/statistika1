@@ -1,5 +1,6 @@
 ---
 title: "Popis vztahů mezi proměnnými"
+subtitle: "Statistika 1, Katedra sociologie Filozofické fakulty UK" 
 author: "Jaromír Mazák"
 output:
   ioslides_presentation:
