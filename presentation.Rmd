@@ -30,62 +30,62 @@ Pod jednotlivými kartami s čísly najdete kompletní prezentace k přednášk�
 ### 1
 
 
-<iframe src="slides/intro.html" width="900" height="600"></iframe>
+<iframe src="slides/intro.html" width="900" height="700"></iframe>
 <br>
 
 
 ### 2
 
 
-<iframe src="slides/categories.html" width="900" height="600"></iframe>
+<iframe src="slides/categories.html" width="900" height="700"></iframe>
 <br>
 
 
 ### 3
 
-<iframe src="slides/centrality.html" width="900" height="600"></iframe>
+<iframe src="slides/centrality.html" width="900" height="700"></iframe>
 <br>
 
 
 ### 4
 
-<iframe src="slides/variability.html" width="900" height="600"></iframe>
+<iframe src="slides/variability.html" width="900" height="700"></iframe>
 <br>
 
 
 ### 5
 
-<iframe src="slides/relations.html" width="900" height="600"></iframe>
+<iframe src="slides/relations.html" width="900" height="700"></iframe>
 <br>
 
 
 ### 6
 
-<iframe src="slides/model.html" width="900" height="600"></iframe>
+<iframe src="slides/model.html" width="900" height="700"></iframe>
 <br>
 
 
 ### 7
 
-<iframe src="slides/inference.html" width="900" height="600"></iframe>
+<iframe src="slides/inference.html" width="900" height="700"></iframe>
 <br>
 
 
 ### 8
 
-<iframe src="slides/probability.html" width="900" height="600"></iframe>
+<iframe src="slides/probability.html" width="900" height="700"></iframe>
 <br>
 
 
 ### 9
 
-<iframe src="slides/clt.html" width="900" height="600"></iframe>
+<iframe src="slides/clt.html" width="900" height="700"></iframe>
 <br>
 
 
 ### 10
 
-<iframe src="slides/conditional.html" width="900" height="600"></iframe>
+<iframe src="slides/conditional.html" width="900" height="700"></iframe>
 <br>
 
 
