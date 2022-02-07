@@ -132,6 +132,7 @@ Když absolutní riziko u lidí, kteří jsou vystaveni působení zkoumaného j
 
 Tabulka shrnuje možné způsoby komunikace příkladu výše: úmrtí operovaných žen, když operuje žena, resp. když operuje muž.
 
+
 ```{r}
 ukazatele <- tribble(~"Ukazatel", ~"Operuje žena", ~"Operuje muž",
                      "pravděpodobnost", "0.5 %", "0.66 %",

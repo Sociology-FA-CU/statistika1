@@ -10,83 +10,25 @@ knitr::opts_chunk$set(echo = FALSE)
 col_icon <- "#00f"
 ```
 
-Pod jednotlivými kartami s čísly najdete kompletní prezentace k přednáškám. Prezentace nejsou navržené jako materiál pro samostudium, ale jako doprovodný materiál k výkladu. Po kliknutí na okno s prezentací spustíte mód zobrazení na celou obrazovku stisknutím písmene "f". Stisknutí písmene "w" pak převede zobrazení do širokoúhlého formátu (16:9). 
+U názvů jednotlivých témat najdete kompletní prezentace k přednáškám. Prezentace nejsou navržené jako materiál pro samostudium, ale jako doprovodný materiál k výkladu. K dispozici jsou dvě verze: HTML verze zobrazitelná přímo v prohlížeči a PDF verze ke stažení. PDF verze neobsahuje poznámky.
 
-1) Úvod a motivace
-1) Kategorická data a procenta
-1) Numerické proměnné a míry centrality
-1) Numerické proměnné a míry variability
-1) Popis vztahů mezi proměnnými
-1) Základy inferenčního uvažování: vzorek a populace
-1) Pravděpodobnost, nejistota a variabilita
-1) Centrální limitní věta
-1) Podmíněná pravděpodobnost a Bayesova věta
-1) Bayesovská aktualizace na základě nových informací
+Při práci s HTML verzí prezentací je možné využívat následujících klávesových zkratek:
 
+- šipkami je možné přecházet z jednoho snímku na druhý.
+- Klávesa `r` spustí zobrezení plné obrazovky (fullscreen)
+- Klávesa `f` spustí širokoúhlé zobrazení (widescreen)
+- Klávesa `o` zobrazazí přehled snímků.
+- Klávesa `p` zobrazují poznámku k aktuálnímu snímku (pokud existuje)
 
+---
 
-## {.tabset}
-
-### 1
-
-
-<iframe src="slides/intro.html" width="900" height="700"></iframe>
-<br>
-
-
-### 2
-
-
-<iframe src="slides/categories.html" width="900" height="700"></iframe>
-<br>
-
-
-### 3
-
-<iframe src="slides/centrality.html" width="900" height="700"></iframe>
-<br>
-
-
-### 4
-
-<iframe src="slides/variability.html" width="900" height="700"></iframe>
-<br>
-
-
-### 5
-
-<iframe src="slides/relations.html" width="900" height="700"></iframe>
-<br>
-
-
-### 6
-
-<iframe src="slides/model.html" width="900" height="700"></iframe>
-<br>
-
-
-### 7
-
-<iframe src="slides/inference.html" width="900" height="700"></iframe>
-<br>
-
-
-### 8
-
-<iframe src="slides/probability.html" width="900" height="700"></iframe>
-<br>
-
-
-### 9
-
-<iframe src="slides/clt.html" width="900" height="700"></iframe>
-<br>
-
-
-### 10
-
-<iframe src="slides/conditional.html" width="900" height="700"></iframe>
-<br>
-
-
-
+1) Úvod a motivace ([v prohlížeči](slides/intro.html), ke stažení)
+1) Kategorická data a procenta ([v prohlížeči](slides/categories.html), ke stažení)
+1) Numerické proměnné a míry centrality ([v prohlížeči](slides/centrality.html), ke stažení)
+1) Numerické proměnné a míry variability ([v prohlížeči](slides/variability.html), ke stažení)
+1) Popis vztahů mezi proměnnými ([v prohlížeči](slides/relations.html), ke stažení)
+1) Základy inferenčního uvažování: vzorek a populace ([v prohlížeči](slides/inference.html), ke stažení)
+1) Pravděpodobnost, nejistota a variabilita ([v prohlížeči](slides/probability.html), ke stažení)
+1) Centrální limitní věta ([v prohlížeči](slides/clt.html), ke stažení)
+1) Podmíněná pravděpodobnost a Bayesova věta ([v prohlížeči](slides/conditional.html), ke stažení)
+1) Bayesovská aktualizace na základě nových informací (v prohlížeči, ke stažení)
