@@ -15,9 +15,9 @@ U názvů jednotlivých témat najdete kompletní prezentace k přednáškám. P
 Při práci s HTML verzí prezentací je možné využívat následujících klávesových zkratek:
 
 - šipkami je možné přecházet z jednoho snímku na druhý.
-- Klávesa `r` spustí zobrezení plné obrazovky (fullscreen)
+- Klávesa `r` spustí zobrazení plné obrazovky (fullscreen)
 - Klávesa `f` spustí širokoúhlé zobrazení (widescreen)
-- Klávesa `o` zobrazazí přehled snímků.
+- Klávesa `o` zobrazí přehled snímků.
 - Klávesa `p` zobrazují poznámku k aktuálnímu snímku (pokud existuje)
 
 ---
