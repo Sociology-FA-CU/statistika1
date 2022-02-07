@@ -208,7 +208,7 @@ Angličtina zná termíny "chance" a "odds". Čeština oba překládá jako šan
 
 Tedy:
 
-$$\frac{úspěchy}{neúspěchy}$$
+$$\frac{\textrm{úspěchy}}{\textrm{neúspěchy}}$$
 
 
 Případně za využití pravděpodobnosti:
@@ -219,14 +219,14 @@ $$\frac{p}{1-p}$$
 
 Medicínský ukazatel. Nevím o českém překladu. Může být užitečný i ve společenských vědách. 
 
-$$\frac{100}{rozdíl\:v\:absolutním\:riziku\:v\:procentech}$$
+$$\frac{100}{\textrm{rozdíl absolutním riziku procentech}}$$
 
 ## Poměr šancí
 
 Zrádný ukazatel, v tuhle chvíli nadstavba.
 
 
-$$ \frac{\frac{úspěchy_{\:skupina1}}{neúspěchy_{\:skupina1}}}{\frac{úspěchy_{\:skupina2}}{neúspěchy_{\:skupina2}}} $$
+$$ \frac{\frac{\textrm{úspěchy}_{\:skupina1}}{\textrm{neúspěchy}_{\:skupina1}}}{\frac{\textrm{úspěchy}_{\:skupina2}}{\textrm{neúspěchy}_{\:skupina2}}} $$
 
 ## Proč je poměr šancí zrádný?
 
