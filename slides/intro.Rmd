@@ -28,15 +28,15 @@ library(eulerr) # for ploting statistics in context of science
 .forceBreak { -webkit-column-break-after: always; break-after: column; }
 </style>
 ```
+
 ## 
 
 -   Efektivita vakcíny Pfizer--BioNTech je 73 %.
 -   11,5 % lidí v Česku žije v chudobě.
 
 ::: {.notes}
-**Efektivita vakcíny** je definována jako relativní pokles rizika. Tj. v očkované skupině je zasaženo o 73 % méně lidí, než by se nakazilo bez vakcíny. (Neznamená to, že 27 % z očkovaných bude zasaženo. Neznamená, že 73 % si utvoří protilátky.) Co se myslí pojmeme "zasaženo"? To může být různé. Klíčové se ptát, efektivita proti čemu: [V tomto případě](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(21)02183-8/fulltext) proti nakažení, dále 90 % efektivita proti hospitalizaci. Dále víme, že efektivita proti nákaze poklesla z 88 % po 1 měsíci na 47 % po 5 měsících. **Chudoba** je yde specifický ukazatel ohrožení chudobou a sociálním vyloučením, viz dále.
+**Efektivita vakcíny** je definována jako relativní pokles rizika. Tj. v očkované skupině je zasaženo o 73 % méně lidí, než by se nakazilo bez vakcíny. (Neznamená to, že 27 % z očkovaných bude zasaženo. Neznamená, že 73 % si utvoří protilátky.) Co se myslí pojmeme "zasaženo"? To může být různé. Klíčové se ptát, efektivita proti čemu: [V tomto případě](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(21)02183-8/fulltext) proti nakažení, dále 90 % efektivita proti hospitalizaci. Dále víme, že efektivita proti nákaze poklesla z 88 % po 1 měsíci na 47 % po 5 měsících. **Chudoba** je zde specifický ukazatel ohrožení chudobou a sociálním vyloučením, viz dále v prezentaci. Take-away: Než se začneme soustředit na samotná čísla, je potřeba si ujasnit, o čem se vlastně mluví.
 :::
-
 
 # Statistika a covid
 
@@ -54,17 +54,17 @@ Základní reprodukční číslo = kolik lidí v průměru nakazí jeden nakaže
 
 [Zdroj obrázku Michigan Health Lab](https://images.app.goo.gl/qdgNZJQBKTSKWKhM8)
 
-## Skutečnost (pro $R_0 = 3$)
+## Blíže skutečnosti (pro $R_0 = 3$)
 
 ![](figures/01_R0_covid.png){width="50%"}
 
-Převzato z @spiegelhalter2021a
+Převzato z @spiegelhalter2021
 
 ## Odhad distribuce počtu nakažených
 
 ![](figures/01_R0_distribution.png){width="50%"}
 
-Převzato z @spiegelhalter2021a
+Převzato z @spiegelhalter2021
 
 ::: {.notes}
 "when introduced into susceptible communities, around 75% of people who catch the virus do not go on to infect anyone else, while a small minority (10%) lead to the great majority (80%) of new cases. There are several reasons for this. Some may be particularly infectious, while 'super-spreader' events can also occur. There was a choir practice in Washington State where one person with 'cold-like' symptoms led to 52 infections of 60 other singers."
@@ -75,7 +75,7 @@ Převzato z @spiegelhalter2021a
 $$\Huge R_t$$
 
 ::: {.notes}
-Během pandemie odhadováno experty podle aktuálního vývoje počtu nakažených. Snaha dostat pod 1.
+Během pandemie odhadováno experty podle aktuálního vývoje počtu nakažených. Snaha dostat pod 1 = počet nakažených bude postupně klesat.
 :::
 
 # Statistika jako investigativní proces
@@ -147,20 +147,26 @@ PPDAC cyklus vymysleli @mackay2000a Explicitně na PPDACC ho rozšiřuje @spiege
 
 > -   Vymyslete příklad relevantní výzkumné otázky pro sociologii.
 
+::: {.notes}
+Mění se v čase poměr sňatků a rozvodů? Hraje větší roli v příjmových nerovnostech seniorita, nebo formlní vzdělání? Způsobuje používání sociálních sítí depresi? Kdo páchá sebevraždy a proč? Má větší vliv na volbu politické strany pohlaví, věk, nebo vzdělání? Tisíce otázek...
+:::
+
 ## Plán
 
--   Co měřit a jak? Jak data shromažďovat na jednom místě? Atd.
+-   Co měřit a jak? Jak data shromažďovat na jednom místě? Jaká relevantní data už existují? Jak se k nim dostat? Atd.
 
 > -   Vytvořit datovou oporu: všechna relevantní pracoviště sdílejí informace o nových infekcích v přesně stanoveném formátu podle přesně stanovených definic.
 
 ## Data
 
--   Sběr dat, uchovávání, čištění.
--   Reálná data jsou téměř vždy zatížena chybami a zkresleními - potřebujeme reflektovat a zaznamenat.
+-   Sběr dat, uchovávání, získání, čištění.
+-   Reálná data jsou téměř vždy zatížena chybami a zkresleními - potřebujeme reflektovat a zaznamenat. Musíme co nejpřesněji rozumět tomu, co data znamenají, v čem se na ně můžeme spolehnout a v čem nikoliv.
+
+> -   Pokud pracuji s pojmem "efektivita vakcíny", potřebvuji vědět, co znamená a jak spolehlivě je měřen.
 
 ## Analýza
 
--   Zpracovávání dat v softwaru, tabulky, grafy, testování hypotéz - to vše je jen část statistické práce
+-   Zpracovávání dat v softwaru, tabulky, grafy, testování hypotéz,...
 
 ## Závěry/Komunikace
 
@@ -173,6 +179,17 @@ PPDAC cyklus vymysleli @mackay2000a Explicitně na PPDACC ho rozšiřuje @spiege
 </blockquote>
 
 -   Intepretace, generování nových nápadů, komunikace různým skupinám.
+
+
+## Závěry/Komunikace - ilustrace
+
+![](figures/01_UK_mortality_rate.png)
+
+Obrázek z @spiegelhalter2021
+
+::: {.notes}
+Statistika je nástroj, ale význam světu dáváme my, záleží na našich hodnotách, preferencích, sociálním kontextu atp. Spiegelhalter in [Covid by Numbers](https://www.amazon.com/Covid-Numbers-Making-Pandemic-Pelican-ebook/dp/B0948Q12PJ): Data pro Británii: míra úmrtí na 100 000 obyvatel nebyla v covidovém roce 2020 horší než v roce 2000 (při započtení vlivu věkové struktury). Lidé za časů covidu tedy měli větší šanci se dožít příštích narozenin než lidé v roce 2000 nebo kdykoliv předtím. Znamená to, že covid nebyl tak zlý? Stejně tak ale platí, že od chřipkové epidemii v roce 1951 v Británii nikdy nedošlo k většímu meziročnímu nárůstu míry úmrtnosti. Záleží na interpretaci.
+:::
 
 ## PPDACC cyklus - shrnutí
 
@@ -313,7 +330,7 @@ Představte si, že se díváte na dvě ovce na poli. Kolik ovcí tam je? Dvě, 
 Tim Harford: "Avoid premature enumeration"
 
 ::: {.notes}
-Over the years, as I found myself trying to lead people out of statistical mazes week after week, I came to realise that many of the problems I encountered were because people had taken a wrong turn right at the start. They had dived into the mathematics of a statistical claim -- asking about sampling errors and margins of error, debating if the number is rising or falling, believing, doubting, analysing, dissecting -- without taking the time to understand the first and most obvious fact: what is being measured, or counted? What definition is being used?
+Tim Harford: Over the years, as I found myself trying to lead people out of statistical mazes week after week, I came to realise that many of the problems I encountered were because people had taken a wrong turn right at the start. They had dived into the mathematics of a statistical claim -- asking about sampling errors and margins of error, debating if the number is rising or falling, believing, doubting, analysing, dissecting -- without taking the time to understand the first and most obvious fact: what is being measured, or counted? What definition is being used?
 :::
 
 ## Sociologický příklad: Ohrožení chudobou

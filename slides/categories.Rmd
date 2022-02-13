@@ -217,7 +217,7 @@ $$\frac{p}{1-p}$$
 
 ## Number Needed to Treat (NNT)
 
-Medicínský ukazatel. Nevím o českém překladu. Může být užitečný i ve společenských vědách. 
+Medicínský ukazatel. Nevím o českém překladu. Může být užitečný i pro komunikaci ve společenských vědách: Například kolik dětí by muselo projít intervencí, aby o jedno dítě méne skončilo v výchvoném ústavu? 
 
 $$\frac{100}{\textrm{rozdíl absolutním riziku procentech}}$$
 
@@ -249,7 +249,7 @@ Absolutní riziko se zvýšilo o 2 %. Relativní riziko je 70/68 = 1.03, tedy zv
 ## Jak z toho ven?
 
 - poměry šancí patří do statistických modelů, ne do mezilidské komunikace
-- absolutní riziko nejlépe vyjádříme v tzv. procentních bodech
+- absolutní riziko nejlépe vyjádříme v tzv. procentních bodech (p. b.)
 - relativní riziko je dobré komunikovat spolu s absolutním
 
 
@@ -265,6 +265,71 @@ Absolutní riziko se zvýšilo o 2 %. Relativní riziko je 70/68 = 1.03, tedy zv
 -   5% mortalita zní hůře než 95% přežití
 -   99 % mladých Londýňanů nepáchá závažné násilí vs. ve městě je 10 000 mladých, kteří páchají závažné násilí
 
+# Komunikace nebinárních kategorických proměnných
+
+## Absolutní nebo relativní četnosti pomocí sloupcových grafů
+
+Data ze srpna 2021.
+
+![](figures/02_volebni_model_ct.png){width="90%"}
+
+## Míru nejistoty můžeme vyjádřit také graficky
+
+Zde data z července 2021.
+
+![](figures/02_volebni_model_cvvm.png){width="90%"}
+
+## Co je na tomto grafu?
+
+Data ze září 2021.
+
+![](figures/02_volebni_potencial.png){width="90%"}
+
+##  Proč (moc) nepoužíváme koláčové graf?
+
+![](figures/02_pie_chart_comparison.png){width="90%"}
+
+Zdroj: [Wikipedie](https://en.wikipedia.org/wiki/Pie_chart)
+
+## Proč rozhodně nepoužíváme 3D efekty?
+
+![](figures/02_3D_pie_chart.png){width="90%"}
+
+Zdroj: [Making data vizualizations - A survival guide](https://www.slideshare.net/vis4/making-data-visualizations-a-survival-guide)
+
+## Osa Y
+
+![](figures/02_ct_byty.jpg){width="90%"}
+Zachyceno ve vysílání ČT.
+
+## Arbitrární začátek osy Y
+
+![](figures/02_ct_byty_comparison.png){width="90%"}
+
+## Někdy to ale nemusí být tak jasné...
+
+
+![](figures/02_US_GDP_a.png){width="50%"}
+
+
+![](figures/02_US_GDP_b.png){width="50%"}
+
+Zdroj [QUARTZ](https://qz.com/418083/its-ok-not-to-start-your-y-axis-at-zero/)
+
+## To platí dvojnásob, pokud je 0 arbitrární
+
+A pokud malé relativní hrajou velkou roli...
+
+![](figures/02_teplota_a.png){width="45%"}
+
+
+![](figures/02_teplota_b.png){width="45%"}
+
+Zdroj [Cracked.com](http://www.cracked.com/photoplasty_2052_19-ways-you-can-make-statistics-say-whatever-you-want_p1/
+)
+
+
+
 # Ostatní typy proměnných
 
 ## Metodologická perspektiva
@@ -273,8 +338,8 @@ Absolutní riziko se zvýšilo o 2 %. Relativní riziko je 70/68 = 1.03, tedy zv
 - ordinální (ordinal)
 - kardinální (cardinal, metric)
 
-  - intervalové
-  - poměrové 
+  - intervalové (interval)
+  - poměrové (ratio)
   
 ::: {.notes}
 Příklady intervalových proměnných: teplota ve stupních Celsia; letopočty, IQ,...  
@@ -322,4 +387,5 @@ Dichotomizace dat: Převod původně nebinárních dat na data binární.
 
 ## Reference v prezentaci
 
+Následuje seznam referencí, které v prezentaci neměly aktivní proklik na zdroj.
 

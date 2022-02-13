@@ -5,33 +5,136 @@ author: "Jaromír Mazák"
 output:
   ioslides_presentation:
     css: "../css/slides-style.css"
+editor_options: 
+  chunk_output_type: console
+bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
-## R Markdown
-
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
-
-## Slide with Bullets
-
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-## Slide with R Output
-
-```{r cars, echo = TRUE}
-summary(cars)
+```{r libs}
+library(tidyverse)
+library(here)
+library(ggpmisc) # to add table to ggplot2 object
 ```
 
-## Slide with Plot
+## Opakování
 
-```{r pressure}
-plot(pressure)
+-   tvar dat graficky (histogram, boxplot, bodový graf)
+-   popis centrální tendence (průměr, medián, modus)
+
+> -   Dnes: Číselný popis variability dat
+
+## Výzkum sexuálního života
+
+-   britský výzkum Natsal-3, 2010-2012, N \> 2000, nyní se plánuje čtvrté kolo
+
+-   Uváděný počet sexuálních partnerů, srovnání žen a mužů ve věku 35-44 let
+
+    -   Jaký minimální a jaký maximální počet partnerů byl uveden ve skupině žen? mužů?
+
+> -   Muži minimum: 0, Muži maximum: 500
+> -   Ženy minimum: 0, Ženy maximum: 550
+
+::: {.notes}
+Minimum by nemělo být překvapivé, jde o velký vzorek. Co vypovídá maximum o obou podskupinách? Pravděpodobně téměř nic...
+:::
+
+## (Variační) rozpětí a mezikvartilové rozpětí
+
+-   (Variační) rozpětí = MAX - MIN
+-   Mezikvartilové rozpětí = Q3 - Q1
+-   Kterou z těchto statistik můžeme považovat za robustní?
+
+> -   Mezikvartilové rozpětí muži: 4 až 18
+> -   Mezikvartilové rozpězí ženy: 3 až 10
+
+## Porovnání variačního a mezikvartilového rozpětí 1/3
+
+```{r}
+set.seed(13)
+population <- rpois(1000, lambda = 2)
+pop <- tibble(value = population)
+pop_graph <- pop %>% ggplot(aes(x=value))+geom_bar()+scale_x_continuous(breaks = c(0:9))+
+  labs(title = "Simulovaná data",
+       x = "Hodnota proměnné",
+       y = "# v tisícovém vzorku s danou hodnotou proměnné")
+
+pop_table <- pop %>% summarise(min = min(value), max = max(value), Q1 = quantile(value, 0.25), Q3 = quantile(value, 0.75))
+
+odhady_30 <- tibble()
+
+for (i in 1:20) {
+  odhady_30 <- bind_rows(odhady_30,
+                      pop %>% 
+                        sample_n(30) %>% 
+                        summarise(min = min(value), max = max(value), Q1 = quantile(value, 0.25), Q3 = quantile(value, 0.75)))
+}
+
+
+odhady_300 <- tibble()
+
+for (i in 1:20) {
+  odhady_300 <- bind_rows(odhady_300,
+                      pop %>% 
+                        sample_n(300) %>% 
+                        summarise(min = min(value), max = max(value), Q1 = quantile(value, 0.25), Q3 = quantile(value, 0.75)))
+}
+
+
+pop_graph +                                             
+  annotate(geom = "table",
+           x = 9,
+           y = 250,
+           label = list(pop_table))
+
+
 ```
 
+## Porovnání variačního a mezikvartilového rozpětí 2/3
+
+```{r}
+
+odhady_30 %>% 
+  rownames_to_column() %>% 
+  ggplot(aes(x = as.numeric(rowname)))+
+  geom_linerange(aes(ymin = min, ymax = max), color = "red")+
+  geom_linerange(aes(ymin = Q1, ymax = Q3), color = "blue", size = 1.5)+
+  scale_y_continuous(breaks = c(0:9))+
+  scale_x_continuous(breaks = c(1:20))+
+  labs(x="Vzorek",
+       title = "Dvacet vzorků po třiceti pozorováních")
+
+```
+
+## Porovnání variačního a mezikvartilového rozpětí 2/3
+
+```{r}
+
+odhady_300 %>% 
+  rownames_to_column() %>% 
+  ggplot(aes(x = as.numeric(rowname)))+
+  geom_linerange(aes(ymin = min, ymax = max), color = "red")+
+  geom_linerange(aes(ymin = Q1, ymax = Q3), color = "blue", size = 1.5)+
+  scale_y_continuous(breaks = c(0:9))+
+  scale_x_continuous(breaks = c(1:20))+
+  labs(x="Vzorek",
+       title = "Dvacet vzorků po 300 pozorováních")
+
+```
+
+## Interpretujte následující tabulku
+
+![](figures/04_sexual_partners.png)
+
+Převzato z @spiegelhalter2019
+
+## Vyjádřit charakteristiky dat číslem je užitečné...
+
+... Ale obrázek často řekne víc než mnoho čísel
+
+![](figures/04_sexual_partners_bar.png){width=50%}
+
+Převzato z @spiegelhalter2019

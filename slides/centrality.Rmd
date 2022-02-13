@@ -18,11 +18,12 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(knitr)
 library(kableExtra)
 library(tidyverse)
-library(cowplot)
-library(ggplot2)
+library(patchwork)
 library(scales)
 library(here)
-
+library(openintro) # for mammals dataset
+library(ggrepel)
+# library(fGarch) # for desired skew. finally unused to reduce pck dependency
 ```
 
 ```{=html}
@@ -31,14 +32,221 @@ library(here)
 </style>
 ```
 
+## Typy proměnných - opakování {.columns-2}
+
+-   nominální
+
+-   ordinální
+
+-   kardinální (metrické, numerické, kvantitativní)
+
+    -   intervalové
+    -   poměrové
+
+<p class="forceBreak">
+
+</p>
+
+-   numerické diskrétní
+-   numerické spojité
+
 # Empirická distribuce dat
 
-Tvar kardinálních dat
+Tvar dat
 
-## TBD example of skewed data, income?
+## Moudrost davu: počet fazolek ve sklenici
 
--   grafy - "tvar dat"
--   logaritmické měřítko
+![](figures/03_beans.png){width=35%}
+
+Zdroj: @spiegelhalter2019
+
+## Jak vizualizovat mnoho dat? {.columns-2}
+
+### Původní měřítko
+
+![](figures/03_beans_in_jar.png){width=90%}
+<p class="forceBreak">
+
+</p>
+
+### Logaritmické měřítko
+
+![](figures/03_beans_in_jar_log.png){width=90%}
+
+## Šikmost (Skewness)
+
+```{r}
+
+
+set.seed(42)
+
+skew_neg <- ggplot(data=as_tibble(rbeta(1000,5,2)), aes(x = value)) + geom_histogram(color="white") + labs(title = "Záporná šikmost", x = "Rozsah proměnné je od 0 do 1", y = "Četnost") + annotate(geom="text", x=0.05, y=60, label="-", color="red", size = 20) + scale_x_continuous(limits = c(0,1))
+skew_pos <- ggplot(data=as_tibble(rbeta(1000,2,5)), aes(x = value)) + geom_histogram(color="white") + labs(title = "Kladná šikmost", x = "Rozsah proměnné je od 0 do 1", y = "Četnost") + annotate(geom="text", x=0.95, y=60, label="+", color="red", size = 15) + scale_x_continuous(limits = c(0,1))
+skew_0 <- ggplot(data=as_tibble(rbeta(1000,5,5)), aes(x = value)) + geom_histogram(color="white") + labs(title = "Nešikmé rozdělení", x = "Rozsah proměnné je od 0 do 1", y = "Četnost") + scale_x_continuous(limits = c(0,1))
+
+skew_0 / skew_neg / skew_pos
+
+
+# unused versions of illustrating skew
+
+# left <- rnorm(1000, 10, 1) %>% log10() %>% hist()
+# right <- rnorm(1000, 10, 1) %>% exp() %>% hist()
+# rsnorm(1000, mean = 0, sd = 1, xi = 10) %>% hist()
+
+```
+
+
+## Šikmost - orientační hodnoty
+
+- 0 předtavuje dokonale symetrická data. 
+- Hodnoty mezi -0.5 a 0.5 představují přibližně symetrická data. 
+- Hodnoty menší než -0.5 a větší než 0.5 indikují šikmá data
+- Hodnoty menší než -1 a větší než 1 indikují velmi šikmá data
+
+
+## Výhody logaritmického měřítka
+
+- Umožňuje společně vizualizovat velké a malé hodnoty (srazí je k sobě)
+- Často pomůže převést data s kladnou šikmostí na data přibližně symetrická
+
+## Logaritmické měřítko a exponenciální růst
+
+- Co je to exponenciální růst?
+>- Exponenciální růst - něco se "x-násobí" za určitou časovou jednotku (zdvojnásobí, zdesetinásobí, ale i jen vynásobí 1.001)
+
+
+::: {.notes}
+Pověst o vynálezci šachů, který chtěl od sultána za hru tolik rýže, že na prvním poli bude jedno zrnko, na druhém dvě, pak čtyři a tak dál. Sultán radostně souhlasil, než se ukázalo, že si takovou cenu nemůže dovolit. Podobně hádanka o jezeře, kde se porost vodní rostlinou zdojnásobí každý den. 100. den rostlina akorát stihne pokrýt celé jezero. Kolikátý den pokryje půlku? 
+:::
+
+## Jak vypadá expondenciální růst?
+
+```{r}
+t <- 0:6
+R1 <- 2
+R2 <- 2.5
+R3 <- 3
+R4 <- 4
+a <- 1
+
+y1 <- R1^t
+y2 <- R2^t
+y3 <- R3^t
+y4 <- R4^t
+
+y5 <- y4 * c(1,1,1,0.95, 0.45, 0.18, 0.07) # zpočátku exponenciální, pak roste pomaleji
+y6 <- c((1:7)^3) # roste pomaleji
+
+
+exp_data <- 
+  tibble(y1 = y1, y2 = y2, y3 = y5, y4 = y6, x = 0:6)
+
+
+exp_data %>% 
+  pivot_longer(cols = -x) %>% 
+  ggplot(aes(x = x, y = value, group = name, color = name))+
+  geom_point(size = 2)+
+  geom_line()+
+  labs(title = "Která z následujících křivek představuje exponenciální růst?",
+       x= "Běh času",
+       y= element_blank())+
+  scale_x_continuous(breaks = 0:6)
+```
+
+
+## Zlogaritmování pomáhá rozpoznat exponenciální růst
+
+```{r}
+
+exp_data %>% 
+  pivot_longer(cols = -x) %>% 
+  mutate(value = log(value)) %>% 
+  ggplot(aes(x = x, y = value, group = name, color = name))+
+  geom_point(size = 2)+
+  geom_line()+
+  labs(title = "Stejná data jako na předchozím snímku po zlogaritmování",
+       x= "Běh času",
+       y= element_blank())+
+  scale_x_continuous(breaks = 0:6)
+
+```
+
+::: {.notes}
+Pokud proměnnou zlogaritmujeme, z exponenciálního růstu se stane přímka: lineární nárůst na logaritmickém měřítku totiž znamená, že v každém mezikroku je růst stejným násobkem předchozího stavu. Jasně tedy vidíme, že červená a zelená přímka představují exponenciální růst. Fialová nikdy nepředstavovala exponenciální růst. Modrá představovala exponenciální růst do bodu 3, ale pak začal růst zpomalovat. 
+:::
+
+
+## Příklad: savci a jejich mozky
+
+```{r}
+mammals %>% select(species, body_wt, brain_wt) %>% head(10) %>% kableExtra::kable()
+```
+
+<br>
+Inspirováno [tutorialem Marvina Lemose](https://rstudio-pubs-static.s3.amazonaws.com/433476_9ce6707ae2794d96923b7258703fdff7.html)
+
+## Distribuce hmotností těl a mozků
+
+```{r}
+
+body <- ggplot(data = mammals, aes(body_wt)) + geom_histogram() + labs(x="Hmotnost těla [kg]", y = element_blank())
+brain <- ggplot(data = mammals, aes(brain_wt)) + geom_histogram() + labs(x="Hmotnost mozku [g]", y = element_blank())
+
+body + brain
+```
+
+## Vztah mezi hmotností těl a mozků
+
+```{r}
+ggplot(mammals, aes(body_wt, brain_wt)) + geom_point()
+```
+
+## Vztah na logaritmickém měřítku
+
+```{r}
+
+y_breaks = c(10^0, 10^1, 10^2, 10^3, 10^4)
+x_breaks = c(10^-1, 10^0, 10^1, 10^2, 10^3)
+
+backup_options <- options()
+options(scipen = 999)
+  
+ggplot(data = mammals, aes(x = body_wt, y = brain_wt)) +
+  geom_point(data = mammals %>% filter(species %in% c("Mouse", "Cat", "Baboon", "Man","Sheep", "Pig", "Cow")),
+             colour = "orange", size = 3) +
+  geom_point() +
+  geom_smooth(method = "lm", se = F) +
+  scale_x_log10(breaks = x_breaks) + 
+  scale_y_log10(breaks = y_breaks)+
+  labs(x = "Hmotnost těla [kg]",
+       y = "Hmotnost mozku [g]")+
+  geom_text_repel(data=mammals %>% filter(species %in% c("Mouse", "Cat", "Baboon", "Man", "Sheep", "Pig", "Cow")),
+            aes(label=species))
+
+
+options(backup_options)
+
+```
+
+
+## U logaritmického měřítka je častý vědecký zápis
+
+```{r}
+x_breaks_labs = scientific(x_breaks, digits = 2)
+y_breaks_labs = scientific(y_breaks, digits = 2)
+
+
+ggplot(data = mammals, aes(x = body_wt, y = brain_wt)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = F) +
+  scale_x_log10(breaks = x_breaks, labels = x_breaks_labs) + 
+  scale_y_log10(breaks = y_breaks, labels = y_breaks_labs) +
+  labs(x = "Hmotnost těla [kg]",
+       y = "Hmotnost mozku [g]")
+
+```
+
+
 
 # Míry centrality
 
@@ -49,6 +257,11 @@ Míry centrality se také nazývají míry polohy (measures of the location of t
 > -   (aritmetický) průměr - suma dělená počtem případů
 > -   medián - prostřední hodnota z řady seřazené podle velikosti
 > -   modus - nejčastější hodnota
+
+::: {.notes}
+**Medián** - v případě lichého počtu pozorování je jasné, která hodnota je prostřední, v případě sudého počtu bereme průměr dvou prostředních hodnot. **Modus** - v jednom datovém souboru může být více hodnot, které se objevují stejně často, tedy módů může být více. Hovoříme například o bimodální distribuci dat. 
+:::
+
 
 ## Aritmetický průměr z dat (sample mean)
 
@@ -74,9 +287,9 @@ Průměr reprezentuje data v určitém smyslu, ale nemusí být reprezentativní
 Další příklady: Bill Gates přijde do baru a najednou je v něm v průměru každý miliardář. Průměrný věk dožití v roce 1800 v Evropě byl 33 let. Ale přibližně třetina lidí zemřela do pěti let od narození. Pokud je vyloučíme, průměrný věk se blížil 60 let.
 :::
 
-## Jak se šíří COVID
+## Už jsme viděli: Jak se šíří COVID
 
-![](figures/01_R0_covid.png){width="50%"}
+![](figures/01_R0_covid.png){width="55%"}
 
 Převzato z @spiegelhalter2021a
 
@@ -163,27 +376,119 @@ wealth %>%
 
 ## Co je robustní statistika?
 
-- Ukazetel, který není (příliš) ovlivněn extrémními hodnotami (odlehlými pozorováními).
+-   Ukazetel, který není (příliš) ovlivněn extrémními hodnotami (odlehlými pozorováními).
 
-```{r}
-
-```
 
 ## Průměr vs. medián
 
-TBD
+```{r}
 
-## Oříznutý průměr vs. median
+"%ni%" <- Negate("%in%")
 
-# Kvartily, kvintily, percentily
+set.seed(42)
+mammals <- bind_rows(mammals[-1,], mammals[1,]) %>% mutate(y_jitter = runif(n=nrow(mammals)))
+
+mammals_but_ae <- mammals %>% filter(species %ni% c("Africanelephant"))
+
+all_mean <- mean(mammals$body_wt) %>% round(1)
+but_ae_mean <- mean(mammals_but_ae$body_wt) %>% round(1)
+
+all_median <- median(mammals$body_wt) %>% round(1)
+but_ae_median <- median(mammals_but_ae$body_wt) %>% round(1)
+
+orig_all <- 
+  mammals %>% 
+  ggplot() + 
+  geom_point(aes(x=body_wt, y=y_jitter)) +  
+  scale_x_continuous(breaks = c(seq(0,6000, by=1000)),
+                     limits = c(0,6999))+
+  scale_y_continuous(breaks = NULL) + 
+  labs(y = element_blank(),
+       x = "Hmotnost těla [kg]")+
+  geom_vline(xintercept = all_mean, color="red")+
+  geom_vline(xintercept = all_median, color="blue")+
+  geom_text(label = paste0("průměr = ",all_mean), color = "red", x=3000, y=0.4)+
+  geom_text(label = paste0("medián = ",all_median), color = "blue", x=3000, y=0.6)
+
+
+log_all <- 
+  mammals %>% 
+  ggplot() + 
+  geom_point(aes(x=body_wt, y=y_jitter))+
+  scale_x_log10(breaks = x_breaks,  limits = c(0.005,6999))+
+  scale_y_continuous(breaks = NULL) + 
+  labs(y = element_blank(),
+       x = "Hmotnost těla [kg]") +
+  geom_vline(xintercept = all_mean, color="red")+
+  geom_vline(xintercept = all_median, color="blue")
+
+orig_but <- 
+  mammals_but_ae %>% 
+  ggplot() + 
+  geom_point(aes(x=body_wt, y=y_jitter)) +  
+  scale_x_continuous(breaks = c(seq(0,6000, by=1000)),
+                     limits = c(0,6999))+
+  scale_y_continuous(breaks = NULL) + 
+  labs(y = element_blank(),
+       x = "Hmotnost těla [kg]")+
+  geom_vline(xintercept = but_ae_mean, color="red")+
+  geom_vline(xintercept = but_ae_median, color="blue")+
+  geom_text(label = paste0("průměr = ",but_ae_mean), color = "red", x=3000, y=0.4)+
+  geom_text(label = paste0("medián = ",but_ae_median), color = "blue", x=3000, y=0.6)
+
+log_but <- 
+  mammals_but_ae %>% 
+  ggplot() + 
+  geom_point(aes(x=body_wt, y=y_jitter)) +  
+  scale_x_log10(breaks = x_breaks,  limits = c(0.005,6999))+
+  scale_y_continuous(breaks = NULL) + 
+  labs(y = element_blank(),
+       x = "Hmotnost těla [kg]") +
+  geom_vline(xintercept = but_ae_mean, color="red")+
+  geom_vline(xintercept = but_ae_median, color="blue")
+
+
+(orig_all + log_all) / (orig_but + log_but)
+
+```
+
+## Oříznutý průměr
+
+>- Oříznutý průměr (trimmed mean, truncated mean): průměr z hodnot po "oříznutí" určitého procenta extrémních (nejmenší a největších hodnot).
+>- Medián potlačuje šikmost distribuce i extrémní případy, oříznutý průměr potlačuje především extrémní případy.
+>- NADSTAVBA: Windsorized mean - podobný jako oříznutý, místo odříznutí ale hodnoty nahradí nejvyšší/nejnižší ještě neodstraněnou hodnotou.
+
+
+::: {.notes}
+Například oříznutý průměr na 90 % hodnot znamená, že se odstraní 5 % nejmenších a 5 % největších hodnot, z prostředních 90 % se spočítá průměr.
+:::
+
+# Kvantily: Kvartily, kvintily, decily, percentily
 
 ## Kvartily
 
-TBD
+- Analogické k mediánu, dělí seřazená data na čtyři stejné části.
+
+>- Kolik je kvartilů?
+>- Jaký je vztah mezi mediánem a 2. kvartilem?
+>- Existuje více způsobů výpočtu kvartilů, nelamte si tím hlavu 
+
+::: {.notes}
+Pokud máme například číselnou řadu 1, 2, 3, 4, 5, není úplně jednoznačné, kde jsou jednotlivé kvartily. Je první kvartil číslo 2, tedy první číslo, pro které platí, že od začátku až po toto číslo je obsaženo 25 % pozorování? Nebo číslo 1,5 jako střed mezi 1 a 2? Ale pokud si představíme osu od 1 do 5, tak mezi 1 a 2 za sebou rozhodně nemáme 25 % cesty mezi oběma konci. Existuje více postupů výpočtu kvartilů, liší se především pro malé vzorky, kde ale kvartily moc nepotřebujeme. Proto to nebudeme řešit. 
+:::
+
+
+## Kvintily
+
+- ... na 5 stejných částí
+
+## Decily
+
+- ... na 10 stejných částí
 
 ## Percentily
 
-TBD
+- ... na 100 stejných částí
 
 # Jiné průměry
 
@@ -245,7 +550,7 @@ obyv_3$pop <- c(10.7, 59.55, 5.46)
 -   Počet obyvatel SK = 5 500 000
 
 > -   Aritmetický průměr = $(4.1 + 7.4 + 3.4) / 3 = 4.97$
-> -   Geometrický průměr = $(4.1*10.7 + 7.4*59.6 + 3.4*5.5) / (10.7 + 59.6 + 5.5) = 6.64$
+> -   Vážený průměr = $(4.1*10.7 + 7.4*59.6 + 3.4*5.5) / (10.7 + 59.6 + 5.5) = 6.64$
 
 ## Klouzavý průměr {.columns-2 .smaller}
 
@@ -271,9 +576,7 @@ Aritmetický průměr: $100*1.2*1.2*1.2 = 172.8$
 
 ## Výpočet geometrického průměru (nadstavba)
 
-$$\bar{x}_G = \sqrt[n]{x_1*x_2*x_3 ... x_n}  $$
-kde ${x_1*x_2*x_3 ... x_n}$ vyjadřují tempo růstu ve formátu, kdy 2 % jsou vyjádřena jako 1,02
-
+$$\bar{x}_G = \sqrt[n]{x_1*x_2*x_3 ... x_n}  $$ kde ${x_1*x_2*x_3 ... x_n}$ vyjadřují tempo růstu ve formátu, kdy 2 % jsou vyjádřena jako 1,02
 
 Tedy v našem případě: $\sqrt[3]{1.02*1.20*1.38} = 1.191$
 
@@ -283,10 +586,9 @@ A lze snadno ověřit, že: $100*1.191*1.191*1.191 = 168.9$
 
 $$\bar{x}_H = \frac{n}{\frac{1}{n}*(\frac{1}{x_1}+\frac{1}{x_2}...\frac{1}{x_n})}  $$
 
-
 $$\bar{x}_H = \frac{n}{\sum_{i=1}^n \frac{1}{x_i}}  $$
 
-Linka A vyrobí produkt za 30 minut, linka B za 10 minut. Jak dlouho průměrně trvá vyrobit jeden výrobek? 20 minut je špatná odpověď, protože by vedla k predikci, že za hodinu vyrobím v průměru 3 výrobky na jedné lince, tedy 6 na obou dohromady. Ale ve skutečnosti vyrobím za hodinu 8 výrobků. 
+Linka A vyrobí produkt za 30 minut, linka B za 10 minut. Jak dlouho průměrně trvá vyrobit jeden výrobek? 20 minut je špatná odpověď, protože by vedla k predikci, že za hodinu vyrobím v průměru 3 výrobky na jedné lince, tedy 6 na obou dohromady. Ale ve skutečnosti vyrobím za hodinu 8 výrobků.
 
 Výpočet pomocí harmonického průměru je: $2/(1/30 + 1/10) = 15$
 
