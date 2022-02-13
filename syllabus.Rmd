@@ -18,6 +18,8 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 -   Z výsledků učení přímo vychází sekce Procvičování, kde si můžete ověřit své znalosti a dovednosti
 -   Z výsledků učení přímo vychází úlohy v závěrečném testu, na jehož základě je vám udělana výsledná známka
 
+Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní a případně i Rozšiřující přípravu na každou přednášku. Základní příprava je povinná v tom smyslu, že ve výkladu se počítá s tím, že ji studující před přednáškou absolvoval. Koncepty, které jsou obsaženy v Základní přípravě, už na přednášce nebudou detailně vysvětlovány. Naopak budu počítat s tím, že už jste si je osvojili a budu na ně navazovat. Základní příprava je přibližně na 20 až 60 minut na každou přednášku, prosím, opravdu si na ni čas vyhraďte. Otázky v závěrečném testu také předpokládají, že jste základní přípravu absolovovali. Rozšiřující příprava je nabídkou, jak se k tématu dozvědět předem něco víc a usnadnit si tak orientaci v přednášené látce. S výkladem se buď do určité míry překrývá, nebo přináší doplňkovou perspektivu.   
+
 # Úvod a motivace
 
 -   *Cíle výuky:* Cílem přednášky + semináře je představit studujícím statistiku jako investigativní proces, který má vést k zodpovězení relevantních otázek společenských věd. Za tímto účelem je představen rámec PPDACC, tedy "problem" -- "plan" -- "data" -- "analysis" -- "conclusion" -- "communication" [@mackay2000; @spiegelhalter2019a], který se bude opětovně vynořovat v průběhu kurzu.
@@ -27,6 +29,7 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
     -   Definovat a ve správných souvislostech použít pojmy: (kvantitativní) empirický výzkum, proměnná
     -   Vysvětlit a na příkladu ilustrovat klíčovou roli definice pojmu (co počítáme) v kontextu statistického vyšetřování
     -   Nakreslit a popsat PPDACC cyklus jako příklad modelu statického vyšetřování
+    
 
 # Kategorická data a procenta
 
@@ -37,6 +40,14 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
     -   Definovat a ve správných souvislostech použít pojmy: proměnné diskrétní, spojité, kategoriální, nominální, ordinální, kardinální, intervalové, poměrové, absolutní riziko, relativní riziko, očekávaná četnost, pravděpodobnost, šance.
     -   Vysvětlit, proč je nevhodné použití vícero koláčových grafů pro srovnání dvou a více skupin.
     -   Převést informace o absolutním a relativním riziku na očekávané četnosti.
+    
+-   *Základní příprava*
+
+    -   TBD
+    
+-   *Doporučená příprava*
+
+    -   TBD
 
 # Numerické proměnné a míry centrality
 
@@ -51,6 +62,16 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
     -   Vysvětlit, jaké nedostatky může mít použití konkrétní statistiky na konkrétních příkladech (například použití aritmetického průměru pro příjem, mediánu pro majetek, módu pro počet komentářů u příspěvku na sociálních médiích atp.).
     -   Nakreslit a na obrázku vysvětlit, proč může být pro správné pochopení distribuce dat potřeba data vizualizovat (nejen pouze popsat vybranou mírou centrality).
 
+    
+-   *Základní příprava*
+
+    -   Podívejte se na [toto video na Khan Academy o logaritmickém měřítku](https://www.khanacademy.org/math/algebra-home/alg-exp-and-log/alg-logarithmic-scale/v/logarithmic-scale) a [toto video na YouTube na stejné téma](https://www.youtube.com/watch?v=eJF9hiv3c-A).
+    
+-   *Doporučená příprava*
+
+    -   Pokud potřebujete některé koncepty z přednášky zopakovat, [zde najdete video o průměru a váženém průměru](https://www.youtube.com/watch?v=bfQLNyiDPsk), [zde video o medianu](https://www.youtube.com/watch?v=rvBqEEGtJY4) a [modus je vysvětlen v tomto videu](https://www.youtube.com/watch?v=HUUyX80PUuI). 
+    -   Pokud chcete prohloubit svůj vhled do nadstavbových konceptů, [zde najdete video o geometrickém a harmonickém průměru](https://www.youtube.com/watch?v=jXKYI7wyqp0).
+
 # Numerické proměnné a míry variability
 
 -   *Cíle výuky:* Přednáška rozšiřuje výklad o konceptu empirické distribuce dat, tentokrát s důrazem na míry variability. V rámci přednášky je také představena problematika exponenciální funkce (exponenciálního růstu) a možnosti využití logaritmického měřítka pro práci s (velmi) šikmými daty. Studenti jsou také seznámeni problematikou standardizace a z-skórů. V rámci přednášky je též představeno uniformní a normální rozdělení.
@@ -62,6 +83,14 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
     -   Vysvětlit, co jsou robustní statistiky a uvést příklady robustní míry variability.
     -   Uvést příklad míry variability, která robustní není, a vymyslet ilustrativní příklad dat, na kterém to lze demonstrovat.
     -   Nakreslit a na obrázku vysvětlit, proč může být pro správné pochopení distribuce dat potřeba data vizualizovat (nejen pouze popsat sumarizačními statistikami).
+    
+-   *Základní příprava*
+
+    -   TBD
+    
+-   *Doporučená příprava*
+
+    -   TBD
 
 # Popis vztahů mezi proměnnými
 
@@ -75,6 +104,14 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
     -   Vysvětlit a na příkladech ilustrovat, co znamená, že korelace neimplikuje kauzalitu.
     -   Vysvětlit a na příkladech ilustrovat, co znamená, že kauzalita neimplikuje korelaci.
     -   Nakreslit obrázek ilustrující Simpsonův paradax pro zadaný problém.
+    
+-   *Základní příprava*
+
+    -   TBD
+    
+-   *Doporučená příprava*
+
+    -   TBD
 
 # Statistický model
 
@@ -84,6 +121,14 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 
     -   Definovat a ve správných souvislostech použít pojmy závislá proměnná, nezávislá proměnná, očekávaná hodnota, podmíněná očekávaná hodnota, jednoduchá lineární regrese
     -   Vysvětlit, co znamená regrese k průměru a jakou roli v tomto konceptu hraje rozdělení variability na deterministickou a náhodnou složku
+    
+-   *Základní příprava*
+
+    -   TBD
+    
+-   *Doporučená příprava*
+
+    -   TBD
 
 # Základy inferenčního uvažování: vzorek a populace
 
@@ -94,6 +139,14 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
     -   Definovat a ve správných souvislostech použít pojmy deskripce, explanace, deskriptivní statistika, inferenční statistika, induktivní statistika, vzorek, výběrový soubor, populace, reprezentativita dat, validita, interní validita, externí validita, populace jako skupina subjektů, virtuální populace, metaforická populace, „sampling distribution", bootstrapping.
     -   Vysvětlit myšlenku bootstrappingu a jak na jeho základě odhadujeme variabilitu odhadu.
     -   Srovnat doslovný význam pojmu populace a s pojmem virtuální populace a metaforická populace a vysvětlit, v čem je zavedení těchto pojmů užitečné.
+    
+-   *Základní příprava*
+
+    -   TBD
+    
+-   *Doporučená příprava*
+
+    -   TBD
 
 # Pravděpodobnost, nejistota a variabilita
 
@@ -104,6 +157,14 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
     -   Vysvětlit omezení klasické (naivní) definice pravděpodobnosti.
     -   Vysvětlit rozdíly mezi frekventistickou a bayesiánskou interpretací pravděpodobnosti a diskutovat výhody a nevýhody obou přístupů.
     -   Interpretovat graf (kumulativní) distribuční funkce pro diskrétní i spojité proměnné.
+    
+-   *Základní příprava*
+
+    -   TBD
+    
+-   *Doporučená příprava*
+
+    -   TBD
 
 # Centrální limitní věta
 
@@ -113,6 +174,14 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 
     -   Vysvětlit na základě zákona zákona velkých čísel a centrální limitní věty, proč je možné zobecnit výsledky výběrových šetření na širší populaci.
     -   Interpretovat intervalové odhady z pohledu frekventistické a bayesiánské pravděpodobnosti a vysvětlit výhody a nevýhody obou přístupů.
+
+-   *Základní příprava*
+
+    -   TBD
+    
+-   *Doporučená příprava*
+
+    -   TBD
 
 # Podmíněná pravděpodobnost a Bayesova věta
 
@@ -124,6 +193,14 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
     -   Vysvětlit na zadaném příkladu, co jsou falešně pozitivní a co falešně negativní případy a případně je na základě zadání vyčíslit.
     -   Využít podmíněnou pravděpodobnost pro zpřesnění pravděpodobnostních odhadů.
     -   Využít Bayesovu větu pro inverzi podmíněné pravděpodobnosti.
+    
+-   *Základní příprava*
+
+    -   TBD
+    
+-   *Doporučená příprava*
+
+    -   TBD
 
 # Bayesovská aktualizace na základě nových informací
 
@@ -134,5 +211,13 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
     -   Vysvětlit pojmy prior, likelihood a posterior.
     -   Vysvětlit, jakou roli hraje Bayesův teorém v bayesiánské inferenci.
     -   Konceptuálně vysvětlit, jak je možné formálně aktualizovat představy o světe na základě nově příchozích dat.
+    
+-   *Základní příprava*
+
+    -   TBD
+    
+-   *Doporučená příprava*
+
+    -   TBD
 
 # Reference {.unnumbered}

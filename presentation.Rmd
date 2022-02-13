@@ -10,15 +10,15 @@ knitr::opts_chunk$set(echo = FALSE)
 col_icon <- "#00f"
 ```
 
-U názvů jednotlivých témat najdete kompletní prezentace k přednáškám. Prezentace nejsou navržené jako materiál pro samostudium, ale jako doprovodný materiál k výkladu. K dispozici jsou dvě verze: HTML verze zobrazitelná přímo v prohlížeči a PDF verze ke stažení. PDF verze neobsahuje poznámky.
+U názvů jednotlivých témat najdete kompletní prezentace k přednáškám. Prezentace nejsou primárně navržené jako materiál pro samostudium, ale jako doprovodný materiál k výkladu. K dispozici jsou dvě verze: HTML verze zobrazitelná přímo v prohlížeči a PDF verze ke stažení. PDF verze neobsahuje poznámky.
 
 Při práci s HTML verzí prezentací je možné využívat následujících klávesových zkratek:
 
 - šipkami je možné přecházet z jednoho snímku na druhý.
-- Klávesa `r` spustí zobrazení plné obrazovky (fullscreen)
-- Klávesa `f` spustí širokoúhlé zobrazení (widescreen)
+- Klávesa `f` spustí zobrazení plné obrazovky (fullscreen)
+- Klávesa `w` spustí širokoúhlé zobrazení (widescreen)
 - Klávesa `o` zobrazí přehled snímků.
-- Klávesa `p` zobrazují poznámku k aktuálnímu snímku (pokud existuje)
+- Klávesa `p` zobrazí poznámku k aktuálnímu snímku (pokud existuje) - doplnění poznámkami má za cíl alespoň částečně usnadnit samostudium těm, kdo se nemohou účastnit přednášek.
 
 ---
 
@@ -27,6 +27,7 @@ Při práci s HTML verzí prezentací je možné využívat následujících kl�
 1) Numerické proměnné a míry centrality ([v prohlížeči](slides/centrality.html), ke stažení)
 1) Numerické proměnné a míry variability ([v prohlížeči](slides/variability.html), ke stažení)
 1) Popis vztahů mezi proměnnými ([v prohlížeči](slides/relations.html), ke stažení)
+1) Statistický model ([v prohlížeči](slides/model.html), ke stažení) 
 1) Základy inferenčního uvažování: vzorek a populace ([v prohlížeči](slides/inference.html), ke stažení)
 1) Pravděpodobnost, nejistota a variabilita ([v prohlížeči](slides/probability.html), ke stažení)
 1) Centrální limitní věta ([v prohlížeči](slides/clt.html), ke stažení)
