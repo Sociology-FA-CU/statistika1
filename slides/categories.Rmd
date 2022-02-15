@@ -20,6 +20,11 @@ library(kableExtra)
 library(tidyverse)
 library(cowplot)
 library(ggplot2)
+library(here)
+library(janitor) # for tabyl
+
+
+countries <- read_csv(here("data-input", "countries.csv"))
 
 ```
 
@@ -33,7 +38,7 @@ library(ggplot2)
 
 Co na základě tohoto výroku můžeme říct o účinnosti vakcín?
 
-[Celý článek HN](https://domaci.hn.cz/c1-67017640-na-koronavirus-letos-zemrelo-24-tisic-cechu-80-procent-z-nich-nebylo-ockovanych)
+<font size="2">[Celý článek HN](https://domaci.hn.cz/c1-67017640-na-koronavirus-letos-zemrelo-24-tisic-cechu-80-procent-z-nich-nebylo-ockovanych)</font>
 
 ::: {.notes}
 Moc ne, minimálně bychom potřebovali znát podíl očkovaných. Ani to by vlastně nestačilo - je možné, že se očkuje jiný typ lidí. Ale tuhle otázku zatím necháme stranou.
@@ -43,7 +48,9 @@ Moc ne, minimálně bychom potřebovali znát podíl očkovaných. Ani to by vla
 
 Base rate fallacy
 
+<div class="centered">
 ![](figures/02_base_rate_1.png)
+</div>
 
 ## Přehlížení výchozí pravděpodobnosti
 
@@ -54,7 +61,7 @@ p2 <- ggdraw() + draw_image("figures/02_base_rate_2.png", scale = 0.9)
 plot_grid(p1, p2)
 ```
 
-[Zdroj obrázků Our World in Data](https://ourworldindata.org/covid-deaths-by-vaccination)
+<font size="2">[Zdroj obrázků Our World in Data](https://ourworldindata.org/covid-deaths-by-vaccination)</font>
 
 ## Není většina jako většina
 
@@ -66,7 +73,7 @@ Titulek na Britských listech: "Proč většina lidí, kteří už byli očková
 
 To naštěstí není pravda. Ale většina umírajících jsou očkovaní. Pokud neznáme výchozí distribuci, nic moc nám to neříká.
 
-[Celý článek BL](https://blisty.cz/art/104272-proc-vetsina-lidi-kteri-uz-byli-ockovani-nyni-v-anglii-umira-na-covid.html)
+<font size="2">[Celý článek BL](https://blisty.cz/art/104272-proc-vetsina-lidi-kteri-uz-byli-ockovani-nyni-v-anglii-umira-na-covid.html)</font>
 
 ::: {.notes}
 Většina lidí, kteří zemřou za volantem, používá bezpečnostní pás ;-)
@@ -84,7 +91,7 @@ Většina lidí, kteří zemřou za volantem, používá bezpečnostní pás ;-)
 
 Women 32% more likely to die after operation by male surgeon, study reveals
 
----[The Guardian](https://www.theguardian.com/society/2022/jan/04/women-more-likely-die-operation-male-surgeon-study)
+<font size="3">---[The Guardian](https://www.theguardian.com/society/2022/jan/04/women-more-likely-die-operation-male-surgeon-study)</font>
 
 </blockquote>
 
@@ -160,11 +167,12 @@ kbl(komparace) %>%
 ```
 
 
-## Obě tabulky pro srovnání
+## Obě tabulky pro srovnání {.smaller}
 
 ```{r}
 kbl(ukazatele) %>%
    kable_paper(bootstrap_options = c("hover", "condensed"))
+
 
 kbl(komparace) %>%
    kable_paper(bootstrap_options = c("hover", "condensed"))
@@ -188,13 +196,13 @@ Zmiňovaná studie mj. říká: "Participants (health professionals and consumer
 
 ## Očekávané četnosti lze komunikovat také graficky
 
-<center>
+<div class="centered">
+![](figures/02_icon_array.png){width="45%"}
+</div>
 
-![](figures/02_icon_array.png){width="35%"}
+<font size="2">Zdroj obrázku @spiegelhalter2019</font>
 
-Zdroj obrázku @spiegelhalter2019
 
-</center>
 
 
 ::: {.notes}
@@ -217,9 +225,11 @@ $$\frac{p}{1-p}$$
 
 ## Number Needed to Treat (NNT)
 
-Medicínský ukazatel. Nevím o českém překladu. Může být užitečný i ve společenských vědách. 
+Medicínský ukazatel. Může být užitečný i pro komunikaci ve společenských vědách: Například kolik dětí by muselo projít intervencí, aby o jedno dítě méne skončilo v výchvoném ústavu? 
 
-$$\frac{100}{\textrm{rozdíl absolutním riziku procentech}}$$
+$$\frac{100}{\textrm{rozdíl v absolutním riziku v procentech}}$$
+
+Příklad výše: Absolutní rizika 0,5 % a 0,66 %. Jejich rozdíl je 0,16. NNT = 100/0,16 = 625.
 
 ## Poměr šancí
 
@@ -249,7 +259,7 @@ Absolutní riziko se zvýšilo o 2 %. Relativní riziko je 70/68 = 1.03, tedy zv
 ## Jak z toho ven?
 
 - poměry šancí patří do statistických modelů, ne do mezilidské komunikace
-- absolutní riziko nejlépe vyjádříme v tzv. procentních bodech
+- absolutní riziko nejlépe vyjádříme v tzv. procentních bodech (p. b.)
 - relativní riziko je dobré komunikovat spolu s absolutním
 
 
@@ -262,8 +272,74 @@ Absolutní riziko se zvýšilo o 2 %. Relativní riziko je 70/68 = 1.03, tedy zv
 
 ## Rámování: na prezentaci záleží
 
--   5% mortalita zní hůře než 95% přežití
--   99 % mladých Londýňanů nepáchá závažné násilí vs. ve městě je 10 000 mladých, kteří páchají závažné násilí
+>-    5% mortalita zní hůře než 95% přežití
+>-    99 % mladých Londýňanů nepáchá závažné násilí vs. ve městě je 10 000 mladých, kteří páchají závažné násilí
+>-    80 nebo 90 % očkovaných nemusí znít jako velký rozdíl, ale 10 nebo 20 % neočkovaných je dvojnásobek lidí s vyšší pravděpodobností přenosu.     
+
+# Komunikace nebinárních kategorických proměnných
+
+## Absolutní nebo relativní četnosti pomocí sloupcových grafů
+
+Data ze srpna 2021.
+
+![](figures/02_volebni_model_ct.png){width="90%"}
+
+## Míru nejistoty můžeme vyjádřit také graficky
+
+Zde data z července 2021.
+
+![](figures/02_volebni_model_cvvm.png){width="90%"}
+
+## Je na tomto grafu něco podezřelého?
+
+Data ze září 2021.
+
+![](figures/02_volebni_potencial.png){width="90%"}
+
+##  Proč (moc) nepoužíváme koláčové graf?
+
+![](figures/02_pie_chart_comparison.png){width="90%"}
+
+<font size="2">Zdroj: [Wikipedie](https://en.wikipedia.org/wiki/Pie_chart)</font>
+
+## Proč nepoužíváme 3D efekty? {.flexbox .vcenter}
+
+![](figures/02_3D_pie_chart.png){width="90%"}
+
+<font size="2">Zdroj: [Making data vizualizations - A survival guide](https://www.slideshare.net/vis4/making-data-visualizations-a-survival-guide)</font>
+
+## Osa Y
+
+![](figures/02_ct_byty.jpg){width="90%"}
+<font size="2">Zachyceno ve vysílání ČT.</font>
+
+## Arbitrární začátek osy Y
+
+![](figures/02_ct_byty_comparison.png){width="90%"}
+
+## Někdy to ale nemusí být tak jasné...
+
+<div class="centered">
+![](figures/02_US_GDP_a.png){width="50%"}
+
+
+![](figures/02_US_GDP_b.png){width="50%"}
+</div>
+
+<font size="2">Zdroj [QUARTZ](https://qz.com/418083/its-ok-not-to-start-your-y-axis-at-zero/)</font>
+
+## To platí dvojnásob, pokud je 0 arbitrární
+
+A pokud malé relativní rozdíly hrají velkou roli...
+
+![](figures/02_teplota_a.png){width="45%"}
+
+
+![](figures/02_teplota_b.png){width="45%"}
+
+<font size="2">Zdroj [Cracked.com](http://www.cracked.com/photoplasty_2052_19-ways-you-can-make-statistics-say-whatever-you-want_p1/)</font>
+
+
 
 # Ostatní typy proměnných
 
@@ -273,8 +349,8 @@ Absolutní riziko se zvýšilo o 2 %. Relativní riziko je 70/68 = 1.03, tedy zv
 - ordinální (ordinal)
 - kardinální (cardinal, metric)
 
-  - intervalové
-  - poměrové 
+  - intervalové (interval)
+  - poměrové (ratio)
   
 ::: {.notes}
 Příklady intervalových proměnných: teplota ve stupních Celsia; letopočty, IQ,...  
@@ -284,9 +360,11 @@ Příklady intervalových proměnných: teplota ve stupních Celsia; letopočty,
 
 Na této fotografii je 6 aut. Vůz číslo "99" (se žlutou střechou) je na 1. pozici.
 
+<div class="centered">
 ![](figures/02_car-racing.jpg)
+</div>
 
-[Zdroj mathsisfun.com](https://www.mathsisfun.com/numbers/cardinal-ordinal-nominal.html#:~:text=Example%20With%20Everything&text=Car%20Number%20%2299%22%20(with,a%20name%20for%20the%20car))
+<font size="2">[Zdroj mathsisfun.com](https://www.mathsisfun.com/numbers/cardinal-ordinal-nominal.html#:~:text=Example%20With%20Everything&text=Car%20Number%20%2299%22%20(with,a%20name%20for%20the%20car))</font>
 
 
 ## Alternativní prezentace
@@ -312,14 +390,35 @@ Na této fotografii je 6 aut. Vůz číslo "99" (se žlutou střechou) je na 1. 
 
 - Kategorická data jsou buď nominální, nebo ordinální.
 - Jejich smyslem je uskupovat příbuzná pozorování.
-- Často je analyticky uchopujeme skrze procenta a kontingenčí tabulky (viz Analytická propedeutika)
+- Často je analyticky uchopujeme skrze procenta a kontingenční tabulky (viz Analytická propedeutika)
 - Speciální kategorií kategorických dat jsou data binární či dichotomická. 
+
+## Připomenutí kontingenční tabulky
+
+```{r}
+tyb <- countries %>% tabyl(eu_member, postsoviet)
+tyb <- 
+  tyb %>%
+  mutate(eu_member = if_else(eu_member == "no", "Není člen EU", "Člen EU")) %>% 
+  rename('Západní země' = no, 'Postsovětské' = yes, ' ' = eu_member)
+
+tyb %>% 
+  adorn_totals("col") %>% 
+  adorn_percentages("row") %>% 
+  adorn_pct_formatting() %>% 
+  adorn_ns() %>% 
+  kableExtra::kable() %>%
+  kable_material(bootstrap_options = c("hover", "condensed"))
+```
+
 
 ## Kategorizace dat
 
-Kategorizace dat: Převod původně nekategorických dat na kategorická. 
-Dichotomizace dat: Převod původně nebinárních dat na data binární.
+- Kategorizace dat: Převod původně nekategorických dat na kategorická. 
+- Dichotomizace dat: Převod původně nebinárních dat na data binární.
 
-## Reference v prezentaci
 
+## Reference v prezentaci {.smaller}
+
+Následuje seznam referencí, které v prezentaci neměly aktivní proklik na zdroj.
 

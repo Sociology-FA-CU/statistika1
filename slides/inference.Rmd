@@ -11,4 +11,16 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# TBD
+# Teoretická distribuce dat
+
+## Opakování: Empirická distribuce dat - tvar dat
+
+Kardinální (metrická data) mají určitou distribuci (tvar). Tuto distribuci můžeme vizualizovat graficky nebo zachytit nějaký její aspekt statistickými ukazateli. Rozlišujeme statistické ukazatele typu "míry polohy" (průměr, medián, modus) a "míry variability" (variační nebo mezikvartilové rozpětí, rozptyl, směrodatná odchylka atp.).
+
+Některé distribuce je ale užitečné zavést teoreticky: ideální tvary dat, ke kterým vztahujeme (se kterými porovnáváme) naše pozorování. 
+
+## Uniformní rozdělení dat (diskrétní)
+
+
+
+
