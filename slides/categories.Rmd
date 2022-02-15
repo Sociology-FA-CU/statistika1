@@ -182,7 +182,7 @@ kbl(komparace) %>%
 
 ## Pravděpodobnost
 
-$$\frac{úspěchy}{pokusy}$$
+$$\frac{\textrm{úspěchy}}{\textrm{pokusy}}$$
 Pohybuje se od 0 do 1, případně od 0 % do 100 %.
 
 
