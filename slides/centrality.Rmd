@@ -57,10 +57,14 @@ Tvar dat
 ## Moudrost davu: počet fazolek ve sklenici
 
 <div class="centered">
-![](figures/03_beans.png){width=40%}
+![](figures/03_beans.png){width=35%}
 </div>
 
 <font size="2">Zdroj: @spiegelhalter2019</font>
+
+::: {.notes}
+Fotografie ilustruje experiment, lidé měli odhadnout počet fazolek ve sklenici. Mediánový odhad byl lepší než 90 % individuálních odhadů, má ilustrovat tzv. moudrost davu - průměrná odpověď mnoha lidí často může vést ke slušnému odhadu, kdy náhodné chyby, kterým podléhají jednotlivci, se částečně vyruší. Nemusí ale dobře fungovat proti systematickým zkreslením.
+:::
 
 ## Jak vizualizovat mnoho dat? {.columns-2}
 
@@ -74,6 +78,11 @@ Tvar dat
 ### Logaritmické měřítko
 
 ![](figures/03_beans_in_jar_log.png){width=90%}
+
+::: {.notes}
+Bodový graf, box plot (krabicový graf) a histrogram. Logaritmické měřítko zachycuje tempo růstu. Od vybrané hodnoty tak hodnota destkrát menší bude stejně daleko doleva, jako hodnota desetkrát větší doprava.
+:::
+
 
 ## Šikmost (Skewness)
 
@@ -97,6 +106,10 @@ skew_0 / skew_neg / skew_pos
 
 ```
 
+
+::: {.notes}
+Data mohou být buď symetrická (např. známé normální rozdělení čii Gausova křivka), nebo nesymetrická. Možným měřítkem nesymetričnosti je šikmost. 
+:::
 
 ## Výhody logaritmického měřítka
 
@@ -178,7 +191,7 @@ mammals %>% select(species, body_wt, brain_wt) %>% head(10) %>% kableExtra::kabl
 ```
 
 <br>
-Inspirováno [tutorialem Marvina Lemose](https://rstudio-pubs-static.s3.amazonaws.com/433476_9ce6707ae2794d96923b7258703fdff7.html)
+<font size="2">Inspirováno [tutorialem Marvina Lemose](https://rstudio-pubs-static.s3.amazonaws.com/433476_9ce6707ae2794d96923b7258703fdff7.html)</font>
 
 ## Distribuce hmotností těl a mozků
 
@@ -224,6 +237,10 @@ options(backup_options)
 ```
 
 
+::: {.notes}
+Pokud zhruba platí, že člověk je v horizontální dimenzi stejně daleko od šimpanze jako od krávy, znamená to, že kráva je tolikrát těžší než člověk, kolikrát je člověk těžší než šimpanz.  
+:::
+
 ## U logaritmického měřítka je častý vědecký zápis
 
 ```{r}
@@ -241,7 +258,9 @@ ggplot(data = mammals, aes(x = body_wt, y = brain_wt)) +
 
 ```
 
-
+::: {.notes}
+Vědecký zápis lze číst takto: uvažujte číslo před "e". Toto číslo má explicitně nebo implicitně desetinnou čárku, např. číslo 5 je 5,0. Posuňte desetinnou čárku o tolik míst, jaké číslo je za znakem -, resp. +. Pokud je znak minus, posouváme doleva, pokud plus, posouváme doprava. Například číslo 3,4e-04 tedy znamená: 0,00034.
+:::
 
 # Míry centrality
 
@@ -291,6 +310,10 @@ Další příklady: Bill Gates přijde do baru a najednou je v něm v průměru 
 </div>
 
 <font size="2">Převzato z @spiegelhalter2021</font>
+
+::: {.notes}
+Průměr užitečně modeluje naše očekávání ohledně počtu nakažených do budoucna, ale může být zavádějící z hlediska mechanismů (např. super spreaders), jak se nákaza šíří. 
+:::
 
 ## Měli bychom tedy raději používat medián?
 
@@ -451,6 +474,12 @@ log_but <-
 
 ```
 
+
+::: {.notes}
+Odstraněna byla hodnota pro slona afrického. Graf na lineárním měřítku není příliš přehledný. Změna průměru a mediánu je lépe vyjádřena číselně. Pro logaritmické měřítko platí číselně stejné změny.
+:::
+
+
 ## Oříznutý průměr
 
 >- Oříznutý průměr (trimmed mean, truncated mean): průměr z hodnot po "oříznutí" určitého procenta extrémních (nejmenší a největších hodnot).
@@ -480,6 +509,11 @@ Pokud máme například číselnou řadu 1, 2, 3, 4, 5, není úplně jednoznač
 ## Kvintily
 
 - ... na 5 stejných částí
+
+::: {.notes}
+Spodní kvintil znamená totéž co spodních 20 %. 
+:::
+
 
 ## Decily
 

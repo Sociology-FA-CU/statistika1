@@ -205,8 +205,6 @@ Zmiňovaná studie mj. říká: "Participants (health professionals and consumer
 <font size="2">Zdroj obrázku @spiegelhalter2019</font>
 
 
-
-
 ::: {.notes}
 Obrázek se váže k příkladu rakoviny tlustého střeva. Pokud lidé nejí procesované maso, 6 ze 100 bude mít v životě rakovinu tlustého střeva. Pokud jí denně ekvivalent 50 g slaniny, roste riziko ze 6 na 7.
 :::
@@ -231,7 +229,9 @@ Medicínský ukazatel. Může být užitečný i pro komunikaci ve společenský
 
 $$\frac{100}{\textrm{rozdíl v absolutním riziku v procentech}}$$
 
+::: {.notes}
 Příklad výše: Absolutní rizika 0,5 % a 0,66 %. Jejich rozdíl je 0,16. NNT = 100/0,16 = 625.
+:::
 
 ## Poměr šancí
 
@@ -247,7 +247,7 @@ $$ \frac{\frac{\textrm{úspěchy}_{\:skupina1}}{\textrm{neúspěchy}_{\:skupina1
 
 ## 10% nárůst z 68 % na 70 %
 
-???
+Jak tenhle nadpis může dávat smysl???
 
 >- Intervence zvýší riziko vedlejšího účinku z 68 % na 70 %.
 >- Absolutní riziko se zvýšilo o ...
@@ -271,6 +271,10 @@ Absolutní riziko se zvýšilo o 2 %. Relativní riziko je 70/68 = 1.03, tedy zv
 1) Podpora strany klesla o 5 %
 1) Podpora strany klesla o 25 %
 1) Podpora strany klesla o 5 p. b.
+
+::: {.notes}
+V některých kontextech, jako je reportování volebních modelů, se zaběhl určitý způsob komunikace, takže říct, že podpora strany poklesla o 5 % by asi většinou bylo pochopeno správně. Ale 5 procentních bodů je rozhodně lepší, preciznější vyjádření.
+:::
 
 
 ## Rámování: na prezentaci záleží
