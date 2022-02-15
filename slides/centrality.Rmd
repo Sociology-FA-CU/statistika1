@@ -56,9 +56,11 @@ Tvar dat
 
 ## Moudrost davu: počet fazolek ve sklenici
 
-![](figures/03_beans.png){width=35%}
+<div class="centered">
+![](figures/03_beans.png){width=40%}
+</div>
 
-Zdroj: @spiegelhalter2019
+<font size="2">Zdroj: @spiegelhalter2019</font>
 
 ## Jak vizualizovat mnoho dat? {.columns-2}
 
@@ -96,14 +98,6 @@ skew_0 / skew_neg / skew_pos
 ```
 
 
-## Šikmost - orientační hodnoty
-
-- 0 předtavuje dokonale symetrická data. 
-- Hodnoty mezi -0.5 a 0.5 představují přibližně symetrická data. 
-- Hodnoty menší než -0.5 a větší než 0.5 indikují šikmá data
-- Hodnoty menší než -1 a větší než 1 indikují velmi šikmá data
-
-
 ## Výhody logaritmického měřítka
 
 - Umožňuje společně vizualizovat velké a malé hodnoty (srazí je k sobě)
@@ -112,6 +106,7 @@ skew_0 / skew_neg / skew_pos
 ## Logaritmické měřítko a exponenciální růst
 
 - Co je to exponenciální růst?
+
 >- Exponenciální růst - něco se "x-násobí" za určitou časovou jednotku (zdvojnásobí, zdesetinásobí, ale i jen vynásobí 1.001)
 
 
@@ -259,7 +254,7 @@ Míry centrality se také nazývají míry polohy (measures of the location of t
 > -   modus - nejčastější hodnota
 
 ::: {.notes}
-**Medián** - v případě lichého počtu pozorování je jasné, která hodnota je prostřední, v případě sudého počtu bereme průměr dvou prostředních hodnot. **Modus** - v jednom datovém souboru může být více hodnot, které se objevují stejně často, tedy módů může být více. Hovoříme například o bimodální distribuci dat. 
+**Průměr** - také střední hodnota. **Medián** - také prostřední hodnota, v případě lichého počtu pozorování je jasné, která hodnota je prostřední, v případě sudého počtu bereme průměr dvou prostředních hodnot. **Modus** - v jednom datovém souboru může být více hodnot, které se objevují stejně často, tedy módů může být více. Hovoříme například o bimodální distribuci dat. 
 :::
 
 
@@ -281,7 +276,9 @@ Průměr reprezentuje data v určitém smyslu, ale nemusí být reprezentativní
 
 </p>
 
-![](figures/03_mean.png){width="80%"} Obrázek z [brilliant.org](https://brilliant.org/wiki/arithmetic-mean/)
+![](figures/03_mean.png){width="80%"} 
+
+<font size="2">Obrázek z [brilliant.org](https://brilliant.org/wiki/arithmetic-mean/)</font>
 
 ::: {.notes}
 Další příklady: Bill Gates přijde do baru a najednou je v něm v průměru každý miliardář. Průměrný věk dožití v roce 1800 v Evropě byl 33 let. Ale přibližně třetina lidí zemřela do pěti let od narození. Pokud je vyloučíme, průměrný věk se blížil 60 let.
@@ -289,9 +286,11 @@ Další příklady: Bill Gates přijde do baru a najednou je v něm v průměru 
 
 ## Už jsme viděli: Jak se šíří COVID
 
-![](figures/01_R0_covid.png){width="55%"}
+<div class="centered">
+![](figures/01_R0_covid.png){width="45%"}
+</div>
 
-Převzato z @spiegelhalter2021a
+<font size="2">Převzato z @spiegelhalter2021</font>
 
 ## Měli bychom tedy raději používat medián?
 
@@ -379,7 +378,7 @@ wealth %>%
 -   Ukazetel, který není (příliš) ovlivněn extrémními hodnotami (odlehlými pozorováními).
 
 
-## Průměr vs. medián
+## Průměr vs. medián (odstraněna jediná hodnota)
 
 ```{r}
 
@@ -556,7 +555,7 @@ obyv_3$pop <- c(10.7, 59.55, 5.46)
 
 ![](figures/03_rolling_average.png){width="90%"}
 
-@spiegelhalter2021a
+<font size="2">@spiegelhalter2021</font>
 
 <p class="forceBreak">
 
@@ -568,7 +567,7 @@ obyv_3$pop <- c(10.7, 59.55, 5.46)
 
 ## Geometrický průměr (nadstavba)
 
-Pokud je růst HDP ve třech po sobě jdoucích letech 2 %, 20 % a 38 %, průměrný růst HDP je tedy 20 % (aritmetický průměr). Problém je, že pokud by byl třikrát po sobě narostlo HDP o 20 %, dospěli bychom k jinému výsledku. Geometrický průměr je číslo, o které by každý rok muselo narůst HDP, abychom dospěli ke stejnému výsledku, jako když reálný růst byl 2, 20 a 38 %.
+Pokud je růst HDP ve třech po sobě jdoucích letech 2 %, 20 % a 38 %, průměrný růst HDP je tedy 20 % (aritmetický průměr). Problém je, že pokud by byl třikrát po sobě narostlo HDP o 20 %, dospěli bychom k jinému výslednému HDP. Geometrický průměr je číslo, o které by každý rok muselo narůst HDP, abychom dospěli ke stejnému výsledku, jako když reálný růst byl 2, 20 a 38 %.
 
 Jak se vyvíjelo HDP: $100*1.02*1.20*1.38 = 168.9$
 
@@ -594,6 +593,6 @@ Výpočet pomocí harmonického průměru je: $2/(1/30 + 1/10) = 15$
 
 Tedy průměrně na jedné lince výrobek za 15 minut, 4 za hodinu a celkem 8 výrobků za hodinu.
 
-## Reference v prezentaci
+## Reference v prezentaci {.smaller}
 
 Následuje seznam referencí, které v prezentaci neměly aktivní proklik na zdroj.
