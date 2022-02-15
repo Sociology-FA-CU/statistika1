@@ -150,6 +150,11 @@ odhady_300 %>%
 -   Také disperze, variance, střední kvadratická odchylka.
 -   Zkusme odvodit, co je roptyl, z označení "střední kvadratická odchylka"
 
+
+::: {.notes}
+Proč střední kvadratická odchylka? Odchylka od čeho? Od průměru, tedy centrální tendence dané proměnné. Střední znamená průměrná. Proč kvadratická? Protože průměrná odchylka je vždy 0. Proč tedy nepoužijeme absolutní hodnotu odchylky? To by asi také šlo, ale používat čtverec odchylky je konvence, nicméně není arbitrární: statistika je z velké části postavena právě na myšlence variance a kovariance (ta měří vztah mezi více proměnnými). 
+:::
+
 ## Rozptyl formálně
 
 Proměnná $x$ má $n$ pozorování. Potom rozptyl proměnné je definován:
@@ -172,13 +177,26 @@ Je výběrový rozptyl větší nebo menší číslo než rozptyl?
 
 
 ::: {.notes}
-Odpověď: větší, dělíme-li menším číslem, je výsledek větsí. Důvod, proč to děláme? Při výpočtu rozptylu používáme průměr. Ovšem pokud jde o vzorek, průměr zpravidla odhadujeme přímo ze vzorku. Tento průměr je blíže jednotlivým hodnotám vzorku, než je pravděpodobně populační průměr. Náš odhad rozptylu tak výběrovým rozptylem podhodnocujeme. Jmenovatel (n-1) má toto podhodnocení kompenzovat. Není potřeba se tím moc trápit, ani tom rozdílu nebudeme bazírovat. Ale je dobré vědět, že něco takového existuje. 
+Odpověď: větší. Dělíme-li menším číslem, je výsledek větsí. Důvod, proč to děláme? Při výpočtu rozptylu používáme průměr. Ovšem pokud jde o vzorek, průměr zpravidla odhadujeme přímo ze vzorku. Tento průměr je blíže jednotlivým hodnotám vzorku, než je pravděpodobně populační průměr. Náš odhad rozptylu tak výběrovým rozptylem podhodnocujeme. Jmenovatel (n-1) má toto podhodnocení kompenzovat. V tomto kurzu není potřeba se tím moc trápit, ale je dobré vědět, že něco takového existuje.
+:::
+
+## Proč ve vzorci výše odečítáme právě 1? (nadstavba)
+
+- Souvisí se stupni volnosti (degree of freedom) a s konceptem vzorku vs. populace
+- Stupeň volnosti = počet nezávislých informací, které vstupují do výpočtu statistického odhadu.
+
+Populace: populační průměr je daný, předchází jednotlivým pozorováním. Pokud máme například vzorek o 3 pozorováních, nemusí v průměru dávat populační průměr, tj. máme tři stupně volnosti. 
+
+Vzorek: výběrový průměr vychází ze vzorku, vzorek předchází výběrovému průměru. V případě tří pozorování tedy máme jen dva stupně volnosti, tj. n-1.
+
+::: {.notes}
+Pokud je populační průměr například 100 a první dvě ze tří pozorování jsou 95 a 105, může mít třetí pozorování libovolnou hodnotu v teoretickém rozsahu dané proměnné, může být klidně 50. Každé ze tří pozorování je tedy nezávislé. Pokud mám výběrový průměr 100 a první ze tří pozorování jsou 95 a 105, je třetí pozorování už také jasně dané: musí být 100, aby průměr tří čísel byl 100. Mám tedy jen dva nezávislé údaje, třetí už je daný výběrovým průměrem. 
 :::
 
 
 ## Třetí možný zápis rozptylu
 
-E ... expectation, tj. očekávaná hodnoa, v podstatě statistický žargon pro průměr.
+E ... expectation, tj. očekávaná hodnota, v tuto chvíli stačí vnímat jako synonymum pro průměr.
 
 $$var(X) = E[(X - E[X])^2]$$
 
@@ -200,9 +218,11 @@ $$var(X) = E[(X - E[X])^2]$$
 
 ## Rozptyl je v jiných jednotkách než původní proměnná
 
--   Proto samotný číselný údaj o rozptylu zpravidla neříká nic užitečného pro naši lepší představu. Rozptyl je spíše velmi užitečný mezistupeň pro další počítání.
+- Proto samotný číselný údaj o rozptylu zpravidla neříká nic užitečného pro naši lepší představu. 
+- Proč ho tedy počítáme?
 
 ::: {.notes}
+Proč počítáme rozptyl? ukazuje variabilitu v datech za využití každého jednoho pozorování. (Na rozdíl od variačního a mezikvartilového rozpětí, které je určeno jen dvěma konkrétními hraničními hodnotami.) 
 ZŠ úloha: Máme čtverec o straně $a$. Když délku strany zdvojnásobíme, kolikrát se zvětší obsah?
 :::
 

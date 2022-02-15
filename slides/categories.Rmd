@@ -63,6 +63,11 @@ plot_grid(p1, p2)
 
 <font size="2">[Zdroj obrázků Our World in Data](https://ourworldindata.org/covid-deaths-by-vaccination)</font>
 
+::: {.notes}
+Většina lidí, kteří zemřou za volantem, používá bezpečnostní pás ;-)
+:::
+
+
 ## Není většina jako většina
 
 <blockquote>
@@ -71,13 +76,10 @@ Titulek na Britských listech: "Proč většina lidí, kteří už byli očková
 
 </blockquote>
 
-To naštěstí není pravda. Ale většina umírajících jsou očkovaní. Pokud neznáme výchozí distribuci, nic moc nám to neříká.
+To naštěstí není pravda. Ale většina umírajících jsou očkovaní. Pokud neznáme výchozí podíl očkovaných a neočkovaných, nic moc nám to neříká.
 
 <font size="2">[Celý článek BL](https://blisty.cz/art/104272-proc-vetsina-lidi-kteri-uz-byli-ockovani-nyni-v-anglii-umira-na-covid.html)</font>
 
-::: {.notes}
-Většina lidí, kteří zemřou za volantem, používá bezpečnostní pás ;-)
-:::
 
 # Binární proměnné
 
@@ -130,12 +132,12 @@ Podíl lidí ve vymezené skupině, kteří v určeném časovém období proži
 ::: {style="float: right; width: 45%;"}
 ### Relativní riziko
 
-Když absolutní riziko u lidí, kteří jsou vystaveni působení zkoumaného jevu, označíme jako $p$ a absolutní riziko u lidí, kteří jevu vzstaveni nejsou, označíme jako $q$, pak relativní riziko můžeme definovat jako $p/q$.
+Když absolutní riziko u lidí, kteří jsou vystaveni působení zkoumaného jevu, označíme jako $p$ a absolutní riziko u lidí, kteří jevu vystaveni nejsou, označíme jako $q$, pak relativní riziko můžeme definovat jako $p/q$.
 :::
 
 # Jak komunikovat binární proměnné
 
-## Různé způsoby komunikace binárních proměnných
+## Různé způsoby komunikace binárních proměnných {.smaller}
 
 Tabulka shrnuje možné způsoby komunikace příkladu výše: úmrtí operovaných žen, když operuje žena, resp. když operuje muž.
 
@@ -151,7 +153,7 @@ kbl(ukazatele) %>%
    kable_paper(bootstrap_options = c("hover", "condensed"))
 ```
 
-## Různé způsoby srovnání mezi dvěma skupinami
+## Různé způsoby srovnání mezi dvěma skupinami {.smaller}
 
 Tabulka shrnuje různé způsoby, jak ze dvou různých čísel pro dvě různé skupiny udělat jedno číslo, které v sobě obsahuje srovnání.
 
@@ -225,7 +227,7 @@ $$\frac{p}{1-p}$$
 
 ## Number Needed to Treat (NNT)
 
-Medicínský ukazatel. Může být užitečný i pro komunikaci ve společenských vědách: Například kolik dětí by muselo projít intervencí, aby o jedno dítě méne skončilo v výchvoném ústavu? 
+Medicínský ukazatel. Může být užitečný i pro komunikaci ve společenských vědách: Například kolik dětí by muselo projít intervencí, aby o jedno dítě méne skončilo ve výchovném ústavu? 
 
 $$\frac{100}{\textrm{rozdíl v absolutním riziku v procentech}}$$
 
@@ -240,7 +242,8 @@ $$ \frac{\frac{\textrm{úspěchy}_{\:skupina1}}{\textrm{neúspěchy}_{\:skupina1
 
 ## Proč je poměr šancí zrádný?
 
->- V příkladu výše vycházel stejně jako relativní riziko: nárůst relativního rizika byl 32 %, poměr šancí byl 1.32. >- Blízkost k relativnímu riziku platí ale jen pro malá absolutní rizika. U velkých absolutních rizik to vůbec neplatí.
+- V příkladu výše vycházel stejně jako relativní riziko: nárůst relativního rizika byl 32 %, poměr šancí byl 1.32. 
+- Blízkost k relativnímu riziku platí ale jen pro malá absolutní rizika. U velkých absolutních rizik to vůbec neplatí, viz další snímek.
 
 ## 10% nárůst z 68 % na 70 %
 

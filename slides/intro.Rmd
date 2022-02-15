@@ -110,7 +110,7 @@ plot(fit2, labels = c("Věda", "Empirický výzkum", "Statistika"),
 ```
 
 ::: {.notes}
-Empirický výzkum: Výzkum, kdy sebereme data z vnějšího světa a následně na základě těchto dat formujeme závěry o vnějším světě. Kvantitativní empirický výzkum se opírá o statistiku, ale jde stále o širší pojem než statistika. Zahrnuje v sobě také práci s koncepty a jejich operacionalizaci, vytváření měřících nástrojů (např. dotazníků), etiku výzkumu, designování výzkumnýchbstudií, principy práce s respondenty (motivace atp.) atp. Nejde jen o vytváření vědění z dat, ale o vytváření samotných dat.
+Empirický výzkum: Výzkum, kdy sebereme data z vnějšího světa a následně na základě těchto dat formujeme závěry o vnějším světě. Kvantitativní empirický výzkum se opírá o statistiku, ale jde stále o širší pojem než statistika. Zahrnuje v sobě také práci s koncepty a jejich operacionalizaci, vytváření měřících nástrojů (např. dotazníků), etiku výzkumu, designování výzkumných studií, principy práce s respondenty (motivace atp.) atp. Nejde jen o vytváření vědění z dat, ale o vytváření samotných dat.
 :::
 
 ## PPDACC cyklus
@@ -171,6 +171,11 @@ Mění se v čase poměr sňatků a rozvodů? Hraje větší roli v příjmovýc
 ## Analýza
 
 -   Zpracovávání dat v softwaru, tabulky, grafy, testování hypotéz,...
+
+
+::: {.notes}
+Když se řekne statistika, hodně lidí si představí právě jen tuto její část. Ale taková předtava nedoceňuje skutečnou šíři aplikovaného statistického bádání. 
+:::
 
 ## Závěry/Komunikace
 
@@ -255,7 +260,7 @@ diagram
 ### Cíle vědy (hierarchie)
 
 -   Deskripce - popis světa a jeho pravidelností
--   Vysvětlení (explanace) - kauzální mechanismus, kauzální inference
+-   Vysvětlení (explanace) - kauzální mechanismus, kauzální inference (umožňuje predikci a kontrafaktuální uvažování, tj. kreativitu)
 
 Rozdíl mezi deskripcí a explanací ilustruje rozdíl mezi fakty a teorií.
 
@@ -269,6 +274,12 @@ Rozdíl mezi deskripcí a explanací ilustruje rozdíl mezi fakty a teorií.
 -   Inference z dat (vzorku) na populaci (inferenční, resp. induktivní statistika)
 
 Z hlediska cílů vědy plní deskriptivní statistika a induktivní statistika stejnou funkci: deskripci. Vysvětlení nikdy nevychází jen ze statistiky, vždy potřebuje teorii.
+
+
+::: {.notes}
+Nadstava: O hierarchii cílů vědy lze polemizovat. Někdy rozlišujeme deskripci (prostý popis), predikci (odhad budoucího chování) a explanaci (vysvětlení kauzálních mechanismů, které pozorované jevy způsobují). Tehdy je predikce chápána agnosticky z hlediska toho, jak probíhá kauzalita (například prediktivní algoritmy strojového učení, které vychází čistě z asociací). Zde pro jednoduchost predikce uvedena jako jedna z funkcí explanace. 
+:::
+
 
 ## Teorie a fakta (data) {.columns-2 .smaller}
 
@@ -309,6 +320,12 @@ tab <- tribble(~"ID", ~"pohlaví", ~"věk", ~"postoj k placení školného",
 kbl(tab) %>%
    kable_material(bootstrap_options = c("hover", "condensed"))
 ```
+
+
+::: {.notes}
+Většina kurzu bude o tom, jak smysluplně takové a větší tabulky překlápět do vědění. Než se začneme dívat do dat, je ale rozumné přemýšlet o datech.  
+:::
+
 
 ## Vidět svět jako data
 

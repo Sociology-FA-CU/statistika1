@@ -114,7 +114,7 @@ skew_0 / skew_neg / skew_pos
 Pověst o vynálezci šachů, který chtěl od sultána za hru tolik rýže, že na prvním poli bude jedno zrnko, na druhém dvě, pak čtyři a tak dál. Sultán radostně souhlasil, než se ukázalo, že si takovou cenu nemůže dovolit. Podobně hádanka o jezeře, kde se porost vodní rostlinou zdojnásobí každý den. 100. den rostlina akorát stihne pokrýt celé jezero. Kolikátý den pokryje půlku? 
 :::
 
-## Jak vypadá expondenciální růst?
+## Jak vypadá exponenciální růst?
 
 ```{r}
 t <- 0:6
@@ -335,7 +335,7 @@ wealth %>%
 Zdroj dat je [článek na voxeu.org](https://voxeu.org/article/are-germans-poorer-other-europeans-principal-eurozone-differences-wealth-and-income#fn)
 
 ::: {.notes}
-Diskuse: velikost domácností, průměr vs. medián (pro agregované srovnání bohatství dvou zemí možná lepší průměr, medián dává možná větší smysl jako reference pro jednotlivce uvnitř země), míra vlastnictví bydlení (v Německu nejnižší, 44% in Germany, probably due to a primary role of social housing in this country, compared to 55%, 69% and 83% in France, Italy and Spain, respectively), cenové trendy u důležitých komponentů, kulturní odlišnosti v reportování, podíl finančních aktiv (častěji nereportovaná, v Německu více), bohatství národa a závisí i na bohatství veřejného sektoru.
+Diskuse: velikost domácností, průměr vs. medián (pro agregované srovnání bohatství dvou zemí možná lepší průměr, medián dává možná větší smysl jako reference pro jednotlivce uvnitř země), míra vlastnictví bydlení (v Německu nejnižší, 44 % (pravděpodobně souvisí s významnou rolí sociálního bydlení v Německu(veřejné politiky jsou také část bohatství země),  zatímco 55 %, 69 % a 83 % ve Francii, Itálii a Španělsku). Cenové trendy u důležitých komponentů, kulturní odlišnosti v reportování, podíl finančních aktiv (častěji nereportovaná, v Německu více), bohatství národa a závisí i na bohatství veřejného sektoru.
 :::
 
 ## Mediánová vs. průměrná domácnost
