@@ -18,7 +18,7 @@ Tento kurz je koncipován jako první krok do statistiky pro studenty a studentk
 
 Tento web je hlavní elektronickou oporou kurzu. Moodle je v tom kurzu využíván pouze pro složení závěrečného testu a odevzdávání zápočtových a bonusových úkolů. Na tomto webu najdete sylabus s cíli výuky a výsledky učení pro jednotlivé přednášky. Velmi doporučuji s nimi pracovat. Dále zde najdete všechny prezentace k přednáškám, úlohy k procvičování (slouží jako kontrola pro studující, že všemu dobře porozuměli a dokážou to aplikovat), bonusové úkoly (slouží jako příležitost získat průběžnou prací bonusové body pro zlepšení výsledné známky) a datové soubory pro seminář i všechny zadané úkoly. Vlastní karty jsou věnovány podmínkám atestace (včetně zadání zápočtových úkolů) a základní doporučené kurzové literatuře.
 
-## Základní pojmy kurzové administrativy
+## Základní pojmy kurzové administrativy (hahaha)
 
 - **Zápočtové úlohy** - V rámci kurzu je třeba splnit dvě rozsáhlejší povinné zápočtové úlohy. Zadání a podmínky najdete v sekci Atestace.
 - **Bonusové úkoly** - Během semestru lze dobrovolně plnit pět bonusových úkolů a získat tak body navíc pro závěrečnou zkoušku. Zadání a podmínky najdete v sekci Bonusové úkoly.

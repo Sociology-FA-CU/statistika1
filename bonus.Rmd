@@ -6,3 +6,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+Zde najdete zadání jednotlivých bonusových úkolů, za které můžete získat body navíc do závěrečného testu. Více o bodování a odevzdávání viz sekce Atestace.
+
+* [Zadání bonusového úkolu 1](https://ffuk-my.sharepoint.com/:b:/g/personal/mazaj7af_ff_cuni_cz/EbVDZ5wWgk9Ajn-wk578_4MBiXSdy0Vbb4zDN9KqCXM6tQ?e=Dgxm2p)

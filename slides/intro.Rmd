@@ -29,10 +29,11 @@ library(eulerr) # for ploting statistics in context of science
 </style>
 ```
 
-## 
+## Statistika je když... {.flexbox .vcenter}
 
--   Efektivita vakcíny Pfizer--BioNTech je 73 %.
--   11,5 % lidí v Česku žije v chudobě.
+**Efektivita vakcíny Pfizer--BioNTech je 73 %.**
+
+**11,5 % lidí v Česku žije v chudobě.**
 
 ::: {.notes}
 **Efektivita vakcíny** je definována jako relativní pokles rizika. Tj. v očkované skupině je zasaženo o 73 % méně lidí, než by se nakazilo bez vakcíny. (Neznamená to, že 27 % z očkovaných bude zasaženo. Neznamená, že 73 % si utvoří protilátky.) Co se myslí pojmeme "zasaženo"? To může být různé. Klíčové se ptát, efektivita proti čemu: [V tomto případě](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(21)02183-8/fulltext) proti nakažení, dále 90 % efektivita proti hospitalizaci. Dále víme, že efektivita proti nákaze poklesla z 88 % po 1 měsíci na 47 % po 5 měsících. **Chudoba** je zde specifický ukazatel ohrožení chudobou a sociálním vyloučením, viz dále v prezentaci. Take-away: Než se začneme soustředit na samotná čísla, je potřeba si ujasnit, o čem se vlastně mluví.
@@ -57,15 +58,15 @@ Základní reprodukční číslo = kolik lidí v průměru nakazí jeden nakaže
 ## Blíže skutečnosti (pro $R_0 = 3$)
 
 <div class="centered">
-![](figures/01_R0_covid.png){width="55%"}
+![](figures/01_R0_covid.png){width="40%"}
 </div>
 
 <font size="2">Převzato z @spiegelhalter2021</font>
 
-## Odhad distribuce počtu nakažených
+## Odhad rozložení počtu nakažených
 
 <div class="centered">
-![](figures/01_R0_distribution.png){width="55%"}
+![](figures/01_R0_distribution.png){width="45%"}
 </div>
 
 <font size="2">Převzato z @spiegelhalter2021</font>
@@ -84,13 +85,13 @@ Během pandemie odhadováno experty podle aktuálního vývoje počtu nakažený
 
 # Statistika jako investigativní proces
 
-## Statistika jako investigativní proces vytváření vědění z dat
+## Statistika je...
 
-Statistika jako základ pro kvantitativní empirický výzkum, zaměřená na porozumění světu, vytváření vědění a opory v rozhodování.
+... základ pro kvantitativní empirický výzkum, zaměřená na porozumění světu, vytváření vědění a opory v rozhodování. Aby tohle zvládla, nestačí chroustat čísla, je potřeba skutečně rozumět tomu, co znamenají.
 
 ## Statistika v kontextu vědy
 
-```{r}
+```{r fig.align="center"}
 
 set.seed(6)
 fit2 <- euler(c("A" = 100, "B" = 0, "C" = 0,
@@ -166,12 +167,20 @@ Mění se v čase poměr sňatků a rozvodů? Hraje větší roli v příjmovýc
 -   Sběr dat, uchovávání, získání, čištění.
 -   Reálná data jsou téměř vždy zatížena chybami a zkresleními - potřebujeme reflektovat a zaznamenat. Musíme co nejpřesněji rozumět tomu, co data znamenají, v čem se na ně můžeme spolehnout a v čem nikoliv.
 
-> -   Pokud pracuji s pojmem "efektivita vakcíny", potřebvuji vědět, co to znamená a jak spolehlivě je měřena.
+
+> -   Jaké jsou vlastnosti testů, které ověřují, že je někdo nakažený? Může záležet na typu testu, jeho administraci atp. Zajímá nás míra falešné pozitivity a falešné negativity. Navíc zpočátku třeba testy nebyly k dispozici a diagnóza probíhala na základě odborného posouzení bez nich. 
+
+> -   S postupem času je potřeba zaznamenávat nové typy dat, například reinfekce. Nebo jestli byl infikovaný člověk očkovaný. 
 
 ## Analýza
 
 -   Zpracovávání dat v softwaru, tabulky, grafy, testování hypotéz,...
 
+<div class="centered">
+![](figures/01_covid_infekce.png){width="55%"}
+</div>
+
+<font size="2">[Zdroj Seznam zprávy](https://www.seznamzpravy.cz/clanek/pocet-nakazenych-cr-koronavirus-120166)</font>
 
 ::: {.notes}
 Když se řekne statistika, hodně lidí si představí právě jen tuto její část. Ale taková předtava nedoceňuje skutečnou šíři aplikovaného statistického bádání. 
@@ -189,8 +198,24 @@ Když se řekne statistika, hodně lidí si představí právě jen tuto její �
 
 -   Intepretace, generování nových nápadů, komunikace různým skupinám.
 
+## Závěry/Komunikace - ilustrace 1 {.columns-2}
 
-## Závěry/Komunikace - ilustrace
+<div class="centered">
+![](figures/01_covid_infekce.png){width="95%"}
+</div>
+
+<p class="forceBreak">
+
+</p>
+
+<div class="centered">
+![](figures/01_covid_hospitalizace.png){width="95%"}
+</div>
+
+
+
+
+## Závěry/Komunikace - ilustrace 2
 
 <div class="centered">
 ![](figures/01_UK_mortality_rate.png)
@@ -291,7 +316,7 @@ Nadstava: O hierarchii cílů vědy lze polemizovat. Někdy rozlišujeme deskrip
 
 </p>
 
-![](figures/01_gazela.jpg){width="100%"}
+![](figures/01_gazela.jpg){width="80%"}
 
 <font size="2">Autor foto: [Yathin sk - I photographed this springbok in Etosha National Park](https://commons.wikimedia.org/w/index.php?curid=21251829), CC BY-SA 3.0</font>
 
@@ -362,7 +387,9 @@ Otázka: Máme v ČR ve srovnání se zbytkem EU hodně, nebo málo lidí ohrož
 
 ## Ohrožení chudobou: data
 
+<div class="centered">
 ![](figures/01_risk_of_poverty.png){width="70%"}
+</div>
 
 <font size="2">[Zdroj Eurostat](https://ec.europa.eu/eurostat/web/products-eurostat-news/-/edn-20211015-1#:~:text=In%202020%2C%20there%20were%2096.5,data%20published%20by%20Eurostat%20today.)</font>
 
@@ -397,7 +424,7 @@ Lze měřit korelace, ale ty neimplikují kauzalitu. Experimentálně se ale zas
 Překlopení pojmů z jazyka teorie do observačního jazyka.
 
 ::: {.notes}
-Všichni máme nějakou intuitivní představu, co je to chudoba. Ale jak objektivně pozorovat chudobu? Pozorovat namísto toho příjem a jeho překročení nebo nepřekročení 60% hranice mediánu je praktičtější.
+Všichni máme nějakou intuitivní představu, co je to chudoba. Ale jak objektivně, standardizovaně a počitatelně pozorovat chudobu? Pozorovat namísto toho příjem a jeho překročení nebo nepřekročení 60% hranice mediánu je praktičtější.
 :::
 
 <!-- ## Chcete se dozvědět víc? -->

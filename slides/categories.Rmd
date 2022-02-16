@@ -350,7 +350,22 @@ A pokud malé relativní rozdíly hrají velkou roli...
 
 # Ostatní typy proměnných
 
-## Metodologická perspektiva
+https://www.jstor.org/stable/1671815?origin=JSTOR-pdf&seq=1#metadata_info_tab_contents
+
+## Metodologická perspektiva - Stevensova typologie (1946) 
+
+- nominální (nominal) - barva vlasů, náboženství
+- ordinální (ordinal) - vůbec-trochu-hodně, ZŠ-SŠ-VŠ
+- intervalové (interval) - teplota ve stupních Celsia
+- poměrové (ratio) - příjem
+
+<font size="2">[Původní Stevensův článek](https://www.jstor.org/stable/1671815?origin=JSTOR-pdf&seq=1#metadata_info_tab_contents). [Kritika Stevensovy typologie - nadstavba](https://medium.com/peter-flom-the-blog/nominal-ordinal-interval-ratio-stevens-typology-and-some-problems-with-it-93b1033815f7#:~:text=Stevens%20(Stevens%201946)%20divided%20types,used%2C%20which%20involve%20permissible%20transformations.)</font>
+  
+::: {.notes}
+Další příklady intervalových proměnných: teplota ve stupních Celsia, letopočty, IQ,...ale také faktorové skóry, případně Likertovy škály a další měřící konstrukty, se kterými se setkáte později během studia.
+:::
+
+## Častá úprava Stevensovy typologie 
 
 - nominální (nominal)
 - ordinální (ordinal)
@@ -359,9 +374,6 @@ A pokud malé relativní rozdíly hrají velkou roli...
   - intervalové (interval)
   - poměrové (ratio)
   
-::: {.notes}
-Příklady intervalových proměnných: teplota ve stupních Celsia; letopočty, IQ,...  
-:::
   
 ## Příklad
 
@@ -374,7 +386,7 @@ Na této fotografii je 6 aut. Vůz číslo "99" (se žlutou střechou) je na 1. 
 <font size="2">[Zdroj mathsisfun.com](https://www.mathsisfun.com/numbers/cardinal-ordinal-nominal.html#:~:text=Example%20With%20Everything&text=Car%20Number%20%2299%22%20(with,a%20name%20for%20the%20car))</font>
 
 
-## Alternativní prezentace
+## Alternativní prezentace Stevensovy typologie
 
 - Kvalitativní proměnné (kategorické)
 
@@ -389,8 +401,12 @@ Na této fotografii je 6 aut. Vůz číslo "99" (se žlutou střechou) je na 1. 
 
 ## Matematická perspektiva na kvantitativní proměnné
 
-- Diskrétní proměnné (count variables)
+- Diskrétní proměnné (count variables, spočetný počet)
 - Spojité proměnné (continuous variables)
+
+::: {.notes}
+Příkladem diskrétní proměnné je například počet studentů v kurzu. U diskrétní proměnné jsme schopni říci, jaké jsou další a předchozí varianty. Pokud je v kurzu zapsaných 42 studentů, víme, že předchází varianta 41 a následuje varianta 42. Diskrétní proměnnou je také hmotnost s přesností na gram. Diskrétní proměnnou vyjadřujeme celými čísly. Naopak spojitou proměnnou je například hmotost nebo vzdálenost bez udání přesnosti, spojitou proměnnou vyjadřujeme reálnými čísly. 
+:::
 
 
 ## Kategorická data - shrnutí
@@ -423,6 +439,10 @@ tyb %>%
 
 - Kategorizace dat: Převod původně nekategorických dat na kategorická. 
 - Dichotomizace dat: Převod původně nebinárních dat na data binární.
+
+::: {.notes}
+Body mass index je spojitá proměnná. Ale často používáme kategorie podváha, normální tělesná hmotnos, nadváha a obezita. V tom případě hovoříme o kategorizované proměnné. Dichotomizace je kategorizace do právě dvou kategorií, například rozdělení domácností na základě příjmů na ty, které jsou ohroženy chudobou, a na ty, které chudobou ohroženy nejsou. 
+:::
 
 
 ## Reference v prezentaci {.smaller}

@@ -22,6 +22,11 @@ Aby se studující mohl zapsat ke zkoušce, musí získat zápočet. Zápočet s
 
 Kromě zápočtových úkolů mohou studující dobrovolně plnit průběžné úkoly, jejichž zadání je zveřejněno na tomto webu v sekci "Bonusové úkoly". Bonusových úkolů je vypsáno celkem pět. Za každý odevzdaný úkol, který je správně, lze získat 2 body jako bonus do závěrečného testu. Termín odevzdání je vždy do půlnoci čtvrtého dne od přednášky, ke které se úkol váže (den přednášky se počítá jako den první). Pokud je například přednáška v pondělí, bonusový úkol je možné odevzdat do čtvrteční půlnoci. 
 
+VŠECHNY ÚKOLY (zápočtové i bonusové) je potřeba odevzdávat skrze platformu Moodle. Na jiná odevzdání nebude brán zřetel.
+
 ## Zadání zápočtových domácích úloh
 
-TBD
+[STÁHNOUT zadání Zápočtového úkolu 1.](https://ffuk-my.sharepoint.com/:b:/g/personal/mazaj7af_ff_cuni_cz/EUAP2RvoE1pCt7skSIBAEHcBIvq-qBKmBrNasS74B6m5nQ?e=Z5b6gg)
+
+- Data najdete zde na webu v sekci Data
+- [Potřebnou dokumentaci k demokratickému indexu zde](https://ffuk-my.sharepoint.com/:b:/g/personal/mazaj7af_ff_cuni_cz/EVEQKD8VOLtKiP_5PgpULQAB-fHYxqsBI6q0Pf5hAjK7RQ?e=YzZO9r)
