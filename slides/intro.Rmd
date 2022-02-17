@@ -148,9 +148,9 @@ PPDAC cyklus vymysleli @mackay2000a Explicitně na PPDACC ho rozšiřuje @spiege
 
 -   Problém zpravidla definujeme skrze výzkumnou otázku.
 
-> -   Objevila se nová infekce. Jak moc se šíří mezi lidmi?
+>-   Objevila se nová infekce. Jak moc se šíří mezi lidmi?
 
-> -   Vymyslete příklad relevantní výzkumné otázky pro sociologii.
+>-   Vymyslete příklad relevantní výzkumné otázky pro sociologii.
 
 ::: {.notes}
 Mění se v čase poměr sňatků a rozvodů? Hraje větší roli v příjmových nerovnostech seniorita, nebo formlní vzdělání? Způsobuje používání sociálních sítí depresi? Kdo páchá sebevraždy a proč? Má větší vliv na volbu politické strany pohlaví, věk, nebo vzdělání? Tisíce otázek...
@@ -160,7 +160,7 @@ Mění se v čase poměr sňatků a rozvodů? Hraje větší roli v příjmovýc
 
 -   Co měřit a jak? Jak data shromažďovat na jednom místě? Jaká relevantní data už existují? Jak se k nim dostat? Atd.
 
-> -   Vytvořit datovou oporu: všechna relevantní pracoviště sdílejí informace o nových infekcích v přesně stanoveném formátu podle přesně stanovených definic.
+>-   Vytvořit datovou oporu: všechna relevantní pracoviště sdílejí informace o nových infekcích v přesně stanoveném formátu podle přesně stanovených definic.
 
 ## Data
 
@@ -168,9 +168,9 @@ Mění se v čase poměr sňatků a rozvodů? Hraje větší roli v příjmovýc
 -   Reálná data jsou téměř vždy zatížena chybami a zkresleními - potřebujeme reflektovat a zaznamenat. Musíme co nejpřesněji rozumět tomu, co data znamenají, v čem se na ně můžeme spolehnout a v čem nikoliv.
 
 
-> -   Jaké jsou vlastnosti testů, které ověřují, že je někdo nakažený? Může záležet na typu testu, jeho administraci atp. Zajímá nás míra falešné pozitivity a falešné negativity. Navíc zpočátku třeba testy nebyly k dispozici a diagnóza probíhala na základě odborného posouzení bez nich. 
+>-   Jaké jsou vlastnosti testů, které ověřují, že je někdo nakažený? Může záležet na typu testu, jeho administraci atp. Zajímá nás míra falešné pozitivity a falešné negativity. Navíc zpočátku třeba testy nebyly k dispozici a diagnóza probíhala na základě odborného posouzení bez nich. 
 
-> -   S postupem času je potřeba zaznamenávat nové typy dat, například reinfekce. Nebo jestli byl infikovaný člověk očkovaný. 
+>-   S postupem času je potřeba zaznamenávat nové typy dat, například reinfekce. Nebo jestli byl infikovaný člověk očkovaný. 
 
 ## Analýza
 
@@ -356,8 +356,8 @@ Většina kurzu bude o tom, jak smysluplně takové a větší tabulky překláp
 
 Prvním krokem statistického vyšetřování je překlopit svět na data.
 
-> -   Kolik stromů je na světě?
-> -   Jaká je úmrtnost novorozenců?
+>-   Kolik stromů je na světě?
+>-   Jaká je úmrtnost novorozenců?
 
 ::: {.notes}
 Stromy: oficiální def. (může se lišit podle země): rostlina s dřevnatým kmenem s obvodem ve výši prsou (DBH) 10 cm. Počítání na vzorku oblastí, odhad celé Země dle satelitních snímků. Res: cca 3\^12 stromů. Zdroj: Spiegelhalter, The Art of Statistics.
@@ -393,7 +393,7 @@ Otázka: Máme v ČR ve srovnání se zbytkem EU hodně, nebo málo lidí ohrož
 
 <font size="2">[Zdroj Eurostat](https://ec.europa.eu/eurostat/web/products-eurostat-news/-/edn-20211015-1#:~:text=In%202020%2C%20there%20were%2096.5,data%20published%20by%20Eurostat%20today.)</font>
 
-> -   Jak byste nízkou míru ohrožení chudobou u nás vysvětlili?
+>-   Jak byste nízkou míru ohrožení chudobou u nás vysvětlili?
 
 ## Co je ohrožení chudobou a sociálním vyloučením?
 
@@ -405,7 +405,7 @@ At risk of poverty or social exclusion, abbreviated as AROPE, corresponds to the
 
 </blockquote>
 
-> -   Ale co to znamená?
+>-   Ale co to znamená?
 
 ::: {.notes}
 **At risk of poverty rate** = share of people with an equivalised disposable income (after social transfer) below the at-risk-of-poverty threshold, which is set at 60 % of the national median equivalised disposable income after social transfers. **Severe material deprivation rate** = cannot afford at least 4 out of 9 predefined material items considered by most people to be desirable or even necessary to lead an adequate life. **Low work intensity indicator** = households where the adults (those aged 18-59, but excluding students aged 18-24) worked a working time equal or less than 20 % of their total combined work-time potential during the previous year.

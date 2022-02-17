@@ -31,7 +31,6 @@ library(ggrepel)
 .forceBreak { -webkit-column-break-after: always; break-after: column; }
 </style>
 ```
-
 ## Typy proměnných - opakování {.columns-2}
 
 -   nominální
@@ -54,12 +53,11 @@ library(ggrepel)
 
 Tvar dat
 
-
 ## Moudrost davu: počet fazolek ve sklenici
 
-<div class="centered">
-![](figures/03_beans.png){width=35%}
-</div>
+::: {.centered}
+![](figures/03_beans.png){width="35%"}
+:::
 
 <font size="2">Zdroj: @spiegelhalter2019</font>
 
@@ -69,13 +67,15 @@ Fotografie ilustruje experiment, lidé měli odhadnout počet fazolek ve sklenic
 
 ## Jak vizualizovat mnoho dat?
 
-![](figures/03_beans_in_jar.png){width=90%}
+<div class="centered">
+![](figures/03_beans_in_jar.png){width="45%"}
+</div>
 
+<font size="2">Zdroj [@spiegelhalter2019]</font>
 
 ::: {.notes}
 Bodový graf - vynáší jednotlivé odhady na číselnou osu, v tomto grafu má význam jen horizontální dimenze, vertikální rozdíly jsou náhodně vygenerovány, aby se body nepřekrývaly. Box plot (krabicový graf) se nesnaží zobrazit pozorování přímo, ale skrze klíčové hodnoty: kvartily (o nich více později). Histrogram využívá pro zobrazení kategorizaci proměnné di intervalů.
 :::
-
 
 # Míry centrality
 
@@ -83,14 +83,13 @@ Bodový graf - vynáší jednotlivé odhady na číselnou osu, v tomto grafu má
 
 Míry centrality se také nazývají míry polohy (measures of the location of the data distribution).
 
-> -   (aritmetický) průměr - suma dělená počtem případů
-> -   medián - prostřední hodnota z řady seřazené podle velikosti
-> -   modus - nejčastější hodnota
+>-   (aritmetický) průměr - suma dělená počtem případů
+>-   medián - prostřední hodnota z řady seřazené podle velikosti
+>-   modus - nejčastější hodnota
 
 ::: {.notes}
-**Průměr** - také střední hodnota. **Medián** - také prostřední hodnota, v případě lichého počtu pozorování je jasné, která hodnota je prostřední, v případě sudého počtu bereme průměr dvou prostředních hodnot. **Modus** - v jednom datovém souboru může být více hodnot, které se objevují stejně často, tedy módů může být více. Hovoříme například o bimodální distribuci dat. 
+**Průměr** - také střední hodnota. **Medián** - také prostřední hodnota, v případě lichého počtu pozorování je jasné, která hodnota je prostřední, v případě sudého počtu bereme průměr dvou prostředních hodnot. **Modus** - v jednom datovém souboru může být více hodnot, které se objevují stejně často, tedy módů může být více. Hovoříme například o bimodální distribuci dat.
 :::
-
 
 ## Aritmetický průměr z dat (sample mean)
 
@@ -110,24 +109,24 @@ Průměr reprezentuje data v určitém smyslu, ale nemusí být reprezentativní
 
 </p>
 
-![](figures/03_mean.png){width="80%"} 
+![](figures/03_mean.png){width="80%"}
 
 <font size="2">Obrázek z [brilliant.org](https://brilliant.org/wiki/arithmetic-mean/)</font>
 
 ::: {.notes}
-Další příklady: Bill Gates přijde do baru a najednou je v něm v průměru každý miliardář. Průměrný věk dožití v roce 1800 v Evropě byl 33 let. Ale přibližně třetina lidí zemřela do pěti let od narození. Pokud je vyloučíme, průměrný věk se blížil 60 let.
+O aritmetickém průměru lze přemýšlet jako o principu páky ve fyzice. Další příklady: Bill Gates přijde do baru a najednou je v něm v průměru každý miliardář. Průměrný věk dožití v roce 1800 v Evropě byl 33 let. Ale přibližně třetina lidí zemřela do pěti let od narození. Pokud je vyloučíme, průměrný věk se blížil 60 let.
 :::
 
 ## Už jsme viděli: Jak se šíří COVID
 
-<div class="centered">
+::: {.centered}
 ![](figures/01_R0_covid.png){width="45%"}
-</div>
+:::
 
 <font size="2">Převzato z @spiegelhalter2021</font>
 
 ::: {.notes}
-Průměr užitečně modeluje naše očekávání ohledně počtu nakažených do budoucna, ale může být zavádějící z hlediska mechanismů (např. super spreaders), jak se nákaza šíří. 
+Průměr užitečně modeluje naše očekávání ohledně počtu nakažených do budoucna, ale může být zavádějící z hlediska mechanismů (např. super spreaders), jak se nákaza šíří.
 :::
 
 ## Měli bychom tedy raději používat medián?
@@ -173,7 +172,7 @@ wealth %>%
 Zdroj dat je [článek na voxeu.org](https://voxeu.org/article/are-germans-poorer-other-europeans-principal-eurozone-differences-wealth-and-income#fn)
 
 ::: {.notes}
-Diskuse: velikost domácností, průměr vs. medián (pro agregované srovnání bohatství dvou zemí možná lepší průměr, medián dává možná větší smysl jako reference pro jednotlivce uvnitř země), míra vlastnictví bydlení (v Německu nejnižší, 44 % (pravděpodobně souvisí s významnou rolí sociálního bydlení v Německu(veřejné politiky jsou také část bohatství země),  zatímco 55 %, 69 % a 83 % ve Francii, Itálii a Španělsku). Cenové trendy u důležitých komponentů, kulturní odlišnosti v reportování, podíl finančních aktiv (častěji nereportovaná, v Německu více), bohatství národa a závisí i na bohatství veřejného sektoru.
+Diskuse: velikost domácností, průměr vs. medián (pro agregované srovnání bohatství dvou zemí možná lepší průměr, medián dává možná větší smysl jako reference pro jednotlivce uvnitř země), míra vlastnictví bydlení (v Německu nejnižší, 44 % (pravděpodobně souvisí s významnou rolí sociálního bydlení v Německu(veřejné politiky jsou také část bohatství země), zatímco 55 %, 69 % a 83 % ve Francii, Itálii a Španělsku). Cenové trendy u důležitých komponentů, kulturní odlišnosti v reportování, podíl finančních aktiv (častěji nereportovaná, v Německu více), bohatství národa a závisí i na bohatství veřejného sektoru.
 :::
 
 ## Mediánová vs. průměrná domácnost
@@ -209,43 +208,39 @@ wealth %>%
 
 ```
 
-
 # Kvantily: Kvartily, kvintily, decily, percentily
 
 ## Kvartily
 
-- Analogické k mediánu, dělí seřazená data na čtyři stejné části.
+-   Analogické k mediánu, dělí seřazená data na čtyři stejné části.
 
->- Kolik je kvartilů?
->- Jaký je vztah mezi mediánem a 2. kvartilem?
->- Existuje více způsobů výpočtu kvartilů, nelamte si tím hlavu 
+>-   Kolik je kvartilů?
+>-   Jaký je vztah mezi mediánem a 2. kvartilem?
+>-   Existuje více způsobů výpočtu kvartilů, nelamte si tím hlavu
 
 ::: {.notes}
-Pokud máme například číselnou řadu 1, 2, 3, 4, 5, není úplně jednoznačné, kde jsou jednotlivé kvartily. Je první kvartil číslo 2, tedy první číslo, pro které platí, že od začátku až po toto číslo je obsaženo 25 % pozorování? Nebo číslo 1,5 jako střed mezi 1 a 2? Ale pokud si představíme osu od 1 do 5, tak mezi 1 a 2 za sebou rozhodně nemáme 25 % cesty mezi oběma konci. Existuje více postupů výpočtu kvartilů, liší se především pro malé vzorky, kde ale kvartily moc nepotřebujeme. Proto to nebudeme řešit. 
+Pokud máme například číselnou řadu 1, 2, 3, 4, 5, není úplně jednoznačné, kde jsou jednotlivé kvartily. Je první kvartil číslo 2, tedy první číslo, pro které platí, že od začátku až po toto číslo je obsaženo 25 % pozorování? Nebo číslo 1,5 jako střed mezi 1 a 2? Ale pokud si představíme osu od 1 do 5, tak mezi 1 a 2 za sebou rozhodně nemáme 25 % cesty mezi oběma konci. Existuje více postupů výpočtu kvartilů, liší se především pro malé vzorky, kde ale kvartily moc nepotřebujeme. Proto to nebudeme řešit.
 :::
-
 
 ## Kvintily
 
-- ... na 5 stejných částí
+-   ... na 5 stejných částí
 
 ![](figures/03_quintile_tobacco_WHO.png)
 
-<fint size="2">[Obrázek převzat z statisticshowto.com](https://www.statisticshowto.com/quintile-definition/) s odvoláním na World Health Organization.</font> 
-
+<font size="2">[Obrázek převzat z statisticshowto.com](https://www.statisticshowto.com/quintile-definition/) s odvoláním na World Health Organization.</font>
 
 ::: {.notes}
-Kvintil může jednak znamenat hranici, jednak také danou pětinu. Například spodní kvintil se používá ve významu spodních 20 %. Pro míru nerovnosti se někdy používají metriky, ve kterých kvintil figurují, například metrika Income quintile share ratio (S80/S20) ukazuje poměr příjmů horního kvintilu vůči spodnímu kvintilu. V Česku se pohybuje kolem 3,5, což je v rámci evropského kontextu velmi málo. 
+Kvintil může jednak znamenat hranici, jednak také danou pětinu. Například spodní kvintil se používá ve významu spodních 20 %. Pro míru nerovnosti se někdy používají metriky, ve kterých kvintil figurují, například metrika Income quintile share ratio (S80/S20) ukazuje poměr příjmů horního kvintilu vůči spodnímu kvintilu. V Česku se pohybuje kolem 3,5, což je v rámci evropského kontextu velmi málo.
 :::
-
 
 ## Decily
 
-- ... na 10 stejných částí
+-   ... na 10 stejných částí
 
 ## Percentily
 
-- ... na 100 stejných částí. Kvantily jsou zpravidla na percentily převoditelné.
+-   ... na 100 stejných částí. Kvantily jsou zpravidla na percentily převoditelné.
 
 ![](figures/03_kvantily_prijmy.png)
 
@@ -257,14 +252,17 @@ Kvintil může jednak znamenat hranici, jednak také danou pětinu. Například 
 
 ### Původní měřítko
 
-![](figures/03_beans_in_jar.png){width=90%}
+![](figures/03_beans_in_jar.png){width="90%"}
+
+<font size="2">Zdroj [@spiegelhalter2019]</font>
+
 <p class="forceBreak">
 
 </p>
 
 ### Logaritmické měřítko
 
-![](figures/03_beans_in_jar_log.png){width=90%}
+![](figures/03_beans_in_jar_log.png){width="90%"}
 
 ::: {.notes}
 Logaritmické měřítko zachycuje tempo růstu. Od vybrané hodnoty tak hodnota destkrát menší bude stejně daleko doleva, jako hodnota desetkrát větší doprava.
@@ -278,7 +276,7 @@ $$log_28 = 3 $$
 
 $$log_{10}100 = 2 $$
 
-Ve statistice využívám zpravidla logaritmické měřítko při základu 10, které převádí čísla na jejich řády. Umožňuje společně vizualizovat velké a malé hodnoty (srazí je k sobě). 
+Ve statistice využívám zpravidla logaritmické měřítko při základu 10 pro zobrazování, tento logaritmus převádí čísla na jejich řády. Umožňuje společně vizualizovat velké a malé hodnoty (srazí je k sobě).
 
 ## Příklad: savci a jejich mozky
 
@@ -286,8 +284,7 @@ Ve statistice využívám zpravidla logaritmické měřítko při základu 10, k
 mammals %>% select(species, body_wt, brain_wt) %>% head(10) %>% kableExtra::kable()
 ```
 
-<br>
-<font size="2">Inspirováno [tutorialem Marvina Lemose](https://rstudio-pubs-static.s3.amazonaws.com/433476_9ce6707ae2794d96923b7258703fdff7.html)</font>
+<br> <font size="2">Inspirováno [tutorialem Marvina Lemose](https://rstudio-pubs-static.s3.amazonaws.com/433476_9ce6707ae2794d96923b7258703fdff7.html)</font>
 
 ## Distribuce hmotností těl a mozků
 
@@ -332,9 +329,8 @@ options(backup_options)
 
 ```
 
-
 ::: {.notes}
-Pokud zhruba platí, že člověk je v horizontální dimenzi stejně daleko od šimpanze jako od krávy, znamená to, že kráva je tolikrát těžší než člověk, kolikrát je člověk těžší než šimpanz.  
+Pokud zhruba platí, že člověk je v horizontální dimenzi stejně daleko od šimpanze jako od krávy, znamená to, že kráva je tolikrát těžší než člověk, kolikrát je člověk těžší než šimpanz.
 :::
 
 ## U logaritmického měřítka je častý vědecký zápis
@@ -358,84 +354,11 @@ ggplot(data = mammals, aes(x = body_wt, y = brain_wt)) +
 Vědecký zápis lze číst takto: uvažujte číslo před "e". Toto číslo má explicitně nebo implicitně desetinnou čárku, např. číslo 5 je 5,0. Posuňte desetinnou čárku o tolik míst, jaké číslo je za znakem -, resp. +. Pokud je znak minus, posouváme doleva, pokud plus, posouváme doprava. Například číslo 3,4e-04 tedy znamená: 0,00034.
 :::
 
-
-## Logaritmické měřítko a exponenciální růst
-
-- Co je to exponenciální růst?
-
->- Exponenciální růst - něco se "x-násobí" za určitou časovou jednotku (zdvojnásobí, zdesetinásobí, ale i jen vynásobí 1.001)
-
-
-::: {.notes}
-Pověst o vynálezci šachů, který chtěl od sultána za hru tolik rýže, že na prvním poli bude jedno zrnko, na druhém dvě, pak čtyři a tak dál. Sultán radostně souhlasil, než se ukázalo, že si takovou cenu nemůže dovolit. Podobně hádanka o jezeře, kde se porost vodní rostlinou zdojnásobí každý den. 100. den rostlina akorát stihne pokrýt celé jezero. Kolikátý den pokryje půlku? 
-:::
-
-## Jak vypadá exponenciální růst?
-
-```{r}
-t <- 0:6
-R1 <- 2
-R2 <- 2.5
-R3 <- 3
-R4 <- 4
-a <- 1
-
-y1 <- R1^t
-y2 <- R2^t
-y3 <- R3^t
-y4 <- R4^t
-
-y5 <- y4 * c(1,1,1,0.95, 0.45, 0.18, 0.07) # zpočátku exponenciální, pak roste pomaleji
-y6 <- c((1:7)^3) # roste pomaleji
-
-
-exp_data <- 
-  tibble(y1 = y1, y2 = y2, y3 = y5, y4 = y6, x = 0:6)
-
-
-exp_data %>% 
-  pivot_longer(cols = -x) %>% 
-  ggplot(aes(x = x, y = value, group = name, color = name))+
-  geom_point(size = 2)+
-  geom_line()+
-  labs(title = "Která z následujících křivek představuje exponenciální růst?",
-       x= "Běh času",
-       y= element_blank())+
-  scale_x_continuous(breaks = 0:6)
-```
-
-
-## Zlogaritmování pomáhá rozpoznat exponenciální růst
-
-```{r}
-
-exp_data %>% 
-  pivot_longer(cols = -x) %>% 
-  mutate(value = log(value)) %>% 
-  ggplot(aes(x = x, y = value, group = name, color = name))+
-  geom_point(size = 2)+
-  geom_line()+
-  labs(title = "Stejná data jako na předchozím snímku po zlogaritmování",
-       x= "Běh času",
-       y= element_blank())+
-  scale_x_continuous(breaks = 0:6)
-
-```
-
-::: {.notes}
-Pokud proměnnou zlogaritmujeme, z exponenciálního růstu se stane přímka: lineární nárůst na logaritmickém měřítku totiž znamená, že v každém mezikroku je růst stejným násobkem předchozího stavu. Jasně tedy vidíme, že červená a zelená přímka představují exponenciální růst. Fialová nikdy nepředstavovala exponenciální růst. Modrá představovala exponenciální růst do bodu 3, ale pak začal růst zpomalovat. 
-:::
-
-
-
-
-
 # Robustní statistiky
 
 ## Co je robustní statistika?
 
 -   Ukazetel, který není (příliš) ovlivněn extrémními hodnotami (odlehlými pozorováními).
-
 
 ## Průměr vs. medián (odstraněna jediná hodnota)
 
@@ -510,24 +433,19 @@ log_but <-
 
 ```
 
-
 ::: {.notes}
 Odstraněna byla hodnota pro slona afrického. Graf na lineárním měřítku není příliš přehledný. Změna průměru a mediánu je lépe vyjádřena číselně. Pro logaritmické měřítko platí číselně stejné změny.
 :::
 
-
 ## Oříznutý průměr
 
->- Oříznutý průměr (trimmed mean, truncated mean): průměr z hodnot po "oříznutí" určitého procenta extrémních (nejmenší a největších hodnot).
->- Medián potlačuje šikmost distribuce i extrémní případy, oříznutý průměr potlačuje především extrémní případy.
->- NADSTAVBA: Windsorized mean - podobný jako oříznutý, místo odříznutí ale hodnoty nahradí nejvyšší/nejnižší ještě neodstraněnou hodnotou.
-
+>-   Oříznutý průměr (trimmed mean, truncated mean): průměr z hodnot po "oříznutí" určitého procenta extrémních (nejmenší a největších hodnot).
+>-   Medián potlačuje šikmost distribuce i extrémní případy, oříznutý průměr potlačuje především extrémní případy.
+>-   NADSTAVBA: Windsorized mean - podobný jako oříznutý, místo odříznutí ale hodnoty nahradí nejvyšší/nejnižší ještě neodstraněnou hodnotou.
 
 ::: {.notes}
 Například oříznutý průměr na 90 % hodnot znamená, že se odstraní 5 % nejmenších a 5 % největších hodnot, z prostředních 90 % se spočítá průměr.
 :::
-
-
 
 # Jiné průměry
 
@@ -588,8 +506,8 @@ obyv_3$pop <- c(10.7, 59.55, 5.46)
 
 -   Počet obyvatel SK = 5 500 000
 
-> -   Aritmetický průměr = $(4.1 + 7.4 + 3.4) / 3 = 4.97$
-> -   Vážený průměr = $(4.1*10.7 + 7.4*59.6 + 3.4*5.5) / (10.7 + 59.6 + 5.5) = 6.64$
+>-   Aritmetický průměr = $(4.1 + 7.4 + 3.4) / 3 = 4.97$
+>-   Vážený průměr = $(4.1*10.7 + 7.4*59.6 + 3.4*5.5) / (10.7 + 59.6 + 5.5) = 6.64$
 
 ## Klouzavý průměr {.columns-2 .smaller}
 
@@ -634,6 +552,71 @@ Linka A vyrobí produkt za 30 minut, linka B za 10 minut. Jak dlouho průměrně
 Výpočet pomocí harmonického průměru je: $2/(1/30 + 1/10) = 15$
 
 Tedy průměrně na jedné lince výrobek za 15 minut, 4 za hodinu a celkem 8 výrobků za hodinu.
+
+## Logaritmické měřítko a exponenciální růst
+
+-   Co je to exponenciální růst?
+
+>-   Exponenciální růst - něco se "x-násobí" za určitou časovou jednotku (zdvojnásobí, zdesetinásobí, ale i jen vynásobí 1.001)
+
+::: {.notes}
+Pověst o vynálezci šachů, který chtěl od sultána za hru tolik rýže, že na prvním poli bude jedno zrnko, na druhém dvě, pak čtyři a tak dál. Sultán radostně souhlasil, než se ukázalo, že si takovou cenu nemůže dovolit. Podobně hádanka o jezeře, kde se porost vodní rostlinou zdojnásobí každý den. 100. den rostlina akorát stihne pokrýt celé jezero. Kolikátý den pokryje půlku?
+:::
+
+## Jak vypadá exponenciální růst?
+
+```{r}
+t <- 0:6
+R1 <- 2
+R2 <- 2.5
+R3 <- 3
+R4 <- 4
+a <- 1
+
+y1 <- R1^t
+y2 <- R2^t
+y3 <- R3^t
+y4 <- R4^t
+
+y5 <- y4 * c(1,1,1,0.95, 0.45, 0.18, 0.07) # zpočátku exponenciální, pak roste pomaleji
+y6 <- c((1:7)^3) # roste pomaleji
+
+
+exp_data <- 
+  tibble(y1 = y1, y2 = y2, y3 = y5, y4 = y6, x = 0:6)
+
+
+exp_data %>% 
+  pivot_longer(cols = -x) %>% 
+  ggplot(aes(x = x, y = value, group = name, color = name))+
+  geom_point(size = 2)+
+  geom_line()+
+  labs(title = "Která z následujících křivek představuje exponenciální růst?",
+       x= "Běh času",
+       y= element_blank())+
+  scale_x_continuous(breaks = 0:6)
+```
+
+## Zlogaritmování pomáhá rozpoznat exponenciální růst
+
+```{r}
+
+exp_data %>% 
+  pivot_longer(cols = -x) %>% 
+  mutate(value = log(value)) %>% 
+  ggplot(aes(x = x, y = value, group = name, color = name))+
+  geom_point(size = 2)+
+  geom_line()+
+  labs(title = "Stejná data jako na předchozím snímku po zlogaritmování",
+       x= "Běh času",
+       y= element_blank())+
+  scale_x_continuous(breaks = 0:6)
+
+```
+
+::: {.notes}
+Pokud proměnnou zlogaritmujeme, z exponenciálního růstu se stane přímka: lineární nárůst na logaritmickém měřítku totiž znamená, že v každém mezikroku je růst stejným násobkem předchozího stavu. Jasně tedy vidíme, že červená a zelená přímka představují exponenciální růst. Fialová nikdy nepředstavovala exponenciální růst. Modrá představovala exponenciální růst do bodu 3, ale pak začal růst zpomalovat.
+:::
 
 ## Reference v prezentaci {.smaller}
 
