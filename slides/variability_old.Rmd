@@ -16,8 +16,12 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 ```{r libs}
 library(tidyverse)
+library(scales)
 library(here)
 library(ggpmisc) # to add table to ggplot2 object
+
+cvvm <- read_csv(here("data-input", "cvvm.csv")) # data for variability
+
 ```
 
 ```{=html}
@@ -261,6 +265,109 @@ Nerobustní, lze demonstrovat na počítačí, kód v R: sd(c(1:100)), sd(c(1:10
 
 <font size="2">Převzato z @spiegelhalter2019</font>
 
+
+## Variační koeficient (VK)
+
+Také "relativní směrodatná odchylka".
+
+Spočítejte směrodatnou odchylku z následujících datových setů:
+
+a) 1, 2, 3
+b) 101, 102, 103
+
+## Směrodatná odchylka je stejná...
+
+... ale v prvním data setu se první a druhé pozorování liší o 100 %, zatímco v druhém o necelé procento...
+
+$$VK = \sigma / \mu $$
+
+
+# Případová studie: variabilita v čistých příjmech v jednotlivých vzdělanostních skupinách
+
+## Tipněte si odpovědi na následující otázky
+
+Na úvod rozdělíme respondenty reprezentativního výběrového šetření CVVM Naše společnost do čtyř skupin: ZŠ, SŠ bez maturity, SŠ s maturitou, VŠ (včetně VOŠ).
+
+1) Která skupina je nejmenší? 
+1) Která skupina má největší variační rozpětí?
+1) Která skupina má nějvětší mezikvartilové rozpětí?
+1) Je medián lidí se základním vzděláním vyšší nebo nižší než 1. kvartil vysokoškoláků?
+
+## Bodový graf
+
+```{r fig.align="center"}
+income_agg <- cvvm %>%
+  select(IDE_10A, t_VZD) %>% 
+  filter(!is.na(t_VZD)) %>% 
+  mutate(IDE_10A = as.numeric(IDE_10A)) %>% 
+  group_by(t_VZD) %>% 
+  summarise(deviation = sd(IDE_10A, na.rm = TRUE),
+            variance = var(IDE_10A, na.rm = TRUE),
+            range = max(IDE_10A, na.rm =  TRUE) - min(IDE_10A, na.rm = TRUE),
+            IQR = IQR(IDE_10A, na.rm = TRUE),
+            mean = mean(IDE_10A, na.rm = TRUE),
+            median = median(IDE_10A, na.rm = TRUE),
+            vk = deviation / mean,
+            count = n())
+
+cvvm %>% select(IDE_10A, t_VZD) %>% 
+  filter(!is.na(t_VZD)) %>% 
+  mutate(IDE_10A = as.numeric(IDE_10A)) %>% 
+  ggplot(aes(x = t_VZD, y = IDE_10A)) +
+  geom_jitter(height = 0, width = 0.2, alpha = 0.4) +
+  scale_x_discrete(labels = str_to_sentence) +
+  scale_y_continuous(labels = number_format(scale = 0.001, suffix = " tis. Kč")) +
+  labs(x = element_blank(),
+       y = "Čistý měsiční příjem",
+       caption = "Zdroj dat: Naše společnost, červen 2019")
+```
+
+## Bodový graf s vybranými statistikami
+
+```{r fig.align="center"}
+cvvm %>% select(IDE_10A, t_VZD) %>% 
+  filter(!is.na(t_VZD)) %>% 
+  mutate(IDE_10A = as.numeric(IDE_10A)) %>% 
+  ggplot(aes(x = t_VZD, y = IDE_10A)) +
+  geom_jitter(height = 0, width = 0.2, alpha = 0.4) +
+  geom_text(data = income_agg,
+            mapping = aes(x = t_VZD, y = -2000,
+                          label = paste0("Počet: ", count))) +
+    geom_text(data = income_agg,
+            mapping = aes(x = t_VZD, y = -5000,
+                          label = paste0("Rozpětí: ", range))) +
+    geom_text(data = income_agg,
+            mapping = aes(x = t_VZD, y = -8000,
+                          label = paste0("IQR: ", IQR))) +
+    geom_text(data = income_agg,
+            mapping = aes(x = t_VZD, y = -11000,
+                          label = paste0("SD: ", round(deviation,0)))) +
+  scale_x_discrete(labels = str_to_sentence) +
+  scale_y_continuous(labels = number_format(scale = 0.001, suffix = " tis. Kč"), limits = c(-12000, 62000)) +
+  labs(x = element_blank(),
+       y = "Čistý měsiční příjem",
+       caption = "Zdroj dat: Naše společnost, červen 2019")
+```
+
+## Bodový graf s boxplotem
+
+```{r fig.align="center"}
+
+cvvm %>% select(IDE_10A, t_VZD) %>% 
+  filter(!is.na(t_VZD)) %>% 
+  mutate(IDE_10A = as.numeric(IDE_10A)) %>% 
+  ggplot(aes(x = t_VZD, y = IDE_10A)) +
+  geom_boxplot()+
+  geom_jitter(height = 0, width = 0.2, alpha = 0.4) +
+  scale_x_discrete(labels = str_to_sentence) +
+  scale_y_continuous(labels = number_format(scale = 0.001, suffix = " tis. Kč")) +
+  labs(x = element_blank(),
+       y = "Čistý měsiční příjem",
+       caption = "Zdroj dat: Naše společnost, červen 2019")
+```
+
+
+
 ## Chudoba a měření variability
 
 Příklad inspirovaný knihou How to Make the World Add Up [@harford2021]
@@ -356,20 +463,6 @@ Zdroj [Wiki](https://en.wikipedia.org/wiki/Gini_coefficient)
 
 $$Gini = A/(A+B) $$
 
-## Variační koeficient (VK)
-
-Také "relativní směrodatná odchylka".
-
-Spočítejte směrodatnou odchylku z následujících datových setů:
-
-a) 1, 2, 3
-b) 101, 102, 103
-
-## Směrodatná odchylka je stejná...
-
-... ale v prvním data setu se první a druhé pozorování liší o 100 %, zatímco v druhém o necelé procento...
-
-$$VK = \sigma / \mu $$
 
 
 ## Reference v prezentaci {.smaller}

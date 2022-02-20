@@ -199,7 +199,7 @@ Zmiňovaná studie mj. říká: "Participants (health professionals and consumer
 ## Očekávané četnosti lze komunikovat také graficky
 
 <div class="centered">
-![](figures/02_icon_array.png){width="45%"}
+![](figures/02_icon_array.png){width="40%"}
 </div>
 
 <font size="2">Zdroj obrázku @spiegelhalter2019</font>
@@ -289,23 +289,31 @@ V některých kontextech, jako je reportování volebních modelů, se zaběhl u
 
 Data ze srpna 2021.
 
-![](figures/02_volebni_model_ct.png){width="90%"}
+<div class="centered">
+![](figures/02_volebni_model_ct.png){width="80%"}
+</div>
 
 ## Míru nejistoty můžeme vyjádřit také graficky
 
 Zde data z července 2021.
 
-![](figures/02_volebni_model_cvvm.png){width="90%"}
+<div class="centered">
+![](figures/02_volebni_model_cvvm.png){width="80%"}
+</div>
 
 ## Je na tomto grafu něco podezřelého?
 
 Data ze září 2021.
 
-![](figures/02_volebni_potencial.png){width="90%"}
+<div class="centered">
+![](figures/02_volebni_potencial.png){width="80%"}
+</div>
 
 ##  Proč (moc) nepoužíváme koláčové graf?
 
-![](figures/02_pie_chart_comparison.png){width="90%"}
+<div class="centered">
+![](figures/02_pie_chart_comparison.png){width="75%"}
+</div>
 
 <font size="2">Zdroj: [Wikipedie](https://en.wikipedia.org/wiki/Pie_chart)</font>
 
@@ -318,6 +326,7 @@ Data ze září 2021.
 ## Osa Y
 
 ![](figures/02_ct_byty.jpg){width="90%"}
+
 <font size="2">Zachyceno ve vysílání ČT.</font>
 
 ## Arbitrární začátek osy Y
@@ -327,7 +336,7 @@ Data ze září 2021.
 ## Někdy to ale nemusí být tak jasné...
 
 <div class="centered">
-![](figures/02_US_GDP_a.png){width="50%"}
+![](figures/02_US_GDP_a.png){width="40%"}
 
 
 ![](figures/02_US_GDP_b.png){width="50%"}
@@ -349,8 +358,6 @@ A pokud malé relativní rozdíly hrají velkou roli...
 
 
 # Ostatní typy proměnných
-
-https://www.jstor.org/stable/1671815?origin=JSTOR-pdf&seq=1#metadata_info_tab_contents
 
 ## Metodologická perspektiva - Stevensova typologie (1946) 
 
