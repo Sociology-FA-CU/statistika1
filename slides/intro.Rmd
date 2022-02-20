@@ -2,7 +2,7 @@
 title: "Úvod a motivace"
 subtitle: "Statistika 1, Katedra sociologie Filozofické fakulty UK" 
 author: "Jaromír Mazák"
-output:
+output: 
   ioslides_presentation:
     css: "../css/slides-style.css"
 editor_options: 

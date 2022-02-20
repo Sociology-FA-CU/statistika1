@@ -24,7 +24,7 @@ Některé prezentace na konci obsahují sekci "Nadstavba". Ta představuje dobro
 
 ---
 
-1) Úvod a motivace ([v prohlížeči](slides/intro.html), ke stažení)
+1) Úvod a motivace ([v prohlížeči](slides/intro.html), [ke stažení](https://ffuk-my.sharepoint.com/:b:/g/personal/mazaj7af_ff_cuni_cz/Ef--efsWGaJAvdJN2isxzZQBv6D_RgUUSdbBVB2unuv3nA?e=PyUSc8))
 1) Kategorická data a procenta ([v prohlížeči](slides/categories.html), ke stažení)
 1) Numerické proměnné a míry centrality ([v prohlížeči](slides/centrality.html), ke stažení)
 1) Numerické proměnné a míry variability ([v prohlížeči](slides/variability.html), ke stažení)
