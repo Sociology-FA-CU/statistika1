@@ -18,7 +18,7 @@ Zde najdete přehled jednotlivých témat. Jedno téma odpovídá jedné předn�
 -   Z výsledků učení přímo vychází sekce Procvičování, kde si můžete ověřit své znalosti a dovednosti
 -   Z výsledků učení přímo vychází úlohy v závěrečném testu, na jehož základě je vám udělana výsledná známka
 
-Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní a případně i Rozšiřující přípravu na každou přednášku. Základní příprava je povinná v tom smyslu, že ve výkladu se počítá s tím, že ji studující před přednáškou absolvoval. Koncepty, které jsou obsaženy v Základní přípravě, už na přednášce nebudou detailně vysvětlovány. Naopak budu počítat s tím, že už jste si je osvojili a budu na ně navazovat. Základní příprava je přibližně na 20 až 60 minut na každou přednášku, prosím, opravdu si na ni čas vyhraďte. Otázky v závěrečném testu také předpokládají, že jste základní přípravu absolovovali. Rozšiřující příprava je nabídkou, jak se k tématu dozvědět předem něco víc a usnadnit si tak orientaci v přednášené látce. S výkladem se buď do určité míry překrývá, nebo přináší doplňkovou perspektivu.   
+Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní a případně i Rozšiřující přípravu na každou přednášku. Základní příprava (před přednáškou) je povinná v tom smyslu, že ve výkladu se počítá s tím, že ji studující před přednáškou absolvoval. Koncepty, které jsou obsaženy v Základní přípravě, už na přednášce nebudou detailně vysvětlovány. Naopak budu počítat s tím, že už jste si je osvojili a budu na ně navazovat. Základní příprava (před přednáškou) je přibližně na 20 až 60 minut na každou přednášku, prosím, opravdu si na ni čas vyhraďte. Otázky v závěrečném testu také předpokládají, že jste základní přípravu absolovovali. Rozšiřující příprava je nabídkou, jak se k tématu dozvědět předem něco víc a usnadnit si tak orientaci v přednášené látce. S výkladem se buď do určité míry překrývá, nebo přináší doplňkovou perspektivu.   
 
 # Úvod a motivace
 
@@ -60,7 +60,7 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     -   Nakreslit a na obrázku vysvětlit, proč může být pro správné pochopení distribuce dat potřeba data vizualizovat (nejen pouze popsat vybranou mírou centrality).
 
     
--   *Základní příprava*
+-   *Základní příprava (před přednáškou)*
 
     -   Podívejte se na [toto video na Khan Academy o logaritmickém měřítku](https://www.khanacademy.org/math/algebra-home/alg-exp-and-log/alg-logarithmic-scale/v/logarithmic-scale) a [toto video na YouTube na stejné téma](https://www.youtube.com/watch?v=eJF9hiv3c-A).
     
@@ -80,7 +80,7 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     -   Vysvětlit, co jsou robustní statistiky a uvést příklady robustní míry variability.
     -   Uvést příklad míry variability, která robustní není, a vymyslet ilustrativní příklad dat, na kterém to lze demonstrovat.
     
--   *Základní příprava*
+-   *Základní příprava (před přednáškou)*
 
     -   TBD
     
@@ -100,7 +100,7 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     -   Vysvětlit a na příkladech ilustrovat, co znamená, že kauzalita neimplikuje korelaci.
     -   Nakreslit obrázek ilustrující Simpsonův paradax pro zadaný problém.
     
--   *Základní příprava*
+-   *Základní příprava (před přednáškou)*
 
     -   TBD
     
@@ -118,7 +118,7 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     -   Interpretovat výstup jednoduché lineární regrese v grafické i tabulkové podobě.
     -   Vysvětlit, co znamená regrese k průměru a jakou roli v tomto konceptu hraje rozdělení variability na deterministickou a náhodnou složku
     
--   *Základní příprava*
+-   *Základní příprava (před přednáškou)*
 
     -   TBD
     
@@ -136,7 +136,7 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     -   Vysvětlit myšlenku bootstrappingu a jak na jeho základě odhadujeme variabilitu odhadu.
     -   Srovnat doslovný význam pojmu populace a s pojmem virtuální populace a metaforická populace a vysvětlit, v čem je zavedení těchto pojmů užitečné.
     
--   *Základní příprava*
+-   *Základní příprava (před přednáškou)*
 
     -   TBD
     
@@ -154,7 +154,7 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     -   Vysvětlit rozdíly mezi frekventistickou a bayesiánskou interpretací pravděpodobnosti a diskutovat výhody a nevýhody obou přístupů.
     -   Interpretovat graf (kumulativní) distribuční funkce pro diskrétní i spojité proměnné.
     
--   *Základní příprava*
+-   *Základní příprava (před přednáškou)*
 
     -   TBD
     
@@ -171,7 +171,7 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     -   Vysvětlit na základě zákona zákona velkých čísel a centrální limitní věty, proč je možné zobecnit výsledky výběrových šetření na širší populaci.
     -   Interpretovat intervalové odhady z pohledu frekventistické a bayesiánské pravděpodobnosti a vysvětlit výhody a nevýhody obou přístupů.
 
--   *Základní příprava*
+-   *Základní příprava (před přednáškou)*
 
     -   TBD
     
@@ -190,7 +190,7 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     -   Využít podmíněnou pravděpodobnost pro zpřesnění pravděpodobnostních odhadů.
     -   Využít Bayesovu větu pro inverzi podmíněné pravděpodobnosti.
     
--   *Základní příprava*
+-   *Základní příprava (před přednáškou)*
 
     -   TBD
     
@@ -208,7 +208,7 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     -   Vysvětlit, jakou roli hraje Bayesův teorém v bayesiánské inferenci.
     -   Konceptuálně vysvětlit, jak je možné formálně aktualizovat představy o světe na základě nově příchozích dat.
     
--   *Základní příprava*
+-   *Základní příprava (před přednáškou)*
 
     -   TBD
     

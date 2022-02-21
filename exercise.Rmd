@@ -75,7 +75,54 @@ Je to přesně naopak. Skutečnost, že je v současné kohortě mladých tak m�
 
 ## 2 
 
-TBD
+<br>
+**Otázka 1** 
+
+*Pro každou z následujících proměnných rozhodněte, zda jde o proměnnou nominální, ordinální, nebo kardinální. Pokud jde o proměnnou kardinální, rozhodněte také, jestli je intervalová, nebo poměrová a do třetice, jestli je spojitá, nebo diskrétní.*
+
+1) Čísla na dresech hokejistů
+1) Velikost bydliště vyjádřená počtem obyvatel
+1) Náboženské vyznání: protestant - katolík – buddhista – muslim – ateista - hinduista
+1) Místo bydliště (obec)
+1) Věk měřený počtem let 
+1) Spokojenost s pracovními podmínkami: velmi spokojen – spíše spokojen – spíše nespokojen – velmi nespokojen 
+1) Rok letopočtu
+
+<details><summary>Podívat se na řešení</summary>
+1) nominální, jde pouze o pojmenování, čísla na dresech neznamenají žádné pořadí v ničem 
+1) kardinální ´- poměrová (má přirozenou 0, resp. můžeme říct, že jedna obec je třikát má třikrát více obyvatel než druhá) - diskrétní (neexistuje nic jako polovina obyvatele)
+1) nominální 
+1) nominální
+1) kardinální - poměrová - a teď záleží, jak rozumíte měřený počtem let: pokud jste si to vyložili jako počtem celých let, pak je diskrétní, pokud tak, že roky jsou pouze jednotka, ale lze říct, že je někomu třeba 34,66 let, pak je to proměnná spojitá. 
+1) ordinální
+1) kardinální - intervalová (rok 1500 je stejně daleko od roku 1000 jako od roku 2000, ale nelze říct, že pokud se něco událo v roce 2000, událo se to dvakrát později než to, co se událo v roce 1000) - diskrétní
+</details>
+
+<br>
+**Otázka 2** 
+
+*Sebevražda je od dob Émila Durkheima považována za relevantní sociologické téma. Jedno pohlaví páchá sebevraždu výrazně (asi čtyřikrát až pětkrát) častěji než druhé (označujme ho po zbytek úlohy pohlaví A). Tipněte si (bez googlování), které to je. Jaké sociologické důvody by s tím mohly být spojeny? Poté odpovězte následující otázky (čísla přibližně platí pro ČR posledních let):*
+
+1) Pokud platí, že pohlaví A páchá sebevraždu čtyřikrát častěji než pohlaví B, doplňte následující větu (každé XXX nahraďte číslem, předpokládejte pro jednoduchost, že obě pohlaví jsou ve společnosti zastoupena stejně): 
+
+"Relativní riziko sebevraždy je u pohlaví A o **XXa** % větší než u pohlaví B. Pokud víme, že v každém roce spáchá sebevraždu asi 24 jedinců pohlaví A na 100 000 obyvatel, můžeme dopočítat, že ročně spáchá sebevraždu asi **XXb** jedinců pohlaví B na 100 000 obyvatel. Rozdíl v absolutním riziku spáchání sebevraždy je tedy mezi oběma pohlavímí **XXc** %. Šanci na spáchání sebevraždy u jedince pohlaví A, pokud nemáme žádné další informace, lze vyjádřit zlomkem **XXd**. [Nadstavba, nemusíte umět:] Poměr šancí spáchání sebevraždy mezi pohlavím A a pohlavím B pak lze vyjádřit číslem **XXe**."  
+
+<details><summary>Podívat se na řešení</summary>
+Pohlaví A jsou muži. To, že muži páchají sebevraždu výrazně více než ženy, je skutečností napříč společnostmi. Protože se tématem nezabývám, důvody neznám, takže váš brainstorming klidně mohl vygenerovat lepší nápady než můj. Já vycházím z toho, že [za komunismu u nás muži páchali sebevraždu jen asi 2krát až 3krát častěji než ženy, zatímco dnes je to 4krát až 5krát častěji](https://www.czso.cz/csu/czso/sebevrazdy_zaj#:~:text=V%20posledn%C3%ADm%20p%C4%9Btilet%C3%A9m%20obdob%C3%AD%202014,mu%C5%BE%C5%AF%20a%20jen%20269%20%C5%BEen.&text=Po%C4%8Det%20sebevra%C5%BEd%20na%20sto%20tis%C3%ADc,v%C4%9Bku%20jich%20op%C4%9Bt%20relativn%C4%9B%20ub%C3%BDv%C3%A1.) (počty sebevražd mezi ženymi poklesly od 70. a 80. let na méně než polovinu, zatímco počty sebevražd mezi muži klesly jen o přibližně 25 %). Proto si myslím, že to do nějaké míry může souviset s tím, že současné uspořádání s důrazem na soutěživost může negaitvněji dopadat na muže, kteří neuspějí, než na ženy. Další hypotéza je, že by to mohlo souviset se hustotou a kvalitou sociálních služeb - azylové domy a podobné instituce jsou často jen pro ženy, obdobné instituce pro muže jsou řidší. Ale jak říkám, je to jen brainstorming.
+
+A teď už k číslům:
+
+- XXa = 300 %
+- XXb = 6
+- XXc = 0,018 %
+- XXd = 24/99976 (lze upravit na 3/12497)
+- XXe = 4
+
+V textu s vysvětlením:
+
+"Relativní riziko sebevraždy je u pohlaví A o **300** % větší než u pohlaví B *(pozor, pokud je relativní riziko 4krát větší, znamená to, že je o 300 % větší, analogicky jako 1,5krát větší riziko představuje o 50 % větší riziko)*. Pokud víme, že v každém roce spáchá sebevraždu asi 24 jedinců pohlaví A na 100 000 obyvatel, můžeme dopočítat, že ročně spáchá sebevraždu asi **6** jedinců pohlaví B na 100 000 obyvatel. Rozdíl v absolutním riziku spáchání sebevraždy je tedy mezi oběma pohlavímí **0,018** % *(tedy necelé 2 desetiny promile - zde se opět dotýkáme toho, že velký rozdíl v relativním riziku nemusí znamenat velký rozdíl v absolutním riziku, pokud je celkové riziko malé, výpočet je následující: Absolutní riziko u mužů v procentech = (24/100000) $\times$ 100). Absolutní riziko u žen = (6/100000) $\times$ 100). Z obou výsledků pak už jen spočítáme rozdíl = 0,024 - 0,006.* Šanci na spáchání sebevraždy u jedince pohlaví A, pokud nemáme žádné další informace, lze vyjádřit zlomkem **24/99976**. [Nadstavba, nemusíte umět:] Poměr šancí spáchání sebevraždy mezi pohlavím A a pohlavím B pak lze vyjádřit číslem **4** *(výpočet: (24/99976)/(6/99994))*."
+</details>
+
 
 ## 3
 
