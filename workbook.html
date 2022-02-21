@@ -11,7 +11,7 @@
 
 
 
-<title>Procvičování</title>
+<title>Pracovní listy</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -271,107 +271,13 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Procvičování</h1>
+<h1 class="title toc-ignore">Pracovní listy</h1>
 
 </div>
 
 
-<p>Na záložkách níže najdete úkoly k procvičování látky z jednotlivých lekcí. Ke každému zadání je pro kontrolu k dispozici řešení. Silně doporučuji: Pokuste se problém nejprve vždy vyřešit sami. Mnohem víc si odnesete, než když si jen líně přečtete řešení ;-)</p>
-<div id="section" class="section level1 tabset">
-<h1 class="tabset"></h1>
-<ol style="list-style-type: decimal">
-<li>Úvod a motivace</li>
-<li>Kategorická data a procenta</li>
-<li>Numerické proměnné a míry centrality</li>
-<li>Numerické proměnné a míry variability</li>
-<li>Popis vztahů mezi proměnnými</li>
-<li>Statistický model<br />
-</li>
-<li>Základy inferenčního uvažování: vzorek a populace</li>
-<li>Pravděpodobnost, nejistota a variabilita</li>
-<li>Centrální limitní věta</li>
-<li>Podmíněná pravděpodobnost a Bayesova věta</li>
-<li>Bayesovská aktualizace na základě nových informací</li>
-</ol>
-<div id="section-1" class="section level2">
-<h2>1</h2>
-<p><br> <strong>Otázka 1</strong></p>
-<p><em>Najděte, jaký je rozdíl mezi porodností (resp. hrubou mírou porodnosti) a plodností (resp. úhrnnou plodností)? V čem se liší z hlediska vhodnosti použití?</em></p>
-<details>
-<summary>
-Podívat se na řešení
-</summary>
-Porodnost, resp. hrubá míra porodnosti udává v promilích počet živě narozených na 1000 osob za kalendářní rok. Plodnost, resp. úhrnná plodnost údává průměrný počet dětí, který by se v období od 15 od 49 let věku narodil jedné ženě v dané zemi (populaci), pokud by zůstala zachována aktuální obecná míra plodnosti (tj. aktuální míra toho, jak mají ženy v různém věku děti). To může znít složitě. Důležité je rozklíčovat, že porodnost především popisuje určité časové období (přičemž nezohledňuje věkovou strukturu obyvatel), zatímco plodnost především popisuje reprodukční chování určité kohorty. Aktuální porodnost tedy může být důležitější při plánování kapacit služeb péče o děti, aktuální plodnost je zase lepším sociologickým indikátorem toho, jak moc lidé prioritizují rodičovství. Nízká plodnost může odrážet odkládání rodičovství, potíže s početím, ale také rozhodnutí větší části populace nemít vůbec děti nebo obtíže skloubit rodinu a ekonomické zajištění za podmínek stávající ekonomiky a sociálních politik.
-</details>
-<p><br> <strong>Otázka 2</strong></p>
-<p><em>Za zjednodušeného předpokladu, že je v ČR 10 miliónů obyvatel a ročně se narodí 100 tisíc dětí, jaká je u nás hrubá míra porodnosti?</em></p>
-<details>
-<summary>
-Podívat se na řešení
-</summary>
-<pre class="r"><code>(100000/10000000)*1000 # násobení číslem 1000 odráží konvenci udávat hrubou míru porodnosti v promilích.</code></pre>
-<pre><code>## [1] 10</code></pre>
-</details>
-<p><br> <strong>Otázka 3</strong></p>
-<p><em>Dohledejte, jaká je aktuálně v Česku úhrnná plodnost. Dále zjistěte, jestli se zaposledních 20 let (zhruba mezi roky 2000 a 2020) zvýšila, snížila, nebo zůstala víceméně stejná.</em></p>
-<details>
-<summary>
-Podívat se na řešení
-</summary>
-<p>Za posledních 20 let se naše úhrnná plodnost zvyšuje. Zatímco kolem roku 2000 patřila k nejnižším na světě, dnešní hodnoty kolem 1,7 z nás dělají v rámci rozvinutých zemích spíše nadprůměrnou zemi. Samozřejmě na obnovu populace to samo o sobě nestačí, na to jsou potřeby hodnoty kolem 2,1. Před úbytkem populace nás (zatím) chrání prodlužující se délka života a narůstající migrace.</p>
-<p><img src="figs/01_ex_fertility.png" width="364" /></p>
-<a href="https://www.czso.cz/csu/czso/aktualni-populacni-vyvoj-v-kostce">Zdroj ČSÚ.</a>
-</details>
-<p><br> <strong>Otázka 4</strong></p>
-<p><em>Čína dnes vykazuje velmi nízkou míru plodnosti (daleko za Českou republikou). Navíc víme, že politika jednoho dítěte, která byla v minulosti realizována v Číně, vedla k tomu, že je dnes v kohortě mladých lidí v reprodukčním věku nebývalá převaha mužů. (Je to důsledkem toho, že rodiny nucené mít jen jedno dítě preferovaly chlapce do té míry, že to vedlo k selektivním potratům na základě pohlaví.) Jak bychom tuto doplňkou informaci vyhodnotili vzhledem k nízké míře plodnosti v zemi? Souhlasíte tvrzením, že nízká míra plodnosti v Číně může být do určité míry pouze zdánlivá a vyplývat z výše popsaných důsledků politiky jednoho dítěte? Proč ano/ne?</em></p>
-<details>
-<summary>
-Podívat se na řešení
-</summary>
-<p>Je to přesně naopak. Skutečnost, že je v současné kohortě mladých tak málo žen, vlastně znamená, že nízká míra plodnosti ani plně neodráží závažnost demografické situace v Číne.</p>
-</details>
-</div>
-<div id="section-2" class="section level2">
-<h2>2</h2>
-<p>TBD</p>
-</div>
-<div id="section-3" class="section level2">
-<h2>3</h2>
-<p>TBD</p>
-</div>
-<div id="section-4" class="section level2">
-<h2>4</h2>
-<p>TBD</p>
-</div>
-<div id="section-5" class="section level2">
-<h2>5</h2>
-<p>TBD</p>
-</div>
-<div id="section-6" class="section level2">
-<h2>6</h2>
-<p>TBD</p>
-</div>
-<div id="section-7" class="section level2">
-<h2>7</h2>
-<p>TBD</p>
-</div>
-<div id="section-8" class="section level2">
-<h2>8</h2>
-<p>TBD</p>
-</div>
-<div id="section-9" class="section level2">
-<h2>9</h2>
-<p>TBD</p>
-</div>
-<div id="section-10" class="section level2">
-<h2>10</h2>
-<p>TBD</p>
-</div>
-<div id="section-11" class="section level2">
-<h2>11</h2>
-<p>TBD</p>
-</div>
-</div>
+<p>Pracovní listy ke stažení.</p>
+<p><a href="https://ffuk-my.sharepoint.com/:w:/g/personal/mazaj7af_ff_cuni_cz/EXOxdMFo-hRNnBV1wJmjbd4BAjt9kFa3JygHfEIqP5TR7Q?e=NY3pJh">Týden 1 - úvod do práce v Excelu</a></p>
 
   <br>
   <footer class="bg-white fixed-bottom border">

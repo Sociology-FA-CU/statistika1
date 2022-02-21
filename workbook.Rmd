@@ -1,0 +1,12 @@
+---
+title: "Pracovní listy"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Pracovní listy ke stažení.
+
+[Týden 1 - úvod do práce v Excelu](https://ffuk-my.sharepoint.com/:w:/g/personal/mazaj7af_ff_cuni_cz/EXOxdMFo-hRNnBV1wJmjbd4BAjt9kFa3JygHfEIqP5TR7Q?e=NY3pJh)
