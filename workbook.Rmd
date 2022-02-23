@@ -10,4 +10,6 @@ knitr::opts_chunk$set(echo = TRUE)
 Pracovní listy ke stažení.
 
 - [Týden 1 - Úvod do práce v Excelu](https://ffuk-my.sharepoint.com/:w:/g/personal/mazaj7af_ff_cuni_cz/EXOxdMFo-hRNnBV1wJmjbd4BAjt9kFa3JygHfEIqP5TR7Q?e=uYkK0L)
+- [Týden 1 - Úvod do práce v Excelu - Řešení](https://ffuk-my.sharepoint.com/:x:/g/personal/mazaj7af_ff_cuni_cz/EVFpS4DpnKNPmmeEC0GIcXgBFjHAAnob9_uQDTsthEeyDA?e=2M6PwJ)
 - [Týden 2 - Seminář k lekci Úvod a motivace](https://ffuk-my.sharepoint.com/:w:/g/personal/mazaj7af_ff_cuni_cz/Ec3Q4-6AvH5EqyVqUNMrKc4BB9x0qi2_qKJV3YFXFafRYg?e=6fFguy)
+- [Týden 3 - Kategorická data a procenta](https://ffuk-my.sharepoint.com/:w:/g/personal/mazaj7af_ff_cuni_cz/EZ5DfbrHBwZCq1d7w1myMxQB9JXMpy5khP8GX1RhLCkFQg?e=XDlzko)
