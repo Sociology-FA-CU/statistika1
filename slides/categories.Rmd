@@ -115,7 +115,9 @@ Nárůst absolutního rizika pro ženy tak odpovídal jednomu úmrtí navíc pro
 
 ## Závěr?
 
-Zajímavé, potenciálně závažné, ale relativní riziko může být zavádějící. Dobrým dalším krokem by mohlo být porovnání s jinými faktory (Například jak se od sebe liší různé nemocnice?) a přemýšlení o kauzálním mechanismu.
+Relativní riziko samo o sobě může být zavádějící. V tomto případě jde o potenciálně závažné zjištění, i když rozdíl v absolutním riziku možná neodpovídá představám, které budil novinový titulek. Dobrým dalším krokem pro postavení věci do perspektivy by mohlo být porovnání s jinými faktory (například jak se od sebe liší různé nemocnice?) a přemýšlení o kauzálním mechanismu.
+
+>- Jaký kauzální mechanismus by podle vás mohl působit?
 
 ::: {.notes}
 Asociace není kauzalita. Potenciální kauzální mechanismy: pro ženy je těžší stát se chirugy, uspějí jen ty nejlepší, jsou pak v průměru lepší než jejich mužští kolegové. Mužští chirurgové se více učí na mužských pacientech, mají menší zájem o odlišnosti ženského těla. Muži a ženy mezi chirurgy dostávají odlišně obtížné případy. Muži a ženy mezi chirurgy se věnují různým subdisciplínám s různými riziky. První observační studie s tímto závěrem - je potřeba další výzkum.
@@ -144,7 +146,7 @@ Tabulka shrnuje možné způsoby komunikace příkladu výše: úmrtí operovan�
 
 ```{r}
 ukazatele <- tribble(~"Ukazatel", ~"Operuje žena", ~"Operuje muž",
-                     "pravděpodobnost", "0.5 %", "0.66 %",
+                     "pravděpodobnost (absolutní riziko)", "0.5 %", "0.66 %",
                      "očekávaná četnost", "5 ze 1000", "6.6 ze 1000",
                      "také očekávaná četnost", "1 z 200", "1 z 152",
                      "šance", "5 / 995", "6.6 / 993.4")
@@ -152,6 +154,8 @@ ukazatele <- tribble(~"Ukazatel", ~"Operuje žena", ~"Operuje muž",
 kbl(ukazatele) %>%
    kable_paper(bootstrap_options = c("hover", "condensed"))
 ```
+
+>- Zkuste na základě tabulky definovat, co je to šance.
 
 ## Různé způsoby srovnání mezi dvěma skupinami {.smaller}
 
@@ -256,7 +260,7 @@ Jak tenhle nadpis může dávat smysl???
 
 
 ::: {.notes}
-Absolutní riziko se zvýšilo o 2 %. Relativní riziko je 70/68 = 1.03, tedy zvýšení o 3 %. Poměr šancí je (70/30)/(68/32) = 1.1, tedy 10% nárůst šance vedlejšího účinku u skupiny s intervencí.
+Absolutní riziko se zvýšilo o 2 %, resp. o 2 p.b. Relativní riziko je 70/68 = 1.03, tedy zvýšení o 3 %. Poměr šancí je (70/30)/(68/32) = 1.1, tedy 10% nárůst šance vedlejšího účinku u skupiny s intervencí.
 :::
 
 ## Jak z toho ven?
