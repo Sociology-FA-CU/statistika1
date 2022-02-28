@@ -37,7 +37,7 @@ Kardinální data
 -   tvar dat graficky (histogram, boxplot, bodový graf)
 -   popis centrální tendence (průměr, medián, modus)
 
-> -   Dnes: Číselný popis variability dat
+>-   Dnes: Číselný popis variability dat
 
 ## Výzkum sexuálního života
 
@@ -47,8 +47,8 @@ Kardinální data
 
     -   Jaký minimální a jaký maximální počet partnerů byl uveden ve skupině žen? mužů?
 
-> -   Muži minimum: 0, Muži maximum: 500
-> -   Ženy minimum: 0, Ženy maximum: 550
+>-   Muži minimum: 0, Muži maximum: 500
+>-   Ženy minimum: 0, Ženy maximum: 550
 
 ::: {.notes}
 Minimum by nemělo být překvapivé, jde o velký vzorek. Co vypovídá maximum o obou podskupinách? Pravděpodobně téměř nic...
@@ -60,8 +60,8 @@ Minimum by nemělo být překvapivé, jde o velký vzorek. Co vypovídá maximum
 -   Mezikvartilové rozpětí = Q3 - Q1
 -   Kterou z těchto statistik můžeme považovat za robustní?
 
-> -   Mezikvartilové rozpětí muži: 4 až 18
-> -   Mezikvartilové rozpězí ženy: 3 až 10
+>-   Mezikvartilové rozpětí muži: 4 až 18
+>-   Mezikvartilové rozpězí ženy: 3 až 10
 
 ## Porovnání variačního a mezikvartilového rozpětí 1/3
 
@@ -112,12 +112,13 @@ pop_graph +
 odhady_30 %>% 
   rownames_to_column() %>% 
   ggplot(aes(x = as.numeric(rowname)))+
-  geom_linerange(aes(ymin = min, ymax = max), color = "red")+
+  geom_linerange(aes(ymin = min, ymax = max), color = "red", size = 1)+
   geom_linerange(aes(ymin = Q1, ymax = Q3), color = "blue", size = 1.5)+
   scale_y_continuous(breaks = c(0:9))+
   scale_x_continuous(breaks = c(1:20))+
   labs(x="Vzorek",
-       title = "Dvacet vzorků po třiceti pozorováních")
+       title = "Dvacet vzorků po třiceti pozorováních")+
+  theme_classic()
 
 ```
 
@@ -128,12 +129,13 @@ odhady_30 %>%
 odhady_300 %>% 
   rownames_to_column() %>% 
   ggplot(aes(x = as.numeric(rowname)))+
-  geom_linerange(aes(ymin = min, ymax = max), color = "red")+
+  geom_linerange(aes(ymin = min, ymax = max), color = "red", size = 1)+
   geom_linerange(aes(ymin = Q1, ymax = Q3), color = "blue", size = 1.5)+
   scale_y_continuous(breaks = c(0:9))+
   scale_x_continuous(breaks = c(1:20))+
   labs(x="Vzorek",
-       title = "Dvacet vzorků po 300 pozorováních")
+       title = "Dvacet vzorků po 300 pozorováních")+
+  theme_classic()
 
 ```
 
@@ -167,7 +169,7 @@ $$
 var(X) = \frac{\sum (x_i - \mu_x)^2}{n}
 $$
 
-kde $x_i$ je i-té pozorování, řecké písmeno $\mu$ se čte mjů a značí průměr proměnné x.
+kde $x_i$ je i-té pozorování, řecké písmeno $\mu$ se čte mí (anglicky mjů) a značí průměr proměnné x.
 
 ## Výběrový rozptyl (rozptyl vzorku dat)
 
@@ -218,16 +220,15 @@ $$
 
 $$var(X) = E[(X - E[X])^2]$$
 
->- Odpověď: Ne.
+>- Odpověď: Ne. Je potřeba umět rozpoznat, že každý z těchto zápisů vyjadřuje rozptyl, když ho vidíte. Je potřeba umět ho odlišit pro zápis například průměru, směrodatné odchylky a dalších konceptů představených později. A je potřeba vlastními slovy dokázat vysvětlit, co to rozptyl je. 
 
 ## Rozptyl je v jiných jednotkách než původní proměnná
 
-- Proto samotný číselný údaj o rozptylu zpravidla neříká nic užitečného pro naši lepší představu. 
+- Samotný číselný údaj o rozptylu zpravidla neříká nic užitečného pro naši lepší představu. 
 - Proč ho tedy počítáme?
 
 ::: {.notes}
-Proč počítáme rozptyl? ukazuje variabilitu v datech za využití každého jednoho pozorování. (Na rozdíl od variačního a mezikvartilového rozpětí, které je určeno jen dvěma konkrétními hraničními hodnotami.) 
-ZŠ úloha: Máme čtverec o straně $a$. Když délku strany zdvojnásobíme, kolikrát se zvětší obsah?
+Proč počítáme rozptyl? Ukazuje variabilitu v datech za využití každého jednoho pozorování. (Na rozdíl od variačního a mezikvartilového rozpětí, které je určeno jen dvěma konkrétními hraničními hodnotami.) Hlavně je ale základem pro pokročilejší statistické modelování vztahů mezi proměnnými. V ručitém slova smyslu je rozptyl základním stavebním kamenem statistiky.  
 :::
 
 ## Směrodatná odchylka
@@ -253,17 +254,23 @@ $$
     -   Směrodatná odchylka z čísel 1, 2, 3, ... 100 (sto pozorování)
     -   Směrodatná odchylka z čísel 1, 2, 3, ... 100, 1000 (sto jedna pozorování)
 
-> -   Směrodatná odchylka není robustní, informativní je proto především jen pro symetrická data.
+> -   Směrodatná odchylka není příliš robustní, informativní je proto především jen pro symetrická data.
 
 ::: {.notes}
-Nerobustní, lze demonstrovat na počítačí, kód v R: sd(c(1:100)), sd(c(1:100,1000)).
+Nerobustní, lze demonstrovat na počítači, kód v R: sd(c(1:100)), sd(c(1:100,1000)).
 :::
 
-## Interpretujte následující tabulku
+## Interpretujte následující tabulku, odpovězte otázky {.smaller}
 
 ![](figures/04_sexual_partners.png)
 
 <font size="2">Převzato z @spiegelhalter2019</font>
+
+- Je reportovaný počet sexuálních partnerů u ženy na 75. percentilu větší nebo menší než je mediánová hodnota pro muže?
+- O kolik je variační rozpětí pro muže větší nebo menší než variační rozpětí pro ženy?
+- Pozorujeme větší variabilitu reportovaného počtu sexuálních partnerů u mužů, nebo u žen?
+- Jaký je rozptyl sledované proměnné pro ženy?
+- J
 
 
 ## Variační koeficient (VK)

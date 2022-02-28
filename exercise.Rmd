@@ -4,7 +4,14 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+
+```{r}
+library(tidyverse)
+library(kableExtra)
+countries <- read_csv("data-input/countries.csv")
 ```
 
 Na záložkách níže najdete úkoly k procvičování látky z jednotlivých lekcí. Ke každému zadání je pro kontrolu k dispozici řešení. Silně doporučuji: Pokuste se problém nejprve vždy vyřešit sami. Mnohem víc si odnesete, než když si jen líně přečtete řešení ;-)
@@ -126,7 +133,65 @@ V textu s vysvětlením:
 
 ## 3
 
-TBD
+<br>
+**Otázka 1** 
+
+*Každý z následujících výroků dokončete/doplňte správnou z nabízených možností:*
+
+1) Úsečka uvnitř krabice v krabicovém grafu (boxplot) znázorňuje ... (a) aritmetický průměr, (b) medián, (c) modus
+1) Tato metrická data (2, 3, 5, 5, 7, 9, 9, 11, 12) můžeme označit za ... (a) mající kladnou šikmost, (b) mající zápornou šikmost, (c) bimodální.
+1) Na pět stejných částí rozdělují data... (a) percentily, (b) kvartily, (c) kvintily
+1) Nejvíce náchylná na extrémní pozorování je tato statistika... (a) medián, (b) oříznutý průměr, (c) aritmetický průměr
+
+
+<details><summary>Podívat se na řešení</summary>
+
+Správné odpovědi jsou: b, c, c, c
+
+Zdůvodnění: 
+
+1) Tak je boxplot zkonstruován, je potřeba si zapamatovat.
+1) Data jsou dokonale symtrická, ale mají dvě nejčastější hodnoty: 5 a 9, tedy jsou bimodální
+1) No tak, tenhle byste uhádli, i kdybyste o tom nikdy neslyšeli...
+1) Prostřední hodnota se s extrémními pozorováními mění úplně stejně jako s neextrémními. Oříznutý průměr vypouští extrémní pozorování z výpočtu, čímž jejich vliv potlačuje.
+
+</details>
+
+<br>
+**Otázka 2** 
+
+*Za použití libovolného softwaru nebo papíru vypočítejte průměrný věk naděje na dožití kombinované populace v následujících zemích podle zadaných čísel (vážený průměr). Která země do výsledku "promluví" největší vahou?*
+
+```{r}
+data <- countries %>% 
+  filter(eu_member == "no" & !is.na(life_exp) & !is.na(population)) %>% 
+  select(country, life_exp, population) 
+
+data %>% 
+  kableExtra::kable() %>%
+  kable_material(bootstrap_options = c("hover", "condensed"))
+```
+
+
+
+
+<details><summary>Podívat se na řešení</summary>
+
+Protože nám nejde o průměr z ukazelů jednotlivých zemí, ale o průměr ze všech jednotlivců v těchto zemích, musíme použít vážený průměr, abychom zohlednili různou velikost populace v jednotlivých zemích. Největší vahou do výsledku promluví největší země, tedy Turecko.
+
+```{r echo=TRUE}
+
+data$life_exp * data$population # nejprve roznásobíme jednotlivé naděje na dožití jejich vahou, tedy populací země, které se týkají
+```
+```{r echo=TRUE}
+sum((data$life_exp * data$population)) # Tato čísla sečteme
+```
+```{r echo=TRUE}
+sum((data$life_exp * data$population)) / sum(data$population) # Výsledek vydělíme součtem všech populací.
+```
+             
+</details>
+
 
 ## 4
 

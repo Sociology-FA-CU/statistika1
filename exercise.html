@@ -26,6 +26,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -309,7 +311,6 @@ Porodnost, resp. hrubá míra porodnosti udává v promilích počet živě naro
 <summary>
 Podívat se na řešení
 </summary>
-<pre class="r"><code>(100000/10000000)*1000 # násobení číslem 1000 odráží konvenci udávat hrubou míru porodnosti v promilích.</code></pre>
 <pre><code>## [1] 10</code></pre>
 </details>
 <p><br> <strong>Otázka 3</strong></p>
@@ -383,7 +384,147 @@ Podívat se na řešení
 </div>
 <div id="section-3" class="section level2">
 <h2>3</h2>
-<p>TBD</p>
+<p><br> <strong>Otázka 1</strong></p>
+<p><em>Každý z následujících výroků dokončete/doplňte správnou z nabízených možností:</em></p>
+<ol style="list-style-type: decimal">
+<li>Úsečka uvnitř krabice v krabicovém grafu (boxplot) znázorňuje … (a) aritmetický průměr, (b) medián, (c) modus</li>
+<li>Tato metrická data (2, 3, 5, 5, 7, 9, 9, 11, 12) můžeme označit za … (a) mající kladnou šikmost, (b) mající zápornou šikmost, (c) bimodální.</li>
+<li>Na pět stejných částí rozdělují data… (a) percentily, (b) kvartily, (c) kvintily</li>
+<li>Nejvíce náchylná na extrémní pozorování je tato statistika… (a) medián, (b) oříznutý průměr, (c) aritmetický průměr</li>
+</ol>
+<details>
+<summary>
+Podívat se na řešení
+</summary>
+<p>Správné odpovědi jsou: b, c, c, c</p>
+<p>Zdůvodnění:</p>
+<ol style="list-style-type: decimal">
+<li>Tak je boxplot zkonstruován, je potřeba si zapamatovat.</li>
+<li>Data jsou dokonale symtrická, ale mají dvě nejčastější hodnoty: 5 a 9, tedy jsou bimodální</li>
+<li>No tak, tenhle byste uhádli, i kdybyste o tom nikdy neslyšeli…</li>
+<li>Prostřední hodnota se s extrémními pozorováními mění úplně stejně jako s neextrémními. Oříznutý průměr vypouští extrémní pozorování z výpočtu, čímž jejich vliv potlačuje.</li>
+</ol>
+</details>
+<p><br> <strong>Otázka 2</strong></p>
+<p><em>Za použití libovolného softwaru nebo papíru vypočítejte průměrný věk naděje na dožití kombinované populace v následujících zemích podle zadaných čísel (vážený průměr). Která země do výsledku “promluví” největší vahou?</em></p>
+<table class=" lightable-material" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+country
+</th>
+<th style="text-align:right;">
+life_exp
+</th>
+<th style="text-align:right;">
+population
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Iceland
+</td>
+<td style="text-align:right;">
+82.4
+</td>
+<td style="text-align:right;">
+348450
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Norway
+</td>
+<td style="text-align:right;">
+82.5
+</td>
+<td style="text-align:right;">
+5295619
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Switzerland
+</td>
+<td style="text-align:right;">
+83.3
+</td>
+<td style="text-align:right;">
+8484130
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Montenegro
+</td>
+<td style="text-align:right;">
+76.8
+</td>
+<td style="text-align:right;">
+622359
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+North Macedonia
+</td>
+<td style="text-align:right;">
+75.9
+</td>
+<td style="text-align:right;">
+2075301
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Albania
+</td>
+<td style="text-align:right;">
+76.4
+</td>
+<td style="text-align:right;">
+2870324
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Serbia
+</td>
+<td style="text-align:right;">
+76.3
+</td>
+<td style="text-align:right;">
+7001444
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Turkey
+</td>
+<td style="text-align:right;">
+76.4
+</td>
+<td style="text-align:right;">
+80810525
+</td>
+</tr>
+</tbody>
+</table>
+<details>
+<summary>
+Podívat se na řešení
+</summary>
+<p>Protože nám nejde o průměr z ukazelů jednotlivých zemí, ale o průměr ze všech jednotlivců v těchto zemích, musíme použít vážený průměr, abychom zohlednili různou velikost populace v jednotlivých zemích. Největší vahou do výsledku promluví největší země, tedy Turecko.</p>
+<pre class="r"><code>data$life_exp * data$population # nejprve roznásobíme jednotlivé naděje na dožití jejich vahou, tedy populací země, které se týkají</code></pre>
+<pre><code>## [1]   28712280  436888568  706728029   47797171  157515346  219292754  534210177
+## [8] 6173924110</code></pre>
+<pre class="r"><code>sum((data$life_exp * data$population)) # Tato čísla sečteme</code></pre>
+<pre><code>## [1] 8305068434</code></pre>
+<pre class="r"><code>sum((data$life_exp * data$population)) / sum(data$population) # Výsledek vydělíme součtem všech populací.</code></pre>
+<pre><code>## [1] 77.25059</code></pre>
+</details>
 </div>
 <div id="section-4" class="section level2">
 <h2>4</h2>

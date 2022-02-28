@@ -101,7 +101,7 @@ Zkrácený zápis:
 
 $$\bar{x} = \frac{1}{n} \sum_{i=1}^n x_i $$
 
-## Skoro všichni mají větší než průměrný počet nohou... {.columns-2 .smaller}
+## Průměr a princip páky {.columns-2 .smaller}
 
 Průměr reprezentuje data v určitém smyslu, ale nemusí být reprezentativní v jiném smyslu.
 
@@ -120,13 +120,41 @@ O aritmetickém průměru lze přemýšlet jako o principu páky ve fyzice. Dal�
 ## Už jsme viděli: Jak se šíří COVID
 
 ::: {.centered}
-![](figures/01_R0_covid.png){width="45%"}
+![](figures/01_R0_distribution.png){width="45%"}
 :::
 
 <font size="2">Převzato z @spiegelhalter2021</font>
 
 ::: {.notes}
 Průměr užitečně modeluje naše očekávání ohledně počtu nakažených do budoucna, ale může být zavádějící z hlediska mechanismů (např. super spreaders), jak se nákaza šíří.
+:::
+
+## Šikmost (Skewness) {.smaller}
+
+```{r}
+
+
+set.seed(42)
+
+skew_neg <- ggplot(data=as_tibble(rbeta(1000,5,2)), aes(x = value)) + geom_histogram(color="white") + labs(title = "Záporná šikmost", x = "Rozsah proměnné je od 0 do 1", y = "Četnost") + annotate(geom="text", x=0.05, y=60, label="-", color="red", size = 20) + scale_x_continuous(limits = c(0,1))
+skew_pos <- ggplot(data=as_tibble(rbeta(1000,2,5)), aes(x = value)) + geom_histogram(color="white") + labs(title = "Kladná šikmost", x = "Rozsah proměnné je od 0 do 1", y = "Četnost") + annotate(geom="text", x=0.95, y=60, label="+", color="red", size = 15) + scale_x_continuous(limits = c(0,1))
+skew_0 <- ggplot(data=as_tibble(rbeta(1000,5,5)), aes(x = value)) + geom_histogram(color="white") + labs(title = "Nešikmé rozdělení", x = "Rozsah proměnné je od 0 do 1", y = "Četnost") + scale_x_continuous(limits = c(0,1))
+
+skew_0 / skew_neg / skew_pos
+
+
+# unused versions of illustrating skew
+
+# left <- rnorm(1000, 10, 1) %>% log10() %>% hist()
+# right <- rnorm(1000, 10, 1) %>% exp() %>% hist()
+# rsnorm(1000, mean = 0, sd = 1, xi = 10) %>% hist()
+
+```
+
+- Ve kterém ze tří obrázků výše bude průměr větší/menší než medián? Kdy bude stejný?
+
+::: {.notes}
+Data mohou být buď symetrická (např. známé normální rozdělení čili Gausova křivka), nebo nesymetrická. Možným měřítkem nesymetričnosti je šikmost. 
 :::
 
 ## Měli bychom tedy raději používat medián?
@@ -354,6 +382,7 @@ ggplot(data = mammals, aes(x = body_wt, y = brain_wt)) +
 Vědecký zápis lze číst takto: uvažujte číslo před "e". Toto číslo má explicitně nebo implicitně desetinnou čárku, např. číslo 5 je 5,0. Posuňte desetinnou čárku o tolik míst, jaké číslo je za znakem -, resp. +. Pokud je znak minus, posouváme doleva, pokud plus, posouváme doprava. Například číslo 3,4e-04 tedy znamená: 0,00034.
 :::
 
+
 # Robustní statistiky
 
 ## Co je robustní statistika?
@@ -485,7 +514,7 @@ obyv %>% ggplot(aes(y=fct_reorder(country, `80-and-over`), x = `80-and-over`, fi
 
 Jak vypočítat podíl osob ve věku 80 a více v rámci EU?
 
-## Příklad Itálie, Česko a Slovensko
+## Příklad Itálie, Česko a Slovensko {.smaller}
 
 ```{r}
 
