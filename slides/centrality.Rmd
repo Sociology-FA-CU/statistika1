@@ -31,6 +31,7 @@ library(ggrepel)
 .forceBreak { -webkit-column-break-after: always; break-after: column; }
 </style>
 ```
+
 ## Typy proměnných - opakování {.columns-2}
 
 -   nominální
@@ -74,7 +75,7 @@ Fotografie ilustruje experiment, lidé měli odhadnout počet fazolek ve sklenic
 <font size="2">Zdroj [@spiegelhalter2019]</font>
 
 ::: {.notes}
-Bodový graf - vynáší jednotlivé odhady na číselnou osu, v tomto grafu má význam jen horizontální dimenze, vertikální rozdíly jsou náhodně vygenerovány, aby se body nepřekrývaly. Box plot (krabicový graf) se nesnaží zobrazit pozorování přímo, ale skrze klíčové hodnoty: kvartily (o nich více později). Histrogram využívá pro zobrazení kategorizaci proměnné di intervalů.
+Bodový graf - vynáší jednotlivé odhady na číselnou osu, v tomto grafu má význam jen horizontální dimenze, vertikální rozdíly jsou náhodně vygenerovány, aby se body nepřekrývaly. Box plot (krabicový graf) se nesnaží zobrazit pozorování přímo, ale skrze klíčové hodnoty: kvartily (o nich více později). Histrogram využívá pro zobrazení kategorizaci proměnné di intervalů. Skutečný počet fazolek ve sklenici: 1616. Mediánový odhad "davu" v experimentu, který Spiegelhalter reportuje: 1775 (jen 1 z 10 hádajících se dostal takto blízko nebo lépe).
 :::
 
 # Míry centrality
@@ -468,8 +469,8 @@ Odstraněna byla hodnota pro slona afrického. Graf na lineárním měřítku ne
 
 ## Oříznutý průměr
 
->-   Oříznutý průměr (trimmed mean, truncated mean): průměr z hodnot po "oříznutí" určitého procenta extrémních (nejmenší a největších hodnot).
 >-   Medián potlačuje šikmost distribuce i extrémní případy, oříznutý průměr potlačuje především extrémní případy.
+>-   Oříznutý průměr (trimmed mean, truncated mean): průměr z hodnot po "oříznutí" určitého procenta extrémních (nejmenší a největších hodnot).
 >-   NADSTAVBA: Windsorized mean - podobný jako oříznutý, místo odříznutí ale hodnoty nahradí nejvyšší/nejnižší ještě neodstraněnou hodnotou.
 
 ::: {.notes}

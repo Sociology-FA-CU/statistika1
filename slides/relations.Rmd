@@ -50,18 +50,129 @@ ggExtra::ggMarginal(p, type = "histogram")
 
 # Kovariance
 
-## Opakování: Variance
 
-Měřítko toho, jak moc jednotlivá pozorování dané proměnné variují. 
+## Kovariance {.columns-2 .smaller}
+
+Míra toho, jak dvě proměnné variují společně. 
+
+<p class="forceBreak">
+
+</p>
+
+![](figures/05_cov_wiki.png){width=35%}
+
+<font size="2">[Zdroj Wiki](https://en.wikipedia.org/wiki/Covariance)</font>
+
+:::{.notes}
+Provizorně a ve vztahu k prvnímu slajdu (vztah HDP a naděje na dožití) lze říct: pokud by nám informace o HDP na osobu dané země neřekla nic o naději na dožití, mezi proměnnými by byla nulová kovariance. Pokud by větší hodnota HDP na osobu predikovaly větší naději na dožití, šlo by o kladnou kovarianci. Pokud větší hodnoty HDP na hlavu predikují menší hodnoty naděje na dožití, jde o zápornou kovarianci.
+:::
+
+
+## Kovariance - výpočet (nadstavba)
+
+Pro připomenutí: rozptyl, neboli variance:
 
 $$
-var(X) = \frac{\sum (x_i - \mu_x)^2}{n}
+var(X) = E[(X - E[X])^2] = E[(X - E[X]) * (X - E[X])]
+$$
+Kovariance:
+
+$$
+cov(X,Y) = E[(X - E[X]) * (Y - E[Y])]
 $$
 
-## Kovariance
+:::{.notes}
+Sledujeme dvě hodnoty, rozdíl $X_i$ a $\bar{X}$ a rozdíl $Y_i$ a $\bar{Y}$. Pokud jsou obě kladné, kovariance roste. Pokud jsou obě záporné, také roste. Naopak pokud je jedna kladná a druhá záporná, kovariance klesá. 
+:::
+
+## Korelace
+
+Hodnoty  kovariance, stejně jako hodnoty rozptylu, nejsou samy o sobě příliš vypovídající (teoreticky nabývají hodnoty od minus nekonečna do plus nekonečna). Proto využíváme standardizovanou verzi kovariance, tedy korelaci, která nabývá hodnot od -1 do 1.
+
+Hodnoty -1 a +1 odpovídají dokonalému lineárnímu vztahu, jako známe z fyzikálních zákonů. 
 
 
+## Pearsonův korelační koeficient
 
+Ta korelace. Bez upřesnění máme korelací zpravidla Pearsonův korelační koeficient. Značíme řeckým $\rho$ (ró), případně také malým písmenem r. 
+
+Výpočet je nadstavba:
+
+$$
+\rho = cov(X,Y) / \sigma_X*\sigma_Y
+$$
+Pearsonův korelační koeficient vypočítáme tak, že kovarianci vydělíme součinem směrodatných odchylek obou proměnných.
+
+:::{.notes}
+Podobně jako u rozptylu a směrodatné odchylky, také u kovariance a korelace existuje verze výpočtu pro populaci a verze výpočtu pro vzorek. Nás toto komputační rozlišení nebude trápit, příslušné vzorce lze dohledat na anglické Wikipedii.
+:::
+
+## Korelace zachycuje lineární vztah
+
+<div class="centered">
+![](figures/05_cor_linear.png){width=90%}
+</div>
+
+<font size="2">[Zdroj Wiki](https://en.wikipedia.org/wiki/Correlation)</font>
+
+## Spearmanův korelační koeficient
+
+Také Spearmanův koeficient pořadové korelace: převede pozorování na pořadí, z nich se vypočítá Pearsonův koeficient. Značí se také $\rho$, takže v tom může být trochu zmatek.
+
+
+<div class="centered">
+![](figures/05_pearson_spearman.png){width=45%}
+</div>
+
+<font size="2">[Zdroj Wiki](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient)</font>
+
+
+## Kendallův korelační koeficient $\tau$ (nadstavba)
+
+Značí se řeckým písmenem $\tau$ (tau). Také pořadový koeficient korelace, ale založený na jiném principu výpočtu než Spearmanův koeficient. Zatímco Spearmanův korelační koeficient používáme na kardinální proměnné s (výrazně) nesymetrickým tvarem (šikmá data), Kendallův koeficient je doporučen k použití pro ordinální data, často je tedy používán spolu s kontingenčními tabulkami (pokud obě proměnné jsou kardinální). 
+
+Existuje více verzí koeficientu:
+
+- Kendallův koeficient $\tau$ - b se doporučuje používat pro čtvercové kontingenční tabulky
+- Kendallův koeficient $\tau$ - b se doporučuje používat pro obdélníkové kontingenční tabulky
+
+
+:::{.notes}
+Pro zájemce je výpočet snadno dohledatelný a relativně snadno pochopitelný na anglické Wikipedii.
+:::
+
+
+## Vyčíslení vztahu mezi HDP na osobu a nadějí na dožití {.columns-2 .smaller}
+
+- Jakou výši Personova korelačního koeficientu odhadujete?
+- Lze z pohledu na data říct, jestli bude větší Pearsonův, nebo Spearmanův korelační koeficient?
+- Kterému z obou koeficientů byste dali přednost?
+
+<p class="forceBreak">
+
+</p>
+
+```{r fig.width=4}
+
+p <- gapminder %>% 
+  filter(year == 2007, continent == "Europe") %>% 
+  ggplot(aes(x=gdpPercap, y=lifeExp))+
+  geom_point()+
+  geom_text_repel(data = gapminder %>% filter(continent == "Europe", year == 2007, country == "Czech Republic"),
+                  aes(label = country))+
+  labs(x = "HDP na osobu v USD", y = "Naděje na dožití" )
+
+
+ggExtra::ggMarginal(p, type = "histogram")
+  
+```
+
+
+:::{.notes}
+Hodnota Personova koeficientu je 0.58. Spearman je 0.83. Přednost bych dal Pearsonovu koeficientu: Je to základní korelační koeficient (lidé ho spíše očekávají), zajímá mě, jak společně variují sledované proměnné, nikoliv pouze pořadí (to je trochu nouzovka, když mají data opravdu podivný tvar), rozdělení obou proměnných je docela v pohodě, není tam extrémně silná asymetrie.
+:::
+
+# Vztahy mezi proměnnými v agregovaných datech
 
 ## Vztah nehodovosti a příjmu {.columns-2 .smaller}
 
@@ -82,7 +193,7 @@ Inspirováno [Eliyabeth Lynch](https://www.youtube.com/watch?v=8Mpi10MRhDU)
 ![Město A](figures/05_city_a.png){width=65%}
 ![Město B](figures/05_city_b.png){width=65%}
 ![Město C](figures/05_city_c.png){width=65%}
-  
+
   
 ## Je to pravda?
 
@@ -123,7 +234,7 @@ Zavádějící. Je pravda, že ve věkové skupině 10-59 let je vyšší míru 
 
 ## A jen smrti způsobené covidem?
 
-![](figures/05_covid_death_age.png){width=80%}
+![](figures/05_covid_death_age.png){width=60%}
 
 [Celý článek BBC]("https://www.bbc.com/news/59757395")
 
@@ -133,13 +244,13 @@ Zavádějící. Je pravda, že ve věkové skupině 10-59 let je vyšší míru 
 mosaic( ~ Gender + Admit, data = UCBAdmissions)
 ```
 
-## Zohlednění departmentů
+## Zohlednění fakult
 
 ```{r}
 rownames(UCBAdmissions) <- c("A", "R")
 
 mosaic( ~ Dept + Gender + Admit, data = UCBAdmissions,
-       highlighting = "Admit", highlighting_fill = c("lightblue", "pink"),
+       highlighting = "Admit", highlighting_fill = c("lightgreen", "pink"),
        direction = c("v","h","v"))
 
 

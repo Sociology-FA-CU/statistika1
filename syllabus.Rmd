@@ -98,7 +98,7 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     -   Pohledem a úvahou odhadnout, jak se bude měnit korelační koeficient u daného malého datového souboru a jak se bude lišit Pearsonův a Spearmanův koeficient pro tato data.
     -   Vysvětlit a na příkladech ilustrovat, co znamená, že korelace neimplikuje kauzalitu.
     -   Vysvětlit a na příkladech ilustrovat, co znamená, že kauzalita neimplikuje korelaci.
-    -   Nakreslit obrázek ilustrující Simpsonův paradax pro zadaný problém.
+    -   Vysvětlit, co je to Simpsonův paradox a ilustrovat to příkladem.
     
 -   *Základní příprava (před přednáškou)*
 

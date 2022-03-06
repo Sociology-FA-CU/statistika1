@@ -9,4 +9,5 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Zde najdete zadání jednotlivých bonusových úkolů, za které můžete získat body navíc do závěrečného testu. Více o bodování a odevzdávání viz sekce Atestace.
 
-* [Zadání bonusového úkolu 1](https://ffuk-my.sharepoint.com/:b:/g/personal/mazaj7af_ff_cuni_cz/EbVDZ5wWgk9Ajn-wk578_4MBiXSdy0Vbb4zDN9KqCXM6tQ?e=Dgxm2p)
+* [Zadání bonusového úkolu 1](https://drive.google.com/file/d/1x562YOGs-wP0sihqT-A7MUitDAJ8MeLh/view?usp=sharing)
+* [Zadání bonusového úkolu 2](https://docs.google.com/document/d/1swuLwMAYfgm7inQczujzOv4fpzUSDlhK9W4C61RyYMk/edit?usp=sharing)

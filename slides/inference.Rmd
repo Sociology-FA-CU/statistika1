@@ -11,16 +11,51 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# Teoretická distribuce dat
+# Teoretické distribuce dat
 
-## Opakování: Empirická distribuce dat - tvar dat
+## Teoretická distribuce dat
 
-Kardinální (metrická data) mají určitou distribuci (tvar). Tuto distribuci můžeme vizualizovat graficky nebo zachytit nějaký její aspekt statistickými ukazateli. Rozlišujeme statistické ukazatele typu "míry polohy" (průměr, medián, modus) a "míry variability" (variační nebo mezikvartilové rozpětí, rozptyl, směrodatná odchylka atp.).
+![](figures/04_field.jpg)
 
-Některé distribuce je ale užitečné zavést teoreticky: ideální tvary dat, ke kterým vztahujeme (se kterými porovnáváme) naše pozorování. 
+<font size="2">Původ obrázku [zde](https://www.darek-zazitek.cz/zazitek/pilotem-letadla-ve-vyskove)</font>
 
-## Uniformní rozdělení dat (diskrétní)
+-> Už jsem se setkali s pojmem empirická distribuce (rozdělení) dat = tvar konkrétních pozorovaných dat.
+-> Teoretická distribuce dat = model, se kterým reálná data porovnáváme, má určité ideální vlastnosti
+
+## Rovnoměrné (uniformní) rozdělení
+
+- Všechny hodnoty jsou stejně zastoupené
+
+```{r}
+
+tibble(value = as_factor(1:6),
+       prob = 1/6) %>% 
+  ggplot(aes(x = value, y = prob)) + 
+  geom_col() + 
+  labs(x = "Hodnota na kostce", y = "Pravděpodobnost dané hodnoty", title = "Diskrétní uniformní rozdělení - hod kostkou") +
+  scale_y_continuous(labels = scales::label_percent())
+  
+
+```
+
+## Diskrétní rovnoměrné rozdělení - průměr a rozptyl (nadstavba)
+
+- a ... minimum
+- b ... maximum
+- n ... počet možných hodnot
+
+$$
+Průměr = (a+b)/2
+$$
+$$
+Rozptyl = (n^2 - 1)/12
+$$
+
+:::{.notes}
+U teoretických distribucí mohou existovat vzorce pro výpočet průměru, rozptylu a dalších statistik ze základních parametrů distribuce. Fungují ale samozřejmě i obecné vzorce, které jsme si ukazovali.
+:::
 
 
+## Normální rozdělení
 
 

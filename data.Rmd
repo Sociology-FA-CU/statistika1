@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Data pro práci na semináři a bonusové úkoly
 
-* [STÁHNOUT Dataset Gapminder s evropskými zeměmi](https://ffuk-my.sharepoint.com/:x:/g/personal/mazaj7af_ff_cuni_cz/EWChXoZEwzFFv0F1TsKhHQIB0EK_FtbsTyXTNhf0nllD3Q?e=a2HU0R). Původní data (včetně neevropských zemí) lze stáhnout na [webu projektu Gapminder](https://www.gapminder.org/data/), ovšem pro kurz to není potřeba (stačí vám data pro evropské země).
+- [STÁHNOUT Dataset Gapminder s evropskými zeměmi](https://docs.google.com/spreadsheets/d/1OfcaO7OXdenoDgETpqbn-mb5sR_ncKnxgceCdanKKP0/edit?usp=sharing). Původní data (včetně neevropských zemí) lze stáhnout na [webu projektu Gapminder](https://www.gapminder.org/data/), ovšem pro kurz to není potřeba (stačí vám data pro evropské země).
 
   - country	... země
   - region	... historicky spojená skupina zemí
@@ -24,8 +24,10 @@ knitr::opts_chunk$set(echo = TRUE)
   - pop 2007	...
   - gdpPercap 2007	...
   - Happiness Score 2019 ...skóre štěstí získané z výběrového šetření, pro formulaci otázky [viz Cantril Life Ladder](https://news.gallup.com/poll/122453/understanding-gallup-uses-cantril-scale.aspx)
+</br>  
+- [STÁHNOUT Dataset Příjem](https://docs.google.com/spreadsheets/d/1aYFWkbsum688xuzN-P4Z7ZYWvFaH-xVwf4utqq1STaY/edit?usp=sharing)
 
 
 ## Data pro zápočtové úkoly
 
-* [STÁHNOUT Dataset s demokratickým indexem pro ZÁPOČTOVÝ ÚKOL 1](https://ffuk-my.sharepoint.com/:x:/g/personal/mazaj7af_ff_cuni_cz/EZ04HDlXW9BNu9Y1-Mf1ukABnpE7MRlAWu8HxEw_Fzz3gg?e=BtWQXU)
+* [STÁHNOUT Dataset s demokratickým indexem pro ZÁPOČTOVÝ ÚKOL 1](https://docs.google.com/spreadsheets/d/1RzYdIdqhahL0yXBQh2GQ6ncBgGLfHcrVEq94vJlp7k8/edit?usp=sharing)

@@ -270,21 +270,22 @@ Nerobustní, lze demonstrovat na počítači, kód v R: sd(c(1:100)), sd(c(1:100
 - O kolik je variační rozpětí pro muže větší nebo menší než variační rozpětí pro ženy?
 - Pozorujeme větší variabilitu reportovaného počtu sexuálních partnerů u mužů, nebo u žen?
 - Jaký je rozptyl sledované proměnné pro ženy?
-- J
 
 
 ## Variační koeficient (VK)
 
 Také "relativní směrodatná odchylka".
 
-Spočítejte směrodatnou odchylku z následujících datových setů:
+Spočítejte směrodatnou odchylku z následujících datových sad:
 
-a) 1, 2, 3
-b) 101, 102, 103
+a) První sada: 1, 2, 3
+b) Druhá sada: 101, 102, 103
 
 ## Směrodatná odchylka je stejná...
 
 ... ale v prvním data setu se první a druhé pozorování liší o 100 %, zatímco v druhém o necelé procento...
+
+Jedno řešení je variační koeficient:
 
 $$VK = \sigma / \mu $$
 
@@ -372,104 +373,6 @@ cvvm %>% select(IDE_10A, t_VZD) %>%
        y = "Čistý měsiční příjem",
        caption = "Zdroj dat: Naše společnost, červen 2019")
 ```
-
-
-
-## Chudoba a měření variability
-
-Příklad inspirovaný knihou How to Make the World Add Up [@harford2021]
-
-<div class="centered">
-![](figures/04_richest.png){width="60%"}
-</div>
-
-<font size="2">Zdroj [The Guardian](https://www.theguardian.com/business/2019/jan/21/world-26-richest-people-own-as-much-as-poorest-50-per-cent-oxfam-report), 2019.</font>
-
-## Jak dobrý je to ukazatel?
-
-![The Guardian, 2014, data Oxfam](figures/04_richest_2014.png){width="50%"}
-
-![The Guardian, 2017, data Oxfam](figures/04_richest_2017.png){width="50%"}
-
-![The Guardian, 2019, data Oxfam](figures/04_richest_2019.png){width="50%"}
-
-## And it gets worse...
-
-![](figures/04_richest_reporting_fuckup.png){width="70%"}
-
-<font size="2">Zdroj [The Independent](https://www.independent.co.uk/news/world/politics/oxfam-warns-davos-of-pernicious-impact-of-the-widening-wealth-gap-9070714.html)</font>
-
-## Co se měří a kdo to měří?
-
-Pravděpodobně každý v této třídě je bohatší než miliarda nejchudších lidí.
-
-> -   Průzkum Global Wealth Report financovaný bankou Credit Suisse.
-
-> -   Měří čisté bohatství = aktiva jako domy, akcie a hotovost v bance po odečtení případných dluhů. Asi pro miliardu lidí se odhaduje, že má záporný nebo přibližně nulový majetek.
-
-::: {.notes}
-Čisté bohatství je dobrá míra bohatství, ale velmi neintuitivní míra chudoby: "If you've just finished an MBA, or law school, or medical school, and you've picked up a few hundred thousand dollars of debt, your net wealth is way below zero. But financially, a young doctor is likely to feel much more comfortable than a young subsistence farmer, even if the doctor is up to her chin in debt and the farmer owns a scrawny cow and a rusty bike for a net worth of \$100." (Tim Harford, How to make the World add up)
-:::
-
-## Jak to tedy je?
-
-<div class="centered">
-![Global Wealth Report 2021](figures/04_wealth_distribution.png)
-</div>
-
-<font size="2">Zdroj [Global Wealth Report 2021](https://www.credit-suisse.com/about-us/en/reports-research/global-wealth-report.html)</font>
-
-##  {.smaller}
-
-Oxfam's director of campaigns and policy, Matthew Spencer, said:
-
-"The massive fall in the number of people living in extreme poverty is one of the greatest achievements of the past quarter of a century but rising inequality is jeopardising further progress.
-
-The way our economies are organised means wealth is increasingly and unfairly concentrated among a privileged few while millions of people are barely subsisting. Women are dying for lack of decent maternity care and children are being denied an education that could be their route out of poverty. No one should be condemned to an earlier grave or a life of illiteracy simply because they were born poor.
-
-It doesn't have to be this way -- there is enough wealth in the world to provide everyone with a fair chance in life. Governments should act to ensure that taxes raised from wealth and businesses paying their fair share are used to fund free, good-quality public services that can save and transform people's lives."
-
-Zdroj [The Guardian](https://www.theguardian.com/business/2019/jan/21/world-26-richest-people-own-as-much-as-poorest-50-per-cent-oxfam-report)
-
-
-## Míry hodnocení majetkové nerovnosti {.columns-2 .smaller}
-
-### Takhle ne
-
--   zaměření na extrémní jednotky nebo desítky případů: kuriozita posílená tím, že nejbohatší miliardy nic nevlastní
--   směrodatná odchylka - používáme jen pro symetrická rozdělení, její sílu si teprve ukážeme v příštích přednáškách
-
-<p class="forceBreak">
-
-</p>
-
-### Takhle možná
-
--   poměr 50/10, tj, srovnání mediánu a desátého percentilu
--   majetek horního 1 % (používá Piketty) - smysluplnější ukazatel koncentrace majektu na vršku pyramidy
-
-::: {.notes}
-Poměr 50:10 i majetek horního 1 % říkají o nerovnosti něco jiného. Je možné, že poměr 50:10 se zmenší (indikuje pokles nerovnosti), ale podíl na majetku horního procenta vzroste (indikuje nárůst nerovnosti).
-:::
-
-## Giniho koeficient {.columns-2 .smaller}
-
--   Dobrá míra variability (nerovnosti) v nesymetrických, šikmých datech (příjmy, majetek, počet sexuálních partnerů,...)
--   Funguje i pro symetrická data (např. Giniho koeficient výšky)
--   Zohledňuje posuny na celém spektru
--   Jednodušší pochopit graficky
--   Hodnoty často dávají smysl jen v komparaci
-
-<p class="forceBreak">
-
-</p>
-
-![](figures/04_gini_wiki.png){width="85%"}
-
-Zdroj [Wiki](https://en.wikipedia.org/wiki/Gini_coefficient)
-
-$$Gini = A/(A+B) $$
-
 
 
 ## Reference v prezentaci {.smaller}
