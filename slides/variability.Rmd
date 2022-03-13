@@ -249,12 +249,12 @@ $$
 
 -   Úvahou?
 
--   Na příkladu:
+-  Na příkladu:
 
     -   Směrodatná odchylka z čísel 1, 2, 3, ... 100 (sto pozorování)
     -   Směrodatná odchylka z čísel 1, 2, 3, ... 100, 1000 (sto jedna pozorování)
 
-> -   Směrodatná odchylka není příliš robustní, informativní je proto především jen pro symetrická data.
+>-   Směrodatná odchylka není příliš robustní, informativní je proto především jen pro symetrická data.
 
 ::: {.notes}
 Nerobustní, lze demonstrovat na počítači, kód v R: sd(c(1:100)), sd(c(1:100,1000)).
@@ -288,6 +288,18 @@ b) Druhá sada: 101, 102, 103
 Jedno řešení je variační koeficient:
 
 $$VK = \sigma / \mu $$
+
+## Příklad na využití variačního koeficientu
+
+- Ceny nafty v ČR (Kč za litr, průměrné hodnoty za poslední 4 týdny): 37, 38, 43, 49  
+- Ceny nafty v USA (USD za galon, průměrné hodnoty za poslední 4 týdny): 3.5, 3.6, 4.1, 4.6
+
+>- Ve které zemi jsou vyšší ceny nafty? (nejnovější hodnota)
+>- Spočítejte směrodatnou odchylku a variační koeficient pro obě zemi?
+>- Který ukazatel je vhodnější pro srovnání míry variabiilty v obou zemích?
+>- Jak ještě jinak/lépe byste vyjádřili variabilitu cen v tomto konkrétním příkladu? 
+
+
 
 
 # Případová studie: variabilita v čistých příjmech v jednotlivých vzdělanostních skupinách

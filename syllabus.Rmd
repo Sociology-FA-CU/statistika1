@@ -71,23 +71,20 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
 
 # Numerické proměnné a míry variability
 
--   *Cíle výuky:* Přednáška rozšiřuje výklad o konceptu empirické distribuce dat, tentokrát s důrazem na míry variability. V rámci přednášky je též představeno uniformní a normální rozdělení a studující jsou seznámeni s problematikou standardizace a z-skórů.
+-   *Cíle výuky:* Přednáška rozšiřuje výklad o konceptu empirické distribuce dat, tentokrát s důrazem na míry variability. V rámci přednášky je poprvé krátce představena také problematika z-skórů.
 
 -   *Výsledky učení - studující dokáže:*
 
-    -   Definovat a ve správných souvislostech použít pojmy: variační rozpětí, mezikvartilové rozpětí, směrodatná odchylka, rozptyl, uniformní rozdělení, normální rozdělení, standardizace, z-skór.
+    -   Definovat a ve správných souvislostech (včetně řešení numerických úkolů) použít pojmy: variační rozpětí, mezikvartilové rozpětí, rozptyl, směrodatná odchylka, variační koeficient, z-skór.
     -   Vysvětlit, v jaké vzájemném vztahu jsou směrodatná odchylka a rozptyl.
     -   Vysvětlit, co jsou robustní statistiky a uvést příklady robustní míry variability.
     -   Uvést příklad míry variability, která robustní není, a vymyslet ilustrativní příklad dat, na kterém to lze demonstrovat.
+    - Převádět proměnnou na její z-skóry.
     
 -   *Základní příprava (před přednáškou)*
 
-    -   TBD
+    -   Podívejte se na [toto video na Khan Academy o výpočtu z-skórů](https://www.youtube.com/watch?v=5S-Zfa-vOXs) a [toto video na YouTube na stejné téma](https://www.youtube.com/watch?v=eJF9hiv3c-A).
     
--   *Doporučená příprava*
-
-    -   TBD
-
 # Popis vztahů mezi proměnnými
 
 -   *Cíle výuky:* Cílem je systematizovat pro studující problematiku popisu vztahů mezi různými typy proměnných. Toto téma je částečně pokryto už v předchozích přednáškách, které se vždy alespoň zčásti opírají o reálné příklady, takže přítomnost více proměnných a zkoumání vztahů mezi nimi jsou studentům představeny jaksi mimochodem. Nyní jde o systematizaci a doplnění tohoto poznání. Předmětem přednášky je pouze deskripce vztahů, nikoliv statistické testování. Důraz je kladen na vizualizaci dat.
@@ -128,7 +125,7 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
 
 # Základy inferenčního uvažování: vzorek a populace
 
--   *Cíle výuky:* Cílem přednášky je seznámit studující s různými významy konceptu populace a uvést je do problematiky inferenční statistiky, tedy usuzování z výběrového souboru na populaci. Vedle konceptu populace jsou předmětem přednášky bodové a intervalové odhady a základní seznámení se simulační technikou bootstrapping.
+-   *Cíle výuky:* Cílem přednášky je seznámit studující s různými významy konceptu populace a uvést je do problematiky inferenční statistiky, tedy usuzování z výběrového souboru na populaci. Studující se seznámí s uniformním a normálním rozdělením, a standardizací proměnných na z-skóry. Vedle konceptu populace jsou předmětem přednášky bodové a intervalové odhady a základní seznámení se simulační technikou bootstrapping.
 
 -   *Výsledky učení - studující dokáže:*
 

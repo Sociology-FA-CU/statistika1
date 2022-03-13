@@ -172,6 +172,17 @@ ggExtra::ggMarginal(p, type = "histogram")
 Hodnota Personova koeficientu je 0.58. Spearman je 0.83. Přednost bych dal Pearsonovu koeficientu: Je to základní korelační koeficient (lidé ho spíše očekávají), zajímá mě, jak společně variují sledované proměnné, nikoliv pouze pořadí (to je trochu nouzovka, když mají data opravdu podivný tvar), rozdělení obou proměnných je docela v pohodě, není tam extrémně silná asymetrie.
 :::
 
+# Korelace a kauzalita
+
+## TBD Korelace není kauzalita
+
+(Přidat pár snímků, kde to bude krátce ilustrováno, více to proberou v metodách.)
+
+
+## TBD Obrázky korelace
+
+(Přidat pár obrázků, kde si vyzkouší odhadnout, jak vysoká je kde korelace, případně co se kde stane s korelací, když přibyde nebo ubyde jedno pozorování.)
+
 # Vztahy mezi proměnnými v agregovaných datech
 
 ## Vztah nehodovosti a příjmu {.columns-2 .smaller}

@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Data pro práci na semináři a bonusové úkoly
 
-- [STÁHNOUT Dataset Gapminder s evropskými zeměmi](https://docs.google.com/spreadsheets/d/1OfcaO7OXdenoDgETpqbn-mb5sR_ncKnxgceCdanKKP0/edit?usp=sharing). Původní data (včetně neevropských zemí) lze stáhnout na [webu projektu Gapminder](https://www.gapminder.org/data/), ovšem pro kurz to není potřeba (stačí vám data pro evropské země).
+* [STÁHNOUT Dataset Gapminder s evropskými zeměmi](https://docs.google.com/spreadsheets/d/1OfcaO7OXdenoDgETpqbn-mb5sR_ncKnxgceCdanKKP0/edit?usp=sharing). Původní data (včetně neevropských zemí) lze stáhnout na [webu projektu Gapminder](https://www.gapminder.org/data/), ovšem pro kurz to není potřeba (stačí vám data pro evropské země).
 
   - country	... země
   - region	... historicky spojená skupina zemí
@@ -24,10 +24,31 @@ knitr::opts_chunk$set(echo = TRUE)
   - pop 2007	...
   - gdpPercap 2007	...
   - Happiness Score 2019 ...skóre štěstí získané z výběrového šetření, pro formulaci otázky [viz Cantril Life Ladder](https://news.gallup.com/poll/122453/understanding-gallup-uses-cantril-scale.aspx)
-</br>  
-- [STÁHNOUT Dataset Příjem](https://docs.google.com/spreadsheets/d/1aYFWkbsum688xuzN-P4Z7ZYWvFaH-xVwf4utqq1STaY/edit?usp=sharing)
 
+</br> 
 
+* [STÁHNOUT Dataset Příjem](https://docs.google.com/spreadsheets/d/1aYFWkbsum688xuzN-P4Z7ZYWvFaH-xVwf4utqq1STaY/edit?usp=sharing)
+
+  - [Zdroj dat je ČSÚ](https://www.czso.cz/csu/czso/cri/prumerne-mzdy-3-ctvrtleti-2021)
+  - Data za období 1. čtvrtletí 2020 - 3. čtvrtletí 2021
+
+</br>
+
+* [STÁHNOUT Dataset Jména](https://docs.google.com/spreadsheets/d/1r7Sxsn_a2RgFC6FdNmqYJSBBZMMLkhFM7sF6WP7_suo/edit?usp=sharing)
+
+  - 100 nejčastějších ženských a mužských jmen pro děti narozené v roce 2016 (celkem 107 169)
+  - [Zdroj dat je Našejména.cz](https://www.nasejmena.cz/nj/cetnost.php?id=2016&typ=rocnik) s odvoláním na MV ČR
+
+</br>
+
+* [STÁHNOUT Dataset Kraje](https://docs.google.com/spreadsheets/d/1v6NbEPfiaDptpgi11gpNnbibZC_kiJ-lfW9kX4ZHr_M/edit?usp=sharing)
+
+  - [Zdroj převážně SLDB 2021](https://www.czso.cz/csu/scitani2021/vysledky-prvni ): počet obyvatel, průměrný věk, počet žen, VŠ vzdělání, věřící, národnost, rodinný stav
+  - [Zdroj ekonomických ukazatelů je ČSÚ zde](https://www.czso.cz/csu/czso/porovnani-kraju)
+  - Rozloha převzata z Wikipedie
+  - Najdete v datech nějaké číselné nesrovnalosti?
+  
+  
 ## Data pro zápočtové úkoly
 
 * [STÁHNOUT Dataset s demokratickým indexem pro ZÁPOČTOVÝ ÚKOL 1](https://docs.google.com/spreadsheets/d/1RzYdIdqhahL0yXBQh2GQ6ncBgGLfHcrVEq94vJlp7k8/edit?usp=sharing)
