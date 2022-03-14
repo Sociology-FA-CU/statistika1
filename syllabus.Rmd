@@ -79,11 +79,9 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     -   Vysvětlit, v jaké vzájemném vztahu jsou směrodatná odchylka a rozptyl.
     -   Vysvětlit, co jsou robustní statistiky a uvést příklady robustní míry variability.
     -   Uvést příklad míry variability, která robustní není, a vymyslet ilustrativní příklad dat, na kterém to lze demonstrovat.
-    - Převádět proměnnou na její z-skóry.
     
 -   *Základní příprava (před přednáškou)*
 
-    -   Podívejte se na [toto video na Khan Academy o výpočtu z-skórů](https://www.youtube.com/watch?v=5S-Zfa-vOXs) a [toto video na YouTube na stejné téma](https://www.youtube.com/watch?v=eJF9hiv3c-A).
     
 # Popis vztahů mezi proměnnými
 
@@ -135,7 +133,7 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     
 -   *Základní příprava (před přednáškou)*
 
-    -   TBD
+    -   Podívejte se na [toto video na Khan Academy o výpočtu z-skórů](https://www.youtube.com/watch?v=5S-Zfa-vOXs) a [toto video na YouTube na stejné téma](https://www.youtube.com/watch?v=eJF9hiv3c-A).
     
 -   *Doporučená příprava*
 

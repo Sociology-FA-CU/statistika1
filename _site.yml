@@ -1,7 +1,7 @@
 name: "Jaromír Mazák"
 output_dir: "."
 navbar:
-  title: "Statitiska 1"
+  title: "Statistika 1"
   left:
     - text: "Sylabus"
       href: syllabus.html

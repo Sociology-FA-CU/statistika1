@@ -194,8 +194,60 @@ sum((data$life_exp * data$population)) / sum(data$population) # Výsledek vyděl
 
 
 ## 4
+<br>
+**Otázka 1** 
 
-TBD
+*Každý z následujících výroků dokončete/doplňte správnou z nabízených možností:*
+
+1) Vzorec $\sqrt{E[X-E(X)]^2}$ je možným zápisem pro výpočet ... (a) rozptylu, (b) směrodatné odchylky, (c) variačního koeficientu
+1) Jaký je vztah mezi rozptylem a směrodatnou odchylkou ... (a) rozptyl je vždy větší, (b) rozptyl je vždy menší, (c) nelze říct
+1) Kterou z následujících měr variablity bychom nejspíše označili za robustní ... (a) směrodatnou odchylku, (b) mezikvartilové rozpětí, (c) variační rozpětí
+1) Robustní statistika je taková, která ... (a) není příliš ovlivněna extérmními pozorováními, (b) pro jejíž výpočet je potřeba znát hodnotu všech pozorování, (c) pro jejíž výpočet stačí znát pouze hodnotu kvartilů
+
+
+<details><summary>Podívat se na řešení</summary>
+
+Správné odpovědi jsou: b, c, b, a
+
+Zdůvodnění: 
+
+1) Odmocnina jednoho z běžných zápisů rozptylu, tedy směrodatná odchylka
+1) Rozptyl je sice smrodatná odchylka na druhou, ale pokud je směrodatná odchylka menší než 1, je rozptyl menší.
+1) Směrodatná odchylka vychází z rozptylu, který ve výpočtu využívá čtverec odchylky pozorování od průměru, jinými slovy dává odlehlým pozorováním velkou váhu. Variační rozpětí je zase citlivé na hodnoty maxima a minima. Jen mezikvartilové rozpětí je poměrně robustní. 
+1) Tak je prostě robustní statistika definována, je potřeba si pamatovat
+
+</details>
+
+<br>
+**Otázka 2** 
+
+*Za použití tužky a papíru vypočítejte mezikvartilové rozpětí, výběrový rozptyl, výběrovou směrodatnou odchylku pro následující datovou sadu: 10, 11, 20, 13, 22, 7, 8, 19*
+
+<details><summary>Podívat se na řešení</summary>
+
+Níže používám funkce v R, výsledky slouží pouze pro kontrolu, nepředpokládá se využití funkcí, spíše je dobré procvičit si výpočet v ruce. 
+
+```{r echo=TRUE}
+IQR(c(10, 11, 20, 13, 22, 7, 8, 19)) # mezikvartilové rozpětí
+quantile(c(10, 11, 20, 13, 22, 7, 8, 19), 0.25) # 1. kvartil
+quantile(c(10, 11, 20, 13, 22, 7, 8, 19), 0.75) # 3. kvartil
+```
+
+```{r echo=TRUE}
+var(c(10, 11, 20, 13, 22, 7, 8, 19)) # výběrový rozptyl
+
+n <- length(c(10, 11, 20, 13, 22, 7, 8, 19))
+var(c(10, 11, 20, 13, 22, 7, 8, 19)) * (n-1)/n # populační rozptyl, ten ale skoro nikdy nechcete 
+
+```
+
+```{r echo=TRUE}
+sd(c(10, 11, 20, 13, 22, 7, 8, 19)) # výběrová směrodatná odchylka
+sqrt(var(c(10, 11, 20, 13, 22, 7, 8, 19))) # alernativní výpočet
+```
+
+</details>
+
 
 ## 5
 
