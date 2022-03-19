@@ -20,7 +20,7 @@ Při práci s HTML verzí prezentací je možné využívat následujících kl�
 - Klávesa `o` zobrazí přehled snímků.
 - Klávesa `p` zobrazí poznámku k aktuálnímu snímku (pokud existuje) - doplnění poznámkami má za cíl alespoň částečně usnadnit samostudium těm, kdo se nemohou účastnit přednášek.
 
-Některé prezentace na konci obsahují sekci "Nadstavba". Ta představuje dobrovolné rozšíření probírané látky, nicméně toto rozšíření není předmětem zkoušení ani žádných zadaných úkolů. Na přednášce se zpravidla sekcí Nadstavba nebudeme zabývat. 
+Některé prezentace na konci obsahují sekci "Nadstavba". Ta představuje dobrovolné rozšíření probírané látky, nicméně toto rozšíření není předmětem zkoušení ani žádných zadaných úkolů. Na přednášce se zpravidla sekcí Nadstavba nebudeme zabývat (nebo jen pokud zbyde čas). 
 
 ---
 

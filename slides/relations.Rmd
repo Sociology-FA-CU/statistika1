@@ -126,6 +126,12 @@ Také Spearmanův koeficient pořadové korelace: převede pozorování na pořa
 
 <font size="2">[Zdroj Wiki](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient)</font>
 
+## Jak spočítat Pearsonův a Spearmanův korelační koeficient v Excelu?
+
+Pearsonův korelační koeficient lze snadno vypočítat funkci "PEARSON", resp. "CORREL" (z historických důvodů vývoje softwaru jsou zde dvě stejně se chovající funkce).
+
+Spearmanův korelační koeficient vlastní funkci nemá, ale stačí původní hodnoty převést na pořadí a pak spočítat Pearsonův koeficient. 
+
 
 ## Kendallův korelační koeficient $\tau$ (nadstavba)
 
@@ -174,14 +180,43 @@ Hodnota Personova koeficientu je 0.58. Spearman je 0.83. Přednost bych dal Pear
 
 # Korelace a kauzalita
 
-## TBD Korelace není kauzalita
+## Korelace není kauzalita
 
-(Přidat pár snímků, kde to bude krátce ilustrováno, více to proberou v metodách.)
+>- Čím více hasičských aut zasahuje při požáru, tím větší škody.
+>- Děti, které jsou doučovány, mají horší známky než ty, které doučovány nejsou.
+>- Čím více zmrzliny se prodá, tím více lidí se utopí.
+>- Děti, které spí s rozsvíceným světlem, spíše v dospělosti trpí krátkozrakostí.
+>- Mezi žáky v první třídě je souvislost mezi školními výsledky a znamením zvěrokruhu.
+>- Lidé s kratším předloktím žijí déle.
 
+## Kauzalita nemusí nutně znamenat korelaci
 
-## TBD Obrázky korelace
+Kauzální vztahy jsou komplexní a mohou působit proti sobě. Například počet let formálního vzdělání může být příčinou vyššího příjmu. Mladší lidí mají častěji vyšší počet let vzdělání. Také seniorita může být příčinou vyššího příjmu. Starší lidé mají často vyšší senioritu. Ve výsledku se tak mohou oba kuazální vztahy "vyrušit", takže korelaci nebudeme pozorovat. 
 
-(Přidat pár obrázků, kde si vyzkouší odhadnout, jak vysoká je kde korelace, případně co se kde stane s korelací, když přibyde nebo ubyde jedno pozorování.)
+## Vizuální odhad míry kauzality
+
+```{r}
+complement <- function(y, rho, x) {
+  if (missing(x)) x <- rnorm(length(y)) # Optional: supply a default if `x` is not given
+  y.perp <- residuals(lm(x ~ y))
+  rho * sd(y.perp) * y + y.perp * sd(y) * sqrt(1 - rho^2)
+}
+
+y <- rnorm(50, sd=10)
+x <- 1:50 # Optional
+rho <- c(0, 0.2, 0.4, 0.6, 0.8, 1)
+X <- data.frame(z=as.vector(sapply(rho, function(rho) complement(y, rho, x))),
+                rho=ordered(rep(signif(rho, 2), each=length(y))),
+                y=rep(y, length(rho)))
+    
+
+ggplot(X, aes(y,z, group=rho)) + 
+  geom_smooth(method="lm", se=FALSE) + 
+  geom_rug(sides="b") + 
+  geom_point(aes(fill=rho), alpha=1/2, shape=21) +
+  facet_wrap(~ rho)
+```
+<font size="1"> Code by whuber from: <https://stats.stackexchange.com/questions/15011/generate-a-random-variable-with-a-defined-correlation-to-an-existing-variables></font>
 
 # Vztahy mezi proměnnými v agregovaných datech
 
@@ -191,11 +226,11 @@ Hodnota Personova koeficientu je 0.58. Spearman je 0.83. Přednost bych dal Pear
 Spočítejte 
 
   - průměrný příjem ve svém městě
-  - průměrnou nehodovost ve svém městě
+  - průměrnou nehodovost ve svém městě (jako šanci, nikoliv pravděpodobnost, že daná domácnost v daném roce nabourá)
   
 
+<font size="1"> Inspirováno [Eliyabeth Lynch](https://www.youtube.com/watch?v=8Mpi10MRhDU) </font>
 
-Inspirováno [Eliyabeth Lynch](https://www.youtube.com/watch?v=8Mpi10MRhDU)
 
 <p class="forceBreak">
 
@@ -204,50 +239,6 @@ Inspirováno [Eliyabeth Lynch](https://www.youtube.com/watch?v=8Mpi10MRhDU)
 ![Město A](figures/05_city_a.png){width=65%}
 ![Město B](figures/05_city_b.png){width=65%}
 ![Město C](figures/05_city_c.png){width=65%}
-
-  
-## Je to pravda?
-
-<blockquote>
-Vaccinated English adults under 60 are dying at twice the rate of unvaccinated people the same age.
-</blockquote>
-
-
-Zdroj [ZDE](https://alexberenson.substack.com/p/vaccinated-english-adults-under-60)
-
-## Data jsou skutečná...
-
-Graf v článku vychází z dat zveřejněných ONS (Office for National Statistics, britský staťák).
-
-
-![](figures/05_vax_vs_unvax_rate.png){width=80%}
-
-## Jaké otázky bychom si mohli klást?
-
-> - Úmrtí v důsledku covidu, nebo obecně?
-> - Věkový interval 10 až 59 let? Není to trochu moc?
-> - Jak jsou očkovaní a neočkovaní rozloženi v tomto intervalu?
-
-## Co se děje v agregovaných datech?
-
-<blockquote>
-Professor Jeffrey Morris estimated that the annual mortality rate at the older end of the 10-59 age spectrum would be more than 50 times higher than the mortality rate at the younger end of the spectrum, with 478.2 per 100,000 deaths among 55-59 year olds and 8.8 per 100,000 among 10-14 year olds. [Reuters Fact Check](https://www.reuters.com/article/factcheck-coronavirus-britain-idUSL1N2SN1P4)
-</blockquote>
-
-
-## Verdikt REUTERS FACT CHECK
-
-<blockquote>
-Zavádějící. Je pravda, že ve věkové skupině 10-59 let je vyšší míru úmrtnosti u očkovaných jedinců. Není to však důsledkem toho, že by očkování způsobovalo úmrtí, ale důsledkem vyšší míry očkování u starších věkových skupin v tomto širokém věkovém rozpětí, přičemž starší mají také vyšší úmrtnost.
-</blockquote>
-
-[Celý článek Reuters Fact Check](https://www.reuters.com/article/factcheck-coronavirus-britain-idUSL1N2SN1P4)
-
-## A jen smrti způsobené covidem?
-
-![](figures/05_covid_death_age.png){width=60%}
-
-[Celý článek BBC]("https://www.bbc.com/news/59757395")
 
 ## Přijetí na Univerzitu v Berkeley dle pohlaví
 
@@ -280,4 +271,8 @@ plot_grid(p1, p2)
 ```
 
 Zdroj [Wikipedie](https://en.wikipedia.org/wiki/Simpson%27s_paradox)
+
+## Jak poznat, jestli vztah na agregované úrovni platí i na úrovni individuální?
+
+>- Potřebujeme data na individuální úrovni
 

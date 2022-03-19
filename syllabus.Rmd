@@ -212,3 +212,5 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     -   TBD
 
 # Reference {.unnumbered}
+
+Toto není seznam kurzové literatury, ale pouze literatura explicitně odkazovaná v této části webu. Pro doporučenou kurzovou literaturu viz záložka Literatura.

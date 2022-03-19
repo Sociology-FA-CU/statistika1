@@ -577,7 +577,50 @@ var(c(10, 11, 20, 13, 22, 7, 8, 19)) * (n-1)/n # populační rozptyl, ten ale sk
 </div>
 <div id="section-5" class="section level2">
 <h2>5</h2>
-<p>TBD</p>
+<p><br> <strong>Otázka 1</strong></p>
+<p><em>Stáhněte si dataset Countries a vypočítejte vždy Pearsonův a Spearmanův korelační koeficient pro následující dvojice proměnných. Dvojici proměnných si vizualizujte a na základě toho rozhodněte, který koeficient je vhodnější:</em></p>
+<ol style="list-style-type: decimal">
+<li>Plocha a populace</li>
+<li>HDP a populace</li>
+<li>Procento univerzitně vzdělaných a populace</li>
+</ol>
+<details>
+<summary>
+Podívat se na řešení
+</summary>
+<p>Správné odpovědi jsou:</p>
+<p>Zdůvodnění:</p>
+<ol style="list-style-type: decimal">
+<li>Pearson = 0.78, Spearman = 0.73. Tyto vysoké populace nejsou překvapivé, do větší zemí se vejde více lidí.</li>
+<li>Pearson = 0.96, Spearman = 0.85. Tyto extrémně vysoké korelace nejsou překvapivé, HDP není na hlavu, ale agregované pro celou zemi. Je jasné, že větší populace toho více vytvoří.<br />
+</li>
+<li>Pearson = -0.17, Spearman = -0.22. Tyto záporné koralce by člověk těžko odhadoval předem - není hned jasné, proč by měl být nějaký vztah mezi procentem lidí s diplomem a velikostí populace. Každopádně vztah je to velmi slabý, jak je i patrné z grafu.</li>
+</ol>
+</details>
+<p><br> <strong>Otázka 2</strong></p>
+<p><em>Níže je popsáno několik hypotetických či skutečných příkladů Simpsonova paradoxu. Pro každý příklad zkuste vymyslet mechanismus, který by ho mohl vysvětlovat.</em></p>
+<ol style="list-style-type: decimal">
+<li>Skutečný příklad: Objevila se zpráva, že ve věkové skupině osob ve věku 18-59 let je mezi očkovanými proti nemoci COVID dvojnásobná úmrtnost oproti neočkovaným. Data byla skutečná, ovšem nešlo o to, že by očkování zvyšovalo pravděpodobnost úmrtí, nýbrž šlo o příklad Simpsonova paradoxu. Dokážete vymyslet, v čem mohl spočívat?</li>
+</ol>
+<details>
+<summary>
+Podívat se na řešení
+</summary>
+<p>V krátkosti: v dané věkové skupině nebyli lidé očkováni rovnoměrně. U starších kategorií bylo očkování mnohem častější, ale starší lidé mají také větší pravděpodobnost úmrtí.</p>
+<p>Původní tvrzení: Vaccinated English adults under 60 are dying at twice the rate of unvaccinated people the same age. Zdroj <a href="https://alexberenson.substack.com/p/vaccinated-english-adults-under-60">ZDE</a></p>
+<p>Professor Jeffrey Morris estimated that the annual mortality rate at the older end of the 10-59 age spectrum would be more than 50 times higher than the mortality rate at the younger end of the spectrum, with 478.2 per 100,000 deaths among 55-59 year olds and 8.8 per 100,000 among 10-14 year olds. <a href="https://www.reuters.com/article/factcheck-coronavirus-britain-idUSL1N2SN1P4">Reuters Fact Check</a></p>
+<p>Verdikt: Zavádějící. Je pravda, že ve věkové skupině 10-59 let je vyšší míru úmrtnosti u očkovaných jedinců. Není to však důsledkem toho, že by očkování způsobovalo úmrtí, ale důsledkem vyšší míry očkování u starších věkových skupin v tomto širokém věkovém rozpětí, přičemž starší mají také vyšší úmrtnost.<a href="https://www.reuters.com/article/factcheck-coronavirus-britain-idUSL1N2SN1P4">Celý článek Reuters Fact Check</a></p>
+</details>
+<p><br></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Hypotetický příklad: Vraťte se v hlavě do USA konce 19. století, kdy míra negramotnosti v dospělém obyvatelstvu byla relativně vysoká, asi 15 % lidí nedokázalo číst. Provedete analýzu a zjistíte, že čím větší procento migrantů v daném americkém státě žije, tím nižší míra negramotnosti tam je. Znamená to tedy, že migranti jsou více gramotní než rodilí Američané? Provedete analýzu na úrovni jednotlivů a zjistíte, že je to naopak, rodilí Američané častěji dovedou číst a psát anglicky. Jde o Simpsonův paradox. Čím by mohl být způsoben?</li>
+</ol>
+<details>
+<summary>
+Podívat se na řešení
+</summary>
+<p>Příklad jsem označil jako hypotetický, protože nejsem schopen dohledat zdroj, ale mám pocit, že jsem něco podobného skutečně četl: Například je možné, že státy s vyšší gramotností jsou ekonomicky silnější, nabízí víc pracovních příležitostí, a tak lákají více migrantů. Byť ti sami jsou méně gramotní než rodilí Američané, nepřeváží to vysokou koncentraci gramotných Američanů v bohatých státech. Na agregované úrovni pak sledujeme přesně obrácený vztah než na úrovni individuální.</p>
+</details>
 </div>
 <div id="section-6" class="section level2">
 <h2>6</h2>

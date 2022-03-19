@@ -48,6 +48,28 @@ knitr::opts_chunk$set(echo = TRUE)
   - Rozloha převzata z Wikipedie
   - Najdete v datech nějaké číselné nesrovnalosti?
   
+
+* [STÁHNOUT Dataset Countries](https://docs.google.com/spreadsheets/d/1ZeIaNRJNE-Rn4Une4YqtLZeQCteaYCbo2X5i6jMMuEk/edit?usp=sharing)
+
+Popis proměnných v datasetu Countries:
+
+|Jméno proměnné |Popis                                                            |Zdroj                |
+|:--------------|:----------------------------------------------------------------|:--------------------|
+|country        |Country name                                                     |                     |
+|code           |Two digit coutry code                                            |                     |
+|gdp            |GDP in the milions of EUR (2018)                                 |Eurostat             |
+|population     |Country population on the 1.1.2018                               |Eurostat             |
+|area           |Area of the country                                              |CIA factbook         |
+|eu_member      |Is the country a EU member?   (2019)                             |European Union       |
+|postsoviet     |Was the country a member of the Eastern block                    |Wikipedia            |
+|life_exp       |Life expectancy at birth (2017)                                  |UN                   |
+|uni_prc        |% of people with university education between 15-64 years (2018) |Eurostat             |
+|poverty_risk   |% of people in risk of poverty (2017)                            |Eurostat             |
+|material_dep   |% of people in material deprivation, 3 or less items (2017)      |Eurostat             |
+|hdi            |Human development index (2018)                                   |UN                   |
+|foundation_date|Date of founding                                                 |Wikipedia            |
+|maj_belief     |Biggest religious group (2018)                                   |Pew Researcher Center|
+  
   
 ## Data pro zápočtové úkoly
 
