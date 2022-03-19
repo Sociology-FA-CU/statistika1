@@ -70,11 +70,20 @@ Provizorně a ve vztahu k prvnímu slajdu (vztah HDP a naděje na dožití) lze 
 
 ## Kovariance - výpočet (nadstavba)
 
-Pro připomenutí: rozptyl, neboli variance:
+Pro připomenutí rozptyl neboli variance:
 
 $$
-var(X) = E[(X - E[X])^2] = E[(X - E[X]) * (X - E[X])]
+var(X) = E[(X - E[X])^2]
 $$
+Lze rozepsat:
+
+$$
+var(X) = E[(X - E[X]) * (X - E[X])]
+$$
+
+
+<br>
+<br>
 Kovariance:
 
 $$
@@ -99,7 +108,7 @@ Ta korelace. Bez upřesnění máme korelací zpravidla Pearsonův korelační k
 Výpočet je nadstavba:
 
 $$
-\rho = cov(X,Y) / \sigma_X*\sigma_Y
+\rho = cov(X,Y) / (\sigma_X*\sigma_Y)
 $$
 Pearsonův korelační koeficient vypočítáme tak, že kovarianci vydělíme součinem směrodatných odchylek obou proměnných.
 
@@ -216,7 +225,32 @@ ggplot(X, aes(y,z, group=rho)) +
   geom_point(aes(fill=rho), alpha=1/2, shape=21) +
   facet_wrap(~ rho)
 ```
+
 <font size="1"> Code by whuber from: <https://stats.stackexchange.com/questions/15011/generate-a-random-variable-with-a-defined-correlation-to-an-existing-variables></font>
+
+## Klasifikace korelačního koeficientu dle síly
+
+Kolují různá doporučení, jak interprertovat:
+
+- 0.1 ... slabá asociace
+- 0.3 ... středně silná asociace
+- 0.5 ... silná asociace
+
+Silně nedoporučuji taková doporučení používat! Záleží na kontextu.
+
+:::{.notes}
+Existují obrovské rozdíly mezi obory. Pokud nějaký jev predikuje růst akciového trhu tak, že mezi oběma proměnnými existuje korelace 0.1, může jít o silnou asociaci z hlediska makléře. Naopak pokud třeba biologivé studují odpověď buňky na chemickou látku v Petriho misce, může být, v závislosti na kontextu, korelace 0.9 velmi nízká. V některých oblastech fyziky může být korelace 0.99 nízká. V sociologii záleží také na tom, jestli jde o korelaci na individuální úrovni (mezi vlastnostmi jednotlivců), kde zpravidla pozoroujeme nižší korelace než na úrovni agregovaných celků (okresů, organizací, států atp.). Nicméně lze říct, že pokud je korelace 0.1, těžko si lze v sociologii představit kontext, kdy by to něco znamenalo. Nejmenší korealace, které vůbec v socilogii stojí za zmínku, budou kolem 0.2.
+:::
+
+## Korelace je míra lineární asociace, ale není to lineární metrika síly vztahu
+
+Interpretace korelačního koeficientu: Piersonův korelační koeficient na druhou vyjadřuje podíl rozptylu v jedné proměnné, který dokážeme predikovat při znalosti druhé proměnné.  
+
+
+:::{.notes}
+Co to znamená: Nárůst korelace z 0.1 na 0.2 nepředstavuje stejný posun v síle vztahu jako nárůst z 0.2 na 0.3. Pokud se korelační koeficient zdvojnásobí, nelze říct, že se zdvojnásobila síla asociace mezi proměnnými (ta totiž vzroste více). Korelační koeficient 0.1 = znalost jedné proměnné nám umožňuje predikovat 0.01, tedy 1 % rozptylu druhé proměnné. Korelační koeficient 0.2 = 4 %, 0.3 = 9 % ... 0.6 = 36 % atd. 
+:::
+
 
 # Vztahy mezi proměnnými v agregovaných datech
 
