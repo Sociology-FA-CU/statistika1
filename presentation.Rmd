@@ -28,7 +28,7 @@ Některé prezentace na konci obsahují sekci "Nadstavba". Ta představuje dobro
 1) Kategorická data a procenta ([v prohlížeči](slides/categories.html), ke stažení)
 1) Numerické proměnné a míry centrality ([v prohlížeči](slides/centrality.html), ke stažení)
 1) Numerické proměnné a míry variability ([v prohlížeči](slides/variability.html), ke stažení)
-1) Popis vztahů mezi proměnnými ([v prohlížeči](slides/000relations.html), ke stažení)
+1) Popis vztahů mezi proměnnými ([v prohlížeči](slides/relations.html), ke stažení)
 1) Statistický model ([v prohlížeči](slides/000model.html), ke stažení) 
 1) Základy inferenčního uvažování: vzorek a populace ([v prohlížeči](slides/000inference.html), ke stažení)
 1) Pravděpodobnost, nejistota a variabilita ([v prohlížeči](slides/000probability.html), ke stažení)
