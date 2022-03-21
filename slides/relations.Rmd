@@ -68,7 +68,7 @@ Provizorně a ve vztahu k prvnímu slajdu (vztah HDP a naděje na dožití) lze 
 :::
 
 
-## Kovariance - výpočet (nadstavba)
+## Kovariance - výpočet
 
 Pro připomenutí rozptyl neboli variance:
 
