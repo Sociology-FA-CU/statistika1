@@ -2,12 +2,446 @@
 title: "Statistický model"
 subtitle: "Statistika 1, Katedra sociologie Filozofické fakulty UK" 
 author: "Jaromír Mazák"
-output: ioslides_presentation
+output:
+  ioslides_presentation:
+    css:  "../css/slides-style.css"
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+
+library(tidyverse)
+library(HistData)
 ```
 
-# TBD
+```{=html}
+<style>
+.forceBreak { -webkit-column-break-after: always; break-after: column; }
+</style>
+```
+
+# Modely ve vědě
+
+## Sociologie a modely
+
+- Sociální realita je složité -> Potřeba zjednodušit 
+- Modely fungují ve vědě na více úrovních (teoretický model, statistický model)
+- Model, pokus o definici: Reprezentace určitého aspektu světa založená na zjednodušujících předpokladech.
+
+
+::: {.notes}
+**Max Weber a jeho ideální typ** je speciální druh teoretického modelu, jehož cílem je uspořádat sociální realitu. Ideální typ nemá být popisem reality, ale záměrnou snahou v určitém kontextu zaměřit pozornost na významné rysy či charakteristiky. Ideální typ tyto rysy pojmenovává, je pak snažší je porovnávat s realitou (př. demokracie). **PPDACC** cyklus je také modelem, případně ideální typem toho, jak funguje statistické vyšetřování. Ne vždy jsou všechny části relevantní, ale pomáhá nám na nic nezapomenou.
+:::
+
+
+## Příklady empirických modelů
+
+- Wisdom of Crowds
+- Tipping point
+- Agent-based models
+...
+- Statistické modely (např. lineární regrese)
+
+::: {.notes}
+**M. Gladwell - The Tipping Point: How Little Things Can Make a Big Difference**, diskutuje řadu mechanismů, nicméně hlavní myšlenka je, že určitá kritická masa způsobí kvalitativní změnu, podobně jako bod varu vody. **Agentní modelování** - například Schellingův model sociální segregace, ukazuje, jak poměrně slabé individuální preference mohou způsobit silnou segregaci na agregované úrovni. **Lineární modely** - modely vztahů mezi proměnnými, kdy určité úroveň nezávislé proměnné (případně více nezávislých proměnných) je asociována s určitou úrovní závislé proměnné. 
+:::
+
+# Statistický model
+
+## Průměr jako nulový model {.columns-2 .smaller}
+
+- nulový model - nemáme žádnou dodatečnou informaci
+- 2 základní stavební kameny: 
+
+  - predikce modelu (v tomto případě aritmetický průměr)
+  - odchylka od predikce (od modelu)
+
+<p class="forceBreak">
+
+</p>
+
+```{r fig.width=4}
+data(Galton) 
+data("GaltonFamilies")
+# Galton %>% as_tibble()
+# GaltonFamilies %>% as_tibble()
+
+Galton_FatherSon <- GaltonFamilies %>%
+  as_tibble() %>% 
+  filter(gender == "male") %>% 
+  mutate(res_from_mean = childHeight - mean(childHeight)) 
+
+
+Galton_FatherSon <- 
+  Galton_FatherSon %>%
+  mutate(x_rand = runif(nrow(Galton_FatherSon)))
+
+Galton_FatherSon_mm <- 
+  Galton_FatherSon %>% 
+  filter(childHeight == max(childHeight) |
+           childHeight == min(childHeight))
+
+gg_galton1 <- 
+  Galton_FatherSon %>% 
+  ggplot(aes(x=x_rand,
+           y=childHeight)) +
+  geom_segment(data = Galton_FatherSon_mm,
+                aes(xend = x_rand,
+                    yend = mean(Galton_FatherSon$childHeight)))+
+  geom_point(alpha = 0.5)+
+  geom_hline(yintercept = mean(Galton_FatherSon$childHeight), linetype = "dashed", color = "blue", size = 1)+
+  labs(x=element_blank(),
+       y="Výška synů v palcích",
+       title = "Galtonův dataset - výška synů",
+       subtitle = "Horizontální čára značí průměrnou výšku")+
+  scale_x_continuous(breaks = NULL)
+  
+  
+gg_galton1
+
+# intercept <- mean(Galton_FatherSon$childHeight)
+# slope <- 4.64564
+# data$fitted <- intercept + slope * data$damMean
+# 
+# ggplot(data, aes(x = damMean, y = progenyMean)) +
+#   geom_abline(slope = slope, intercept = intercept, color = "blue") +
+#   geom_segment(aes(xend = damMean, yend = fitted, color = "resid")) +
+#   geom_point() +
+#   scale_color_manual(values = c(resid = "darkred"), labels = c(resid = "residuals"))
+
+```
+
+::: {.notes}
+Francis Galton, známe již z příkladu z hádání váhy býka (moudrost davu), sesbíral výšky rodičů a dětí a zkoumal vztahy mezi nimi. 
+:::
+
+## Kategoriální prediktor {.columns-2}
+
+
+```{r fig.width=4}
+gg_galton1
+
+```
+
+<p class="forceBreak">
+
+</p>
+
+```{r fig.width = 4, fig.height=5.25}
+
+Galton_FatherSon <- 
+  Galton_FatherSon %>% 
+  mutate(father_binary = if_else(father >= mean(father), 
+                                 "nadprůměrně vysoký otec", 
+                                 "podprůměrně vysoký otec"))
+
+
+gg_galton2 <- 
+  Galton_FatherSon %>% 
+  ggplot(aes(x=father_binary, y=childHeight, group = father_binary, color = father_binary)) +
+  geom_point(position = position_jitterdodge(), alpha = 0.5) +
+  scale_color_manual(values = c("aquamarine4", "darkgoldenrod4"))+
+  geom_segment(x=0.6, 
+               xend=1.4,
+               y=mean(Galton_FatherSon %>% filter((father >= mean(father))) %>% 
+                                         pull(childHeight)),
+               yend=mean(Galton_FatherSon %>% filter((father >= mean(father))) %>% 
+                                         pull(childHeight)),
+               color = "aquamarine4")+
+    geom_segment(x=1.6, 
+               xend=2.4,
+               y=mean(Galton_FatherSon %>% filter((father < mean(father))) %>% 
+                                         pull(childHeight)),
+               yend=mean(Galton_FatherSon %>% filter((father < mean(father))) %>% 
+                                         pull(childHeight)),
+               color = "darkgoldenrod4")+
+  labs(x=element_blank(),
+       y="Výška synů v palcích",
+       title = "Galtonův dataset - výška synů",
+       subtitle = "Data rozdělena podle výšky otce",
+       color = element_blank()) + 
+  theme(legend.position="bottom")
+
+
+gg_galton2
+
+```
+
+ 
+
+::: {.notes}
+Suma čtverců je ve druhém případě menší, proč? Co to znamená z hlediska porovnání našeho modelu se dvěma kategoriemi výšky otců s modelem nulovým? **Technickým cílem modelování je zmenšit odchylku skutečné hodnoty od hodnoty predikované modelem** - to má samozřejmě své meze, zároveň totiž chceme, aby model zůstal užitečným zjednodušením reality. Příliš složitý model nemusí být vždy užitečný. 
+:::
+
+## Kardinální prediktor
+
+```{r fig.asp=1, fig.width=5, fig.align="center"}
+
+Galton_FatherSon %>% 
+  ggplot(aes(x=father, y=childHeight))+
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) + 
+  labs(x = "Výška otců v palcích",
+       y = "Výška synů v palcích",
+       title = "Galtonův dataset - predikce výšky synů při znalosti výšky otců")
+
+```
+
+
+::: {.notes}
+Geometricky: Data proložíme přímkou tak, abychom minimalizovali průměrnou (kvadratickou) odchylku dat od přímky. Oproti nulovému modelu tak vlastně na základě znalosti dodatečné informace přiblížíme model (predikci) datům.
+:::
+
+
+## Statistický model obecně
+
+Statistický model má dva komponenty: deterministický komponent a náhodný komponent.
+
+To můžeme vyjádřit takto:
+
+::: {.centered}
+Data = model + zbytek
+:::
+
+Nebo alternativně takto:
+
+::: {.centered}
+Pozorování = predikovaná hodnota + chyba
+:::
+
+
+::: {.notes}
+Tomu zbytku říkáme chyba (error) v datech, reziduum v teorii. Nicméně neznamená to chybu ve smyslu omylu, ale ve smyslu odchylky, jejíž existence není překvapivá - neočekáváme, že model "sedne" na data přesně, cíle je zjednodušit složitou realitu. Modelování umožňuje vydestilovat z dat vztah (signál o tom, jaké tendence se v realitě prosazují) a zároveň říct, jak moc se skutečná pozorování od tohoto vztahu liší (jak moc je kromě sledované tendence v realitě přítomna také modelem nepredikovaná náhodnost neboli šum).
+:::
+
+
+## Průměr a regrese jako statistické modely
+
+Formální zápis modelu s průměrem:
+
+$$
+y_i = \bar{y} + e_i
+$$
+
+Formální zápis jednoduché lineární regrese:
+
+$$
+y_i = \beta_0 + \beta_1*x_i+e_i
+$$
+
+>- $\beta_1$ (regresní koeficient) vyjadřuje sklon přímky,
+>- regresní koeficient v jednoduché lineární regresi: o kolik se podle našeho modelu zvedne podmíněná očekávaná hodnota závislé proměnné, když hodnota nezávislé proměnné vzroste o jednotku
+
+## Očekávaná hodnota a podmíněná očekávaná hodnota
+
+ - Očekávaná hodnota (expectation) - průměr z velkého počtu nezávislých pozorování
+ - Podmíněná očekávaná hodnota - očekávaná hodnota závislé proměnné za předpokladu naplnění určitých podmínek
+ 
+
+Podmíněná očekávaná hodnota v případě jednoduché lineární regrese: Průměrná hodnota závislé proměnné pro danou hodnotu nezávislé proměnné za předpokladu, že mezi nimi existuje lineární vztah. 
+
+Deterministická část modelu udává podmíněnou očekávanou hodnotu. 
+
+
+::: {.notes}
+**Očekávaná hodnota** - neplést s očekávaná četnost (způsob prezentace kategoriálních, resp. binárních dat).
+:::
+
+## Výstup lineární regrese v R a problém extrapolace {.smaller}
+
+```{r}
+
+m1 <- lm(childHeight ~ father, data = Galton_FatherSon)
+m1$coefficients
+
+```
+
+
+```{r fig.width=4.5, fig.asp=1}
+Galton_FatherSon %>% 
+  ggplot(aes(x=father, y=childHeight))+
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE, fullrange=TRUE) + 
+  scale_x_continuous(limits = c(0,80))+
+  scale_y_continuous(limits = c(0,80))+
+  labs(x = "Výška otců v palcích",
+       y = "Výška synů v palcích",
+       title = "Galtonů dataset - osy protažené do 0")
+```
+
+
+::: {.notes}
+Lineární regrese používá jako model přímku, která přirozeně nemá začátek ani konec. Jak je vidět z obrázku, byla by ale chyba extrapolovat mimo prostor, pro který máme data.
+:::
+
+## Rozdíl mezi regresním a korelačním koeficientem
+
+```{r message=FALSE, fig.align="center"}
+set.seed(42)
+edu <- round (rnorm (100, mean = 15, sd = 4), digits=0)
+set.seed (24)
+rand <- round(rnorm (100, mean = 1000, sd = 50), digits=0)
+rand.2 <- round(rnorm (100, mean = 2000, sd = 300), digits=0)
+inc <- edu*rand
+inc.2 <- edu*rand.2
+
+data <- data.frame(x = edu, y = c(inc, inc.2), group = c(rep(1,100), rep(2,100)), row.names = NULL)
+
+data %>% ggplot(aes(x=x, y=y, color = group, group=group))+
+  geom_point()+
+  geom_smooth(method = "lm", se=FALSE)+
+  labs(title = "Simulovaná data",
+       subtitle = "Světlemodrá data mají vyšší regresní koeficient,\n ale nižší korelační koeficient než černá data",
+       x = "Např. počet let vzdělání",
+       y = "Např. měsíční příjem v korunách")+
+  theme(legend.position = "none")
+```
+
+::: {.notes}
+Korelační koeficient vyjadřuje těsnost vztahu, regresní koeficient v sobě obsahuje informaci o tom, jakou hodnotu závislé proměnné máme očekávat při dané hodnotě nezávislé proměnné. 
+:::
+
+## Nadtavba: matematický vztah mezi regresním a korelačním koeficientem
+
+$$
+\beta_1 = \rho * (\sigma_y/\sigma_x)
+$$
+
+Tedy regresní koeficient získáme z korelačního tak, že jej vynásobíme podílem směrodatné odchylky závislé proměnné a směrodatné odchylky nezávislé proměnné. Z toho vyplývá, že pokud je směrodatná odchylka obou proměnných stejná, oba koeficienty mají stejnou hodnotu. 
+
+# Statistický model a suma čtverců reziduí
+
+## Minimalizace sumy reziduí
+
+- Samotná komputace (odhadování) statistického modelu může probíhat různými způsoby. V případě lineární regrese používáme zpravidla algoritmus, který minimalizuje sumu čtverců odchylek (OLS)
+
+- Suma čtverců v nulovém modelu:
+
+$$
+\sum{e_i^2} = \sum{(y_i-\bar{y})^2}
+$$
+
+>- Jaký je vztah mezi sumou čtverců reziduí a rozptylem?
+
+
+::: {.notes}
+Rozptyl je vlastně minimální průměrná kvadratická odchylka (model "průměr" tuto odchylku minimalizuje).
+:::
+
+## Rozklad sumy čtverců vizuálně {.columns-2}
+
+
+```{r fig.width=4}
+gg_galton1
+
+```
+
+<p class="forceBreak">
+
+</p>
+
+```{r fig.width = 4, fig.height=5.25}
+
+gg_galton2 +
+  geom_hline(data = Galton_FatherSon,
+             aes(x=1,
+                 color=1,
+                 group=1,
+                 y=childHeight),
+             yintercept = mean(Galton_FatherSon$childHeight), linetype = "dashed", color = "blue", size = 1)
+  
+
+```
+ 
+
+::: {.notes}
+Pomocí obrázku a čmárání na tabuli vytvořit intuici: každá skupina má svůj ropztyl (vnitroskupinový), jednotlivé skupinové průměry vytvářejí body, které mají opět vůči sobě nějaký rozptyl (meziskupinový). 
+:::
+
+## Rozklad sumy čtverců koncepčně
+
+Total SS = Explained SS + Residual SS
+
+TSS = ESS + RSS
+
+SST = SSE + SSR
+
+
+## Rozklad sumy čtverců ve vzorcích
+
+$$
+TSS = \sum(y_i - \bar{y})^2
+$$
+
+
+$$
+RSS = \sum(y_i - \hat{y_i})^2
+$$
+
+
+$$
+ESS = \sum(\hat{y_i} - \bar{y})^2
+$$
+
+TSS = ESS + RSS
+
+
+
+# Regrese k průměru
+
+## Regrese k průměru
+
+```{r fig.asp=1, fig.width=5, fig.align="center"}
+
+Galton_FatherSon %>% 
+  ggplot(aes(x=father, y=childHeight))+
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE) + 
+  geom_abline(intercept = 0, slope = 1, linetype = 2)+
+  labs(x = "Výška otců v palcích",
+       y = "Výška synů v palcích",
+       title = "Srovnání regresní křivky s diagonálou")
+
+```
+
+::: {.notes}
+Pokud by nejlepším odhadem výšky syna byla výška otce, tak by regresní křivka ležela na diagonále. Namísto toho ale pozorujeme jiný vztah - pro nižší otce predikujeme výšku synů nad diagonálou, pro vyšší zase pod diagonálou. Tomuto vztahu se říká regresek průměru. Regrese k průměru je fenomén, který jen volně souvisí s regresní analýzou. Vyjadřuje ale tendenci extrémů vracet se zpět k průměru.
+:::
+
+## Regrese k průměru je všude kolem nás
+
+- Snižují rychlostní kamery počet nehod?
+- Vede pochavala ke zhoršení?
+- Proč mají nejúspěšnější země v testech PISA tendenci se v dalším kole zhoršovat?
+
+::: {.notes}
+**Kamery** - [studie Lindy Mountain](https://rss.onlinelibrary.wiley.com/doi/10.1111/j.1740-9713.2006.00179.x) ukazuje, že dvě třetiny poklesu ve vážných nehodách na místě instalace kamer byly dány regresí k průměru, část poklesu šlo vysvětlit dlouhodobými trendy a jen 19 % sledovaného poklesu byl pravděpodobný dopad kamer. **Pochvala** - viz slavný Kahnemanův příklad s leteckými instruktory nebo pozorování, že poté, co se sportovci objeví ve Sports Illustrated, jejich výkony se zhorší.     
+:::
+
+
+
+# Výhled za hranice tohoto kurzu
+
+## Vícenásobná linerární regrese
+
+- Větší mnžství prediktorů
+
+## Logistická regrese
+
+- Kategoriální závislá proměnná
+
+## Mechanistické modely
+
+- Modeluje se nikoliv struktura vztahů (vyjádřená například přímkou v jednoduché lineární regresi), ale předpokládané chování
+
+## Strojové učení (black-box algoritmy)
+
+- Samotný odhad modelu zpravidla není zřejmý, používá se k predikci
+
+
+## Reference
+
 

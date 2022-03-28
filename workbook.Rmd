@@ -16,3 +16,4 @@ Pracovní listy ke stažení.
 - [Týden 4 - Numerické proměnné a míry centrality](https://docs.google.com/document/d/1-hEG9SJajU1VsJMP1VnSC0KH-ubwaz3pGDsf6WxJmu4/edit?usp=sharing)
 - [Týden 4 - Dataset DIY - řešení](https://docs.google.com/spreadsheets/d/10-Xk70IWKNiHtvOmvc53BUB-hwpWnagO/edit?usp=sharing&ouid=108897516173003443305&rtpof=true&sd=true)
 - [Týden 5 - Numerické proměnné a míry variability](https://docs.google.com/document/d/1be57Xv1iAeCPyIVKpAtweam8NiI-yGn5Derz98jPyLo/edit?usp=sharing)
+- [Týden 5 - Gapminder - řešení](https://docs.google.com/spreadsheets/d/1-qSDYFZGp7ZA4ffYLRc1GWC4THoZDkDtY2TarZbRgg8/edit?usp=sharing)
