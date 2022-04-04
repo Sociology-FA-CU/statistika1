@@ -27,7 +27,7 @@ library(HistData)
 
 ## Sociologie a modely
 
-- Sociální realita je složité -> Potřeba zjednodušit 
+- Sociální realita je složitá -> Potřeba zjednodušit 
 - Modely fungují ve vědě na více úrovních (teoretický model, statistický model)
 - Model, pokus o definici: Reprezentace určitého aspektu světa založená na zjednodušujících předpokladech.
 
