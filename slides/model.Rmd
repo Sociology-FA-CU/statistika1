@@ -31,10 +31,19 @@ library(HistData)
 - Modely fungují ve vědě na více úrovních (teoretický model, statistický model)
 - Model, pokus o definici: Reprezentace určitého aspektu světa založená na zjednodušujících předpokladech.
 
-
 ::: {.notes}
 **Max Weber a jeho ideální typ** je speciální druh teoretického modelu, jehož cílem je uspořádat sociální realitu. Ideální typ nemá být popisem reality, ale záměrnou snahou v určitém kontextu zaměřit pozornost na významné rysy či charakteristiky. Ideální typ tyto rysy pojmenovává, je pak snažší je porovnávat s realitou (př. demokracie). **PPDACC** cyklus je také modelem, případně ideální typem toho, jak funguje statistické vyšetřování. Ne vždy jsou všechny části relevantní, ale pomáhá nám na nic nezapomenou.
 :::
+
+
+## Smysl modelu - užitečnost
+
+::: {.centered}
+![](figures/06_figure.jpg)
+:::
+
+>- "All models are wrong, but some are useful." 
+
 
 
 ## Příklady empirických modelů
