@@ -30,21 +30,21 @@ library(tidyverse)
 Typy inference: ze vzorku na populaci, prediktivní, kauzální
 
 ::: {.notes}
-My budeme největší pozornost věnovat inferenci ze vzorku na populaci (podobně jako Statistika 2 v příštím semestru), nicméně poznání, které nám tento typ inference umožní, je hodně užitečné i pro prediktivní a kauzální inferenci.
+Zatím jsme v kurzu měli data, která jsme se učili popisovat (míry centrality, variability, vztahy). Ale proč to vlastně děláme? Často nás nezajímají jen data v ruce, ale chceme dělat závěry s obecnější platností. Tomu se říká inference. My budeme dnes největší pozornost věnovat inferenci ze vzorku na populaci (podobně jako Statistika 2 v příštím semestru), nicméně poznání, které nám tento typ inference umožní, je hodně užitečné i pro prediktivní a kauzální inferenci.
 :::
 
 
 # Populace
 
-## Porodní hmotnost - populační rozdělení 1/2
+## Porodní hmotnost
 
-Ženě se narodilo dítě o hmotnosti 2,91 kg. Ví, že je to podprůměrná hmotnost. Ale jak moc? Měla by mít obavy?
+Ženě se narodilo dítě o hmotnosti 2,91 kg. Je to hodně, nebo málo? Jak moc? Měli by mít rodiče obavy?
 
 ::: {.notes}
-Probírali jsme zatím empirickou distribuci ve smyslu "tvaru" našich dat. Nyní se zaměříme na populační distribuci ve smyslu populačního rozdělení dat. To ještě nabyde na významu, až si představíme různé způsoby konceptualizace pojmu populace. Zmíněné dítě můžeme považovat za vzorke (n=1) z populačního rozdělení porodních vah.
+Probírali jsme zatím empirickou distribuci ve smyslu "tvaru" pozorovaných dat. Nyní se zaměříme na populační distribuci. Tu můžeme chápat jednak v analogickém smyslu: tvar dat pro celou populaci (kterou ale málokdy pozorujeme celou). Vedle toho ji ale můžeme chápat jako pravděpodobností rozdělení, ze kterého se "generují" jednotlivá pozorování. (To nepopisuje realitu, ale je to užitečný model.) Zmíněné dítě můžeme považovat za vzorek (n=1) z populačního rozdělení porodních vah.
 :::
 
-## Porodní hmotnost - populační rozdělení 1/2
+## Porodní hmotnost - populační rozdělení
 
 ::: {.centered}
 ![](figures/07_birth_weight.png){width="40%"}
@@ -52,27 +52,14 @@ Probírali jsme zatím empirickou distribuci ve smyslu "tvaru" našich dat. Nyn�
 
 <font size="2"> Převzato z [@spiegelhalter2019]</font>
 
-## Různé konceptualizace populace
 
-> -   Populace v původním slova smyslu - identifikovatelná skupina jedinců, z nich se snažíme získat vzorek v sociologickém výzkumu
-> -   Virtuální populace - například pokud pacienty změříme několikrát denně = vzorek z virtuální populace všech teoreticky možných měření. Nebo když hodímě X-krát kostkou = vzorek ze všech možných hodů
-> -   Metaforická populace - žádná větší populace neexistuje, ale my se chováme, jako že ano
+
+## Proč je dobré znát populační rozdělení?
 
 ::: {.notes}
-Metaforická populace je trochu neintuitivní koncept, který využíváme především v situacích, když máme všechna data. Proč to děláme? Protože i zde je užitečné předpokládat, že celá empirická populace pochází z nějaké hypotetické/metaforické či prostě jen teoretické meta-populace.
+Diskuse ve třídě. Mělo by zaznít: Znalost populačního rozdělení nám umožní dát pozorování do matematického kontextu: jaký je dítě percentil, kolik směrodatných odchylek od průměru atp. Skutečnost, že takto lehké nebo lehčí dítě se narodí asi v jednom z devíti případů sama o sobě neodpovídá, zda by rodiče měli mít obavy. Musíme mít další oborové znalosti, abychom věděli, že rizikovost této porodní váhy je zanědbatelně nízká.
 :::
 
-## Proč je užitečný koncept metaforické populace?
-
--   Srovnání vražednosti ve dvou zemích
--   Srovnání výpovědí na dvou odděleních
--   ...
-
-> -   Koncept metaforické populace zpochybňuje poučku, že: Pokud pozorujeme celou populaci, nelze provádět inferenční statistiku.
-
-::: {.notes}
-Zpravidla máme informace o všech vraždách (nebo skoro všech). Takže srovnat dvě země je celkem spolehlivé. Ale značí pozorovaný rozdíl skutečný rozdíl ve vražednosti, nebo mohlo jít o náhodnou oscilaci mezi dvěma zeměmi se stejnou mírou rizika, že bude člověk zavražděn? Podobně podíl výpovědí v dané firmě například za rok sledujeme přesně. Ale značí rozdíl, že jedno oddělení má inherentně vyšší obrat zaměstnanců, nebo je to náhodná oscilace? Koncept metaforické populace pomáhá odpovědět.
-:::
 
 # Inference
 
@@ -89,12 +76,12 @@ Mluvit o skutečnostech, které neznáme, se zdá jako bláhové, nicméně infe
 ## Proces inference
 
 1)  Data
-2)  Závěry o vzorku (popisná statistika)
-3)  Závěry o studované populaci (inferenční statistika)
-4)  Závěry o cílové populaci (freestyle)
+2)  Závěry o výběrovém souboru (a.k.a. sample) (popisná statistika)
+3)  Závěry o základním souboru (a.k.a. study population) (inferenční statistika)
+4)  Závěry o (cílové) populaci (a.k.a. target population) (freestyle)
 
 ::: {.notes}
-Rozdíl mezi studovanou a cílovou populací: například pokud jsou studovanou populací myši, ale studujeme je proto, abychom se dozvěděli něco o lidech = velká mezera/nejistota mezi studovanou a cílovou populací. Příklad v sociologii: vybíráme vzorky nevládních organizací jen z několika zemí, ale snažíme se něco říct o všech post-komunistických zemích. Chceme něco říct o populaci ČR, ale děláme náhodný výběr z domácností (ne všichni žijí v domácnosti, někdo je bez domova nebo v instituci).
+Rozdíl mezi základním souborem a cílovou populací: Základní populace = mají šanci na výběr. Například lidé s telefonním číslem, pokud sběr provádíme náhodným vytáčením čísel. Nebo neziskové organizace v CZ, PL, HU a SK, pokud právě v těchto zemích oslovujeme organizace pro výzkum. Cílová populace = objekt výzkumu, tedy ti, o kom chceme dělat závěry. Například dospělá populace ČR, neziskové organizace v postkomunistických zemích. Obhájit mezeru/nejistotu v přechodu od interpretace základního souboru k cílové populaci je trochu freestyle, který nemá jasná pravidla.
 :::
 
 ## Rizika inference {.columns-2 .smaller}
@@ -110,13 +97,13 @@ Rozdíl mezi studovanou a cílovou populací: například pokud jsou studovanou 
 
 -   Přechod mezi každými dvěma stupni poznávacího procesu v sobě nese nějaká rizika.
 
-    -   Přechod z 1 na 2: chyby měření (viz Sociologický výzkum)
-    -   Přechod z 2 na 3: design studie, validita (viz Sociologický výzkum) + inferenční statistika
-    -   Přechod z 3 na 4: dosažitelnost těch, koho chceme zkoumat (viz Sociologický výzkum)
+    -   Přechod z 1 na 2: chyby měření (viz kurz Sociologický výzkum)
+    -   Přechod z 2 na 3: design studie, validita (viz kurz Sociologický výzkum) + inferenční statistika
+    -   Přechod z 3 na 4: dosažitelnost těch, koho chceme zkoumat
 
-# Vzorek a intervalové odhady
+# Výběrový soubor a intervalové odhady
 
-## Vzorek čili výběrový soubor
+## Výběrový soubor (čili vzorek)
 
 ::: {.centered}
 ![](figures/07_sample.png){width="80%"}
@@ -125,7 +112,7 @@ Rozdíl mezi studovanou a cílovou populací: například pokud jsou studovanou 
 Dva klíčové parametry vzorku jsou jeho velikost a reprezentativita.
 
 ::: {.notes}
-O velikosti a reprezentativitě vzorku se budete učit detailně v rámci předmětu Sociologický výzkum
+O velikosti a reprezentativitě vzorku se budete učit detailně v rámci kurzu Sociologický výzkum, zde jen ve zkratce.
 :::
 
 ## Validita a reliabilita v souvislosti se vzorkem
@@ -142,16 +129,19 @@ In January 2018 the BBC News website announced that over the three months to the
 
 </blockquote>
 
+
+>-    Je to hodně, nebo málo? S jakou přesností bylo číslo změřeno?
+
 ::: {.notes}
-Číslo ve skutečnosti vůbec nebylo přesné, chyba odhadu zveřejněná britskou ONS byla +- 77 000. Skutečné číslo tedy mohlo klidně ležet někde mezi poklesem o 80 000 a nárůstem nezaměstnanosti o 74 000.
+Číslo ve skutečnosti nebylo tak přesné, aby z něj šlo usuzovat na jakoukoliv změnu, chyba odhadu zveřejněná britskou ONS byla +- 77 000. Skutečné číslo tedy mohlo klidně ležet někde mezi poklesem o 80 000 a nárůstem nezaměstnanosti o 74 000.
 :::
 
-## Rozpětí chyby (margin of error)
+## Chyba odhadu (margin of error)
 
-Pokud na základě vzorku konstruujme bodový odhad (například průměr), rozpětí chyby říká, kde bychom věrohodně mohli čekat skutečnou hodnotu v populaci.
+Pokud na základě výběrového souboru konstruujme bodový odhad (například průměr), údaj o chybě odhadu říká, jak moc velká nejistota je s tímto odhadem spojena.
 
 ::: {.notes}
-S analogickým problémem už jsme se setkali - regresní analýza říká, kde pro danou hodnotu prediktoru můžeme v průměru očekávat hodnotu závislé proměnné. Ale neříká, jak moc se jednotlivá pozorování budou od tohoto průměrného očekávání lišit. Podmíněná očekávaná hodnota je bodový odhad. Znát míru nejistoty je ale také důležité.
+S analogickým problémem už jsme se setkali - regresní analýza říká, kde pro danou hodnotu prediktoru můžeme v průměru očekávat hodnotu závislé proměnné. Ale neříká, jak moc se jednotlivá pozorování budou od tohoto průměrného očekávání lišit. Podmíněná očekávaná hodnota v regresi, určená regresním koeficientem, je bodový odhad. Pokud chceme dělat závěry o základním souboru, je ale potřeba nějak zachytit také míru nejistoty.
 :::
 
 ## Latinka pro vzorek, řecká písmena pro populaci
@@ -169,16 +159,23 @@ $\sigma$ ... populační směrodatná odchylka
 ![](figures/07_sample_size_and_error.png)
 
 ::: {.notes}
-Zákon velkých čísel: pokud opakujeme náhodný výběr z populace mnohokrát, průměrná pozorovaná hodnota se bude velmi blížit skutečné hodnotě v populace.
+Zákon velkých čísel: pokud opakujeme náhodný výběr z populace mnohokrát, průměrná pozorovaná hodnota se bude velmi blížit skutečné hodnotě v populace. Například 10krát ještě není mnohokrát. Provést náhodný výber 100 pozorování je už lepší, ale průměrná chyba je pořád docela velká. Míra přesnosti odhadu je teoreticky arbitrární: pro každou přesnost lze určit velikost vzorku. Nicméně: (a) vzorky větší než jednotky tisíc se v sociologii prakticky nevyskytují kvůli ceně. (b) z důvodu jiných zdrojů chyb nemá smysl o větší přesnost stejně usilovat. 
 :::
 
-## Nejistota vyjádřená jako intervalový odhad
+## Interval spolehlivosti
+
+Interval spohlivosti = statistický mainstream pro vyjádření nejistoty intervalovým odhadem
 
 ::: {.centered}
-![](figures/07_intervals.jpg){width="65%"}
+![](figures/07_intervals.jpg){width="55%"}
 :::
 
 Interval spolehlivosti na hladině 5 % (neboli 95% interval spolehlivosti) překryje skutečnou hodnotu v populaci v 95 % případů.
+
+
+::: {.notes}
+Ve statistice dnes fungují dvě dominantní paradigmata: tzv. frekvenční a tzv. bayesiánské. Liší se v tom, jak v teoretické rovině definují pravděpodobnost (viz příští přednáška). Ve výuce statistiky převažuje frekvenční paradigma (také u nás na katedře), kam spadají intervaly spolehlivosti. Analogií bayesiánské statitistiky jsou intervaly věrohodnosti, s odlišnou interpretací.  
+:::
 
 ## Problém srovnávání napříč průzkumy
 
@@ -190,51 +187,111 @@ Interval spolehlivosti na hladině 5 % (neboli 95% interval spolehlivosti) přek
 
 ## Jak vyváříme intervalové odhady?
 
-Základ inferenční statistiky
+Základ inferenční statistiky a testování nulových hypotéz v kurzu Statistika 2.
 
 -   Tato přednáška: bootstraping a intuice za intervalovými odhady
 -   Příští přednáška: teorie pravděpodobnosti
 -   Další přednáška: centrální limitní věta
 
-## Intervalové odhady pomocí bootstrapování: počet sexuálních partnerů {.columns-2 .smaller}
+## Bootstrapování intervaloých odhadů {.columns-2 .smaller}
 
-![](figures/07_boot1.png){width="60%"}
+Počet sexuálních partnerů mužů ve věku 35 až 44 let. N = 769.
+
+![](figures/07_boot1.png){width="65%"}
 
 <p class="forceBreak">
 
 </p>
 
-![](figures/07_boot2.png){width="60%"}
+![](figures/07_boot2.png){width="65%"}
 
 <font size="2">Převzato z [@spiegelhalter2019]</font>
 
 
 ::: {.notes}
-Obrázek vlevo vychází ze vzorku N = 50. Horní panel je rozložní odpovědí v tomto vzorku. Toto rozložní dokážeme sumarizovat nějakou statistikou, například průměrem. Ale jak přesná je tato sumarizace vzhledem k populaci? Resp. jinými slovy, jaká je s tímto odhadem spojená nejistota? To naznačuje bootstraping čili "převzorkování" (resampling) s opakováním. Obrázek vpravo ukazuje rozložení odhadů průměru pro 1000 bootstrapů z různě velkých vzorků.
+Obrázek vlevo vychází ze vzorku N = 50. Horní panel je rozložní odpovědí v tomto vzorku. Toto rozložní dokážeme sumarizovat nějakou statistikou, například průměrem. Ale jak přesná je tato sumarizace vzhledem k populaci? Resp. jinými slovy, jaká je s tímto odhadem spojená nejistota? To naznačuje bootstraping čili "převzorkování" (resampling) s opakováním. Obrázek vpravo ukazuje rozložení odhadů průměru pro 1000 bootstrapů z různě velkých vzorků (tzv. sampling distribution). 
 :::
 
 ## Bootstrapování
 
 Způsob generování intervalů spolehlivosti bez teorie pomocí hrubé výpočetní síly: ze vzorku vytváříme mnoho alternativních vzorků stejné velikosti pomocí náhodného výběru s opakováním (tzv. resampling with replacement). Sledujeme míru variability ve výsledných odhadech sledované statistiky (např. průměru).
 
+## Rozložení bodového odhadu (sampling distribution)
+
+Pravděpodobnostní rozložení bodového odhadu (například průměru nebo regresního koeficientu), pokud bychom sesbírali velké množství výběrových souborů a z každého bychom spočítali bodový odhad.
+
+## Vlastnosti rozložení bodového odhadu {.columns-2 .smaller}
+
+![](figures/04_sexual_partners_bar.png){width="65%"}
+
+<p class="forceBreak">
+
+</p>
+
+![](figures/07_boot2.png){width="65%"}
+
+<font size="2">Převzato z [@spiegelhalter2019]</font>
+
+::: {.notes}
+Všimňete si: původní distribuce je velmi šikmá. Distribuce bodových odhadů s rostoucím počtem pozorování v jednom výběru jsou: symetrické, vyšší (více koncentrované, méně nejistoty) a jejich průměr má tendenci splývat s průměrem původních dat. Tyto vlastnosti jsou klíčové pro většinu inferenční statistiky, více viz přednáška o centrální limitní větě.   
+:::
+
 # Populace jako pravděpodobnostní rozdělení
 
-## Populace jako pravděpodobnostní rozdělení
+## Různé konceptualizace populace
 
-Populace udává pravděpodobnostní rozdělení pro jednotlivá pozorování. (Například: s jakou pravděpodobností uvidíme u náhodně vybraného novorozence porodní váhu 2,91 kg nebo nižší.)
+-   Populace v jednoduchém slova smyslu - konečná populace, např. identifikovatelná skupina jedinců (dospělé osoby v ČR)
+-   Superpopulace - větší populace neexistuje, ale my ji předpokládáme
 
-## Pravděpodobnostní rozdělení
+::: {.notes}
+Superpopulace je trochu neintuitivní koncept, který využíváme především v situacích, když máme všechna data, ale je užitečé předpokládat, že jsou výsledkem výběru vzorku z teoretického pravděpodobnostního rozdělení. Například pokud pacienty opakovaně měříme, více měření neexistuje, ale předpokládáme, že by existovat mohlo. Když hodím X-krát kostkou, více hodů neexistuje, ale předpokládám, že by existovat mohlo. Metaforická populace tak zastupuje tzv. "data-generating" mechanismus, neboli pravděpodobnostní rozdělení, ze kterého "taháme" jednotlivá skutečná pozorování.
+:::
 
--   Teoretický model toho, jak jsou data generována
--   Inference: postup od dat k modelu
--   Pravděpodobnost: od modelu k datům (jaká data můžeme předpokládat, když známe model)
+## Proč je užitečný koncept superpopulace?
+
+-   Srovnání vražednosti ve dvou zemích
+-   Srovnání výpovědí na dvou odděleních
+-   ...
+
+> -   Koncept metaforické populace zpochybňuje poučku, že: Pokud pozorujeme celou populaci, nelze provádět inferenční statistiku.
+
+::: {.notes}
+Zpravidla máme informace o všech vraždách (nebo skoro všech). Takže srovnat dvě země je celkem spolehlivé. Ale značí pozorovaný rozdíl skutečný rozdíl ve vražednosti, nebo mohlo jít o náhodnou oscilaci mezi dvěma zeměmi se stejnou mírou rizika, že bude člověk zavražděn? Podobně podíl výpovědí v dané firmě například za rok sledujeme přesně. Ale značí rozdíl, že jedno oddělení má inherentně vyšší obrat zaměstnanců, nebo je to náhodná oscilace? Koncept superpopulace pomáhá odpovědět.
+:::
+
+
+## Stavební plán pro statistickou inferenci
+
+-   Pravděpodobnostní rozdělení: Teoretický model toho, jak jsou data generována
+-   Teorie pravděpodobnosti: postup od modelu populace k datům (jaká data můžeme předpokládat, když známe/předpokládáme model)
+-   Inference: postup od dat k modelu populace
+
 
 ::: {.notes}
 **Pravděpodobnostní rozdělení** jako model má vlastnosti modelu, tedy nemá popisovat přesně skutečnost, ale užitečně ji abstrahovat. Ve skutečnosti není porodní váha každého dítěte dána náhodným losem z pravděpodobnotní distribuce, ale je dána nespočetným množství faktorů na genetické, chemické a fyzikální úrovni. Ve vědě zpravidla usilujeme o poznávání reality skrze inferenci, tedy postupujeme od dat k modelu. Pochopení obráceného postupu (od pravděpodobnostního modelu k datům) nám umožňuje vyvíjet a zvládnout nástroje, které pak používáme pro inferenci.
 :::
 
+## Stavební plán pro statistickou inferenci: druhý pokus o vysvětlení
+
+Pokud známe nebo předpokládáme populační rozdělení, můžeme říct, jak jsou různá pozorování (jednotlivě nebo v kombinaci) překvapivá. 
+
+Statistická inference: Máme pouze pozorování reality. Uděláme předpoklad o populačním rozdělení. Pokud je naše pozorování reality příliš překvapivé, zamítneme náš předpoklad.
 
 ## Normální rozdělení (zvonová křivka, Gaussova křivka)
+
+::: {.centered}
+![](figures/07_gauss2.png){width="65%"}
+:::
+
+<font size="2">Zdroj [Wikipedia](https://en.wikipedia.org/wiki/Normal_distribution)</font>
+
+Pravidlo tří sigma (68-95-99,7)
+
+
+<!---
+
+
+## Normální rozdělení ve vazbě na boxplot
 
 ::: {.centered}
 ![](figures/07_gauss.png){width="65%"}
@@ -242,11 +299,12 @@ Populace udává pravděpodobnostní rozdělení pro jednotlivá pozorování. (
 
 <font size="2">Courtesy of Jan Netík</font>
 
-::: {.notes}
-Normální rozdělení typicky vzniká tam, kde jevy vznikají v důsledku mnoha malých vlivů. Působení těchto vlivů se častěji "vykrátí" (některé přidávají, jiné ubírají). Jen výjimečně se stane, že všechny malé vlivy "táhnou" stejným směrem. Viz intuice na dalším snímku.
-:::
+-->
+
 
 ## Jak vzniká normální rozdělení? Vytvoření intuice
+
+Typicky v důsledku mnoha malých vlivů. Působení těchto vlivů se častěji "vykrátí" (některé přidávají, jiné ubírají).
 
 ::: {.centered}
 ![](figures/07_intuice_norm.png)
@@ -256,15 +314,7 @@ Normální rozdělení typicky vzniká tam, kde jevy vznikají v důsledku mnoha
 V hypotetickém příkladu ovlivňují výsledek jen čtyři faktory. Ty mohou každý nabývat polohy +1 (modrá), nebo -1 (červená). Je vidět, že možné výsledky dávají vzniknout normálnímu rozdělení.
 :::
 
-## Normální rozdělení a směrodatné odchylky
 
-::: {.centered}
-![](figures/07_gauss2.png){width="65%"}
-:::
-
-<font size="2">Zdroj [Wikipedia](https://en.wikipedia.org/wiki/Normal_distribution)</font>
-
-Pravidlo tří sigma (68-95-99,7)
 
 ## Normální rozdělení - formální definice (nadstavba)
 
@@ -288,42 +338,5 @@ Jinými slovy: normální rozdělení je plně efinováno dvěma parametry: prů
 >- Kolik procent prostředních pozorování zeleného rozdělení spadá mezi hodnoty -5 a 1?
 >- Kolik procent prostředních pozorování červeného rozdělení spadá mezi hodnoty -1 a 2?
 
-## Rovnoměrné (uniformní) rozdělení
-
--   Všechny hodnoty jsou stejně zastoupené
-
-```{r}
-
-tibble(value = as_factor(1:6),
-       prob = 1/6) %>% 
-  ggplot(aes(x = value, y = prob)) + 
-  geom_col() + 
-  labs(x = "Hodnota na kostce", y = "Pravděpodobnost dané hodnoty", title = "Diskrétní uniformní rozdělení - hod kostkou") +
-  scale_y_continuous(labels = scales::label_percent())
-  
-
-```
-
-::: {.notes}
-Pozor, existuje rozdíl mezi diskrétním a spojitým rozdělením. Tomu se budeme více věnovat v příští přednášce o pravděpodobnosti.
-:::
-
-## Diskrétní rovnoměrné rozdělení - průměr a rozptyl (nadstavba)
-
--   a ... minimum
--   b ... maximum
--   n ... počet možných hodnot
-
-$$
-Průměr = (a+b)/2
-$$
-
-$$
-Rozptyl = (n^2 - 1)/12
-$$
-
-::: {.notes}
-U teoretických distribucí mohou existovat vzorce pro výpočet průměru, rozptylu a dalších statistik ze základních parametrů distribuce. Fungují ale samozřejmě i obecné vzorce, které jsme si ukazovali. Nemusíte se tyto vzorce učit. Spíš jen abyste nebyly překvapeni, když se s něčím takovým setkáte.
-:::
 
 ## Reference
