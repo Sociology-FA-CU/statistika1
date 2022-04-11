@@ -244,7 +244,7 @@ Všimňete si: původní distribuce je velmi šikmá. Distribuce bodových odhad
 -   Superpopulace - větší populace neexistuje, ale my ji předpokládáme
 
 ::: {.notes}
-Superpopulace je trochu neintuitivní koncept, který využíváme především v situacích, když máme všechna data, ale je užitečé předpokládat, že jsou výsledkem výběru vzorku z teoretického pravděpodobnostního rozdělení. Například pokud pacienty opakovaně měříme, více měření neexistuje, ale předpokládáme, že by existovat mohlo. Když hodím X-krát kostkou, více hodů neexistuje, ale předpokládám, že by existovat mohlo. Metaforická populace tak zastupuje tzv. "data-generating" mechanismus, neboli pravděpodobnostní rozdělení, ze kterého "taháme" jednotlivá skutečná pozorování.
+Superpopulace je trochu neintuitivní koncept, který využíváme především v situacích, když máme všechna data, ale je užitečé předpokládat, že jsou výsledkem výběru vzorku z teoretického pravděpodobnostního rozdělení. Například pokud pacienty opakovaně měříme, více měření neexistuje, ale předpokládáme, že by existovat mohlo. Když hodím X-krát kostkou, více hodů neexistuje, ale předpokládám, že by existovat mohlo. Superpopulace tak zastupuje tzv. "data-generating" mechanismus, neboli pravděpodobnostní rozdělení, ze kterého "taháme" jednotlivá skutečná pozorování.
 :::
 
 ## Proč je užitečný koncept superpopulace?
@@ -253,7 +253,7 @@ Superpopulace je trochu neintuitivní koncept, který využíváme především 
 -   Srovnání výpovědí na dvou odděleních
 -   ...
 
-> -   Koncept metaforické populace zpochybňuje poučku, že: Pokud pozorujeme celou populaci, nelze provádět inferenční statistiku.
+> -   Koncept superpopulace zpochybňuje poučku, že: Pokud pozorujeme celou populaci, nelze provádět inferenční statistiku.
 
 ::: {.notes}
 Zpravidla máme informace o všech vraždách (nebo skoro všech). Takže srovnat dvě země je celkem spolehlivé. Ale značí pozorovaný rozdíl skutečný rozdíl ve vražednosti, nebo mohlo jít o náhodnou oscilaci mezi dvěma zeměmi se stejnou mírou rizika, že bude člověk zavražděn? Podobně podíl výpovědí v dané firmě například za rok sledujeme přesně. Ale značí rozdíl, že jedno oddělení má inherentně vyšší obrat zaměstnanců, nebo je to náhodná oscilace? Koncept superpopulace pomáhá odpovědět.
