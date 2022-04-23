@@ -13,16 +13,16 @@
 
 <title>Sylabus</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <link href="site_libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
-<link href="site_libs/_Fira Sans-0.4.0/font.css" rel="stylesheet" />
-<link href="site_libs/_Fira Code-0.4.0/font.css" rel="stylesheet" />
-<script src="site_libs/bs3compat-0.3.0/transition.js"></script>
-<script src="site_libs/bs3compat-0.3.0/tabs.js"></script>
-<script src="site_libs/bs3compat-0.3.0/bs3compat.js"></script>
+<link href="site_libs/_Fira Sans-0.4.1/font.css" rel="stylesheet" />
+<link href="site_libs/_Fira Code-0.4.1/font.css" rel="stylesheet" />
+<script src="site_libs/bs3compat-0.3.1/transition.js"></script>
+<script src="site_libs/bs3compat-0.3.1/tabs.js"></script>
+<script src="site_libs/bs3compat-0.3.1/bs3compat.js"></script>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
@@ -49,6 +49,7 @@ if (window.hljs) {
   }
 }
 </script>
+
 
 
 
@@ -99,6 +100,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -324,7 +328,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -444,7 +448,14 @@ div.tocify {
 <li>Vysvětlit, co jsou robustní statistiky a uvést příklady robustní míry variability.</li>
 <li>Uvést příklad míry variability, která robustní není, a vymyslet ilustrativní příklad dat, na kterém to lze demonstrovat.</li>
 </ul></li>
-<li><p><em>Základní příprava (před přednáškou)</em></p></li>
+<li><p><em>Základní příprava (před přednáškou)</em></p>
+<ul>
+<li>Podívejte se na <a href="https://www.youtube.com/watch?v=qcTcsEdMgBo">toto video o mezikvartilovém rozpětí a krabicovém grafu</a> a <a href="https://www.youtube.com/watch?v=wpY9o_OyxoQ">toto video o rozptylu a směrodatné odchylce</a>.</li>
+</ul></li>
+<li><p><em>Doporučená příprava</em></p>
+<ul>
+<li>Od stejného autora se můžete podívat ještě na <a href="https://www.youtube.com/watch?v=9dwLKGoaeEs&amp;t=241s">video o variačním koeficientu</a>.</li>
+</ul></li>
 </ul>
 </div>
 <div id="popis-vztahů-mezi-proměnnými" class="section level1" number="5">
@@ -461,7 +472,7 @@ div.tocify {
 </ul></li>
 <li><p><em>Základní příprava (před přednáškou)</em></p>
 <ul>
-<li>TBD</li>
+<li>Podívejte se na <a href="https://www.youtube.com/watch?v=mG__Wpp9dns">toto video o kovarianci a korelaci</a>.</li>
 </ul></li>
 <li><p><em>Doporučená příprava</em></p>
 <ul>
@@ -475,7 +486,7 @@ div.tocify {
 <li><p><em>Cíle výuky:</em> Cílem je seznámit studující na základní úrovni s myšlenkou statistického modelu, jako matematické reprezentace vyjadřující pravděpodobnostní rozdělení náhodných proměnných a skládající se z deterministické a náhodné komponenty. Tato myšlenka je představena na konceptu již známém (aritmetický průměr) i novém (jednoduchá lineární regrese).</p></li>
 <li><p><em>Výsledky učení - studující dokáže:</em></p>
 <ul>
-<li>Definovat a ve správných souvislostech použít pojmy závislá proměnná, nezávislá proměnná, očekávaná hodnota, podmíněná očekávaná hodnota, jednoduchá lineární regrese</li>
+<li>Definovat a ve správných souvislostech použít pojmy závislá proměnná, nezávislá proměnná, očekávaná hodnota, podmíněná očekávaná hodnota, jednoduchá lineární regrese, celková suma čtverců reziduí, reziduální suma čtverců reziduí, vysvětlená suma čtverců reziduí.</li>
 <li>Interpretovat výstup jednoduché lineární regrese v grafické i tabulkové podobě.</li>
 <li>Vysvětlit, co znamená regrese k průměru a jakou roli v tomto konceptu hraje rozdělení variability na deterministickou a náhodnou složku</li>
 </ul></li>
@@ -485,7 +496,8 @@ div.tocify {
 </ul></li>
 <li><p><em>Doporučená příprava</em></p>
 <ul>
-<li>TBD</li>
+<li>Pokud si chcete poslechnout někoho jiného, jak popisuje základní pojmy lineárního statistického modelu, můžete se podívat na <a href="https://www.youtube.com/watch?v=Fu12LgDDV-0">toto video</a>.</li>
+<li><a href="https://www.youtube.com/watch?v=EFdlFoHI_0I&amp;list=PL1328115D3D8A2566&amp;index=65&amp;t=15s">V tomto videu o celkové sumě čtverců</a> si můžete s autorem názorně projít výpočtem celkové sumy čtverců reziduí na příkladu kategorického prediktoru (3 kategorie) a kardinální závislé proměnné. V <a href="https://www.youtube.com/watch?v=j9ZPMlVHJVs&amp;list=PL1328115D3D8A2566&amp;index=66">tomto navazujícím videu o rozkladu celkové sumy čtverců</a> se můžete podívat na názorný rozklad celkové sumy čtverců, ale pozor, je zde používána trochu jiná terminologie. Pro reziduální sumu čtverců reziduí (RSS) používá autor “sum of squares within” a pro vysvětlenou sumu čtverců (ESS) používá autor “sum of squares between.” Tento rozdíl v terminiologii je dán pouze odlišným rámcem výkladu: zatímco my používáme rámec lineárního modelu, autor videí používá rámec s názvem ANOVA. Rámec lineárního modelu v kurzu preferujeme, protože je obecnější (ANOVA je pouze jeden jeho speciální případ).</li>
 </ul></li>
 </ul>
 </div>
@@ -521,7 +533,7 @@ div.tocify {
 </ul></li>
 <li><p><em>Základní příprava (před přednáškou)</em></p>
 <ul>
-<li>TBD</li>
+<li>Podívejte se na <a href="https://www.youtube.com/watch?v=YXLVjCKVP7U&amp;t=84s">toto video o funkcích rozdělení pravděpodobnosti</a>.</li>
 </ul></li>
 <li><p><em>Doporučená příprava</em></p>
 <ul>

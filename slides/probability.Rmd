@@ -25,88 +25,47 @@ library(tidyverse)
 </style>
 ```
 
-# Proč nezačínáme tento kurz teorií pravděpodobnosti?
+## Proč ve statistice potřebujeme pravděpodobnost?
 
-## Dva hody mincí: jaká je pravděpodobnost, že padne dvakrát panna?
+Klasická inferenční statistika funguje asi takto:
 
-Zamyslete se a odpověď napište na kus papíru.
+* udělám předpoklad o světě (vytvořím model světa)
+* seberu data
+* ptám se, jak překvapivá jsou tato data za předpokladu modelu
+* pokud jsou velmi překvapivá (nepravděpodobná) odmítnu původní model
 
-> -   Zmýlili jste se? [To se stalo i 60 % britských poslanců.](https://www.theguardian.com/lifeandstyle/2016/apr/24/heads-or-tails-smarter-than-an-mp-personality-quiz-ben-ambridge)
 
-## Monty Hall
+Teorie pravděpodobnosti nás učí formálně vyhodnocovat (ne)překvapivost pozorovaných dat.
 
-::: {.centered}
-![](figures/08_Monty.png){width="75%"}
-:::
+## Motivační příklad
 
-::: {.notes}
-Monty Hall -- moderoval televizní show.
-Soutěžící si vybral dveře, věděl, že za jednimi je auto, za dvěma jen koza.
-Moderátor ze zbývajících dvou otevřel jedny, za kterými byla koza.
-Soutěžící měl možnost zůstat při své volbě, nebo změnit volbu a vybrat si zbývající neotevřené dveře.
-:::
+Existuje rozdíl ve výšce žen a mužů?
 
-## Marilyn vos Savant, nejvyšší IQ dle Guinnessovy knihy rekordů {.smaller}
+Model světa: neexistuje
 
-Marilyn: Účastník by měl svoji volbu změnit.
+Seberu data:
 
-<font size="5">
+- ženy: 166, 175, 164, 171
+- muži: 180, 172, 175, 186
 
-<blockquote>
 
-I have been a faithful reader of your column, and I have not, until now, had any reason to doubt you.
-However, in this matter (for which I do have expertise), your answer is clearly at odds with the truth.
-James Rauff, Ph.D. Millikin University
+Jaká je pravděpodobnost, že bychom dostali takto nebo více extrémní rozdíl mezi výškou žen a mužů, pokud by skutečný rozdíl v populaci byl 0?
 
-</blockquote>
+## Motivační příklad - rozuzlení
 
-<blockquote>
+Data:
 
-May I suggest that you obtain and refer to a standard textbook on probability before you try to answer a question of this type again?
-Charles Reid, Ph.D. University of Florida
+- ženy: 166, 175, 164, 171
+- muži: 180, 172, 175, 186
 
-</blockquote>
+Pravděpodobnost (za určitých předpokladů):
 
-<blockquote>
-
-You made a mistake, but look at the positive side.
-If all those Ph.D.'s were wrong, the country would be in some very serious trouble.
-Everett Harman, Ph.D. U.S. Army Research Institute
-
-</blockquote>
-
-</font>
-
-::: {.notes}
-Odpověď Marylin: Není to 1:1, protože musíme uvažovat předchozí pravděpodobnost -- ta byla pro 2.
-a 3.
-dveře dohromady celkem 2/3.
-Vodítko pro intuici: 100 dveří, moderátor otevře 98 z 99 nevybraných.
-[Jedno z nejlepších vláken historie internetu je k přečtení zde.](https://web.archive.org/web/20130121183432/http://marilynvossavant.com/game-show-problem/)
-:::
-
-## Monty Hall vizuálně
-
-![](figures/07_monty2.png)
-
-<font size="2">[Zdroj Wikipedie](https://en.wikipedia.org/wiki/Monty_Hall_problem)</font>
-
-## Proč nezačínáme tento kurz teorií pravděpodobnosti?
-
-Pravděpodobnost je těžká a neintuitivní disciplína, začínat s ní nesplňuje Komenského zásadu posupovat od jednoduchého ke složitému.
-
-## Očekávaná četnost jako nástroj řešení pravděpodobnostních úloh
-
-![](figures/07_coins.png)
-
-<font size="2">Převzato z [@spiegelhalter2019]</font>
-
-## Monty Hall výčtem možností (očekávaná četnost)
-
-![](figures/07_monty3.png)
-
-<font size="2">[Zdroj Ask Marilyn](https://web.archive.org/web/20130121183432/http://marilynvossavant.com/game-show-problem/)</font>
-
+```{r}
+z <- c(166, 175, 164, 171)
+m <- c(180, 172, 175, 186)
+t <- t.test(z,m)
+round(t$p.value, 3)
+```
 
 # Axiomy teorie pravděpodobnosti
 
@@ -117,13 +76,13 @@ Pravděpodobnost je těžká a neintuitivní disciplína, začínat s ní nespl�
 1) Pokud $z_i$, ..., $z_k$ jsou vzájemně se vylučující jevy: $Pr(z_i \cup ... \cup z_k) = Pr(z_i) + ... + Pr(z_k)$
 
 
-Z těchto axiomů lze odvodit další užitečná pravidla, především:
+Z těchto axiomů lze odvodit další užitečná pravidla, například:
 
 >- Pravidlo doplňku: $Pr(z) = 1 - Pr(!z)$, kde vykřičník značí negaci
 >- Mlutiplikační pravidlo: Pravděpodobnost, že najednou nastanou vzájemně nezávislé jevy, se rovná součinu jejich individuálních pravděpodobností
 
 ::: {.notes}
-*Sample space* = všechny možné události/jevy, které mohou nastat. Například pro hod šestistěnnou kostkou je sample space vektor 1,2,3,4,5,6. **Axiom** není předpoklad ve smyslu, že bychom mohli rozhodnout, zda je špatně nebo správně. Axiom je prvotní princip, který přijímáme jako platný a nezpochybňujeme jeho pravdivost, případně zpochybňujeme jeho užitečnost. Například druý axiom bychom snadno mohli změnit na $Pr(sample space)$ = 2. Hodnota pravděpodobnoti 1 by pak značila ne 100% pravděpodobnot, ale 50%. 
+**Sample space** = všechny možné události/jevy, které mohou nastat. Například pro hod šestistěnnou kostkou je sample space vektor 1,2,3,4,5,6. **Axiom** není předpoklad ve smyslu, že bychom mohli rozhodnout, zda je špatně nebo správně. Axiom je prvotní princip, který přijímáme jako platný a nezpochybňujeme jeho pravdivost, případně zpochybňujeme jeho užitečnost. Například druhý axiom bychom snadno mohli změnit na $Pr(sample space)$ = 2. Hodnota pravděpodobnoti 1 by pak značila ne 100% pravděpodobnost, ale 50%. **Příklad multiplakčního pravidla:** pravděpodobnost, že mi na kostce padne číslo 6 a zároveň na minci orel, je $1/6*1/2 = 1/12$.
 :::
 
 ## Dva přístupy k pravděpodobnosti
@@ -131,74 +90,93 @@ Z těchto axiomů lze odvodit další užitečná pravidla, především:
 * Analytický přístup
 * Simulační přístup
 
+::: {.notes}
+**Analytický přístup** = skrze teorii: z axiomů odvozujeme složitější zákonitosti pro různé pravděpodobnostní distribuce. Viz obor statistika a teorie pravděpodobnosti. **Simulační přístup** = díky výpočetní technice prostě simulujeme určité pokusy mnohotisíckrát a pak se jen podíváme na výsledek. Například bootstrapping v minulé přednášce.  
+:::
+
+# Funkce rozdělení pravděpodobnosti (Probability distribution functions)
+
+## Funkce rozdělení pravděpodobnosti (Probability distribution functions)
+
+Jsou dvě:
+
+* Hustota pravděpodobnosti (probability density function, PDF)
+* Kumulativní distribuce (cumulative distribution function, CDF)
+
+
+
+::: {.centered}
+![](figures/08_pdf_a_cdf_uniform.jpg){width=25%}
+:::
+
+<font size="2">[Zdroj graduatetutor.com](https://www.graduatetutor.com/statistics-tutor/probability-density-function-pdf-and-cumulative-distribution-function-cdf/)</font>
+
 ## Hustota pravděpodobnosti (probability density function, PDF)
 
-$P(y)$ ... rozlišuji Pr ve smyslu pravděpodobnost, že proměnná bude nabývat určité hodnoty, a P ve smyslu funkce hustoty pravděpodobnosti pro celé spektrum možných hodnot proměnné
+Značení ... budeme rozlišovat Pr ve smyslu pravděpodobnost, že proměnná bude nabývat určité hodnoty, a P ve smyslu funkce hustoty pravděpodobnosti pro celé spektrum možných hodnot proměnné.
 
-TBD: obrázek PDF, diskrétní i spojitý, ideálně více typů rozdělení, např. normál a poisson
+$P(y)$ ... funkce hustoty pravděpodobnosti proměnné y
 
-## Pravděpodobnost diskrétních a spojitých proměnných
+$Pr(y=4)$ ... pravděpodobnost, že na kostce padne 4
 
-* Pro diskrétní proměnné: PDF: $\sum_{všech\;y} P(y) = 1$
-* Pro diskrétní proměnné: PDF: $ \int^{+\infty}_{-\infty} f(y)\, dy = 1 $
-
-
-::: {.notes}
-Pro diskrétní proměnné je to jednoduché, jen posčítáme pravděpodobnosti všech možných jevů. Aby to byla PDF, musí být součet 1. *Integrál* -  plocha pod křivkou. PDF pro spojitou proměnnou má tedy tu vlastnost, že plocha pod její křivkou se musí rovna 1.
-:::
 
 ## Počítání pravděpodobnosti na základě PDF
 
-TBD: ukázat ploch pod křivkou pro daný rozsah (od bodu do bodu) a nějaké značení, jak se to popisuje
-
-## Návrat rovnoměrného rozdělení
-
-TBD - představit pomocí jazyka prsti
-
-## Návrat normálního rozdělení
-
-TBD - ...
-
-## Bernoulliho rozdělení
-
-TBD
-
-## Binomické rozdělení
-
-TBD
-
-## CDF
-
-TBD
+* Hod kostkou, $Pr(y = 3)$?
+* Hod kostkou, $Pr(y != 3)$?
+* Hod kostkou, $Pr(y >= 3)$?
+* Dva hody kostkou, $Pr(y_1 >= 3 \;\&\; y_2 = 6)$?
 
 
+# Vybraná užitečná rozdělení pravděpodobnosti (užitečné modely světa)
+
+## Ideální rozdělení č. 1: Rovnoměrné (uniformní)
+
+* Všechny hodnoty mají stejnou pravděpodobnost výskytu
+* Hod kostkou, tahání karty z balíčku, tahání tomboly ... možná datum narození?
 
 
-## Podmíněná pravděpodobnost
-
-TBD - tato přednáška, nebo jinde?
-
-# Odlišné filosofie pravděpodobnosti
-
-## Co je to pravděpodobnost?
-
-TBD
+::: {.notes}
+Datum narození závisí na datu početí. Je toto náhodné, nebo "zakládají" lidé na dítě v různých částech roku různě? Model: je rovnoměrné. Porovnáme s realitou: je realita v souladu s modelem?
+:::
 
 
+## Pravděpodobnost diskrétních a spojitých proměnných {.columns-2 .smaller} 
+ 
+* Pro diskrétní proměnné: PDF: 
+
+$$\sum_{for\;all\;y} P(y) = 1$$
 
 
+* Pro diskrétní proměnné: PDF: 
+
+$$ \int_{-\infty}^{+\infty} f(y) \, dy = 1$$
+
+<p class="forceBreak">
+
+</p>
+
+```{r , echo=FALSE,out.width="49%", out.height="20%",fig.cap="Diskrétní rovnoměrné",fig.show='hold',fig.align='center'}
+
+knitr::include_graphics(c("figures/08_uniform_discrete_pdf.png","figures/08_uniform_discrete_cdf.png"))
+
+```
+
+```{r , echo=FALSE,out.width="49%", out.height="20%",fig.cap="Spojité rovnoměrné",fig.show='hold',fig.align='center'}
+
+knitr::include_graphics(c("figures/08_uniform_continuous_pdf.png","figures/08_uniform_continuous_cdf.png"))
+
+```
 
 
+<font size="2">[Zdroj obrázků spojité](https://en.wikipedia.org/wiki/Continuous_uniform_distribution) a [Zdroj obrázků diskrétní](https://en.wikipedia.org/wiki/Discrete_uniform_distribution)</font>
 
-# Proč se vůbec věnujeme teorii pravděpodobnosti?
+::: {.notes}
+Pro diskrétní proměnné je to jednoduché, jen posčítáme pravděpodobnosti všech možných jevů. Aby to byla PDF, musí být součet 1. Pozor, někdy se PDF pro diskrétní proměnné označuje jako "probability mass function", tedy PMF. *Integrál* -  plocha pod křivkou. PDF pro spojitou proměnnou má tedy tu vlastnost, že plocha pod její křivkou se musí rovna 1. 
+:::
 
-## Proč ke statistice potřebujeme pravdědpodobnost?
 
-## 
-
-<!---
-
-## Diskrétní rovnoměrné rozdělení - průměr a rozptyl (nadstavba)
+## Diskrétní rovnoměrné rozdělení - průměr a rozptyl {.columns-2 .smaller}
 
 -   a ... minimum
 -   b ... maximum
@@ -212,32 +190,281 @@ $$
 Rozptyl = (n^2 - 1)/12
 $$
 
-::: {.notes}
-U teoretických distribucí mohou existovat vzorce pro výpočet průměru, rozptylu a dalších statistik ze základních parametrů distribuce. Fungují ale samozřejmě i obecné vzorce, které jsme si ukazovali. Nemusíte se tyto vzorce učit. Spíš jen abyste nebyly překvapeni, když se s něčím takovým setkáte.
-:::
+
+<p class="forceBreak">
+
+</p>
 
 
+```{r , echo=FALSE,out.width="65%", out.height="20%",fig.cap="Diskrétní rovnoměrné",fig.show='hold',fig.align='center'}
 
-## Rovnoměrné (uniformní) rozdělení
-
--   Všechny hodnoty jsou stejně zastoupené
-
-```{r}
-
-tibble(value = as_factor(1:6),
-       prob = 1/6) %>% 
-  ggplot(aes(x = value, y = prob)) + 
-  geom_col() + 
-  labs(x = "Hodnota na kostce", y = "Pravděpodobnost dané hodnoty", title = "Diskrétní uniformní rozdělení - hod kostkou") +
-  scale_y_continuous(labels = scales::label_percent())
-  
+knitr::include_graphics(c("figures/08_uniform_discrete_pdf.png","figures/08_uniform_discrete_cdf.png"))
 
 ```
 
+
 ::: {.notes}
-Pozor, existuje rozdíl mezi diskrétním a spojitým rozdělením. Tomu se budeme více věnovat v příští přednášce o pravděpodobnosti.
+U teoretických distribucí mohou existovat vzorce pro výpočet průměru, rozptylu a dalších statistik ze základních parametrů distribuce. Fungují ale samozřejmě i obecné vzorce, které jsme si ukazovali.
 :::
 
 
+## Spojité rovnoměrné rozdělení - průměr a rozptyl, nadstavba {.columns-2 .smaller}
 
--->
+-   a ... minimum
+-   b ... maximum
+
+$$
+Průměr = (a+b)/2
+$$
+
+$$
+Rozptyl = (b - a)^2/12
+$$
+
+
+<p class="forceBreak">
+
+</p>
+
+
+```{r , echo=FALSE,out.width="65%", out.height="20%",fig.cap="Diskrétní rovnoměrné",fig.show='hold',fig.align='center'}
+
+knitr::include_graphics(c("figures/08_uniform_continuous_pdf.png","figures/08_uniform_continuous_cdf.png"))
+
+```
+
+
+## Ideální rozdělení č. 2: Normální (Gaussovo)
+
+* Tzv. zvonová křivka
+* Střední a prostřední hodnoty jsou časté. Čím extrémnější hodnoty, tím méně časté
+* Je na obrázku PDF, nebo CDF?
+
+```{r fig.height=3}
+p1 <- ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = 0, sd = 1)) + ylab("") +
+  scale_y_continuous(breaks = NULL)
+p1
+```
+
+
+## Normální rozdělení: PDF a CDF
+
+::: {.centered}
+![](figures/08_pdf_a_cdf.png){width=60%}
+:::
+
+<font size="2">[Zdroj Wikipedie](https://en.wikipedia.org/wiki/Probability_distribution)</font>
+
+
+* Všimněte si: čím vyšší je PDF, tím strmější je (obecná vlastnost funkcí rozdělení pravděpodobnosti, nejen pro normální rozdělení)
+
+
+## Normální rozdělení - formální definice PDF (nadstavba)
+
+::: {.centered}
+![](figures/07_norm_formal.png)
+:::
+
+Vypadá to děsivě, ale pí a eulerovo číslo jsou konstanty, x zastuje hodnoty proměnné, takže jediné, co vám stačí, je $\mu$ a $\sigma$, tedy průměr a směrodatná odchylka.
+
+Jinými slovy: normální rozdělení je plně efinováno dvěma parametry: průměrem a směrodatnou odchylkou.
+
+
+## Standardní normální rozdělení a jeho vlastnosti
+
+::: {.centered}
+![](figures/07_gauss2.png){width="65%"}
+:::
+
+<font size="2">Zdroj [Wikipedia](https://en.wikipedia.org/wiki/Normal_distribution)</font>
+
+Pravidlo tří sigma (68-95-99,7)
+
+
+
+## Různá normální rozdělení {.smaller}
+
+::: {.centered}
+![](figures/07_gauss_variety.png){width=55%}
+:::
+
+<font size="2">[Převzato z Wikipedie](https://cs.wikipedia.org/wiki/Norm%C3%A1ln%C3%AD_rozd%C4%9Blen%C3%AD#:~:text=Norm%C3%A1ln%C3%AD%20rozd%C4%9Blen%C3%AD%20neboli%20Gaussovo%20rozd%C4%9Blen%C3%AD,%2C%20p%C5%99edpisem%20nebo%20modelem%E2%80%9C.))</font>
+
+>- Mezi jaké hodnoty spadá prostředních 68 % modrého rozdělení?
+>- Kolik procent pozorování zeleného rozdělení spadá mezi hodnoty -5 a 1?
+>- Kolik procent pozorování červeného rozdělení spadá mezi hodnoty -1 a 2?
+
+
+## Jak vzniká normální rozdělení? Vytvoření intuice
+
+Typicky v důsledku mnoha malých vlivů. Působení těchto vlivů se častěji "vykrátí" (některé přidávají, jiné ubírají).
+
+::: {.centered}
+![](figures/07_intuice_norm.png)
+:::
+
+::: {.notes}
+V hypotetickém příkladu ovlivňují výsledek jen čtyři faktory. Ty mohou každý nabývat polohy +1 (modrá), nebo -1 (červená). Je vidět, že možné výsledky dávají vzniknout normálnímu rozdělení.
+:::
+
+## Alternativní (Bernoulliho) rozdělení {.columns-2 .smaller}
+
+* Rozdělení náhodné proměnné, která může nabývat pouze 1, nebo 0
+* Pr(y=1) značíme $p$
+* Pr(y=0) značíme $1-p$ nebo $q$
+* $m = p$
+* $var = p*q$
+
+
+Kontrolní otázky: 
+
+* Kolik vstupních údajů plně definuje alternativní rozdělení?
+* Jak by vypadala funkce hustoty spojitého alternativního rozdělení?
+
+<p class="forceBreak">
+
+</p>
+
+![](figures/08_alternative_pdf.png)
+
+<font size="2">Zdroj [Wikipedia](https://en.wikipedia.org/wiki/Bernoulli_distribution)</font>
+
+
+::: {.notes}
+Alternativní rozdělení je logicky definováno jen pro diskrétní proměnné. 
+:::
+
+## Binomické rozdělení (také Bernoulliho schéma) {.columns-2 .smaller}
+
+* Popisuje výskyt jevu v $n$ nezávislých pokusech, z nichž každý má stejnou pravděpodobnost úspěchu
+* Plně definováno dvěma údaji: 
+    * $n$, počet pokusů
+    * $p$, pravděpodobnost úspěchu
+* $m=np$
+* $var=npq$
+    
+<p class="forceBreak">
+
+</p>
+
+
+```{r , echo=FALSE,out.width="65%", out.height="20%",fig.show='hold',fig.align='center'}
+
+knitr::include_graphics(c("figures/08_binomial_pdf.png","figures/08_binomial_cdf.png"))
+
+```
+
+<font size="2">Zdroj [Wikipedia](https://en.wikipedia.org/wiki/Binomial_distribution#Bernoulli_distribution)</font>
+
+
+## Počítání s binomickým rozdělením {.smaller}
+
+```{r fig.height=3}
+data.frame(heads = 0:10, prob = dbinom(x = 0:10, size = 10, prob = 0.5)) %>%
+ggplot(aes(x = factor(heads), y = prob)) +
+  geom_col() +
+  geom_text(
+    aes(label = round(prob,2), y = prob + 0.01),
+    position = position_dodge(0.9),
+    size = 3,
+    vjust = 0
+  ) +
+  labs(title = "Pr(X), kde X ... počet orlů na minci",
+       subtitle = "binomické rozdělení (10 hodů spravedlivou mincí)",
+       x = "Počet orlů (X)",
+       y = "Pravděpodobnost") 
+```
+
+$$
+P(k) = P(X = k) = {n \choose k} p^k(1-p)^{n-k} 
+$$
+
+where:
+
+$$
+{n \choose k} = \frac{n!}{k!(n-k)!}
+$$
+
+
+
+
+## Příklad: Přechod na trvalou hybridní výuku? {.smaller}
+
+* Pr(příznivec) = $p_X$
+* X ... proměnná, zda příznivec hybridní výuky (1), nebo ne (0)
+* Počet náhodně vybraných respondentů n = 10
+* Y ... počet příznivců v našem vzorku (teoreticky od 0 do 10)
+
+Otázky:
+
+1) Jaké rozdělení má proměnná X?
+1) Pr(Y=0), když $p_X$ = 0.2
+1) Pr(Y=2), když $p_X$ = 0.2
+1) Pr(Y>=2), když $p_X$ = 0.2
+1) E(Y)?, když $p_X$ = 0.2
+1) E(Y)?, když $p_X$ = 0.5
+1) Var(Y)?, když $p_X$ = 0.4
+1) Které stavy byste označili za běžné a které za extrémní?
+1) Pokud byste předpokládali $p_X$ = 0.2, je 8 příznivců hybridní výuku extrémní stav, který by zpochybnil Vás předpoklad?
+1) Jak se výsledky změní, pokud n = 1000? Jak se změní tvar rozdělení?
+
+
+::: {.notes}
+**1** Alternativní čili Bernoulliho. **2** $0.8^10 = 0.107$. **3** Pozor, toto není $0.2^2 * 0.8^8$, protože 2 z 8 lze vybrat mnoha způsoby. Je potřeba použít kombinatoriku, resp. vzorec výše. **4** Nejlepší je spočítat Pr(Y=0) a Pr(Y=1) a jejich součet odečíst od 1.  
+:::
+
+## Změna tvaru binomického rozdělení při růstu $n$
+
+```{r out.width="33%"}
+
+# par(mfrow = c(3, 2))  # 3 rows and 2 columns
+# for (i in c("Sturges", "st", "Scott", "sc", "FD", "fr")) {
+#     hist(cars$speed, breaks = i, main = paste("method is", i, split = ""))
+# }
+
+n <- 10
+k <- seq(0, n, 1)
+plot (k, dbinom(k, n, 0.2), type = "l", ylab = "density",
+      main = "n=10, p=0.2")
+
+n <- 100
+k <- seq(0, n, 1)
+plot (k, dbinom(k, n, 0.2), type = "l", ylab = "density",
+      main = "n=100, p=0.2")
+
+
+n <- 1000
+k <- seq(0, n, 10)
+plot (k, dbinom(k, n, 0.2), type = "l", ylab = "density",
+      main = "n=1000, p=0.2")
+
+
+```
+
+
+## Vyčíslení pravděpodobností v softwaru
+
+Pravděpodobnost, že z 10 hodů mincí padne 4 nebo 5 orlů.
+
+```{r echo=TRUE}
+sum(dbinom(4:5, 10, 0.5))
+```
+
+Zkuste si doma ověřit výsledky pomocí funkce binom.dist v MS Excel. 
+
+
+# Odlišné filosofie pravděpodobnosti
+
+## Co je to pravděpodobnost?
+
+TBD
+
+
+
+# Proč se vůbec věnujeme teorii pravděpodobnosti?
+
+## Proč ke statistice potřebujeme pravdědpodobnost?
+
+Klasický přístup k inferenci: statistika nám pomáhá určit, jak (ne)pravděpodobná jsou určitá data za předpokladu určitého modelu. 
+

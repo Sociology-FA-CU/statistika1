@@ -11,4 +11,8 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# TBD
+
+Look at:
+
+- https://www.youtube.com/watch?v=RKdB1d5-OE0 for examples of convergence to normal distribution and basic idea of CLT
+- 

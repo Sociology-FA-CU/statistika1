@@ -82,6 +82,12 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     
 -   *Základní příprava (před přednáškou)*
 
+    -   Podívejte se na [toto video o mezikvartilovém rozpětí a krabicovém grafu](https://www.youtube.com/watch?v=qcTcsEdMgBo) a [toto video o rozptylu a směrodatné odchylce](https://www.youtube.com/watch?v=wpY9o_OyxoQ).
+    
+-   *Doporučená příprava*
+
+    -   Od stejného autora se můžete podívat ještě na [video o variačním koeficientu](https://www.youtube.com/watch?v=9dwLKGoaeEs&t=241s).
+
     
 # Popis vztahů mezi proměnnými
 
@@ -97,7 +103,8 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     
 -   *Základní příprava (před přednáškou)*
 
-    -   TBD
+    -   Podívejte se na [toto video o kovarianci a korelaci](https://www.youtube.com/watch?v=mG__Wpp9dns).
+
     
 -   *Doporučená příprava*
 
@@ -109,7 +116,7 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
 
 -   *Výsledky učení - studující dokáže:*
 
-    -   Definovat a ve správných souvislostech použít pojmy závislá proměnná, nezávislá proměnná, očekávaná hodnota, podmíněná očekávaná hodnota, jednoduchá lineární regrese
+    -   Definovat a ve správných souvislostech použít pojmy závislá proměnná, nezávislá proměnná, očekávaná hodnota, podmíněná očekávaná hodnota, jednoduchá lineární regrese, celková suma čtverců reziduí, reziduální suma čtverců reziduí, vysvětlená suma čtverců reziduí.
     -   Interpretovat výstup jednoduché lineární regrese v grafické i tabulkové podobě.
     -   Vysvětlit, co znamená regrese k průměru a jakou roli v tomto konceptu hraje rozdělení variability na deterministickou a náhodnou složku
     
@@ -119,7 +126,8 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     
 -   *Doporučená příprava*
 
-    -   TBD
+    -   Pokud si chcete poslechnout někoho jiného, jak popisuje základní pojmy lineárního statistického modelu, můžete se podívat na [toto video](https://www.youtube.com/watch?v=Fu12LgDDV-0).
+    -   [V tomto videu o celkové sumě čtverců](https://www.youtube.com/watch?v=EFdlFoHI_0I&list=PL1328115D3D8A2566&index=65&t=15s) si můžete s autorem názorně projít výpočtem celkové sumy čtverců reziduí na příkladu kategorického prediktoru (3 kategorie) a kardinální závislé proměnné. V [tomto navazujícím videu o rozkladu celkové sumy čtverců](https://www.youtube.com/watch?v=j9ZPMlVHJVs&list=PL1328115D3D8A2566&index=66) se můžete podívat na názorný rozklad celkové sumy čtverců, ale pozor, je zde používána trochu jiná terminologie. Pro reziduální sumu čtverců reziduí (RSS) používá autor "sum of squares within" a pro vysvětlenou sumu čtverců (ESS) používá autor "sum of squares between". Tento rozdíl v terminiologii je dán pouze odlišným rámcem výkladu: zatímco my používáme rámec lineárního modelu, autor videí používá rámec s názvem ANOVA. Rámec lineárního modelu v kurzu preferujeme, protože je obecnější (ANOVA je pouze jeden jeho speciální případ).
 
 # Základy inferenčního uvažování: vzorek a populace
 
@@ -151,7 +159,7 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     
 -   *Základní příprava (před přednáškou)*
 
-    -   TBD
+    -   Podívejte se na [toto video o funkcích rozdělení pravděpodobnosti](https://www.youtube.com/watch?v=YXLVjCKVP7U&t=84s).
     
 -   *Doporučená příprava*
 
