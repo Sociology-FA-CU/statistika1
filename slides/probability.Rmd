@@ -291,9 +291,9 @@ Pravidlo tří sigma (68-95-99,7)
 
 <font size="2">[Převzato z Wikipedie](https://cs.wikipedia.org/wiki/Norm%C3%A1ln%C3%AD_rozd%C4%9Blen%C3%AD#:~:text=Norm%C3%A1ln%C3%AD%20rozd%C4%9Blen%C3%AD%20neboli%20Gaussovo%20rozd%C4%9Blen%C3%AD,%2C%20p%C5%99edpisem%20nebo%20modelem%E2%80%9C.))</font>
 
->- Mezi jaké hodnoty spadá prostředních 68 % modrého rozdělení?
->- Kolik procent pozorování zeleného rozdělení spadá mezi hodnoty -5 a 1?
->- Kolik procent pozorování červeného rozdělení spadá mezi hodnoty -1 a 2?
+>- Mezi jaké hodnoty spadá prostředních 68 % červeného rozdělení?
+>- Kolik procent pozorování červeného rozdělení spadá mezi hodnoty -2 a 1?
+>- Kolik procent pozorování červeného rozdělení spadá mezi hodnoty -3 a 0?
 
 
 ## Jak vzniká normální rozdělení? Vytvoření intuice
@@ -380,7 +380,7 @@ $$
 P(k) = P(X = k) = {n \choose k} p^k(1-p)^{n-k} 
 $$
 
-where:
+kde:
 
 $$
 {n \choose k} = \frac{n!}{k!(n-k)!}
@@ -398,20 +398,20 @@ $$
 
 Otázky:
 
-1) Jaké rozdělení má proměnná X?
-1) Pr(Y=0), když $p_X$ = 0.2
-1) Pr(Y=2), když $p_X$ = 0.2
-1) Pr(Y>=2), když $p_X$ = 0.2
-1) E(Y)?, když $p_X$ = 0.2
-1) E(Y)?, když $p_X$ = 0.5
-1) Var(Y)?, když $p_X$ = 0.4
-1) Které stavy byste označili za běžné a které za extrémní?
-1) Pokud byste předpokládali $p_X$ = 0.2, je 8 příznivců hybridní výuku extrémní stav, který by zpochybnil Vás předpoklad?
-1) Jak se výsledky změní, pokud n = 1000? Jak se změní tvar rozdělení?
+>- Jaké rozdělení má proměnná X? Co proměnná Y?
+>- Pr(Y=0), když $p_X$ = 0.2
+>- Pr(Y=1), když $p_X$ = 0.2
+>- Pr(Y>=2), když $p_X$ = 0.2
+>- E(Y)?, když $p_X$ = 0.2
+>- E(Y)?, když $p_X$ = 0.5
+>- Var(Y)?, když $p_X$ = 0.4
+>- Které stavy byste označili za běžné a které za extrémní?
+>- Pokud byste předpokládali $p_X$ = 0.2, je 8 příznivců hybridní výuku extrémní stav, který by zpochybnil Vás předpoklad?
+>- Jak se výsledky změní, pokud n = 1000? Jak se změní tvar rozdělení?
 
 
 ::: {.notes}
-**1** Alternativní čili Bernoulliho. **2** $0.8^10 = 0.107$. **3** Pozor, toto není $0.2^2 * 0.8^8$, protože 2 z 8 lze vybrat mnoha způsoby. Je potřeba použít kombinatoriku, resp. vzorec výše. **4** Nejlepší je spočítat Pr(Y=0) a Pr(Y=1) a jejich součet odečíst od 1.  
+**1** X - Alternativní čili Bernoulliho rozdělení, Y - binomické. **2** $0.8^10 = 0.107$. **3** Pozor, toto není $0.2^2 * 0.8^8$, protože 2 z 8 lze vybrat mnoha způsoby. Je potřeba použít kombinatoriku, resp. vzorec výše. **4** Nejlepší je spočítat Pr(Y=0) a Pr(Y=1) a jejich součet odečíst od 1.  
 :::
 
 ## Změna tvaru binomického rozdělení při růstu $n$
@@ -452,14 +452,6 @@ sum(dbinom(4:5, 10, 0.5))
 ```
 
 Zkuste si doma ověřit výsledky pomocí funkce binom.dist v MS Excel. 
-
-
-# Odlišné filosofie pravděpodobnosti
-
-## Co je to pravděpodobnost?
-
-TBD
-
 
 
 # Proč se vůbec věnujeme teorii pravděpodobnosti?

@@ -443,9 +443,9 @@ Diskrétní rovnoměrné
 <p><font size="2"><a href='https://cs.wikipedia.org/wiki/Norm%C3%A1ln%C3%AD_rozd%C4%9Blen%C3%AD#:~:text=Norm%C3%A1ln%C3%AD%20rozd%C4%9Blen%C3%AD%20neboli%20Gaussovo%20rozd%C4%9Blen%C3%AD,%2C%20p%C5%99edpisem%20nebo%20modelem%E2%80%9C.' title=''>Převzato z Wikipedie</a>)</font></p>
 
 <ul class = 'build'>
-<li>Mezi jaké hodnoty spadá prostředních 68 % modrého rozdělení?</li>
-<li>Kolik procent pozorování zeleného rozdělení spadá mezi hodnoty -5 a 1?</li>
-<li>Kolik procent pozorování červeného rozdělení spadá mezi hodnoty -1 a 2?</li>
+<li>Mezi jaké hodnoty spadá prostředních 68 % červeného rozdělení?</li>
+<li>Kolik procent pozorování červeného rozdělení spadá mezi hodnoty -2 a 1?</li>
+<li>Kolik procent pozorování červeného rozdělení spadá mezi hodnoty -3 a 0?</li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>Jak vzniká normální rozdělení? Vytvoření intuice</h2></hgroup><article  id="jak-vzniká-normální-rozdělení-vytvoření-intuice">
@@ -514,7 +514,7 @@ Diskrétní rovnoměrné
 P(k) = P(X = k) = {n \choose k} p^k(1-p)^{n-k} 
 \]</p>
 
-<p>where:</p>
+<p>kde:</p>
 
 <p>\[
 {n \choose k} = \frac{n!}{k!(n-k)!}
@@ -531,10 +531,10 @@ P(k) = P(X = k) = {n \choose k} p^k(1-p)^{n-k}
 
 <p>Otázky:</p>
 
-<ol>
-<li>Jaké rozdělení má proměnná X?</li>
+<ul class = 'build'>
+<li>Jaké rozdělení má proměnná X? Co proměnná Y?</li>
 <li>Pr(Y=0), když \(p_X\) = 0.2</li>
-<li>Pr(Y=2), když \(p_X\) = 0.2</li>
+<li>Pr(Y=1), když \(p_X\) = 0.2</li>
 <li>Pr(Y&gt;=2), když \(p_X\) = 0.2</li>
 <li>E(Y)?, když \(p_X\) = 0.2</li>
 <li>E(Y)?, když \(p_X\) = 0.5</li>
@@ -542,9 +542,9 @@ P(k) = P(X = k) = {n \choose k} p^k(1-p)^{n-k}
 <li>Které stavy byste označili za běžné a které za extrémní?</li>
 <li>Pokud byste předpokládali \(p_X\) = 0.2, je 8 příznivců hybridní výuku extrémní stav, který by zpochybnil Vás předpoklad?</li>
 <li>Jak se výsledky změní, pokud n = 1000? Jak se změní tvar rozdělení?</li>
-</ol>
+</ul>
 
-<aside class='note'><section><p><strong>1</strong> Alternativní čili Bernoulliho. <strong>2</strong> \(0.8^10 = 0.107\). <strong>3</strong> Pozor, toto není \(0.2^2 * 0.8^8\), protože 2 z 8 lze vybrat mnoha způsoby. Je potřeba použít kombinatoriku, resp. vzorec výše. <strong>4</strong> Nejlepší je spočítat Pr(Y=0) a Pr(Y=1) a jejich součet odečíst od 1.</p></section></aside>
+<aside class='note'><section><p><strong>1</strong> X - Alternativní čili Bernoulliho rozdělení, Y - binomické. <strong>2</strong> \(0.8^10 = 0.107\). <strong>3</strong> Pozor, toto není \(0.2^2 * 0.8^8\), protože 2 z 8 lze vybrat mnoha způsoby. Je potřeba použít kombinatoriku, resp. vzorec výše. <strong>4</strong> Nejlepší je spočítat Pr(Y=0) a Pr(Y=1) a jejich součet odečíst od 1.</p></section></aside>
 
 </article></slide><slide class=""><hgroup><h2>Změna tvaru binomického rozdělení při růstu \(n\)</h2></hgroup><article  id="změna-tvaru-binomického-rozdělení-při-růstu-n">
 
@@ -559,12 +559,6 @@ P(k) = P(X = k) = {n \choose k} p^k(1-p)^{n-k}
 <pre >## [1] 0.4511719</pre>
 
 <p>Zkuste si doma ověřit výsledky pomocí funkce binom.dist v MS Excel.</p>
-
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Odlišné filosofie pravděpodobnosti</h2></hgroup><article  id="odlišné-filosofie-pravděpodobnosti">
-
-</article></slide><slide class=""><hgroup><h2>Co je to pravděpodobnost?</h2></hgroup><article  id="co-je-to-pravděpodobnost">
-
-<p>TBD</p>
 
 </article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Proč se vůbec věnujeme teorii pravděpodobnosti?</h2></hgroup><article  id="proč-se-vůbec-věnujeme-teorii-pravděpodobnosti">
 
