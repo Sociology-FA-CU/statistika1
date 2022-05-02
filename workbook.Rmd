@@ -21,7 +21,7 @@ Pracovní listy ke stažení.
 - [Týden 7 - Statistický model](https://docs.google.com/document/d/1am1QbbH6rxN_SWs0kr9aNJk7GZX-XBapWKpzRZvy4NU/edit?usp=sharing)
 - [Týden 8 - Úvod do inference](https://docs.google.com/document/d/1JQVc8IFE2nZ3U55F9NRNugpiGgaFnMmi_Ji7fW7qrfk/edit?usp=sharing)
 - [Týden 9 - Teorie pravděpodobnosti](https://docs.google.com/document/d/1NU_JR8lp8AtUNAWne_cjdOAvKrYHVtGyJ-6Hn2ngXg4/edit?usp=sharing)
-
+- [Týden 9 - Teorie pravděpodobnosti -řešení bootstrapping](https://docs.google.com/spreadsheets/d/10GD4DP8tlQ4uTfiwnZ-ELfjovT0IP7fV/edit?usp=sharing&ouid=108897516173003443305&rtpof=true&sd=true)
 
 
 
