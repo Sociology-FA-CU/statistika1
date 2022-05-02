@@ -8,6 +8,7 @@ output:
 editor_options: 
   markdown: 
     wrap: sentence
+  chunk_output_type: console
 bibliography: references.bib
 ---
 
@@ -257,7 +258,7 @@ p1
 <font size="2">[Zdroj Wikipedie](https://en.wikipedia.org/wiki/Probability_distribution)</font>
 
 
-* Všimněte si: čím vyšší je PDF, tím strmější je (obecná vlastnost funkcí rozdělení pravděpodobnosti, nejen pro normální rozdělení)
+* Všimněte si: čím vyšší je PDF, tím strmější je CDF (obecná vlastnost funkcí rozdělení pravděpodobnosti, nejen pro normální rozdělení)
 
 
 ## Normální rozdělení - formální definice PDF (nadstavba)
@@ -416,17 +417,29 @@ Otázky:
 
 ## Změna tvaru binomického rozdělení při růstu $n$
 
-```{r out.width="33%"}
+```{r}
 
-# par(mfrow = c(3, 2))  # 3 rows and 2 columns
-# for (i in c("Sturges", "st", "Scott", "sc", "FD", "fr")) {
-#     hist(cars$speed, breaks = i, main = paste("method is", i, split = ""))
-# }
+par(mfrow = c(2, 3))
+
+n <- 5
+k <- seq(0, n, 1)
+plot (k, dbinom(k, n, 0.2), type = "l", ylab = "density",
+      main = "n=5, p=0.2")
 
 n <- 10
 k <- seq(0, n, 1)
 plot (k, dbinom(k, n, 0.2), type = "l", ylab = "density",
       main = "n=10, p=0.2")
+
+n <- 20
+k <- seq(0, n, 1)
+plot (k, dbinom(k, n, 0.2), type = "l", ylab = "density",
+      main = "n=20, p=0.2")
+
+n <- 50
+k <- seq(0, n, 1)
+plot (k, dbinom(k, n, 0.2), type = "l", ylab = "density",
+      main = "n=50, p=0.2")
 
 n <- 100
 k <- seq(0, n, 1)
@@ -435,10 +448,12 @@ plot (k, dbinom(k, n, 0.2), type = "l", ylab = "density",
 
 
 n <- 1000
-k <- seq(0, n, 10)
+k <- seq(0, n, 1)
 plot (k, dbinom(k, n, 0.2), type = "l", ylab = "density",
       main = "n=1000, p=0.2")
 
+
+par(mfrow = c(1, 1))
 
 ```
 
@@ -458,5 +473,5 @@ Zkuste si doma ověřit výsledky pomocí funkce binom.dist v MS Excel.
 
 ## Proč ke statistice potřebujeme pravdědpodobnost?
 
-Klasický přístup k inferenci: statistika nám pomáhá určit, jak (ne)pravděpodobná jsou určitá data za předpokladu určitého modelu. 
+Statistika nám pomáhá určit, jak (ne)pravděpodobná jsou určitá data za předpokladu určitého modelu. 
 

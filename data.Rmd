@@ -41,6 +41,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 </br>
 
+* [STÁHNOUT Dataset Vzorků ze jmen](https://docs.google.com/spreadsheets/d/1CoQeW09z9mKTidfC-Y9G0xDcvw3l4gGg6JZwEMBjYCU/edit?usp=sharing)
+
+  - 20 výběrových souborů (vzorků) z ženských jmen z datasetu jména, každý vzorek n = 100 pozorování
+
+</br>
+
 * [STÁHNOUT Dataset Kraje](https://docs.google.com/spreadsheets/d/1v6NbEPfiaDptpgi11gpNnbibZC_kiJ-lfW9kX4ZHr_M/edit?usp=sharing)
 
   - [Zdroj převážně SLDB 2021](https://www.czso.cz/csu/scitani2021/vysledky-prvni ): počet obyvatel, průměrný věk, počet žen, VŠ vzdělání, věřící, národnost, rodinný stav
