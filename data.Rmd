@@ -79,4 +79,8 @@ Popis proměnných v datasetu Countries:
   
 ## Data pro zápočtové úkoly
 
-* [STÁHNOUT Dataset s demokratickým indexem pro ZÁPOČTOVÝ ÚKOL 1](https://docs.google.com/spreadsheets/d/1RzYdIdqhahL0yXBQh2GQ6ncBgGLfHcrVEq94vJlp7k8/edit?usp=sharing)
+* [STÁHNOUT Dataset s demokratickým indexem pro ZÁPOČTOVÝ ÚKOL 1 1](https://docs.google.com/spreadsheets/d/1RzYdIdqhahL0yXBQh2GQ6ncBgGLfHcrVEq94vJlp7k8/edit?usp=sharing)
+
+
+* [STÁHNOUT Dataset s volebními preferencemi (CVVM, listopad 2021) pro ZÁPOČTOVÝ ÚKOL 2 1](https://docs.google.com/spreadsheets/d/1iN8IBM14vEtPZ7uZrnTbZ0-1Cgc13OlMKgd4eHsxOCc/edit?usp=sharing)
+
