@@ -189,12 +189,11 @@ Směrodatnou odchylku distribuce statistiky nazýváme STANDARDNÍ CHYBA (standa
 
 ## Kdy platí CLT?
 
-- Vždy, když je populační rozdělení proměnné X normální
 - (Téměř) nezávisle na distribuci pozorované proměnné, pokud je N dostatečně velké
 
 Dostatečně velké?
 
-- Zpravidla se uvádí větší než 30, ale záleží na šikmosti proměnné
+- Zpravidla se uvádí větší než 30, ale záleží na šikmosti proměnné (někdy je potřeba větší N, aby CLT začal platit)
 - U binomického rozdělení se řídíme pravidlem, že $minimum(n*p; n*q) >= 5$. Pokud podmínka splněna není, na CLT bychom neměli spoléhat.
 
 ## CLT a mírně šikmá data - ilustrace
@@ -203,7 +202,7 @@ Dostatečně velké?
 * Barvy: rozdělení průměru, n = 5, 20, 40
 
 ::: {.centered}
-![](figures/09_clt_with_orig_data.png){width=60%}
+![](figures/09_clt_with_orig_data.png){width=50%}
 :::
 
 <font size="2">[Zdroj obrázku statisticsbyjim.com](https://statisticsbyjim.com/basics/central-limit-theorem/)</font>
@@ -263,7 +262,7 @@ $$
 \bar{X}
 $$
 
-- Pro intervalový odhad: Od bodového odhadu odečteme X-násobek standardní chyby (minimum intervalu) a přičteme z-násobek standardní chyby (maximum intervalu). V případě 95% konfidenčního intervalu $z ≈ 2$. 
+- Pro intervalový odhad: Od bodového odhadu odečteme z-násobek standardní chyby (minimum intervalu) a přičteme z-násobek standardní chyby (maximum intervalu). V případě 95% konfidenčního intervalu $z ≈ 2$, resp. často se uvádí přesněji $z = 1,96$  
 
 
 $$

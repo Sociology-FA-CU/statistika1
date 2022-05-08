@@ -392,8 +392,8 @@ $$
 
 ## Příklad: Přechod na trvalou hybridní výuku? {.smaller}
 
-* Pr(příznivec) = $p_X$
 * X ... proměnná, zda příznivec hybridní výuky (1), nebo ne (0)
+* Pr(X=příznivec) = $p_X$
 * Počet náhodně vybraných respondentů n = 10
 * Y ... počet příznivců v našem vzorku (teoreticky od 0 do 10)
 
