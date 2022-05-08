@@ -180,7 +180,7 @@ Kromě toho najdete u každého tématu (s výjimkou úvodní hodiny) Základní
     
 -   *Doporučená příprava*
 
-    -   TBD
+    -   [Video o výpočtu intervalu spolehlivosti pomocí studentova t rozdělení](https://www.youtube.com/watch?v=jR8fSAeuMvA].
 
 # Podmíněná pravděpodobnost a Bayesova věta
 
