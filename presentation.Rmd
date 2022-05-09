@@ -32,8 +32,8 @@ Některé prezentace na konci obsahují sekci "Nadstavba". Ta představuje dobro
 1) Statistický model ([v prohlížeči](slides/model.html), ke stažení) 
 1) Základy inferenčního uvažování: vzorek a populace ([v prohlížeči](slides/inference.html), ke stažení)
 1) Pravděpodobnost, nejistota a variabilita ([v prohlížeči](slides/probability.html), ke stažení)
-1) Centrální limitní věta ([v prohlížeči](slides/000clt.html), ke stažení)
-1) Centrální limitní věta - opakování a rozšíření ([v prohlížeči](slides/000clt2.html), ke stažení)
+1) Centrální limitní věta ([v prohlížeči](slides/clt.html), ke stažení)
+1) Centrální limitní věta - opakování a rozšíření ([v prohlížeči](slides/clt2.html), ke stažení)
 1) Podmíněná pravděpodobnost a Bayesova věta ([v prohlížeči](slides/000conditional.html), ke stažení)
 1) Bayesovská aktualizace na základě nových informací (v prohlížeči, ke stažení)
 
