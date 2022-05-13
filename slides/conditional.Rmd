@@ -11,4 +11,71 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## TBD
+## Podmíněná pravděpodobnost
+
+>-    Jaká je pravděpodobnosti jevu A, když víme, že nastal jev B? 
+>-    Značíme $P(A|B)$
+
+## Podmíněná pravděpodobnot vizuálně
+
+::: {.centered}
+![](figures/11_conditional.png){width=70%}
+:::
+
+<font size="2">[Zdroj Wiki](https://en.wikipedia.org/wiki/Conditional_probability)</font>
+
+
+::: {.notes}
+"Illustration of conditional probabilities with an Euler diagram. The unconditional probability P(A) = 0.30 + 0.10 + 0.12 = 0.52. However, the conditional probability P(A|B1) = 1, P(A|B2) = 0.12 ÷ (0.12 + 0.04) = 0.75, and P(A|B3) = 0." (Wiki)
+:::
+
+## Dvě čtyřstěnné kostky
+
+Jaká je pravděpodobnost, že součet hodnot bude rovný šesti, pokud na jedné z kostek padlo číslo menší než tři?
+
+$P((K_1 + K_2 = 6) | (K_1 < 3\;OR\;K_2 < 3))$
+
+::: {.notes}
+Ilustrativně řešit vypsáním všech možností. Výsledek je 1/6, zatímco nepodmíněná pravděpodobnost tohoto součtu je 3/16. 
+:::
+
+## Vzorec podmíněné pravděpodobnosti
+
+$$
+P(A|B) = \frac{P(A \cap B)}{P(B)}
+$$
+
+
+## Klasický příklad podmíněné pravděpodobnosti
+
+Při screeningu rakoviny prsu je mamografie zhruba z 90 % přesná v tom smyslu, že 90 % žen s rakovinou a 90 % žen bez rakoviny bude správně klasifikováno. Předpokládejme, že 1 % vyšetřovaných žen má skutečně rakovinu: jaká je pravděpodobnost, že náhodně vybraná žena bude mít pozitivní mamograf, a pokud ano, jaká je šance, že má skutečně rakovinu?
+
+
+::: {.notes}
+Pokud řešíte vzorcem, základem je správně si to označit, například: P(A) = rakovina. P(B) = pozitivní test. 
+:::
+
+
+## Řešení pomocí vzorce
+
+$P(B)$ ... 0.99 * 0.1 + 0.01 * 0.9 = 0.108 = ca 10.8 %
+
+$P(A \cap B)$ ... 0.01 * 0.9 = 0.9 %
+
+$P(A|B)$  = 0.9/10.8 = ca 8 %
+
+## Řešení skrze očekávané četnosti
+
+Co by se stalo ve velké skupině, řekněme 1000 žen? 
+
+>-    990 nemá rakovinu, z nich 10 %, tedy 99 dostane pozitivní nález
+>-    10 má rakovinu, z nich 90 %, tedy 9 dostane pozitivní nález
+>-    Podil nemocných ze všech pozitivních nálezů je tedy 9 / (99 + 9) = 8 %
+
+
+
+
+
+
+## Každá pravděpodobnost je podmíněná
+
