@@ -34,8 +34,7 @@ Některé prezentace na konci obsahují sekci "Nadstavba". Ta představuje dobro
 1) Pravděpodobnost, nejistota a variabilita ([v prohlížeči](slides/probability.html), ke stažení)
 1) Centrální limitní věta ([v prohlížeči](slides/clt.html), ke stažení)
 1) Centrální limitní věta - opakování a rozšíření ([v prohlížeči](slides/clt2.html), ke stažení)
-1) Podmíněná pravděpodobnost a Bayesova věta ([v prohlížeči](slides/000conditional.html), ke stažení)
-1) Bayesovská aktualizace na základě nových informací (v prohlížeči, ke stažení)
+1) Podmíněná pravděpodobnost a Bayesova věta ([v prohlížeči](slides/conditional.html), ke stažení)
 
 
 ## Doplňkové prezentace a další ukázky

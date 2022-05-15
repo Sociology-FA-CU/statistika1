@@ -58,6 +58,10 @@ Pokud řešíte vzorcem, základem je správně si to označit, například: P(A
 
 ## Řešení pomocí vzorce
 
+P(A) ... rakovina
+
+P(B) ... pozitivní test
+
 $P(B)$ ... 0.99 * 0.1 + 0.01 * 0.9 = 0.108 = ca 10.8 %
 
 $P(A \cap B)$ ... 0.01 * 0.9 = 0.9 %
@@ -72,10 +76,50 @@ Co by se stalo ve velké skupině, řekněme 1000 žen?
 >-    10 má rakovinu, z nich 90 %, tedy 9 dostane pozitivní nález
 >-    Podil nemocných ze všech pozitivních nálezů je tedy 9 / (99 + 9) = 8 %
 
-
-
-
-
-
 ## Každá pravděpodobnost je podmíněná
 
+Co by mohl tento výrok znamenat?
+
+::: {.notes}
+I pokud se bavíme například o pravděpodobnosti, že padne na spravedlivé minci hlava, děláme předpoklady v tom smyslu, že například mince nespadne hranou do nějaké spáry, někdo cizí ji nechytí ve vzduchu a neuteče, nespadne meteorit, takže se před dopadem mince vypaří. Jinými slovy, kdykoliv aplikujeme teorii pravděpodobnosti na reálný svět, nemůžeme si být jistí, co vlastně jsou všechny možnosti, co by se mohlo stát.
+:::
+
+## Bayesova věta {.smaller}
+
+
+$$
+P(A|B) = \frac{P(B|A)*P(A)}{P(B)} \;\;\;\;\;[Bayesova\;věta]
+$$
+Pomáhá počítat s podmíněnou pravděpodobností. Odvozena přímo se základního vzorce.
+
+Symetricky:
+
+$$
+P(A|B) = \frac{P(A \cap B)}{P(B)} \;\;\;\;\;[2]
+$$
+$$
+P(B|A) = \frac{P(A \cap B)}{P(A)} \;\;\;\;\;[3]
+$$
+Tedy ze [3] plyne:
+
+$$
+P(A \cap B) = P(B|A)*P(A) \;\;\;\;\;[4]
+$$
+Ze vzorce [4] plyne, že dosazením výrazu $P(B|A)*P(A)$ za $P(A \cap B)$ ve vzorci [2] získáme Bayesovu větu.
+
+## Příklad na využití Bayesovy věty
+
+-   Spáchán trestný čin.
+-   Svědek: "pachazel byl Asiat"
+-   Ve městě žije 15% Asiatů
+
+Policie podrobí svědka pokusu na jeho spolehlivost (za podobného osvětlení mu  v náhod. pořadí přivádějí k rozpoznání  Asiaty / ne Asiaty).
+Svědek má přesnost 80 % jak ve správném určení Asiatů, tak ne-Asiatů. 
+
+Jaká je pravděpodobnost, že pachatel byl Asiat?
+
+
+::: {.notes}
+Doporučený zápis: P(+) ... svědek řekne, že je osoba je Asiat. P(A) ... osoba skutečně je Asiat.	**P(+| A) = 80%; P(-|  non A) = 80%;
+?  P(A|+)** 
+::: 
