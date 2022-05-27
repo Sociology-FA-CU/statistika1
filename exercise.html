@@ -628,15 +628,192 @@ Podívat se na řešení
 </div>
 <div id="section-6" class="section level2">
 <h2>6</h2>
-<p>TBD</p>
+<p><br> <strong>Otázka 1</strong></p>
+<p><em>Představte si kardinální (numerickou) proměnnou, např. příjem pro tisíc lidí. Máte tedy 1000 hodnot. Nyní náhodně vyberete 1 člověka z této tisícovky, nicméně nevíte, která hodnota příjmu k němu patří. Jaký by měl být Váš nejlepší odhad jeho příjmu, pokud kritériem kvality odhadu je, že při opakování tohoto experimentu byste chtěli minimalizovat sumu čtverců odchylek skutečných hodnot od Vašich odhadů?</em></p>
+<ol style="list-style-type: decimal">
+<li>Aritmetický průměr</li>
+<li>Medián</li>
+<li>Modus</li>
+<li>Směrodatná odchylka</li>
+<li>Polovina mezikvartilového rozpětí</li>
+</ol>
+<details>
+<summary>
+Podívat se na řešení
+</summary>
+<p>Správná odpověď: aritemtický průměr</p>
+<p>Zdůvodnění:</p>
+<p>Z přednášky byste měli vědět, že na aritmetický průměr se můžeme dívat jako na nulový model, tedy je to taková hodnota, která minimalizuje sumu čtverců odchylek. Zároveň byste měli mít porozumění, proč odpovědi směrodatná odchylka a polovina mezikvartilového rozpětí jsou v tomto kontextu zcela nesmyslné.</p>
+</details>
+<p><br> <strong>Otázka 2</strong></p>
+<p><em>Které z následujících schémat je nejlepším vyjádřením toho, jak funguje statistický model?</em></p>
+<ol style="list-style-type: decimal">
+<li>Pozorování = aritmetický průměr - medián</li>
+<li>Pozorování = predikovaná hodnota + chyba</li>
+<li>Pozorování = konstanta + chyba</li>
+<li>Pozorování = konstanta + predikovaná hodnota</li>
+</ol>
+<details>
+<summary>
+Podívat se na řešení
+</summary>
+<p>Správná odpověď: Pozorování = predikovaná hodnota + chyba</p>
+<p>Poznámka:</p>
+<p>“Pozorování = konstanta + predikovaná hodnota” popisuje nulový model, tedy pokud pro odhad nepoužíváme žádné prediktory, ale pouze aritemtický průměr. Nelze tedy o obecné vyjádření toho, jak funguje statistický model.</p>
+</details>
+<p><br> <strong>Otázka 3</strong></p>
+<p><em>Na základě výstupu z modelu jednoduché lineární regrese určete podmíněnou očekávanou hodnotu pro jednotlivé výšky dcer. Výstup udává počátek (konstantu) a regresní koeficient nezávislé proměnné výška matky. V centimetrech.</em></p>
+<pre><code>## 
+## Call:
+## lm(formula = childHeight ~ mother, data = Mother_Daughter)
+## 
+## Coefficients:
+## (Intercept)       mother  
+##    110.9700       0.3182</code></pre>
+<ol style="list-style-type: decimal">
+<li>Podmíněná očekávaná hodnota pro dceru, jejíž matka měří 150 cm</li>
+<li>Podmíněná očekávaná hodnota pro dceru, jejíž matka měří 165 cm</li>
+<li>Podmíněná očekávaná hodnota pro dceru, jejíž matka měří 190 cm</li>
+</ol>
+<details>
+<summary>
+Podívat se na řešení
+</summary>
+<ol style="list-style-type: decimal">
+<li>Predikce (podmíněné očekávané hodnoty) výšky dcer na základě modelu jsou pro jednotlivé výšky matek (v daném pořadí): 158.71, 163.48, 171.44</li>
+</ol>
+</details>
+<p><strong>Otázka 4</strong></p>
+<p><em>V rámci práce se statistickým modelem provádíme tzv. rozklad sumy čtverců reziduí (sum of squares, SS), pro který zavádíme zkratky TSS, ESS a RSS. Které z následujících vztahů platí?</em></p>
+<ol style="list-style-type: decimal">
+<li>TSS = ESS - RSS</li>
+<li>ESS = TSS + RSS</li>
+<li>RSS = ESS - TSS</li>
+<li>TSS = RSS - ESS</li>
+</ol>
+<details>
+<summary>
+Podívat se na řešení
+</summary>
+<p>Žádný. Všechny výše uvedené vztahy jsou špatně. Platí TSS = ESS + RSS, tedy že celková suma čtverců se rovná součtu modelem vysvětlené sumě čtverců a residuální sumy čtverců.</p>
+</details>
 </div>
 <div id="section-7" class="section level2">
 <h2>7</h2>
-<p>TBD</p>
+<p><br> <strong>Otázka 1</strong></p>
+<p><em>Která z následujících tvrzení platí?</em></p>
+<ol style="list-style-type: decimal">
+<li>S větší velikostí výběrového souboru roste validita.</li>
+<li>S větší velikostí výběrového souboru roste validita a reliabilita.</li>
+<li>S lepší reprezentativitou výběrového souboru roste validita.</li>
+<li>S lepší reprezentativitou výběrového souboru roste reliabilita.</li>
+</ol>
+<details>
+<summary>
+Podívat se na řešení
+</summary>
+<p>Správná odpověď: Platí pouze tvrzení “S lepší reprezentativitou výběrového souboru roste validita.” Velikost vzorku sama o sobě ovlivňuje pouze reliabilitu.</p>
+</details>
+<p><br> <strong>Otázka 2</strong></p>
+<p><em>Co říká zákon velkých čísel?</em></p>
+<ol style="list-style-type: decimal">
+<li>Distribuce průměrů z jednotlivých výběrových souborů se bude blížit normálnímu rozdělení s tím, jak poroste N (velikost každého jednoho výběrového souboru, ze kterých průměry počítáme).</li>
+<li>Pokud opakujeme náhodný výběr z populace mnohokrát, průměrná pozorovaná hodnota se bude velmi blížit skutečné hodnotě v populaci.</li>
+<li>Pokud pozorujeme určité subjekty opakovaně, subjekty s extrémně vysokými naměřenými hodnotami v čase T1 budou mít v čase T2 tendenci k hodnotám méně extrémním (relativně blíže k průměru ve srovnání s ostatními).</li>
+<li>Pokud bychom lidem přidělili percentily například jejich výšky, pak platí, že čím vyšší percentil bychom hledali, tím méně takových lidí by bylo v populaci. Například lidí na 50. percentilu by bylo méně než lidí na 90. percentilu.</li>
+</ol>
+<details>
+<summary>
+Podívat se na řešení
+</summary>
+<p>Správná odpověď: “Pokud opakujeme náhodný výběr z populace mnohokrát, průměrná pozorovaná hodnota se bude velmi blížit skutečné hodnotě v populaci.”</p>
+<p>Poznámka:</p>
+První možnost je popisem centrální limitní věty. Třetí možnost vyplývá z regrese k průměru. Čtvrtá možnost nereprezentuje žádnou statistickou zákonitost a je věcně špatně - lidí na 10. percentilu bude stejně jako lidí na 20. percentilu a stejně jako lidí na 50. a 90. percentilu a jako na každém jiném percentilu: 1 %. Nenechte se zmást tím, že pokud uvažujeme výšku, která bude mít přibližně normální rozdělení, tak platí, že lidé na 40. a 50. percentilu budou mít méně odlišnou výšku než lidé na 80. a 90. percentilu. To je pravda.
+</details>
+<p><br></p>
+<p><br> <strong>Otázka 3</strong></p>
+<p><em>Které parametry jednoznačně definují normální rozdělení?</em></p>
+<ol style="list-style-type: decimal">
+<li>Průměr, medián a modus</li>
+<li>Rozptyl</li>
+<li>Průměr a směrodatná odchylka</li>
+<li>Průměr a rozptyl</li>
+</ol>
+<details>
+<summary>
+Podívat se na řešení
+</summary>
+<p>Správné odpovědi jsou dvě: 3 a 4. Typicky sice normální rozdělení definujeme průměrem a směrodatnou odchylkou, ale rozptyl je na směrodatnou odchylku jednoznačně přímo převoditelné, takže také kombinace parametrů průměr a rozptyl normální rozdělení jednoznačně definuje.</p>
+</details>
+<p><br></p>
+<p><strong>Otázka 4</strong></p>
+<p><em>Přibližně kolik procent všech pozorování nalezneme u normálního rozdělení mezi hodnotami -nekončeno a +2sd? Zvolte nejlepší z nabízených odpovědí.</em></p>
+<ol style="list-style-type: decimal">
+<li>68 %</li>
+<li>95 %</li>
+<li>99,8 %</li>
+<li>98 %</li>
+</ol>
+<details>
+<summary>
+Podívat se na řešení
+</summary>
+<p>Platí varianta 98 %. Nenechte se zmást tím, že mezi -2sd a +2sd se nachází cca 95 % všech pozorování. Nyní počítáme od -nekonečna, takže bychom se dostali k 97,5 %. Ovšem to platí pro hodnoty -1,96sd a +1,96sd. Pro 2 sd je přesnější 98 %. V otevřené otázce by 97,5 % byla dostatečně přesná odpověď. V uzavřené otázce by na základě toho neměl být problém mezi nabízenými variantami vybrat jako nejlepší možnost variantu 98 %, což je o něco přesnější odpověď.</p>
+</details>
+<p><br></p>
 </div>
 <div id="section-8" class="section level2">
 <h2>8</h2>
-<p>TBD</p>
+<p><br> <strong>Otázka 1</strong></p>
+<p><em>Označme si písmeny <span class="math inline">\(y\)</span> a <span class="math inline">\(z\)</span> dvě události, u kterých lze jednoznačně určit, zda nastaly, nebo ne. Která z následujících tvrzení o pravděpodobnosti těchto událostí zcela jistě NEplatí?</em></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(Pr(z) = 2\)</span></li>
+<li><span class="math inline">\(1 - Pr(z) = -0.3\)</span></li>
+<li><span class="math inline">\(Pr(y) = 0.2\)</span> &amp; <span class="math inline">\(Pr(y)+ Pr(z) = 0.1\)</span></li>
+<li><span class="math inline">\(Pr(y)+ Pr(z) = 1\)</span></li>
+</ol>
+<details>
+<summary>
+Podívat se na řešení
+</summary>
+<p>Zcela jistě neplatí první tři možnosti. Pravděpodobnost z definice nemůže být větší než 1, což zneplaťnuje první dva výroky. Pravděpodobnost také nemůže být záporná, což zneplatňuje třetí výrok.</p>
+</details>
+<p><br> <strong>Otázka 2</strong></p>
+<p><em>Hustota pravděpodobnosti (PDF) výsledku určitého experimentu, který může nabývat čtyř různých stavů (vzájemně se vylučujících), je vyjádřena obrázkem níže. Určete na základě PDF a základních pravidel počítání s pravděpodobností následující:</em></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(Pr(A)\cup Pr(C)\)</span> v jednom opakování experimentu</li>
+<li>Pravděpodobnost, že v pěti po sobě jdoucích nezávislých experimentech dostaneme vždy výsledek B</li>
+<li>Pravděpodobnost, že ve dvou nezávislých opakováních experimentu získáme v prvním experimentu výsledek B nebo D a ve druhém A nebo C?</li>
+</ol>
+<p><img src="exercise_files/figure-html/unnamed-chunk-12-1.png" width="288" /></p>
+<details>
+<summary>
+Podívat se na řešení
+</summary>
+<ol style="list-style-type: decimal">
+<li>0.1 + 0.3 = 0.4</li>
+<li>0.4^5 = cca 0.01, tedy asi 1 %</li>
+<li>0.6 * 0.4 = 0.24</li>
+</ol>
+</details>
+<p><br> <strong>Otázka 3</strong></p>
+<p><em>Zodpovězte následující:</em></p>
+<ol style="list-style-type: decimal">
+<li>Pokud víme, že výsledek experimentu může nabývat 20 různých stavů, jejichž rozdělení je uniformní, jaká je pravděpodobnost, že nastane 16. z těchto 20 stavů?</li>
+<li>Jaká je očekávaná hodnota hodu spravedlivou šestistěnnou kostkou?</li>
+<li>Jaké parametry zcela definují Alternativní rozdělení?</li>
+</ol>
+<details>
+<summary>
+Podívat se na řešení
+</summary>
+<ol style="list-style-type: decimal">
+<li>1/n, tedy 1/20 = 0.05 neboli 5 %. Že se jedná o 16. stav je redundantní informace, všechny stavy mají v uniformním rozdělení stejnou pravděpodobnost.</li>
+<li>3.5 … tuto hodnotu lze vypočítat jako aritmerický průměr z hodnot 1 až 6 nebo vzorcem pro uniformní rozdělení “(minimum + maximum)/2”.</li>
+<li>Jde o jediný parametr, pravděpodobnost úspěchu, který značíme zpravidla <span class="math inline">\(p\)</span>.</li>
+</ol>
+</details>
+<p><br></p>
 </div>
 <div id="section-9" class="section level2">
 <h2>9</h2>

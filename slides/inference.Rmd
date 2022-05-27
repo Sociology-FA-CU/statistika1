@@ -170,7 +170,7 @@ Interval spohlivosti = statistický mainstream pro vyjádření nejistoty interv
 ![](figures/07_intervals.jpg){width="55%"}
 :::
 
-Interval spolehlivosti na hladině 5 % (neboli 95% interval spolehlivosti) překryje skutečnou hodnotu v populaci v 95 % případů.
+Interval spolehlivosti na hladině významnosti 5 % (neboli 95% interval spolehlivosti) překryje skutečnou hodnotu v populaci v 95 % případů.
 
 
 ::: {.notes}
@@ -220,7 +220,7 @@ Způsob generování intervalů spolehlivosti bez teorie pomocí hrubé výpoče
 
 Pravděpodobnostní rozložení bodového odhadu (například průměru nebo regresního koeficientu), pokud bychom sesbírali velké množství výběrových souborů a z každého bychom spočítali bodový odhad.
 
-## Vlastnosti rozložení bodového odhadu {.columns-2 .smaller}
+## Vlastnosti rozložení průměrů (sampling distribution of the mean) {.columns-2 .smaller}
 
 ![](figures/04_sexual_partners_bar.png){width="65%"}
 

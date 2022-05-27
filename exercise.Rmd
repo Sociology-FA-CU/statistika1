@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```{r}
 library(tidyverse)
 library(kableExtra)
+library(HistData)
 countries <- read_csv("data-input/countries.csv")
 ```
 
@@ -305,15 +306,239 @@ Příklad jsem označil jako hypotetický, protože nejsem schopen dohledat zdro
 
 ## 6
 
-TBD
+<br>
+**Otázka 1** 
+
+*Představte si kardinální (numerickou) proměnnou, např. příjem pro tisíc lidí. Máte tedy 1000 hodnot. Nyní náhodně vyberete 1 člověka z této tisícovky, nicméně nevíte, která hodnota příjmu k němu patří. Jaký by měl být Váš nejlepší odhad jeho příjmu, pokud kritériem kvality odhadu je, že při opakování tohoto experimentu byste chtěli minimalizovat sumu čtverců odchylek skutečných hodnot od Vašich odhadů?*
+
+1) Aritmetický průměr
+1) Medián
+1) Modus
+1) Směrodatná odchylka
+1) Polovina mezikvartilového rozpětí
+
+
+<details><summary>Podívat se na řešení</summary>
+
+Správná odpověď: aritemtický průměr
+
+Zdůvodnění: 
+
+Z přednášky byste měli vědět, že na aritmetický průměr se můžeme dívat jako na nulový model, tedy je to taková hodnota, která minimalizuje sumu čtverců odchylek. Zároveň byste měli mít porozumění, proč odpovědi směrodatná odchylka a polovina mezikvartilového rozpětí jsou v tomto kontextu zcela nesmyslné.
+
+</details>
+
+<br>
+**Otázka 2** 
+
+*Které z následujících schémat je nejlepším vyjádřením toho, jak funguje statistický model?*
+
+1) Pozorování = aritmetický průměr - medián
+1) Pozorování = predikovaná hodnota + chyba
+1) Pozorování = konstanta + chyba
+1) Pozorování = konstanta + predikovaná hodnota
+
+<details><summary>Podívat se na řešení</summary>
+
+Správná odpověď:  Pozorování = predikovaná hodnota + chyba
+
+Poznámka: 
+
+"Pozorování = konstanta + predikovaná hodnota" popisuje nulový model, tedy pokud pro odhad nepoužíváme žádné prediktory, ale pouze aritemtický průměr. Nelze tedy o obecné vyjádření toho, jak funguje statistický model.
+
+</details>
+
+<br>
+**Otázka 3** 
+
+*Na základě výstupu z modelu jednoduché lineární regrese určete podmíněnou očekávanou hodnotu pro jednotlivé výšky dcer. Výstup udává počátek (konstantu) a regresní koeficient nezávislé proměnné výška matky. V centimetrech.*
+
+```{r}
+Mother_Daughter <- 
+  GaltonFamilies %>% 
+  filter(gender == 'female') %>% 
+  mutate(childHeight = childHeight * 2.54,
+         mother = mother*2.54)
+
+fit1 <- lm(childHeight ~ mother, data=Mother_Daughter)
+fit1
+
+
+# predict(fit1, newdata = tibble(mother = c(150, 165, 190)))
+```
+
+1) Podmíněná očekávaná hodnota pro dceru, jejíž matka měří 150 cm
+1) Podmíněná očekávaná hodnota pro dceru, jejíž matka měří 165 cm
+1) Podmíněná očekávaná hodnota pro dceru, jejíž matka měří 190 cm
+
+
+
+<details><summary>Podívat se na řešení</summary>
+
+1) Predikce (podmíněné očekávané hodnoty) výšky dcer na základě modelu jsou pro jednotlivé výšky matek (v daném pořadí): `r round(predict(fit1, newdata = tibble(mother = c(150, 165, 190))),2)`
+
+</details>
+
+
+**Otázka 4** 
+
+*V rámci práce se statistickým modelem provádíme tzv. rozklad sumy čtverců reziduí (sum of squares, SS), pro který zavádíme zkratky TSS, ESS a RSS. Které z následujících vztahů platí?*
+
+1) TSS = ESS - RSS
+1) ESS = TSS + RSS
+1) RSS = ESS - TSS
+1) TSS = RSS - ESS
+
+<details><summary>Podívat se na řešení</summary>
+
+Žádný. Všechny výše uvedené vztahy jsou špatně. Platí TSS = ESS + RSS, tedy že celková suma čtverců se rovná součtu modelem vysvětlené sumě čtverců a residuální sumy čtverců. 
+
+</details>
+
 
 ## 7
 
-TBD
+<br>
+**Otázka 1** 
+
+*Která z následujících tvrzení platí?*
+
+1) S větší velikostí výběrového souboru roste validita. 
+1) S větší velikostí výběrového souboru roste validita a reliabilita.
+1) S lepší reprezentativitou výběrového souboru roste validita.
+1) S lepší reprezentativitou výběrového souboru roste reliabilita.
+
+<details><summary>Podívat se na řešení</summary>
+
+Správná odpověď: Platí pouze tvrzení "S lepší reprezentativitou výběrového souboru roste validita." Velikost vzorku sama o sobě ovlivňuje pouze reliabilitu.
+
+</details>
+
+<br>
+**Otázka 2** 
+
+*Co říká zákon velkých čísel?*
+
+1) Distribuce průměrů z jednotlivých výběrových souborů se bude blížit normálnímu rozdělení s tím, jak poroste N (velikost každého jednoho výběrového souboru, ze kterých průměry počítáme).
+1) Pokud opakujeme náhodný výběr z populace mnohokrát, průměrná pozorovaná hodnota se bude velmi blížit skutečné hodnotě v populaci.
+1) Pokud pozorujeme určité subjekty opakovaně, subjekty s extrémně vysokými naměřenými hodnotami v čase T1 budou mít v čase T2 tendenci k hodnotám méně extrémním (relativně blíže k průměru ve srovnání s ostatními).
+1) Pokud bychom lidem přidělili percentily například jejich výšky, pak platí, že čím vyšší percentil bychom hledali, tím méně takových lidí by bylo v populaci. Například lidí na 50. percentilu by bylo méně než lidí na 90. percentilu.
+
+<details><summary>Podívat se na řešení</summary>
+
+Správná odpověď: "Pokud opakujeme náhodný výběr z populace mnohokrát, průměrná pozorovaná hodnota se bude velmi blížit skutečné hodnotě v populaci."
+
+Poznámka: 
+
+První možnost je popisem centrální limitní věty. Třetí možnost vyplývá z regrese k průměru. Čtvrtá možnost nereprezentuje žádnou statistickou zákonitost a je věcně špatně - lidí na 10. percentilu bude stejně jako lidí na 20. percentilu a stejně jako lidí na 50. a 90. percentilu a jako na každém jiném percentilu: 1 %. Nenechte se zmást tím, že pokud uvažujeme výšku, která bude mít přibližně normální rozdělení, tak platí, že lidé na 40. a 50. percentilu budou mít méně odlišnou výšku než lidé na 80. a 90. percentilu. To je pravda. 
+</details>
+
+<br>
+
+
+<br>
+**Otázka 3** 
+
+*Které parametry jednoznačně definují normální rozdělení?*
+
+1) Průměr, medián a modus
+1) Rozptyl
+1) Průměr a směrodatná odchylka
+1) Průměr a rozptyl
+
+<details><summary>Podívat se na řešení</summary>
+
+Správné odpovědi jsou dvě: 3 a 4. Typicky sice normální rozdělení definujeme průměrem a směrodatnou odchylkou, ale rozptyl je na směrodatnou odchylku jednoznačně přímo převoditelné, takže také kombinace parametrů průměr a rozptyl normální rozdělení jednoznačně definuje.
+
+</details>
+
+<br>
+
+**Otázka 4** 
+
+*Přibližně kolik procent všech pozorování nalezneme u normálního rozdělení mezi hodnotami -nekončeno a +2sd? Zvolte nejlepší z nabízených odpovědí.*
+
+1) 68 %
+1) 95 %
+1) 99,8 %
+1) 98 %
+
+<details><summary>Podívat se na řešení</summary>
+
+Platí varianta 98 %. Nenechte se zmást tím, že mezi -2sd a +2sd se nachází cca 95 % všech pozorování. Nyní počítáme od -nekonečna, takže bychom se dostali k 97,5 %. Ovšem to platí pro hodnoty -1,96sd a +1,96sd. Pro 2 sd je přesnější 98 %. V otevřené otázce by 97,5 % byla dostatečně přesná odpověď. V uzavřené otázce by na základě toho neměl být problém mezi nabízenými variantami vybrat jako nejlepší možnost variantu 98 %, což je o něco přesnější odpověď.
+
+</details>
+
+<br>
 
 ## 8
 
-TBD
+<br>
+**Otázka 1** 
+
+*Označme si písmeny $y$ a $z$ dvě události, u kterých lze jednoznačně určit, zda nastaly, nebo ne. Která z následujících tvrzení o pravděpodobnosti těchto událostí zcela jistě NEplatí?*
+
+1) $Pr(z) = 2$ 
+1) $1 - Pr(z) = -0.3$ 
+1) $Pr(y) = 0.2$ & $Pr(y)+ Pr(z) = 0.1$ 
+1) $Pr(y)+ Pr(z) = 1$ 
+
+<details><summary>Podívat se na řešení</summary>
+
+Zcela jistě neplatí první tři možnosti. Pravděpodobnost z definice nemůže být větší než 1, což zneplaťnuje první dva výroky. Pravděpodobnost také nemůže být záporná, což zneplatňuje třetí výrok.
+
+</details>
+
+<br>
+**Otázka 2** 
+
+*Hustota pravděpodobnosti (PDF) výsledku určitého experimentu, který může nabývat čtyř různých stavů (vzájemně se vylučujících), je vyjádřena obrázkem níže. Určete na základě PDF a základních pravidel počítání s pravděpodobností následující:*
+
+1) $Pr(A)\cup Pr(C)$ v jednom opakování experimentu 
+1) Pravděpodobnost, že v pěti po sobě jdoucích nezávislých experimentech dostaneme vždy výsledek B
+1) Pravděpodobnost, že ve dvou nezávislých opakováních experimentu získáme v prvním experimentu výsledek B nebo D a ve druhém A nebo C?
+
+
+```{r fig.width=3}
+d <- tibble(p = c(0.1, 0.4, 0.3, 0.2),
+            s = c("A", "B", "C", "D"))
+
+d %>% ggplot(aes(x=s,y=p))+
+  geom_col()+
+  labs(x=element_blank(),
+       y=element_blank())
+```
+
+
+<details><summary>Podívat se na řešení</summary>
+
+1) 0.1 + 0.3 = 0.4
+1) 0.4^5 = cca 0.01, tedy asi 1 %
+1) 0.6 * 0.4 = 0.24
+
+ 
+</details>
+
+<br>
+**Otázka 3** 
+
+*Zodpovězte následující:*
+
+1) Pokud víme, že výsledek experimentu může nabývat 20 různých stavů, jejichž rozdělení je uniformní, jaká je pravděpodobnost, že nastane 16. z těchto 20 stavů?
+1) Jaká je očekávaná hodnota hodu spravedlivou šestistěnnou kostkou?
+1) Jaké parametry zcela definují Alternativní rozdělení?
+
+
+<details><summary>Podívat se na řešení</summary>
+
+1) 1/n, tedy 1/20 = 0.05 neboli 5 %. Že se jedná o 16. stav je redundantní informace, všechny stavy mají v uniformním rozdělení stejnou pravděpodobnost.
+1) 3.5 ... tuto hodnotu lze vypočítat jako aritmerický průměr z hodnot 1 až 6 nebo vzorcem pro uniformní rozdělení "(minimum + maximum)/2".
+1) Jde o jediný parametr, pravděpodobnost úspěchu, který značíme zpravidla $p$. 
+
+</details>
+
+<br>
+
 
 ## 9
 
