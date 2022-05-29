@@ -28,8 +28,8 @@ Na záložkách níže najdete úkoly k procvičování látky z jednotlivých l
 1) Základy inferenčního uvažování: vzorek a populace 
 1) Pravděpodobnost, nejistota a variabilita 
 1) Centrální limitní věta 
+1) Centrální limitní věta 2
 1) Podmíněná pravděpodobnost a Bayesova věta 
-1) Bayesovská aktualizace na základě nových informací 
 
 ## 1
 
@@ -542,12 +542,190 @@ d %>% ggplot(aes(x=s,y=p))+
 
 ## 9
 
-TBD
+<br>
+**Otázka 1** 
+
+*Která z tvrzení o CLT platí?*
+
+1) Díky CLT víme, že každá proměnná bude mít při dostatečném počtu pozorování přibližně normální rozdělení.
+1) CLT říká, že (téměř) nehledě na distribuci původní proměnné můžeme určit, kde se vyskytuje prostředních 95 % procent všech pozorování: přibližně mezi -2 a +2 směrodatnými odchylkami.  
+1) CLT říká, že (téměř) nehledě na distribuci původní proměnné bude mít průměr z výběorových souborů (vzorků) tendenci k normálnímu rozdělení s dostatečně velkým n (velikostí jednotlivých vzorků).
+1) Díky CLT dokážeme konstruovat inervalové odhady průměru proměnné, téměř nehledě na distribuci proměnné, pro kterou průměr určujeme, pokud máme dostatečně velký výběrový soubor. 
+
+<details><summary>Podívat se na řešení</summary>
+
+Platí druhé dva výroky. První dva představují možné chybné interpretace. Ujistěte se, že rozumíte, proč jsou špatně. CLT nám neříká nic o distribuci proměnné. Její výpověď se vztahuje k distribuci agregující/sumarizační statistiky (typicky průměru nebo sumy) v hypotetickém případě, že bychom výběr z populace opakovali mnohohrát.
+
+</details>
+
+<br>
+**Otázka 2** 
+
+*Jaký výraz na obrázku představuje standardní chybu?:*
+
+1) $\sigma$
+1) $\frac{\sigma}{\sqrt n}$
+1) $\mu$
+1) $\bar x$
+
+
+![](slides/figures/clt.png)
+
+<details><summary>Podívat se na řešení</summary>
+
+Správná odpověď:
+
+$\frac{\sigma}{\sqrt n}$
+ 
+</details>
+
+<br>
+**Otázka 3** 
+
+*Převeďte následující hodnoty na z-skóry: 90, 95, 98, 100, 100, 102, 145*
+
+Poznámka: pro výpočet rozptylu použijte vzorec pro výběrový rozptyl, tedy:
+
+$$
+rozptyl = \frac{\sum (x_i - \bar{x})^2}{n-1}
+$$
+
+<details><summary>Podívat se na řešení</summary>
+
+```{r}
+round(scale(c(90, 95, 98, 100, 100, 102, 145))[,1],3)
+```
+
+Z-skór je převedení hodnot na takové hodnoty, které mají průměr 0 a směrodatnou odchylku 1. Výpočet jsme si ukazovali: od hodnot odečteme jejich průměr a vydělíme směrodatnou odchylkou. V Excelu je potřeba použít funkci "SMODCH.VÝBĚR.S" pro výběrovou směrodatnou odchylku. 
+
+</details>
+
+<br>
+**Otázka 4** 
+
+*Jaká je pravděpodobnost, že dané pozorování bude mít z-skór menší nebo roven hodnotě -1?*
+
+<details><summary>Podívat se na řešení</summary>
+
+To nelze jednoznačně určit. Tahle otázka byla trochu chyták, ale ne samoúčelný. Abyste mohli na otázku odpovědět, museli byste vědět, z jakého rozdělení pozorování pochází. Z-skóry typicky používáme v kontextu normálního rozdělení, nicméně spočítat je můžeme pro jakékliv rozdělení (pokud známe průměr a směrodatnou ochylku). (Pro zájemce: existuje tzv. Chebyshevův teorém, který určuje alespoň hranice podílu pozorování, která jsou oddělena určitým počtem směrodatných ochylek, i pro distribuce, které nejsou normální. Z hlediska kurzu je to ale nadstavba k případnému samostudiu.)
+
+</details>
+
+<br>
+**Otázka 5** 
+
+*Pokud víme, že náhodné pozorování pochází z normálního rozdělení, (A) jaká je pravděpodobnost, že bude mít z-skór menší než -1? (B) A jaké je pravděpodobnost, že bude mít z-skór větší než +1,5? (C) A větší nebo roven 1,5?*
+
+<details><summary>Podívat se na řešení</summary>
+
+(A) 15,9 %, v Excelu: "=NORM.S.DIST(-1;PRAVDA)"
+
+(B) 6,7 %, v Excelu: "=1-NORM.S.DIST(1,5;PRAVDA)", případně "=NORM.S.DIST(-1,5;PRAVDA)" ... na těchto dvou variantách si hezky můžete uvědomit jak se chová symetrie normálního rozdělení.
+
+(C) Stejné jako (B). Pohybujeme se ve spojitém rozdělení, takže na tom nezáleží: pravděpodobnost každé přesné hodnoty je 0, takže dodatek "nebo rovno" nic nemění. Amazing, co?
+
+</details>
+
+<br>
+**Otázka 6** 
+
+*Která z následujících interpretací konfidenčního intervalu (ve frekventistickém paradigmatu) je správná?*
+
+95% konfidenční interval znamená, že...
+
+* ... 95 % pozorování původní proměnné leží v tomto intervalu.
+* ... u 95 % opakovaných experimentů by sledovaná statistika spadla do tohoto intervalu.
+* ... existuje 95% pravděpodobnost, že daný interval překrývá skutečnou populační hodnotu.
+* ... pokud bychom náš experiment realizovali mnohokrát, interval by v 95 % případů překrýval skutečnou populační hodnotu. 
+
+<details><summary>Podívat se na řešení</summary>
+
+Jen ta poslední. Ty ostatní jsou všechny problematické:
+
+* ... 95 % pozorování původní proměnné leží v tomto intervalu. - nesmysl, interval spolehlivosti není o pozorováních, ale o hodnotě statistiky, která popisuje výběrový soubor
+* ... u 95 % opakovaných experimentů by sledovaná statistika spadla do tohoto intervalu. - lepší, ale ne. Interval spolehlivosti se nevtahuje k tomu, jak by dopadly další podobné experimenty, ale k populační hodnotě. 
+* ... existuje 95% pravděpodobnost, že daný interval překrývá skutečnou populační hodnotu. - tohle je hodně otázka filosofie toho, co je to pravděpodobnost, ale ve frekventistickém paradigmatu to neplatí. Frekventisté říkají: populační hodnota je daná a interval ji objektivně buď překrývá, nebo ne. End of the story, žádná pravděpodobnost. To, že my populační hodnotu neznáme a nevíme jistě, jak to je, to je jiný příběh. Proto frekventistická statistika ve své striktní podobě uznává jen tu čtvrtou interpretaci. #SeSTimSmir
+
+</details>
+
 
 ## 10
 
-TBD
+**Otázka 1** 
+
+*Jaká je pravděpodobnost, že dané pozorování bude mít z-skór menší nebo roven hodnotě -1?*
+
+<details><summary>Podívat se na řešení</summary>
+
+To nelze určit. Tahle otázka byla trochu chyták, ale ne samoúčelný. Abyste mohli na otázku odpovědět, museli byste vědět, z jakého rozdělení pozorování pochází. V kurzu Statistika 1 se zabýváme jen z-skóry v normálním rozdělení. Jako sociolog jsem se za svoji kariéru asi nesetkal s využíváním z-skórů v jiném kontextu než právě v normálním rozdělení. 
+
+</details>
+
+<br>
+**Otázka 2** 
+
+*(A) Pokud víme, že pozorování pochází z normálního rozdělení, jaká je pravděpodobnost, že bude mít z-skór menší nebo roven hodnotě -1? (B) A jaké je pravděpodobnost, že pozorování z této distribuce bude mít z-skór větší než +1,5? (C) A větší nebo roven 1,5?*
+
+<details><summary>Podívat se na řešení</summary>
+
+(A) 15,9 %, v Excelu: "=NORM.S.DIST(-1;PRAVDA)"
+
+(B) 6,7 %, v Excelu: "=1-NORM.S.DIST(1,5;PRAVDA)", případně "=NORM.S.DIST(-1,5;PRAVDA)" ... na těchto dvou variantách si hezky můžete uvědomit jako se chová symetrie normálního rozdělení.
+
+(C) Stejné jako (B). Pohybujeme se ve spojitém rozdělení, takže na tom nezáleží: pravděpodobnost každé přesné hodnoty je 0, takže dodatek "nebo rovno" nic nemění. Amazing, co?
+
+</details>
+
+<br>
+**Otázka 3** 
+
+*Ve všech následujících případech platí, že údaje pochází z dostatečně velkého výběrového souboru, takže se můžete spolehnout  na centrální limitní teorém. Spočítejte 87% interval spolehlivosti pro odhad průměru, pokud víte, že:*
+
+a) průměr je 300, standardní chyba je 20 a počet pozorování je 100
+b) průměr je 60, směrodatná odchylka je 30 a počet pozorování je 1000
+c) průměr je 15 800, rozptyl je 1 000 000 a počet pozorování je 250
+
+
+<details><summary>Podívat se na řešení</summary>
+
+a) <269,7 ; 330,3>
+b) <58,6 ; 61,4>
+c) <15704 ; 15896>
+
+Nejprve musíte najít z-skór. Je potřeba si uvědomit, že inteval spolehlivosti má překrýt 87 % prostřeních hodnot, nicméně z-skór v tabulkách nebo softwaru vyhledávat pro pravděpodobnost od -nekonečna až do určitého bodu. Takže potřebujete najít z-skór pro pravděpodobnost 93,5 % (v Excelu pomocí funkce norm.s.inv). Pak už je to jednoduché. Je potřeba si jen dopočítat standardní chybu. V prvním případě ji už máte, takže počet pozorování nevyužijete. Ve druhém a třetím případě musíte z rozptylu, resp. směrodatné odchylky dopočítat pomocí počtu pozorování směrodatnou chybu. 
+
+</details>
+
 
 ## 11
 
-TBD
+Nečekám, že to bude hrát rozdíl ve vašem zájmu si provičovací úkoly projít, nicméně podmíněná pravděpodobnost nebude součástí závěrečné zkoušky. 
+
+**Otázka 1** 
+
+*Máte v plánu piknik, ale probudíte se do zamračeného rána. Jaká je pravděpodobnost, že bude pršet, když také víte...*
+
+* 50 % všech deštivých dnů začíná zamračeným ránem
+* Zamračená rána jsou častá, v této roční době jich je 40 %
+* Dlouhodobý trend ukazuje, že v tomto měsíci jsou deštivé průměrně 3 ze 30 dní
+
+
+<details><summary>Podívat se na řešení</summary>
+
+Co víme:
+
+* Pr(déšť) = 0,1
+* Pr(zamračeno) = 0,4
+* Pr(zamračeno|déšť) = 0,5
+
+Takže Pr(déšť|zamračeno) = ... dosadit do Bayesovy věty... 
+
+$$
+\frac{0.1*0.5}{0.4} = 0.125
+$$
+
+Pravděpodobnost deště je 12,5 %. Ještě bych se s piknikem neloučil.
+
+
+</details>
+

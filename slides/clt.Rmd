@@ -193,8 +193,12 @@ Směrodatnou odchylku distribuce statistiky nazýváme STANDARDNÍ CHYBA (standa
 
 Dostatečně velké?
 
-- Zpravidla se uvádí větší než 30, ale záleží na šikmosti proměnné (někdy je potřeba větší N, aby CLT začal platit)
-- U binomického rozdělení se řídíme pravidlem, že $minimum(n*p; n*q) >= 5$. Pokud podmínka splněna není, na CLT bychom neměli spoléhat.
+- Zpravidla se uvádí větší než 30, ale záleží na šikmosti proměnné (někdy je potřeba (i mnohem) větší N, aby CLT začal být užitečnou aproximaxí)
+- U binomického rozdělení se řídíme pomocným "pravidlem", že $minimum(n*p; n*q) >= 5$. Pokud podmínka splněna není, na CLT bychom neměli spoléhat.
+
+::: {.notes}
+Toto pomocné pravidlo je typu "rule of thumb", tj. je to přibližný pomocník. Ale neměl by vzniknout dojem, že do 5 špatný a od 5 dobrý. Jde o kontinuum a čím větší je $minimum(n*p; n*q)$, tím lepší. Pokud je minimum 5 nebo jen o trochu větší, očekávejme, že aproximace pomocí CLT může a bude "ujíždět" oproti přesnému analytickému výpočtu o několik desetin procentního bodu. 
+:::
 
 ## CLT a mírně šikmá data - ilustrace
 
